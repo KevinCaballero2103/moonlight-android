@@ -32,6 +32,19 @@ public abstract class keyBoardVirtualControllerElement extends View {
     protected final String elementId;
 
     private final Paint paint = new Paint();
+    private Integer opacityOverride;
+    private int globalOpacity;
+
+    public void setOpacityOverride(Integer opacity) {
+        opacityOverride = opacity == null ? null : Math.max(0, Math.min(100, opacity));
+        setOpacity(globalOpacity);
+    }
+
+    // Explicit opacity is applied once to the complete drawing, including icons,
+    // pressed highlights and switch-mode borders. Keep legacy rendering unchanged.
+    protected int getDrawingOpacity() {
+        return opacityOverride == null ? globalOpacity : 100;
+    }
 
     private int normalColor = 0xF0888888;
     protected int textColor = 0xFFFFFFFF;
@@ -96,7 +109,20 @@ public abstract class keyBoardVirtualControllerElement extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        boolean applyOverride = opacityOverride != null && isNomal();
+        if (applyOverride && opacityOverride == 0) {
+            // Only skip painting. Visibility and touch dispatch must stay enabled.
+            return;
+        }
+        int layer = -1;
+        if (applyOverride && opacityOverride < 100) {
+            layer = canvas.saveLayerAlpha(0, 0, getWidth(), getHeight(),
+                    opacityOverride * 255 / 100);
+        }
         onElementDraw(canvas);
+        if (layer != -1) {
+            canvas.restoreToCount(layer);
+        }
 
         if (currentMode != Mode.Normal) {
             paint.setColor(configSelectedColor);
@@ -239,7 +265,8 @@ public abstract class keyBoardVirtualControllerElement extends View {
 
 
     public void setOpacity(int opacity) {
-        int hexOpacity = opacity * 255 / 100;
+        globalOpacity = Math.max(0, Math.min(100, opacity));
+        int hexOpacity = getDrawingOpacity() * 255 / 100;
         // 计算 1.5 倍透明度并确保不超过 255
         int textHexOpacity = Math.min(255, (int)(hexOpacity * 1.5f));
         this.normalColor = (hexOpacity << 24) | (normalColor & 0x00FFFFFF);

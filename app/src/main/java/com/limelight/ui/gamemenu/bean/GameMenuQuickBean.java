@@ -1,11 +1,25 @@
 package com.limelight.ui.gamemenu.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Description
  * Date: 2024-10-20
  * Time: 20:53
  */
 public class GameMenuQuickBean {
+    // Missing/null means inherit the global setting, including in older layouts.
+    @SerializedName("opacity")
+    private Integer opacity;
+
+    public Integer getOpacity() {
+        return opacity == null ? null : Math.max(0, Math.min(100, opacity));
+    }
+
+    public void setOpacity(Integer opacity) {
+        this.opacity = opacity == null ? null : Math.max(0, Math.min(100, opacity));
+    }
+
     private String name;
     private short[] datas;
 

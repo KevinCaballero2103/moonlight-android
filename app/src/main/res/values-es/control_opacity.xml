@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_opacity">Opacidad del control</string>
+    <string name="control_opacity_global">Usar opacidad global</string>
+    <string name="control_opacity_value">Opacidad: %1$d%%</string>
+    <string name="control_opacity_hint" formatted="false">El 0 % oculta el control y mantiene la entrada táctil. Los controles siguen visibles al editar.</string>
+</resources>

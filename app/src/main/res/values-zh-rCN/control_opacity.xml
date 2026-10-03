@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_opacity">控件不透明度</string>
+    <string name="control_opacity_global">使用全局不透明度</string>
+    <string name="control_opacity_value">不透明度：%1$d%%</string>
+    <string name="control_opacity_hint" formatted="false">0% 隐藏控件，但仍可接收触控输入。编辑时控件保持可见。</string>
+</resources>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:padding="5dp"
-    android:gravity="center_vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -141,6 +139,38 @@
         </LinearLayout>
 
 
+        <CheckBox
+            android:id="@+id/cb_global_opacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#8C99E6"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:text="@string/control_opacity_global" />
+
+        <TextView
+            android:id="@+id/tx_control_opacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@android:color/white" />
+
+        <SeekBar
+            android:id="@+id/sb_control_opacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:contentDescription="@string/control_opacity"
+            android:splitTrack="false"
+            android:progressDrawable="@drawable/ic_game_menu_seek_bg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:text="@string/control_opacity_hint" />
+
         <TextView
             android:text="删除"
             android:textSize="12sp"
@@ -170,4 +200,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</ScrollView>

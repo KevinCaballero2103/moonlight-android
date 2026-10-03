@@ -182,7 +182,7 @@ public class KeyBoardDigitalButton extends keyBoardVirtualControllerElement {
         // 5. 绘制内容 (图标或文字)
         if (icon != -1) {
             // 图标缩放优化：保持 1:1 比例且居中
-            int oscOpacity = PreferenceConfiguration.readPreferences(getContext()).oscOpacity;
+            int oscOpacity = getDrawingOpacity();
             Drawable d = getResources().getDrawable(isPressed() ? iconPress : icon);
             int padding = (int) (minSide * 0.15f); // 间距随按钮大小缩放
             d.setBounds(padding, padding, getWidth() - padding, getHeight() - padding);

@@ -123,6 +123,11 @@ public class KeyBoardController {
     private SeekBar sb_zoom_h;
     private TextView tx_margin;
 
+    private CheckBox cb_global_opacity;
+    private SeekBar sb_control_opacity;
+    private TextView tx_control_opacity;
+    private boolean bindingOpacity;
+
     private int currentIndex=-1;
 
     private int buttonWidth;
@@ -162,6 +167,34 @@ public class KeyBoardController {
         tx_zoom_w=lv_left_view.findViewById(R.id.tx_zoom_w);
         tx_zoom_h=lv_left_view.findViewById(R.id.tx_zoom_h);
         tx_margin=lv_left_view.findViewById(R.id.tx_margin);
+        cb_global_opacity = lv_left_view.findViewById(R.id.cb_global_opacity);
+        sb_control_opacity = lv_left_view.findViewById(R.id.sb_control_opacity);
+        tx_control_opacity = lv_left_view.findViewById(R.id.tx_control_opacity);
+        cb_global_opacity.setOnCheckedChangeListener((button, checked) -> {
+            if (bindingOpacity || currentIndex < 0 || currentIndex >= beanList.size()) {
+                return;
+            }
+            beanList.get(currentIndex).setOpacity(checked ? null : sb_control_opacity.getProgress());
+            applySelectedOpacity();
+            bindOpacityEditor();
+        });
+        sb_control_opacity.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (!fromUser || bindingOpacity || currentIndex < 0 || currentIndex >= beanList.size()) {
+                    return;
+                }
+                beanList.get(currentIndex).setOpacity(progress);
+                applySelectedOpacity();
+                bindOpacityEditor();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) { }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) { }
+        });
 
         iv_game_virtual_pad.setOnClickListener(v -> {
             if(lv_right_view.getVisibility()==View.GONE){
@@ -353,6 +386,26 @@ public class KeyBoardController {
         });
     }
 
+    private void applySelectedOpacity() {
+        keyBoardVirtualControllerElement element =
+                frame_layout.findViewWithTag(new TagInfo(currentIndex, isGamePadMode));
+        if (element != null) {
+            element.setOpacityOverride(beanList.get(currentIndex).getOpacity());
+        }
+    }
+
+    private void bindOpacityEditor() {
+        Integer opacity = beanList.get(currentIndex).getOpacity();
+        int effectiveOpacity = opacity == null
+                ? PreferenceConfiguration.readPreferences(context).oscOpacity : opacity;
+        bindingOpacity = true;
+        cb_global_opacity.setChecked(opacity == null);
+        sb_control_opacity.setEnabled(opacity != null);
+        sb_control_opacity.setProgress(effectiveOpacity);
+        tx_control_opacity.setText(context.getString(R.string.control_opacity_value, effectiveOpacity));
+        bindingOpacity = false;
+    }
+
     private List<GameMenuQuickBean> beanList=new ArrayList<>();
 
 
@@ -523,6 +576,7 @@ public class KeyBoardController {
 //                LimeLog.info("axi->当前："+new Gson().toJson(beanList.get(tag)));
                 updateItem(tag.index);
             });
+            element.setOpacityOverride(bean.getOpacity());
             element.setOpacity(PreferenceConfiguration.readPreferences(context).oscOpacity);
             addElement(element,bean.getmLeft(),bean.getmTop(),bean.getWidth(),bean.getHeight());
         }
@@ -539,6 +593,7 @@ public class KeyBoardController {
             lastView=frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode));
         }
         currentIndex=index;
+        bindOpacityEditor();
         if(lastView!=null){
             lastView.invalidate();
         }
