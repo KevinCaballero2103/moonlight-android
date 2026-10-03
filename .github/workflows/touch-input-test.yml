@@ -1,0 +1,46 @@
+name: Touch input test APK
+
+on:
+  push:
+    branches: [test/touch-input-improvements-touch-only]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install Android build packages
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
+            "platforms;android-34" "build-tools;34.0.0" "ndk;27.0.12077973"
+      - name: Check input sequencing
+        run: sh dev/check-virtual-input.sh
+      - name: Run unit tests and build test APK
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon -PincludeKishiHaptics=false -PincludeStereo3dAi=false \
+            :app:testNonRootDebugUnitTest :app:assembleNonRootDebug
+      - name: Verify APK signature
+        run: |
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose \
+            app/build/outputs/apk/nonRoot/debug/app-nonRoot-debug.apk
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: axixi-touch-input-debug
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            app/build/outputs/apk/nonRoot/debug/*.apk
+            app/build/test-results/testNonRootDebugUnitTest/*.xml
