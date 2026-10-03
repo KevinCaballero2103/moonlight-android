@@ -58,38 +58,38 @@ public class KeyBoardControllerConfigurationLoader {
                 if ((direction & KeyboardDigitalPadButton.DIGITAL_PAD_DIRECTION_LEFT) != 0) {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCodeLeft);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 } else {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_UP, keyCodeLeft);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 }
                 if ((direction & KeyboardDigitalPadButton.DIGITAL_PAD_DIRECTION_RIGHT) != 0) {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCodeRight);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 } else {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_UP, keyCodeRight);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 }
                 if ((direction & KeyboardDigitalPadButton.DIGITAL_PAD_DIRECTION_UP) != 0) {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCodeUp);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 } else {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_UP, keyCodeUp);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 }
                 if ((direction & KeyboardDigitalPadButton.DIGITAL_PAD_DIRECTION_DOWN) != 0) {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCodeDown);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 } else {
                     KeyEvent event = new KeyEvent(KeyEvent.ACTION_UP, keyCodeDown);
                     event.setSource(3);
-                    controller.sendKeyEvent(event);
+                    controller.sendKeyEvent(button, event);
                 }
             }
         });
@@ -152,7 +152,7 @@ public class KeyBoardControllerConfigurationLoader {
             public void onkeyEvent(int code, boolean isPress) {
                 KeyEvent keyEvent = new KeyEvent(isPress ? KeyEvent.ACTION_DOWN : KeyEvent.ACTION_UP, code);
                 keyEvent.setSource(2);
-                controller.sendKeyEvent(keyEvent);
+                controller.sendKeyEvent(analogStick, keyEvent);
             }
         });
 
@@ -168,7 +168,7 @@ public class KeyBoardControllerConfigurationLoader {
             public void onkeyEvent(int code, boolean isPress) {
                 KeyEvent keyEvent = new KeyEvent(isPress ? KeyEvent.ACTION_DOWN : KeyEvent.ACTION_UP, code);
                 keyEvent.setSource(2);
-                controller.sendKeyEvent(keyEvent);
+                controller.sendKeyEvent(analogStick, keyEvent);
             }
         });
 
@@ -245,12 +245,12 @@ public class KeyBoardControllerConfigurationLoader {
                     }
                 }
                 if(type==4){
-                    controller.sendAssembleKey((String) keyShort,KeyEvent.ACTION_DOWN);
+                    controller.sendAssembleKey(button, (String) keyShort,KeyEvent.ACTION_DOWN);
                     return;
                 }
                 KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_DOWN, (Integer) keyShort);
                 keyEvent.setSource(type);
-                controller.sendKeyEvent(keyEvent);
+                controller.sendKeyEvent(button, keyEvent);
             }
 
             @Override
@@ -269,12 +269,12 @@ public class KeyBoardControllerConfigurationLoader {
                     }
                 }
                 if(type==4){
-                    controller.sendAssembleKey((String) keyShort,KeyEvent.ACTION_UP);
+                    controller.sendAssembleKey(button, (String) keyShort,KeyEvent.ACTION_UP);
                     return;
                 }
                 KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_UP, (Integer) keyShort);
                 keyEvent.setSource(type);
-                controller.sendKeyEvent(keyEvent);
+                controller.sendKeyEvent(button, keyEvent);
 
             }
         });
@@ -363,7 +363,7 @@ public class KeyBoardControllerConfigurationLoader {
                 }
                 KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_DOWN, code);
                 keyEvent.setSource(type);
-                controller.sendKeyEvent(keyEvent);
+                controller.sendKeyEvent(button, keyEvent);
             }
 
             @Override
@@ -391,7 +391,7 @@ public class KeyBoardControllerConfigurationLoader {
                 }
                 KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_UP, code);
                 keyEvent.setSource(type);
-                controller.sendKeyEvent(keyEvent);
+                controller.sendKeyEvent(button, keyEvent);
 
             }
         });

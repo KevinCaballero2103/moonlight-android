@@ -87,6 +87,9 @@ public class KeyBoardController {
 
     private final Activity context;
     private final Handler handler;
+    private final Object legacyInputOwner = new Object();
+    private final VirtualInputState virtualInputs;
+    private final TimedKeyCombination combinations;
 
     private final Runnable delayedRetransmitRunnable = new Runnable() {
         @Override
@@ -143,6 +146,32 @@ public class KeyBoardController {
         this.context = context;
         this.isGamePadMode=isGamePadMode;
         this.handler = new Handler(Looper.getMainLooper());
+        this.virtualInputs = new VirtualInputState(new VirtualInputState.Sink() {
+            @Override
+            public void keyboard(int keyCode, boolean down) {
+                if (Game.instance != null && Game.instance.connected) {
+                    Game.instance.keyboardEvent(down, (short) keyCode);
+                }
+            }
+
+            @Override
+            public void mouse(int button, boolean down) {
+                if (Game.instance != null && Game.instance.connected) {
+                    Game.instance.mouseButtonEvent(button, down);
+                }
+            }
+        });
+        this.combinations = new TimedKeyCombination(new TimedKeyCombination.Scheduler() {
+            @Override
+            public void postDelayed(Runnable task, long delayMs) {
+                handler.postDelayed(task, delayMs);
+            }
+
+            @Override
+            public void remove(Runnable task) {
+                handler.removeCallbacks(task);
+            }
+        }, virtualInputs);
         this.prefConfig=prefConfig;
         this.vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         buttonConfigure=View.inflate(context,R.layout.axi_keyboard_top_right_view,null);
@@ -784,15 +813,18 @@ public class KeyBoardController {
     }
 
     public void sendKeyEvent(KeyEvent keyEvent) {
+        sendKeyEvent(legacyInputOwner, keyEvent);
+    }
+
+    public void sendKeyEvent(Object owner, KeyEvent keyEvent) {
         if (Game.instance == null || !Game.instance.connected) {
             return;
         }
         //1-鼠标 0-按键 2-摇杆 3-十字键
         if (keyEvent.getSource() == 1) {
-            Game.instance.mouseButtonEvent(keyEvent.getKeyCode(), KeyEvent.ACTION_DOWN == keyEvent.getAction());
+            virtualInputs.mouse(owner, keyEvent.getKeyCode(), KeyEvent.ACTION_DOWN == keyEvent.getAction());
         } else {
-            Game.instance.keyboardEvent(keyEvent.getAction() == KeyEvent.ACTION_DOWN,
-                    (short) keyEvent.getKeyCode());
+            virtualInputs.keyboard(owner, keyEvent.getKeyCode(), keyEvent.getAction() == KeyEvent.ACTION_DOWN);
         }
         if (prefConfig.enableKeyboardVibrate && vibrator.hasVibrator()&&keyEvent.getSource()!=2) {
             vibrator.vibrate(10);
@@ -807,6 +839,14 @@ public class KeyBoardController {
     }
 
     public void sendAssembleKey(String codes,int action){
+        sendAssembleKey(codes, codes, action);
+    }
+
+    public void sendAssembleKey(Object owner, String codes, int action) {
+        if (Game.instance == null || !Game.instance.connected || codes == null) {
+            combinations.cancel(owner);
+            return;
+        }
         if (prefConfig.enableKeyboardVibrate && vibrator.hasVibrator()) {
             vibrator.vibrate(10);
         }
@@ -816,7 +856,12 @@ public class KeyBoardController {
             if(action==KeyEvent.ACTION_DOWN){
                 return;
             }
-            int value= Integer.parseInt(keys[4]);
+            int value;
+            try {
+                value = Integer.parseInt(keys[4]);
+            } catch (NumberFormatException e) {
+                return;
+            }
             switch (value){
                 case 7://0 软键盘
                     if (!Game.instance.hasWindowFocus()) {
@@ -846,11 +891,20 @@ public class KeyBoardController {
             }
             return;
         }
-        for (int i = 0; i < keys.length; i++) {
-            int index = action == KeyEvent.ACTION_DOWN ? i : keys.length - 1 - i;
-            Game.instance.keyboardEvent(action == KeyEvent.ACTION_DOWN,
-                    Short.parseShort(keys[index]));
+        if (action == KeyEvent.ACTION_DOWN) {
+            combinations.down(owner, codes);
+        } else if (action == KeyEvent.ACTION_UP) {
+            combinations.up(owner);
         }
+    }
+
+    public void cancelCombination(Object owner) {
+        combinations.cancel(owner);
+    }
+
+    public void releaseAllVirtualInputs() {
+        combinations.cancelAll();
+        virtualInputs.releaseAll();
     }
 
     public ControllerInputContext getControllerInputContext() {
