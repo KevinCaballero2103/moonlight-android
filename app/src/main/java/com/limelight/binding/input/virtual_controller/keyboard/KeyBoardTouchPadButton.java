@@ -266,6 +266,15 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
     private double xFactor, yFactor;
 
     @Override
+    public void cancelInput() {
+        super.cancelInput();
+        movingButton = null;
+        setPressed(false);
+        onReleaseCallback();
+        invalidate();
+    }
+
+    @Override
     public boolean onElementTouchEvent(MotionEvent event) {
         // get masked (not specific to a pointer) action
         int action = event.getActionMasked();
@@ -311,6 +320,8 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
                 return true;
             }
             case MotionEvent.ACTION_CANCEL:
+                cancelInput();
+                return true;
             case MotionEvent.ACTION_UP: {
                 setPressed(false);
                 if (event.getEventTime() - originalTouchTime <= 200) {

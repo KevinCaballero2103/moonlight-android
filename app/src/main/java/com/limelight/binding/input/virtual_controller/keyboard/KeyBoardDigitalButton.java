@@ -46,6 +46,10 @@ public class KeyBoardDigitalButton extends keyBoardVirtualControllerElement {
          * onRelease event will be fired on button unpress.
          */
         void onRelease();
+
+        default void onCancel() {
+            onRelease();
+        }
     }
 
     private List<DigitalButtonListener> listeners = new ArrayList<>();
@@ -237,6 +241,19 @@ public class KeyBoardDigitalButton extends keyBoardVirtualControllerElement {
 
     private boolean enableSwitchDown;
 
+    @Override
+    public void cancelInput() {
+        super.cancelInput();
+        switchDown = false;
+        movingButton = null;
+        setPressed(false);
+        virtualController.getHandler().removeCallbacks(longClickRunnable);
+        for (DigitalButtonListener listener : listeners) {
+            listener.onCancel();
+        }
+        invalidate();
+    }
+
     public void setEnableSwitchDown(boolean enableSwitchDown) {
         this.enableSwitchDown = enableSwitchDown;
     }
@@ -266,6 +283,8 @@ public class KeyBoardDigitalButton extends keyBoardVirtualControllerElement {
                 return true;
             }
             case MotionEvent.ACTION_CANCEL:
+                cancelInput();
+                return true;
             case MotionEvent.ACTION_UP: {
                 if(enableSwitchDown&&switchDown){
                     return true;

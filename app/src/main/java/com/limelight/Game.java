@@ -1139,6 +1139,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     private void initKeyboardController(){
         keyBoardController=new KeyBoardController(controllerHandler, (FrameLayout) rootView, this,prefConfig,false);
+        keyBoardController.setInputSuppressed(!activityResumed || !hasWindowFocus());
 //        keyBoardController.refreshLayout();
         keyBoardController.show();
         bringDsTouchpadToFront();
@@ -1147,6 +1148,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     private void initVirtualController(){
         virtualController = new KeyBoardController(controllerHandler,(FrameLayout) rootView, this,prefConfig,true);
+        virtualController.setInputSuppressed(!activityResumed || !hasWindowFocus());
 //        virtualController.refreshLayout();
         virtualController.show();
         bringDsTouchpadToFront();
@@ -1829,6 +1831,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
+        setCustomVirtualInputSuppressed(!hasFocus || !activityResumed);
 
         // EXTENSION DEVELOPMENT [EXT-IME-ACCESSORY-BAR] [MODIFIED] BEGIN
         if (!hasFocus && imeKeyboardExtensionController != null) {
@@ -2154,6 +2157,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     @Override
     protected void onDestroy() {
+        setCustomVirtualInputSuppressed(true);
         logSessionInfo("LIFECYCLE", "串流页面正在销毁");
         backgroundReconnectHandler.removeCallbacksAndMessages(null);
         sessionTelemetryHandler.removeCallbacksAndMessages(null);
@@ -2253,6 +2257,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     protected void onResume() {
         super.onResume();
         activityResumed = true;
+        setCustomVirtualInputSuppressed(!hasWindowFocus());
         revealDsTouchpadAndScheduleAutoHide();
 
         if (virtualMouseOverlay != null) {
@@ -2274,6 +2279,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     @Override
     protected void onPause() {
         activityResumed = false;
+        setCustomVirtualInputSuppressed(true);
         cancelDsTouchpadDrag();
         releaseDsTouchpadInput();
 
@@ -3834,6 +3840,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
     }
 
     private void stopConnection(final Runnable afterStop) {
+        // Send key/button ups while the connection is still available.
+        setCustomVirtualInputSuppressed(true);
         streamSessionBackgrounded = false;
         restoreInputGrabAfterBackground = false;
         restartMicAfterBackground = false;
@@ -3920,6 +3928,9 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     @Override
     public void connectionTerminated(final int errorCode) {
+        // The callback may arrive on the connection thread. Cancel pending UI input
+        // even if background recovery returns before normal termination handling.
+        runOnUiThread(() -> setCustomVirtualInputSuppressed(true));
         if (errorCode == MoonBridge.ML_ERROR_GRACEFUL_TERMINATION) {
             logSessionInfo("CONNECT", "连接正常结束, code=" + errorCode);
         }
@@ -4082,6 +4093,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             @Override
             public void run() {
                 connected = true;
+                setCustomVirtualInputSuppressed(!activityResumed || !hasWindowFocus());
                 connecting = false;
                 streamStartElapsedMs = SystemClock.elapsedRealtime();
                 if (backgroundReconnectAttempt > 0) {
@@ -4522,6 +4534,21 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
     public void mouseHighResScroll(boolean up){
         conn.sendMouseHighResScroll((short) (up?prefConfig.mouseSCAmount*50:-50*prefConfig.mouseSCAmount));
+    }
+
+    private void setCustomVirtualInputSuppressed(boolean suppressed) {
+        if (keyBoardController != null) {
+            keyBoardController.setInputSuppressed(suppressed);
+        }
+        if (virtualController != null) {
+            virtualController.setInputSuppressed(suppressed);
+        }
+    }
+
+    public void cancelVirtualSpecialKeyAction() {
+        // Cancellation must not execute a pending Ctrl+Alt+Shift client action.
+        specialKeyCode = KeyEvent.KEYCODE_UNKNOWN;
+        waitingForAllModifiersUp = false;
     }
 
     @Override

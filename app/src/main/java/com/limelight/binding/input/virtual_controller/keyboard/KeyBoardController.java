@@ -90,6 +90,8 @@ public class KeyBoardController {
     private final Object legacyInputOwner = new Object();
     private final VirtualInputState virtualInputs;
     private final TimedKeyCombination combinations;
+    private boolean inputSuppressed;
+    private boolean releasingInputs;
 
     private final Runnable delayedRetransmitRunnable = new Runnable() {
         @Override
@@ -684,6 +686,9 @@ public class KeyBoardController {
 
 
     public void switchMode(ControllerMode currentMode){
+        if (this.currentMode == ControllerMode.Active && currentMode != ControllerMode.Active) {
+            releaseAllVirtualInputs();
+        }
         this.currentMode=currentMode;
         String message="";
         switch (currentMode){
@@ -715,6 +720,7 @@ public class KeyBoardController {
     }
 
     public void hide() {
+        releaseAllVirtualInputs();
         for (keyBoardVirtualControllerElement element : elements) {
             element.setVisibility(View.GONE);
         }
@@ -742,6 +748,7 @@ public class KeyBoardController {
     }
 
     public void removeElements() {
+        releaseAllVirtualInputs();
         for (keyBoardVirtualControllerElement element : elements) {
             frame_layout.removeView(element);
         }
@@ -817,7 +824,8 @@ public class KeyBoardController {
     }
 
     public void sendKeyEvent(Object owner, KeyEvent keyEvent) {
-        if (Game.instance == null || !Game.instance.connected) {
+        if (keyEvent.getAction() == KeyEvent.ACTION_DOWN &&
+                (inputSuppressed || Game.instance == null || !Game.instance.connected)) {
             return;
         }
         //1-鼠标 0-按键 2-摇杆 3-十字键
@@ -826,13 +834,13 @@ public class KeyBoardController {
         } else {
             virtualInputs.keyboard(owner, keyEvent.getKeyCode(), keyEvent.getAction() == KeyEvent.ACTION_DOWN);
         }
-        if (prefConfig.enableKeyboardVibrate && vibrator.hasVibrator()&&keyEvent.getSource()!=2) {
+        if (!releasingInputs && prefConfig.enableKeyboardVibrate && vibrator.hasVibrator()&&keyEvent.getSource()!=2) {
             vibrator.vibrate(10);
         }
     }
 
     public void sendMouseMove(int x,int y){
-        if (Game.instance == null || !Game.instance.connected) {
+        if (inputSuppressed || Game.instance == null || !Game.instance.connected) {
             return;
         }
         Game.instance.mouseMove(x,y);
@@ -843,7 +851,7 @@ public class KeyBoardController {
     }
 
     public void sendAssembleKey(Object owner, String codes, int action) {
-        if (Game.instance == null || !Game.instance.connected || codes == null) {
+        if (inputSuppressed || Game.instance == null || !Game.instance.connected || codes == null) {
             combinations.cancel(owner);
             return;
         }
@@ -899,12 +907,41 @@ public class KeyBoardController {
     }
 
     public void cancelCombination(Object owner) {
+        if (Game.instance != null) {
+            Game.instance.cancelVirtualSpecialKeyAction();
+        }
         combinations.cancel(owner);
     }
 
+    public void setInputSuppressed(boolean suppressed) {
+        inputSuppressed = suppressed;
+        if (suppressed) {
+            releaseAllVirtualInputs();
+        }
+    }
+
     public void releaseAllVirtualInputs() {
-        combinations.cancelAll();
-        virtualInputs.releaseAll();
+        if (releasingInputs) {
+            return;
+        }
+        releasingInputs = true;
+        try {
+            if (Game.instance != null) {
+                Game.instance.cancelVirtualSpecialKeyAction();
+            }
+            combinations.cancelAll();
+            for (keyBoardVirtualControllerElement element : elements) {
+                element.cancelInput();
+            }
+            virtualInputs.releaseAll();
+            handler.removeCallbacks(delayedRetransmitRunnable);
+            inputContext = new ControllerInputContext();
+            if (isGamePadMode && Game.instance != null && Game.instance.connected) {
+                sendControllerInputContextInternal();
+            }
+        } finally {
+            releasingInputs = false;
+        }
     }
 
     public ControllerInputContext getControllerInputContext() {

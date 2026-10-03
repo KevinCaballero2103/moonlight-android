@@ -277,6 +277,15 @@ public class KeyBoardControllerConfigurationLoader {
                 controller.sendKeyEvent(button, keyEvent);
 
             }
+
+            @Override
+            public void onCancel() {
+                if (type == 4) {
+                    controller.cancelCombination(button);
+                } else {
+                    onRelease();
+                }
+            }
         });
 
         return button;

@@ -389,6 +389,18 @@ public class KeyAnalogStick extends keyBoardVirtualControllerElement {
         return true;
     }
 
+    @Override
+    public void cancelInput() {
+        super.cancelInput();
+        stick_state = STICK_STATE.NO_MOVEMENT;
+        click_state = CLICK_STATE.SINGLE;
+        timeLastClick = 0;
+        setPressed(false);
+        notifyOnRevoke();
+        notifyOnMovement(0, 0);
+        invalidate();
+    }
+
     public void setTextTipValues(String[] textTipValues) {
         this.textTipValues = textTipValues;
     }

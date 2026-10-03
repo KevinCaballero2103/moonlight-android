@@ -34,6 +34,7 @@ public abstract class keyBoardVirtualControllerElement extends View {
     private final Paint paint = new Paint();
     private Integer opacityOverride;
     private int globalOpacity;
+    private boolean inputCancelled;
 
     public void setOpacityOverride(Integer opacity) {
         opacityOverride = opacity == null ? null : Math.max(0, Math.min(100, opacity));
@@ -146,6 +147,12 @@ public abstract class keyBoardVirtualControllerElement extends View {
         currentMode = Mode.Resize;
     }
 
+    public void cancelInput() {
+        inputCancelled = true;
+        setPressed(false);
+        invalidate();
+    }
+
     protected void actionCancel() {
         currentMode = Mode.Normal;
         invalidate();
@@ -180,6 +187,13 @@ public abstract class keyBoardVirtualControllerElement extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (isNomal() && event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+            inputCancelled = false;
+        }
+        if (event.getActionMasked() == MotionEvent.ACTION_CANCEL && isNomal()) {
+            cancelInput();
+            return true;
+        }
         // Ignore secondary touches on controls
         //
         // NB: We can get an additional pointer down if the user touches a non-StreamView area
@@ -190,6 +204,9 @@ public abstract class keyBoardVirtualControllerElement extends View {
         }
 
         if (virtualController.getControllerMode() == KeyBoardController.ControllerMode.Active) {
+            if (inputCancelled) {
+                return true;
+            }
             return onElementTouchEvent(event);
         }
 

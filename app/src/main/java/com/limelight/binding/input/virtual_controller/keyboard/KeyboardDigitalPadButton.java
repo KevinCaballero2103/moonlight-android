@@ -176,6 +176,15 @@ public class KeyboardDigitalPadButton extends keyBoardVirtualControllerElement{
         return true;
     }
 
+    @Override
+    public void cancelInput() {
+        super.cancelInput();
+        direction = 0;
+        newDirectionCallback(0);
+        setPressed(false);
+        invalidate();
+    }
+
     public interface DigitalPadListener {
         void onDirectionChange(int direction);
     }

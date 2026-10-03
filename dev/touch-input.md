@@ -41,3 +41,36 @@ The locked-Alt experiment demonstrates that the host/game accept the shortcut.
 It does not prove that 40 ms is the required timing; Android/Genshin testing is
 still needed. This stage does not change touch splitting, sensitivity, or layout
 geometry. Attack + camera and passthrough are subsequent stages.
+
+## Cancellation integration
+
+Each element now has `cancelInput()`. Digital buttons clear lock state, stop long
+press/scroll callbacks, and cancel combination sessions without firing AXIX
+actions. Touchpads release mouse buttons without interpreting cancellation as a
+tap. Joysticks clear their active pointer/state and report neutral movement;
+crucetas report no direction. A cancelled gesture cannot resume on a later MOVE
+or UP; a new DOWN is required. The existing secondary-touch guard is retained.
+
+The controller releases inputs on hide, rebuild, and leaving active mode. Game
+suppresses new custom input while paused/unfocused, before disconnect, and after
+a termination callback. Returning to a focused, resumed connection enables it
+again. Graceful disconnect attempts key/button ups before setting `connected`
+false. Network loss cannot guarantee delivery of an UP to Windows; pending local
+work is still cancelled so it cannot leak into a later session.
+
+Local Ctrl+Alt+Shift actions are discarded on cancellation rather than executed
+by synthetic cleanup ups. Normally released AXIX shortcuts keep their old path.
+Ownership covers this custom overlay; the full keyboard, IME, physical devices,
+and other independently implemented overlays are not folded into this tracker.
+
+## Validation
+
+`dev/check-virtual-input.sh` runs 15 deterministic, dependency-free checks using
+the JDK compiler module. `TimedKeyCombinationTest` exposes the same checks to the
+normal JUnit suite. They cover ordering, all eight modifier keycodes, hold timing,
+quick taps, shared ownership, cancellation, malformed input, and mouse release.
+
+The fresh workspace has Java 17 but no retained Android SDK/Gradle distribution.
+The Gradle wrapper fails downloading Gradle 8.7 with `Network is unreachable`.
+These checks do not replace an Android build or device testing of the View and
+lifecycle integration.

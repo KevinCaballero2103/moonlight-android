@@ -198,9 +198,11 @@ public class keyAnalogStickFree extends keyBoardVirtualControllerElement {
                 }
                 break;
 
+            case MotionEvent.ACTION_CANCEL:
+                cancelInput();
+                break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_POINTER_UP:
-            case MotionEvent.ACTION_CANCEL:
                 if (event.getPointerId(actionIndex) == touchID) {
                     bIsFingerOnScreen = false;
                     setPressed(false);
@@ -213,6 +215,19 @@ public class keyAnalogStickFree extends keyBoardVirtualControllerElement {
         }
         invalidate();
         return true;
+    }
+
+    @Override
+    public void cancelInput() {
+        super.cancelInput();
+        bIsFingerOnScreen = false;
+        touchID = -1;
+        stick_state = STICK_STATE.NO_MOVEMENT;
+        timeLastClick = 0;
+        setPressed(false);
+        notifyOnRevoke();
+        notifyOnMovement(0, 0);
+        invalidate();
     }
 
     private void updatePositionInternal(float tx, float ty, long eventTime) {
