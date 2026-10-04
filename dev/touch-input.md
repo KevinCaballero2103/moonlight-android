@@ -74,3 +74,20 @@ The fresh workspace has Java 17 but no retained Android SDK/Gradle distribution.
 The Gradle wrapper fails downloading Gradle 8.7 with `Network is unreachable`.
 These checks do not replace an Android build or device testing of the View and
 lifecycle integration.
+# Control layout export
+
+The original settings export action only shared a FileProvider URI for the
+selected landscape slot; it did not create a document and assumed that an
+internal file already existed. A bundled layout can be used without ever saving
+that file. Export now uses ACTION_CREATE_DOCUMENT and writes the selected saved
+layout, or its bundled default when no saved file exists. The Activity owns the
+picker request and saves the pending slot across recreation, independently of
+settings Fragment reloads. Copying runs off the UI thread and preserves the raw
+JSON bytes, including per-control opacity and unknown fields. Cancellation does
+not write; success is reported only after flushing and closing the output.
+
+Device checks: export an edited layout to Downloads, check its nonzero size and
+import it into another slot; compare positions, opacity, lock mode and combo
+codes. Export a never-edited slot, an intentionally empty (`[]`) layout and a
+gamepad slot. Cancel the picker and retry. Rotate while the picker is open and
+verify the selected slot is retained. Read/write errors must show failure.
