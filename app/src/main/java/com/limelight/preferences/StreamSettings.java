@@ -2,6 +2,7 @@ package com.limelight.preferences;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -59,6 +60,89 @@ public class StreamSettings extends Activity {
     private AlertDialog backupProgress;
     private boolean profileOperationRunning;
     private AlertDialog profileProgress;
+    private static final int WRITE_CONTROL_LAYOUT_REQUEST_CODE = 1005;
+    private static final String PENDING_LAYOUT_FILE = "pending_layout_file";
+    private static final String PENDING_LAYOUT_ASSET = "pending_layout_asset";
+    private String pendingLayoutFile;
+    private String pendingLayoutAsset;
+    private boolean layoutExportRunning;
+    private AlertDialog layoutExportProgress;
+
+    private void chooseControlLayoutDestination(boolean gamepad) {
+        if (layoutExportRunning || pendingLayoutFile != null) return;
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String name = prefs.getString(gamepad
+                        ? KeyBoardControllerConfigurationLoader.OSC_GAMEPAD_PREFERENCE
+                        : KeyBoardControllerConfigurationLoader.OSC_PREFERENCE,
+                gamepad ? KeyBoardControllerConfigurationLoader.OSC_GAMEPAD_PREFERENCE_VALUE
+                        : KeyBoardControllerConfigurationLoader.OSC_PREFERENCE_VALUE);
+        // Import/export continues to operate on the selected landscape layout.
+        pendingLayoutFile = "axi_" + name + ".txt";
+        pendingLayoutAsset = gamepad ? "config/config_gamepad.txt" : "config/config_keyboard.txt";
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TITLE, pendingLayoutFile);
+        try {
+            // The Activity owns the request so reloading the settings Fragment
+            // cannot discard the picker result or the selected layout.
+            startActivityForResult(intent, WRITE_CONTROL_LAYOUT_REQUEST_CODE);
+        } catch (ActivityNotFoundException e) {
+            pendingLayoutFile = null;
+            pendingLayoutAsset = null;
+            Toast.makeText(this, R.string.control_layout_export_failed, Toast.LENGTH_LONG).show();
+            LimeLog.warning("No document picker for control layout export: " + e);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        state.putString(PENDING_LAYOUT_FILE, pendingLayoutFile);
+        state.putString(PENDING_LAYOUT_ASSET, pendingLayoutAsset);
+        super.onSaveInstanceState(state);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != WRITE_CONTROL_LAYOUT_REQUEST_CODE) return;
+        String fileName = pendingLayoutFile;
+        String assetName = pendingLayoutAsset;
+        pendingLayoutFile = null;
+        pendingLayoutAsset = null;
+        if (resultCode != RESULT_OK) return;
+        if (data == null || data.getData() == null || fileName == null || assetName == null) {
+            Toast.makeText(this, R.string.control_layout_export_failed, Toast.LENGTH_LONG).show();
+            return;
+        }
+        Uri destination = data.getData();
+        layoutExportRunning = true;
+        layoutExportProgress = AppDialog.showProgress(this,
+                getString(R.string.control_layout_export_title),
+                getString(R.string.control_layout_export_working), null);
+        Context context = getApplicationContext();
+        new Thread(() -> {
+            boolean success = false;
+            try {
+                FileUriUtils.exportControlLayout(context, fileName, assetName, destination);
+                success = true;
+            } catch (Exception e) {
+                LimeLog.warning("Control layout export failed: " + e);
+            }
+            final boolean saved = success;
+            runOnUiThread(() -> {
+                layoutExportRunning = false;
+                if (layoutExportProgress != null) {
+                    layoutExportProgress.dismiss();
+                    layoutExportProgress = null;
+                }
+                if (!isFinishing() && !isDestroyed()) {
+                    Toast.makeText(this, saved ? R.string.control_layout_export_success
+                            : R.string.control_layout_export_failed, Toast.LENGTH_LONG).show();
+                }
+            });
+        }, "Control layout export").start();
+    }
 
     void changeSettingsProfile(int target, boolean reset) {
         if (profileOperationRunning || isFinishing()) return;
@@ -143,6 +227,10 @@ public class StreamSettings extends Activity {
 
     @Override
     protected void onDestroy() {
+        if (layoutExportProgress != null) {
+            layoutExportProgress.dismiss();
+            layoutExportProgress = null;
+        }
         if (profileProgress != null) {
             profileProgress.dismiss();
             profileProgress = null;
@@ -189,6 +277,11 @@ public class StreamSettings extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.SettingsHostTheme);
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            pendingLayoutFile = savedInstanceState.getString(PENDING_LAYOUT_FILE);
+            pendingLayoutAsset = savedInstanceState.getString(PENDING_LAYOUT_ASSET);
+        }
 
         previousPrefs = PreferenceConfiguration.readPreferences(this);
 
@@ -1037,17 +1130,8 @@ public class StreamSettings extends Activity {
             findPreference("export_keyboard_file").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String name = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(KeyBoardControllerConfigurationLoader.OSC_PREFERENCE, KeyBoardControllerConfigurationLoader.OSC_PREFERENCE_VALUE);
-                    Uri uri=FileUriUtils.getKeyBoardFile(getActivity(),"axi_"+name+".txt");
-                    if(uri==null){
-                        return false;
-                    }
-                    Intent intent = new Intent(Intent.ACTION_SEND);
-                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                    intent.putExtra(Intent.EXTRA_STREAM, uri);
-                    intent.setType("text/plain");
-                    startActivity(Intent.createChooser(intent,"保存配置文件"));
-                    return false;
+                    ((StreamSettings) getActivity()).chooseControlLayoutDestination(false);
+                    return true;
                 }
             });
 
@@ -1056,17 +1140,8 @@ public class StreamSettings extends Activity {
                 gamepad_export.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
-                        String name = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(KeyBoardControllerConfigurationLoader.OSC_GAMEPAD_PREFERENCE, KeyBoardControllerConfigurationLoader.OSC_GAMEPAD_PREFERENCE_VALUE);
-                        Uri uri=FileUriUtils.getKeyBoardFile(getActivity(),"axi_"+name+".txt");
-                        if(uri==null){
-                            return false;
-                        }
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                        intent.putExtra(Intent.EXTRA_STREAM, uri);
-                        intent.setType("text/plain");
-                        startActivity(Intent.createChooser(intent,"保存配置文件"));
-                        return false;
+                        ((StreamSettings) getActivity()).chooseControlLayoutDestination(true);
+                        return true;
                     }
                 });
             }
