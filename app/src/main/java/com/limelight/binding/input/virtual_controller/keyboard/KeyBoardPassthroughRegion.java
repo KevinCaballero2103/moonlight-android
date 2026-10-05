@@ -25,7 +25,7 @@ public final class KeyBoardPassthroughRegion extends keyBoardVirtualControllerEl
     }
 
     @Override
-    protected boolean onElementTouchEvent(MotionEvent event) {
+    public boolean onElementTouchEvent(MotionEvent event) {
         return false;
     }
 
