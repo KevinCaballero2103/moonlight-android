@@ -99,8 +99,8 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".debug.passtest"
-            resValue "string", "app_label", "Axixi · zonas táctiles"
+            applicationIdSuffix ".debug.passfix7"
+            resValue "string", "app_label", "Axixi · toque directo"
             resValue "string", "app_label_root", "DR·月光"
 
             minifyEnabled true
