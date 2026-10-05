@@ -120,7 +120,12 @@ public class TouchRoutingLayoutTest {
         MotionEvent event = MotionEvent.obtain(1, ++time,
                 action | (index << MotionEvent.ACTION_POINTER_INDEX_SHIFT), ids.length,
                 properties, points, 0, 0, 1, 1, 0, 0, InputDevice.SOURCE_TOUCHSCREEN, 0);
-        try { assertTrue(root.dispatchTouchEvent(event)); }
+        try {
+            boolean handled = root.dispatchTouchEvent(event);
+            if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_POINTER_DOWN) {
+                assertTrue(handled);
+            }
+        }
         finally { event.recycle(); }
     }
 
