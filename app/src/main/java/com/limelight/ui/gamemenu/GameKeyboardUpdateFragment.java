@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.limelight.LimeLog;
 import com.limelight.R;
+import com.limelight.binding.input.virtual_controller.keyboard.KeyBoardTouchPadButton;
 import com.limelight.nvstream.input.ControllerPacket;
 import com.limelight.ui.BaseFragmentDialog.BaseGameMenuDialog;
 import com.limelight.ui.gamemenu.bean.GameMenuQuickBean;
@@ -201,6 +202,9 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
 
         beanList.add(new GameMenuQuickBean("触控板",10,"常规模式",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·左",11,"左键",2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.control_attack_camera),
+                KeyBoardTouchPadButton.CODE_ATTACK_CAMERA,
+                getString(R.string.control_attack_camera_description),2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·右",9,"右键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·中",12,"中键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·无",13,"只转视野",2,false).setShapeType(1));

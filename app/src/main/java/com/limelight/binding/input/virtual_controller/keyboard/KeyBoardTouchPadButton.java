@@ -12,6 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.limelight.LimeLog;
 import com.limelight.R;
@@ -24,6 +25,23 @@ import java.util.List;
  * This is a digital button on screen element. It is used to get click and double click user input.
  */
 public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
+
+    public static final int CODE_ATTACK_CAMERA = 14;
+
+    private final AttackCameraGesture attackCamera = new AttackCameraGesture(new AttackCameraGesture.Sink() {
+        @Override
+        public void button(boolean down) {
+            setPressed(down);
+            if (down) onClickCallback();
+            else onReleaseCallback();
+            invalidate();
+        }
+
+        @Override
+        public void move(int x, int y) {
+            onMoveCallback(x, y);
+        }
+    });
 
     /**
      * Listener interface to update registered observers.
@@ -229,7 +247,9 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         }
 
         virtualController.getHandler().removeCallbacks(longClickRunnable);
-        virtualController.getHandler().postDelayed(longClickRunnable, timerLongClickTimeout);
+        if (code != CODE_ATTACK_CAMERA) {
+            virtualController.getHandler().postDelayed(longClickRunnable, timerLongClickTimeout);
+        }
     }
 
     private void onLongClickCallback() {
@@ -270,12 +290,73 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         super.cancelInput();
         movingButton = null;
         setPressed(false);
-        onReleaseCallback();
+        if (code == CODE_ATTACK_CAMERA) attackCamera.cancel();
+        else onReleaseCallback();
         invalidate();
     }
 
     @Override
+    protected boolean handlesSecondaryTouchEvents() {
+        return code == CODE_ATTACK_CAMERA;
+    }
+
+    private boolean onAttackCameraTouchEvent(MotionEvent event) {
+        switch (event.getActionMasked()) {
+            case MotionEvent.ACTION_DOWN: {
+                attackCamera.cancel();
+                int width = getResources().getDisplayMetrics().widthPixels;
+                int height = getResources().getDisplayMetrics().heightPixels;
+                if (getParent() instanceof View) {
+                    View overlay = (View) getParent();
+                    if (overlay.getWidth() > 0) width = overlay.getWidth();
+                    if (overlay.getHeight() > 0) height = overlay.getHeight();
+                }
+                // The hit rectangle must not amplify aiming when made smaller.
+                double scaleX = 1280.0 / Math.max(1, width)
+                        * preferenceConfiguration.touchPadSensitivity / 100.0;
+                double scaleY = 720.0 / Math.max(1, height)
+                        * preferenceConfiguration.touchPadYSensitity / 100.0;
+                int index = event.getActionIndex();
+                attackCamera.begin(event.getPointerId(index), event.getX(index), event.getY(index),
+                        scaleX, scaleY);
+                break;
+            }
+            case MotionEvent.ACTION_MOVE: {
+                int pointer = attackCamera.getPointerId();
+                if (pointer == -1) break;
+                int index = event.findPointerIndex(pointer);
+                if (index == -1) {
+                    cancelInput();
+                    break;
+                }
+                for (int sample = 0; sample < event.getHistorySize(); sample++) {
+                    attackCamera.move(pointer, event.getHistoricalX(index, sample),
+                            event.getHistoricalY(index, sample));
+                }
+                attackCamera.move(pointer, event.getX(index), event.getY(index));
+                break;
+            }
+            case MotionEvent.ACTION_POINTER_UP:
+                attackCamera.release(event.getPointerId(event.getActionIndex()));
+                break;
+            case MotionEvent.ACTION_UP:
+                // No delayed tap/click on release. End even if Android's final
+                // event is inconsistent, so a button cannot remain held.
+                attackCamera.cancel();
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                cancelInput();
+                break;
+            default:
+                // Additional pointers cannot press or take over this control.
+                break;
+        }
+        return true;
+    }
+
+    @Override
     public boolean onElementTouchEvent(MotionEvent event) {
+        if (code == CODE_ATTACK_CAMERA) return onAttackCameraTouchEvent(event);
         // get masked (not specific to a pointer) action
         int action = event.getActionMasked();
         switch (action) {

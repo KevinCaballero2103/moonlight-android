@@ -28,13 +28,6 @@ import java.io.Reader;
  */
 public class FileUriUtils {
 
-    public static void exportControlLayout(Context context, String fileName,
-                                           String bundledAsset, Uri destination) throws IOException {
-        ControlLayoutExport.write(new File(context.getFilesDir(), fileName),
-                () -> context.getAssets().open(bundledAsset),
-                () -> context.getContentResolver().openOutputStream(destination, "wt"));
-    }
-
     //获取json文件内容
     public static String getKeyBoardJson(Context context,String name){
         File dataBaseFile=new File(context.getFilesDir().getAbsolutePath()+File.separator, name);

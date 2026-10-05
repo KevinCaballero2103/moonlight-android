@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="control_layout_export_title">Exportar controles</string>
-    <string name="control_layout_export_working">Guardando controles…</string>
-    <string name="control_layout_export_success">Controles guardados.</string>
-    <string name="control_layout_export_failed">No se pudieron guardar los controles. Comprueba el destino y el espacio disponible e inténtalo de nuevo.</string>
+    <string name="control_attack_camera">Ataque + cámara</string>
+    <string name="control_attack_camera_description">Mantén para atacar; desliza para apuntar</string>
     <!-- PC view menu entries -->
     <string name="pcview_menu_app_list">Ver lista de juegos</string>
     <string name="pcview_menu_pair_pc">Emparejar con PC</string>
