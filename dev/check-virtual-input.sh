@@ -9,5 +9,7 @@ test_dir="$project_dir/app/src/test/java/com/limelight/binding/input/virtual_con
 # Uses the JDK compiler module directly so a javac launcher is not required.
 java com.sun.tools.javac.Main --release 11 -d "$classes_dir" \
     "$main_dir/VirtualInputState.java" "$main_dir/TimedKeyCombination.java" \
-    "$test_dir/TimedKeyCombinationChecks.java"
+    "$main_dir/AttackCameraGesture.java" \
+    "$test_dir/TimedKeyCombinationChecks.java" "$test_dir/AttackCameraGestureChecks.java"
 java -cp "$classes_dir" com.limelight.binding.input.virtual_controller.keyboard.TimedKeyCombinationChecks
+java -cp "$classes_dir" com.limelight.binding.input.virtual_controller.keyboard.AttackCameraGestureChecks

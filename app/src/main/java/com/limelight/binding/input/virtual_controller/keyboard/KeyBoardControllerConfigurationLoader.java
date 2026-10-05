@@ -354,6 +354,8 @@ public class KeyBoardControllerConfigurationLoader {
         button.setText(text);
         button.setIcon(icon);
         button.setCode(keyShort);
+        // Attack + camera uses the same left-mouse callbacks and input owner as
+        // other touchpads; code 14 changes gesture timing inside the View only.
         button.addDigitalButtonListener(new KeyBoardTouchPadButton.DigitalButtonListener() {
             @Override
             public void onClick() {

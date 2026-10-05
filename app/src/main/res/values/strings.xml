@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="control_attack_camera">Attack + camera</string>
+    <string name="control_attack_camera_description">Hold to attack; drag to aim</string>
     <string name="pairing_backup_category">Back up and restore data</string>
     <string name="pairing_backup_export">Export backup ZIP</string>
     <string name="pairing_backup_import">Import backup ZIP</string>

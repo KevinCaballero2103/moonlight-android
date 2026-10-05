@@ -199,7 +199,7 @@ public abstract class keyBoardVirtualControllerElement extends View {
         // NB: We can get an additional pointer down if the user touches a non-StreamView area
         // while also touching an OSC control, even if that pointer down doesn't correspond to
         // an area of the OSC control.
-        if (event.getActionIndex() != 0) {
+        if (event.getActionIndex() != 0 && (!isNomal() || !handlesSecondaryTouchEvents())) {
             return true;
         }
 
@@ -264,6 +264,12 @@ public abstract class keyBoardVirtualControllerElement extends View {
     }
 
     abstract protected void onElementDraw(Canvas canvas);
+
+    // Opt-in only for controls that explicitly track pointerId. Keep the legacy
+    // secondary-touch guard for the other controls and for layout editing.
+    protected boolean handlesSecondaryTouchEvents() {
+        return false;
+    }
 
     abstract public boolean onElementTouchEvent(MotionEvent event);
 
