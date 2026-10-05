@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.SeekBar;
 
 import com.limelight.R;
+import com.limelight.nvstream.jni.MoonBridge;
 import com.limelight.preferences.PreferenceConfiguration;
 import com.limelight.ui.TouchRoutingLayout;
 import com.limelight.ui.gamemenu.bean.GameMenuQuickBean;
@@ -21,6 +22,8 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+import org.robolectric.annotation.Implementation;
+import org.robolectric.annotation.Implements;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -31,8 +34,17 @@ import static org.junit.Assert.*;
 import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(manifest = Config.NONE, application = Application.class, sdk = {28, 34})
+@Config(manifest = Config.NONE, application = Application.class, sdk = {28, 34},
+        shadows = KeyboardControlTouchTest.NoNativeMoonBridge.class)
 public class KeyboardControlTouchTest {
+    // Preferences reference MoonBridge's audio configurations. This fixture tests
+    // real preferences, Views and input routing, not Android JNI/audio/networking.
+    // Keep the production native loader intact; bypass it only in this sandbox.
+    @Implements(value = MoonBridge.class, isInAndroidSdk = false)
+    public static class NoNativeMoonBridge {
+        @Implementation protected static void __staticInitializer__() {}
+    }
+
     private Activity activity;
     private TouchRoutingLayout root;
     private KeyBoardController controller;
