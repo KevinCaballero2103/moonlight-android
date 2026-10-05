@@ -76,6 +76,10 @@ public class KeyBoardDigitalButton extends keyBoardVirtualControllerElement {
     }
 
     public boolean checkMovement(float x, float y, KeyBoardDigitalButton movingButton) {
+        // A drag from another button must not release this finger's held input
+        // or change a locked button. Preserve legacy slide-to-press otherwise.
+        if (hasOwnedTouchPointer() || switchDown) return false;
+
         // check if the movement happened in the same layer
         if (movingButton.layer != this.layer) {
             return false;

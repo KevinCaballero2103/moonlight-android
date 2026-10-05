@@ -2,6 +2,8 @@ package com.limelight.binding.input.virtual_controller.keyboard;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.Canvas;
+import android.os.Looper;
 import android.view.InputDevice;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,7 +26,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.Duration;
 import static org.junit.Assert.*;
+import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest = Config.NONE, application = Application.class, sdk = {28, 34})
@@ -68,6 +72,9 @@ public class KeyboardControlTouchTest {
         params.leftMargin = x;
         params.topMargin = y;
         root.addView(view, params);
+        if (view instanceof keyBoardVirtualControllerElement) {
+            controller.getElements().add((keyBoardVirtualControllerElement) view);
+        }
     }
 
     private void layout() {
@@ -167,6 +174,256 @@ public class KeyboardControlTouchTest {
         event(MotionEvent.ACTION_UP, 0, new int[]{7}, 702, 102);
         assertTrue(attackInput.isEmpty());
         assertTrue(cameraInput.isEmpty());
+    }
+
+    private KeyBoardDigitalButton digital(int x, int y, List<String> input) {
+        KeyBoardDigitalButton button = new KeyBoardDigitalButton(controller, "key", 0, activity);
+        button.addDigitalButtonListener(new KeyBoardDigitalButton.DigitalButtonListener() {
+            @Override public void onClick() { input.add("down"); }
+            @Override public void onLongClick() { input.add("long"); }
+            @Override public void onRelease() { input.add("up"); }
+        });
+        add(button, x, y, 80, 80);
+        layout();
+        return button;
+    }
+
+    @Test public void cameraOwnerLiftStopsMovementEvenWhenAnotherFingerStaysInside() {
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 500, 200);
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 500, 200, 520, 220);
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{7, 19}, 510, 200, 590, 280);
+        event(MotionEvent.ACTION_POINTER_UP, 0, new int[]{7, 19}, 510, 200, 590, 280);
+        int releasedCount = cameraInput.size();
+        assertEquals("up", cameraInput.get(releasedCount - 1));
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{19}, 650, 300);
+        event(MotionEvent.ACTION_UP, 0, new int[]{19}, 650, 300);
+        assertEquals(releasedCount, cameraInput.size());
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{23}, 500, 200);
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{23}, 510, 200);
+        assertTrue(cameraInput.size() > releasedCount);
+        event(MotionEvent.ACTION_UP, 0, new int[]{23}, 510, 200);
+    }
+
+    @Test public void secondaryLiftDoesNotReleaseDigitalButtonOwner() {
+        List<String> input = new ArrayList<>();
+        digital(500, 200, input);
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 520, 220);
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 520, 220, 540, 240);
+        event(MotionEvent.ACTION_POINTER_UP, 1, new int[]{7, 19}, 520, 220, 540, 240);
+        assertEquals(List.of("down"), input);
+        event(MotionEvent.ACTION_UP, 0, new int[]{7}, 520, 220);
+        assertEquals(List.of("down", "up"), input);
+    }
+
+    @Test public void digitalOwnerLiftReleasesBeforeSecondaryFingerLifts() {
+        List<String> input = new ArrayList<>();
+        digital(500, 200, input);
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 520, 220);
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 520, 220, 540, 240);
+        event(MotionEvent.ACTION_POINTER_UP, 0, new int[]{7, 19}, 520, 220, 540, 240);
+        assertEquals(List.of("down", "up"), input);
+        event(MotionEvent.ACTION_UP, 0, new int[]{19}, 540, 240);
+        assertEquals(List.of("down", "up"), input);
+    }
+
+    @Test public void draggingAnotherButtonCannotReleaseAnIndependentlyHeldKey() {
+        List<String> held = new ArrayList<>();
+        List<String> dragged = new ArrayList<>();
+        digital(500, 200, held);
+        digital(600, 200, dragged);
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 520, 220);
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 520, 220, 620, 220);
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{7, 19}, 520, 220, 530, 230);
+        event(MotionEvent.ACTION_POINTER_UP, 1, new int[]{7, 19}, 520, 220, 530, 230);
+        assertEquals(List.of("down"), held);
+        assertEquals(List.of("down", "up"), dragged);
+        event(MotionEvent.ACTION_UP, 0, new int[]{7}, 520, 220);
+        assertEquals(List.of("down", "up"), held);
+    }
+
+    @Test public void draggingAnotherButtonCannotReleaseLockedKey() {
+        List<String> held = new ArrayList<>();
+        KeyBoardDigitalButton locked = digital(500, 200, held);
+        locked.setEnableSwitchDown(true);
+        digital(600, 200, new ArrayList<>());
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 520, 220);
+        event(MotionEvent.ACTION_UP, 0, new int[]{7}, 520, 220);
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{19}, 620, 220);
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{19}, 530, 230);
+        event(MotionEvent.ACTION_UP, 0, new int[]{19}, 530, 230);
+        assertEquals(List.of("down"), held);
+        controller.releaseAllVirtualInputs();
+        assertEquals(List.of("down", "up"), held);
+    }
+
+    @Test public void fixedJoystickReleasesOwnerAndDoesNotAdoptRemainingFinger() {
+        List<String> input = new ArrayList<>();
+        KeyAnalogStick stick = fixedStick(input);
+        add(stick, 0, 200, 200, 200);
+        layout();
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 100, 300);
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{7}, 140, 300);
+        assertTrue(stick.isPressed());
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 140, 300, 100, 330);
+        event(MotionEvent.ACTION_POINTER_UP, 0, new int[]{7, 19}, 140, 300, 100, 330);
+        assertFalse(stick.isPressed());
+        assertEquals("neutral", input.get(input.size() - 1));
+        int count = input.size();
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{19}, 160, 330);
+        event(MotionEvent.ACTION_UP, 0, new int[]{19}, 160, 330);
+        assertEquals(count, input.size());
+    }
+
+    private KeyAnalogStick fixedStick(List<String> input) {
+        KeyAnalogStick stick = new KeyAnalogStick(controller, activity, "stick");
+        stick.addAnalogStickListener(new KeyAnalogStick.AnalogStickListener() {
+            @Override public void onMovement(float x, float y) {
+                input.add(x == 0 && y == 0 ? "neutral" : "movement");
+            }
+            @Override public void onClick() {}
+            @Override public void onDoubleClick() {}
+            @Override public void onRevoke() {}
+        });
+        return stick;
+    }
+
+    @Test public void freeJoystickReleasesOwnerEvenAtNonzeroPointerIndex() {
+        keyAnalogStickFree stick = new keyAnalogStickFree(controller, activity, "free");
+        List<String> input = new ArrayList<>();
+        stick.addAnalogStickListener(new keyAnalogStickFree.AnalogStickListener() {
+            @Override public void onMovement(float x, float y) { input.add(x == 0 && y == 0 ? "neutral" : "move"); }
+            @Override public void onClick() {}
+            @Override public void onDoubleClick() {}
+            @Override public void onRevoke() {}
+        });
+        stick.layout(0, 0, 200, 200);
+        MotionEvent down = motion(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 100, 100);
+        stick.onTouchEvent(down);
+        down.recycle();
+        MotionEvent up = motion(MotionEvent.ACTION_POINTER_UP, 1, new int[]{19, 7}, 80, 80, 100, 100);
+        stick.onTouchEvent(up);
+        up.recycle();
+        assertFalse(stick.isPressed());
+        assertEquals(List.of("neutral"), input);
+    }
+
+    @Test public void dpadUsesOwnerAfterPointerReorderingAndReleasesAtOwnerLift() {
+        KeyboardDigitalPadButton pad = new KeyboardDigitalPadButton(controller, activity, "dpad");
+        List<Integer> directions = new ArrayList<>();
+        pad.addDigitalPadListener(directions::add);
+        pad.layout(0, 0, 200, 200);
+        MotionEvent down = motion(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 100, 10);
+        pad.onTouchEvent(down);
+        down.recycle();
+        MotionEvent move = motion(MotionEvent.ACTION_MOVE, 0, new int[]{19, 7}, 10, 100, 190, 100);
+        pad.onTouchEvent(move);
+        move.recycle();
+        assertEquals(List.of(KeyboardDigitalPadButton.DIGITAL_PAD_DIRECTION_UP,
+                KeyboardDigitalPadButton.DIGITAL_PAD_DIRECTION_RIGHT), directions);
+        MotionEvent up = motion(MotionEvent.ACTION_POINTER_UP, 1, new int[]{19, 7}, 10, 100, 190, 100);
+        pad.onTouchEvent(up);
+        up.recycle();
+        assertEquals(Integer.valueOf(0), directions.get(directions.size() - 1));
+    }
+
+    @Test public void joystickCameraAndAttackKeepIndependentNativeCaptures() {
+        List<String> stickInput = new ArrayList<>();
+        KeyAnalogStick stick = fixedStick(stickInput);
+        add(stick, 0, 200, 200, 200);
+        layout();
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 100, 300);
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 100, 300, 500, 200);
+        event(MotionEvent.ACTION_POINTER_DOWN, 2, new int[]{7, 19, 23}, 100, 300, 500, 200, 750, 150);
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{7, 19, 23}, 140, 300, 510, 200, 760, 150);
+        assertTrue(stick.isPressed());
+        assertTrue(stickInput.contains("movement"));
+        assertTrue(cameraInput.stream().anyMatch(s -> s.startsWith("move:")));
+        assertEquals("down", attackInput.get(0));
+        assertTrue(attack.isPressed());
+        event(MotionEvent.ACTION_POINTER_UP, 1, new int[]{7, 19, 23}, 140, 300, 510, 200, 760, 150);
+        assertTrue(stick.isPressed());
+        assertTrue(attack.isPressed());
+        int cameraCount = cameraInput.size();
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{7, 23}, 145, 300, 770, 150);
+        assertEquals(cameraCount, cameraInput.size());
+        event(MotionEvent.ACTION_POINTER_UP, 1, new int[]{7, 23}, 145, 300, 770, 150);
+        assertEquals("up", attackInput.get(attackInput.size() - 1));
+        assertTrue(stick.isPressed());
+        event(MotionEvent.ACTION_UP, 0, new int[]{7}, 145, 300);
+        assertEquals("neutral", stickInput.get(stickInput.size() - 1));
+    }
+
+    @Test public void cancellingCameraDoesNotCreateTapOrDelayedLongClick() {
+        KeyBoardTouchPadButton left = pad(11, cameraInput);
+        add(left, 500, 200, 80, 80);
+        layout();
+        event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 520, 220);
+        event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7, 19}, 520, 220, 540, 240);
+        controller.releaseAllVirtualInputs();
+        int count = cameraInput.size();
+        event(MotionEvent.ACTION_MOVE, 0, new int[]{7, 19}, 530, 220, 550, 240);
+        event(MotionEvent.ACTION_POINTER_UP, 0, new int[]{7, 19}, 530, 220, 550, 240);
+        event(MotionEvent.ACTION_UP, 0, new int[]{19}, 550, 240);
+        shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(4));
+        assertEquals(count, cameraInput.size());
+        assertFalse(cameraInput.contains("down"));
+        assertFalse(cameraInput.contains("long"));
+    }
+
+    private class RecordingElement extends keyBoardVirtualControllerElement {
+        MotionEvent last;
+        int count;
+        RecordingElement() { super(controller, activity, "recording"); }
+        @Override protected void onElementDraw(Canvas canvas) {}
+        @Override public boolean onElementTouchEvent(MotionEvent event) {
+            if (last != null) last.recycle();
+            last = MotionEvent.obtain(event);
+            count++;
+            return true;
+        }
+    }
+
+    @Test public void pointerOrderChangesKeepOwnerCoordinatesHistoryAndRelease() {
+        RecordingElement element = new RecordingElement();
+        MotionEvent down = motion(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 100, 120);
+        element.onTouchEvent(down);
+        down.recycle();
+        MotionEvent move = motion(MotionEvent.ACTION_MOVE, 0, new int[]{19, 7}, 900, 910, 110, 130);
+        MotionEvent.PointerCoords[] next = {new MotionEvent.PointerCoords(), new MotionEvent.PointerCoords()};
+        next[0].x = 950; next[0].y = 960;
+        next[1].x = 115; next[1].y = 135;
+        move.addBatch(time += 10, next, 0);
+        element.onTouchEvent(move);
+        assertEquals(2, move.getPointerCount());
+        assertEquals(1, element.last.getPointerCount());
+        assertEquals(7, element.last.getPointerId(0));
+        assertEquals(115, element.last.getX(), 0);
+        assertEquals(135, element.last.getY(), 0);
+        assertEquals(1, element.last.getHistorySize());
+        assertEquals(110, element.last.getHistoricalX(0), 0);
+        assertEquals(130, element.last.getHistoricalY(0), 0);
+        assertEquals(move.getDownTime(), element.last.getDownTime());
+        assertEquals(move.getEventTime(), element.last.getEventTime());
+        move.recycle();
+        MotionEvent up = motion(MotionEvent.ACTION_POINTER_UP, 1, new int[]{19, 7}, 950, 960, 115, 135);
+        element.onTouchEvent(up);
+        assertEquals(MotionEvent.ACTION_UP, element.last.getAction());
+        assertEquals(7, element.last.getPointerId(0));
+        up.recycle();
+        element.last.recycle();
+    }
+
+    @Test public void missingOwnerCancelsInsteadOfSwitchingCoordinatesToAnotherFinger() {
+        List<String> input = new ArrayList<>();
+        KeyBoardDigitalButton button = digital(500, 200, input);
+        MotionEvent down = motion(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 20, 20);
+        button.onTouchEvent(down);
+        down.recycle();
+        MotionEvent missing = motion(MotionEvent.ACTION_MOVE, 0, new int[]{19}, 60, 60);
+        button.onTouchEvent(missing);
+        missing.recycle();
+        assertEquals(List.of("down", "up"), input);
+        assertFalse(button.isPressed());
     }
 
     @Test public void editorShowsShapeAndKeepsExactImportedSizeAndOpacity() throws Exception {

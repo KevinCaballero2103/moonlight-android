@@ -49,6 +49,26 @@ region routing with the actual Game listener, and old/new JSON round trips.
 Existing timing, Attack + camera, opacity and passthrough tests remain enabled.
 Physical stream validation follows the APK delivery.
 
+## Implemented changes
+
+- touchShape uses the existing editor checkbox (checked = rectangular,
+  unchecked = circular), localized in Spanish/Chinese/English. It is also
+  exposed for the existing mouse buttons. Old ordinary button shapes are kept.
+- Programmatic binding of zoom sliders no longer recalculates imported pixel
+  dimensions; selecting a control or changing its shape preserves its geometry.
+- The base active control captures its initiating pointerId and presents its
+  existing input callback with an owner-only MotionEvent. It retains MOVE
+  history, metadata and times; the ordinary split single-pointer path reuses
+  the original event. Owner POINTER_UP is normalized to UP, never to a new tap.
+  Editing still retains its guard. Attack + camera keeps its proven gesture.
+- Slide-across-button handling ignores targets independently held by a finger
+  or locked down, so another button's release cannot release their input.
+- Android's same-View native capture still groups extra pointers inside the
+  View's bounding box. These controls intentionally consume and ignore extra
+  fingers rather than reassign them mid-gesture. Separate control Views keep
+  independent captures. This is ownership stability, not pinch/two-finger
+  camera gestures. The normal stream touch modes are unchanged.
+
 References:
 - https://developer.android.com/reference/android/view/ViewGroup#setMotionEventSplittingEnabled(boolean)
 - https://developer.android.com/reference/android/view/MotionEvent (pointer IDs, indexes and batching)

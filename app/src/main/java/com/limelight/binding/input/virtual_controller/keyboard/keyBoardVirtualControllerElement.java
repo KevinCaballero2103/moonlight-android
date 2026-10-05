@@ -36,6 +36,7 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
     private Integer opacityOverride;
     private int globalOpacity;
     private boolean inputCancelled;
+    private int touchPointerId = -1;
 
     public void setOpacityOverride(Integer opacity) {
         opacityOverride = opacity == null ? null : Math.max(0, Math.min(100, opacity));
@@ -150,6 +151,7 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
 
     public void cancelInput() {
         inputCancelled = true;
+        touchPointerId = -1;
         setPressed(false);
         invalidate();
     }
@@ -195,29 +197,25 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (isNomal() && event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-            if (!containsTouchPoint(event.getX(), event.getY())) return false;
-            inputCancelled = false;
-        }
-        if (event.getActionMasked() == MotionEvent.ACTION_CANCEL && isNomal()) {
-            cancelInput();
-            return true;
-        }
-        // Ignore secondary touches on controls
-        //
-        // NB: We can get an additional pointer down if the user touches a non-StreamView area
-        // while also touching an OSC control, even if that pointer down doesn't correspond to
-        // an area of the OSC control.
-        if (event.getActionIndex() != 0 && (!isNomal() || !handlesSecondaryTouchEvents())) {
-            return true;
-        }
-
-        if (virtualController.getControllerMode() == KeyBoardController.ControllerMode.Active) {
-            if (inputCancelled) {
+        if (isNomal()) {
+            int action = event.getActionMasked();
+            if (action == MotionEvent.ACTION_DOWN) {
+                if (!containsTouchPoint(event.getX(), event.getY())) return false;
+                if (touchPointerId != -1) cancelInput();
+                inputCancelled = false;
+            }
+            if (action == MotionEvent.ACTION_CANCEL) {
+                cancelInput();
                 return true;
             }
-            return onElementTouchEvent(event);
+            if (inputCancelled) return true;
+            // Attack + camera already owns its pointer and consumes MOVE history.
+            if (handlesSecondaryTouchEvents()) return onElementTouchEvent(event);
+            return dispatchOwnedTouch(event);
         }
+
+        // Keep the legacy secondary-touch guard for layout editing only.
+        if (event.getActionIndex() != 0) return true;
 
         if(onItem!=null){
             onItem.click((TagInfo) this.getTag());
@@ -272,6 +270,40 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
         return true;
     }
 
+    protected final boolean hasOwnedTouchPointer() {
+        return touchPointerId != -1;
+    }
+
+    private boolean dispatchOwnedTouch(MotionEvent event) {
+        int action = event.getActionMasked();
+        if (action == MotionEvent.ACTION_DOWN) {
+            touchPointerId = event.getPointerId(event.getActionIndex());
+            boolean handled = onElementTouchEvent(event);
+            if (!handled) touchPointerId = -1;
+            return handled;
+        }
+        if (touchPointerId == -1) return true;
+        if (action == MotionEvent.ACTION_POINTER_DOWN) return true;
+        int index = event.findPointerIndex(touchPointerId);
+        if (index == -1) {
+            cancelInput();
+            return true;
+        }
+        if (action == MotionEvent.ACTION_POINTER_UP) {
+            if (event.getPointerId(event.getActionIndex()) != touchPointerId) return true;
+            action = MotionEvent.ACTION_UP;
+        } else if (action != MotionEvent.ACTION_MOVE && action != MotionEvent.ACTION_UP) {
+            return true;
+        }
+        MotionEvent owned = OwnedPointerMotion.obtain(event, index, action);
+        if (action == MotionEvent.ACTION_UP) touchPointerId = -1;
+        try {
+            return onElementTouchEvent(owned);
+        } finally {
+            if (owned != event) owned.recycle();
+        }
+    }
+
     // Only new gestures use the shape; captured drags keep their original target.
     // Editing continues to use the full bounding rectangle.
     protected boolean containsTouchPoint(float x, float y) {
@@ -280,8 +312,8 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
 
     abstract protected void onElementDraw(Canvas canvas);
 
-    // Opt-in only for controls that explicitly track pointerId. Keep the legacy
-    // secondary-touch guard for the other controls and for layout editing.
+    // Opt-in for controls with their own pointerId handling; other active controls
+    // get a normalized owner-only gesture from dispatchOwnedTouch().
     protected boolean handlesSecondaryTouchEvents() {
         return false;
     }
