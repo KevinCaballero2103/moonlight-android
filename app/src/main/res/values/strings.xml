@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="control_layout_export_title">Export controls</string>
-    <string name="control_layout_export_working">Saving controls…</string>
-    <string name="control_layout_export_success">Controls saved.</string>
-    <string name="control_layout_export_failed">Could not save the controls. Check the save location and available storage, then try again.</string>
     <string name="pairing_backup_category">Back up and restore data</string>
     <string name="pairing_backup_export">Export backup ZIP</string>
     <string name="pairing_backup_import">Import backup ZIP</string>
