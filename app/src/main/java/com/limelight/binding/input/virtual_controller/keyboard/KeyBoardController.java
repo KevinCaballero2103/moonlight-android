@@ -382,6 +382,7 @@ public class KeyBoardController {
                     case 2:
                         beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
                         break;
+                    case 1:
                     case 4:
                         beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*progress*0.01)));
                         break;
@@ -412,6 +413,7 @@ public class KeyBoardController {
                     case 2:
                         beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
+                    case 1:
                     case 4:
                         beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*progress*0.01)));
                         break;
@@ -651,7 +653,7 @@ public class KeyBoardController {
         txDesc.setText("键值："+beanList.get(index).getDesc());
         tx_margin.setText("坐标："+beanList.get(index).getmLeft()+"，"+beanList.get(index).getmTop());
 
-        if(beanList.get(index).getBtnType()==4||beanList.get(index).getBtnType()==2
+        if(beanList.get(index).getBtnType()==1||beanList.get(index).getBtnType()==4||beanList.get(index).getBtnType()==2
                 ||beanList.get(index).getBtnType()==GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH){
             cb_round.setChecked(beanList.get(index).getShapeType()==1);
             cb_round.setVisibility(View.VISIBLE);
@@ -669,7 +671,8 @@ public class KeyBoardController {
                 cb_switch_mode.setVisibility(View.GONE);
             }
             boolean separateSize = beanList.get(index).getShapeType() == 1
-                    || beanList.get(index).getBtnType() != 4;
+                    || beanList.get(index).getBtnType() == 2
+                    || beanList.get(index).getBtnType() == GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH;
             lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(separateSize?View.VISIBLE:View.GONE);
             txZoom.setVisibility(separateSize?View.GONE:View.VISIBLE);
             sb_zoom_x.setVisibility(separateSize?View.GONE:View.VISIBLE);
