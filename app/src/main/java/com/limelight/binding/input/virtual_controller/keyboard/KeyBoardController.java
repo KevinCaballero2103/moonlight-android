@@ -302,10 +302,14 @@ public class KeyBoardController {
             updateItem();
         });
         cb_round.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (currentIndex < 0 || currentIndex >= beanList.size()) return;
+            int type = beanList.get(currentIndex).getBtnType();
+            boolean separateSize = isChecked || type == 2
+                    || type == GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH;
             //方形按钮
-            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(isChecked?View.VISIBLE:View.GONE);
-            txZoom.setVisibility(isChecked?View.GONE:View.VISIBLE);
-            sb_zoom_x.setVisibility(isChecked?View.GONE:View.VISIBLE);
+            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(separateSize?View.VISIBLE:View.GONE);
+            txZoom.setVisibility(separateSize?View.GONE:View.VISIBLE);
+            sb_zoom_x.setVisibility(separateSize?View.GONE:View.VISIBLE);
 
             cb_round.setChecked(isChecked);
             beanList.get(currentIndex).setShapeType(isChecked?1:0);
@@ -327,6 +331,7 @@ public class KeyBoardController {
         sb_zoom_x.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
                 txZoom.setText("缩放比例："+progress+"%");
                 beanList.get(currentIndex).setZoom(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
@@ -369,6 +374,7 @@ public class KeyBoardController {
         sb_zoom_w.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
                 tx_zoom_w.setText("缩放宽度："+progress+"%");
                 beanList.get(currentIndex).setZoomW(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
@@ -398,6 +404,7 @@ public class KeyBoardController {
         sb_zoom_h.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
                 tx_zoom_h.setText("缩放高度："+progress+"%");
                 beanList.get(currentIndex).setZoomH(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
@@ -647,7 +654,7 @@ public class KeyBoardController {
         if(beanList.get(index).getBtnType()==4||beanList.get(index).getBtnType()==2
                 ||beanList.get(index).getBtnType()==GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH){
             cb_round.setChecked(beanList.get(index).getShapeType()==1);
-            cb_round.setVisibility(beanList.get(index).getBtnType()==4?View.VISIBLE:View.GONE);
+            cb_round.setVisibility(View.VISIBLE);
 
             cb_switch_mode.setChecked(beanList.get(index).isSwitchMode());
             if(beanList.get(index).getBtnType()==4){
@@ -661,10 +668,14 @@ public class KeyBoardController {
             }else{
                 cb_switch_mode.setVisibility(View.GONE);
             }
-            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(beanList.get(index).getShapeType()==1?View.VISIBLE:View.GONE);
-            txZoom.setVisibility(beanList.get(index).getShapeType()==1?View.GONE:View.VISIBLE);
-            sb_zoom_x.setVisibility(beanList.get(index).getShapeType()==1?View.GONE:View.VISIBLE);
+            boolean separateSize = beanList.get(index).getShapeType() == 1
+                    || beanList.get(index).getBtnType() != 4;
+            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(separateSize?View.VISIBLE:View.GONE);
+            txZoom.setVisibility(separateSize?View.GONE:View.VISIBLE);
+            sb_zoom_x.setVisibility(separateSize?View.GONE:View.VISIBLE);
 
+            txZoom.setText("缩放比例："+beanList.get(index).getZoom()+"%");
+            sb_zoom_x.setProgress(beanList.get(index).getZoom());
             tx_zoom_w.setText("缩放宽度："+beanList.get(index).getZoomW()+"%");
             tx_zoom_h.setText("缩放高度："+beanList.get(index).getZoomH()+"%");
             sb_zoom_w.setProgress(beanList.get(index).getZoomW());

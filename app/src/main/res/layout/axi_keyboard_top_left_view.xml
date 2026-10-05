@@ -131,7 +131,7 @@
                 android:textSize="11sp"
                 android:id="@+id/cb_round"
                 android:buttonTint="#8C99E6"
-                android:text="方形按钮" />
+                android:text="@string/control_shape_rectangle" />
 
         </LinearLayout>
 

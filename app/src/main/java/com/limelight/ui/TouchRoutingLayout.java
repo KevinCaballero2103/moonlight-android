@@ -17,6 +17,10 @@ public class TouchRoutingLayout extends FrameLayout {
 
     public interface PassthroughArea extends Control {
         boolean isPassthroughEnabled();
+
+        default boolean containsPassthroughPoint(float x, float y) {
+            return true;
+        }
     }
 
     private final Matrix inverse = new Matrix();
@@ -83,7 +87,8 @@ public class TouchRoutingLayout extends FrameLayout {
             View child = getChildAt(i);
             if (child instanceof PassthroughArea
                     && ((PassthroughArea) child).isPassthroughEnabled()
-                    && contains(child, x, y)) {
+                    && contains(child, x, y)
+                    && ((PassthroughArea) child).containsPassthroughPoint(point[0], point[1])) {
                 inArea = true;
                 break;
             }

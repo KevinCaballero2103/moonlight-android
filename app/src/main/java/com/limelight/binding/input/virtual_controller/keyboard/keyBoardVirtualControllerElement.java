@@ -196,6 +196,7 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isNomal() && event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+            if (!containsTouchPoint(event.getX(), event.getY())) return false;
             inputCancelled = false;
         }
         if (event.getActionMasked() == MotionEvent.ACTION_CANCEL && isNomal()) {
@@ -268,6 +269,12 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
             default: {
             }
         }
+        return true;
+    }
+
+    // Only new gestures use the shape; captured drags keep their original target.
+    // Editing continues to use the full bounding rectangle.
+    protected boolean containsTouchPoint(float x, float y) {
         return true;
     }
 
