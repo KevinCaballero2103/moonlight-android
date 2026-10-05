@@ -58,6 +58,7 @@ import com.limelight.ui.AppDialog;
 import com.limelight.ui.GameGestures;
 import com.limelight.ui.BaseFragmentDialog.BaseGameMenuFragmentDialog;
 import com.limelight.ui.StreamView;
+import com.limelight.ui.TouchRoutingLayout;
 import com.limelight.ui.StreamLoadingOverlayController;
 import com.limelight.ui.virtualcontroller.DsTouchpadView;
 import com.limelight.ui.virtualmouse.RemoteMouseSink;
@@ -3821,7 +3822,11 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             view.requestUnbufferedDispatch(event);
         }
 
-        return handleMotionEvent(view, event);
+        boolean handled = handleMotionEvent(view, event);
+        // A reserved region must not fall through to an OSC underneath when
+        // the normal stream handler declines a DOWN (e.g. input is ungrabbed).
+        return handled || (rootView instanceof TouchRoutingLayout
+                && ((TouchRoutingLayout) rootView).isPassthroughTarget(view));
     }
 
     @Override

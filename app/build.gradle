@@ -68,6 +68,10 @@ android {
         }
     }
 
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+
     compileOptions {
         encoding "UTF-8"
         sourceCompatibility JavaVersion.VERSION_11
@@ -95,8 +99,8 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".debug.aimtest"
-            resValue "string", "app_label", "Axixi · ataque y cámara"
+            applicationIdSuffix ".debug.passtest"
+            resValue "string", "app_label", "Axixi · zonas táctiles"
             resValue "string", "app_label_root", "DR·月光"
 
             minifyEnabled true
@@ -178,4 +182,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'org.apmem.tools:layouts:1.10@aar'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
 }

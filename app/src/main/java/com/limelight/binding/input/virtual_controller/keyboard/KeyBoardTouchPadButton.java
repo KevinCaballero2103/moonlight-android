@@ -69,6 +69,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
     private List<DigitalButtonListener> listeners = new ArrayList<>();
     private String text = "";
     private int icon = -1;
+    private int iconPress = -1;
     private long timerLongClickTimeout = 3000;
     private final Runnable longClickRunnable = new Runnable() {
         @Override
@@ -159,6 +160,11 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         invalidate();
     }
 
+    public void setIconPress(int id) {
+        iconPress = id;
+        invalidate();
+    }
+
     private int code;
 
     public void setCode(int code) {
@@ -206,11 +212,20 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         if (icon != -1) {
             // --- 图标模式 ---
             int oscOpacity = getDrawingOpacity();
-            Drawable d = getResources().getDrawable(isPressed() ?
-                    R.mipmap.face_ps_touchpad_press : R.mipmap.face_ps_touchpad_normal);
+            int drawable = code == CODE_ATTACK_CAMERA
+                    ? (isPressed() && iconPress != -1 ? iconPress : icon)
+                    : (isPressed() ? R.mipmap.face_ps_touchpad_press : R.mipmap.face_ps_touchpad_normal);
+            Drawable d = getResources().getDrawable(drawable);
             // 动态计算 Padding：保持图标在中间，不紧贴边缘
             int padding = (int) (minSide * 0.15f);
-            d.setBounds(padding, padding, (int)width - padding, (int)height - padding);
+            if (code == CODE_ATTACK_CAMERA) {
+                int side = Math.max(1, (int) minSide - padding * 2);
+                int left = ((int) width - side) / 2;
+                int top = ((int) height - side) / 2;
+                d.setBounds(left, top, left + side, top + side);
+            } else {
+                d.setBounds(padding, padding, (int)width - padding, (int)height - padding);
+            }
             d.setAlpha((int) (oscOpacity * 2.55));
             d.draw(canvas);
             // 编辑模式下的额外框线

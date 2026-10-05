@@ -200,6 +200,13 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
         beanList.add(new GameMenuQuickBean("滚轮·下",5,"常规模式",1,false));
         beanList.add(new GameMenuQuickBean("滚轮·下",5,"锁定模式",1,true));
 
+        GameMenuQuickBean passthrough = new GameMenuQuickBean(
+                getString(R.string.control_touch_passthrough), 0,
+                getString(R.string.control_touch_passthrough_description),
+                GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH, false).setShapeType(1);
+        passthrough.setOpacity(0);
+        beanList.add(passthrough);
+
         beanList.add(new GameMenuQuickBean("触控板",10,"常规模式",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·左",11,"左键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean(getString(R.string.control_attack_camera),

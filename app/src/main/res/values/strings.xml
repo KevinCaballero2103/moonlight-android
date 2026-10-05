@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="control_touch_passthrough">Direct touch zone</string>
+    <string name="control_touch_passthrough_description">Use the normal stream touch mode inside this area</string>
     <string name="control_attack_camera">Attack + camera</string>
     <string name="control_attack_camera_description">Hold to attack; drag to aim</string>
     <string name="pairing_backup_category">Back up and restore data</string>

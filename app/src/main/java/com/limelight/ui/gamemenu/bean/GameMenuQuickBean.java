@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
  * Time: 20:53
  */
 public class GameMenuQuickBean {
+    public static final int TYPE_TOUCH_PASSTHROUGH = 6;
     // Missing/null means inherit the global setting, including in older layouts.
     @SerializedName("opacity")
     private Integer opacity;

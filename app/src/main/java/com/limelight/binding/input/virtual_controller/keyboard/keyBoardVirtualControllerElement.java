@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.limelight.ui.TouchRoutingLayout;
 import com.limelight.Game;
 import com.limelight.binding.input.virtual_controller.VirtualController;
 import com.limelight.preferences.PreferenceConfiguration;
@@ -25,7 +26,7 @@ import com.limelight.utils.UiHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public abstract class keyBoardVirtualControllerElement extends View {
+public abstract class keyBoardVirtualControllerElement extends View implements TouchRoutingLayout.Control {
     protected static boolean _PRINT_DEBUG_INFORMATION = false;
 
     protected KeyBoardController virtualController;
@@ -102,8 +103,8 @@ public abstract class keyBoardVirtualControllerElement extends View {
         int newHeight = height + (startSize_y - pressed_y);
         int newWidth = width + (startSize_x - pressed_x);
 
-        layoutParams.height = newHeight > 20 ? newHeight : 20;
-        layoutParams.width = newWidth > 20 ? newWidth : 20;
+        layoutParams.height = Math.max(1, newHeight);
+        layoutParams.width = Math.max(1, newWidth);
 
         requestLayout();
     }
@@ -179,6 +180,13 @@ public abstract class keyBoardVirtualControllerElement extends View {
 //        DisplayMetrics screen = getResources().getDisplayMetrics();
 //        return (int)(screen.heightPixels*0.004f);
         return UiHelper.dpToPx(getContext(),1);
+    }
+
+    @Override
+    public boolean isEditing() {
+        KeyBoardController.ControllerMode mode = virtualController.getControllerMode();
+        return mode != KeyBoardController.ControllerMode.Active
+                && mode != KeyBoardController.ControllerMode.NONE;
     }
 
     protected boolean isNomal(){
