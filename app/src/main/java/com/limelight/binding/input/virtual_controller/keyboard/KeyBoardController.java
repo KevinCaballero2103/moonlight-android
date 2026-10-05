@@ -331,24 +331,26 @@ public class KeyBoardController {
                 switch (beanList.get(currentIndex).getBtnType()){
                     case 1://1鼠标 2触控板 3摇杆 4普通按钮 5十字键
                     case 4:
-                        beanList.get(currentIndex).setWidth((int) (buttonWidth*progress*0.01));
-                        beanList.get(currentIndex).setHeight((int) (buttonHeight*progress*0.01));
+                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*progress*0.01)));
+                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*progress*0.01)));
                         break;
                     case 2:
-                        beanList.get(currentIndex).setWidth((int) (buttonWidth*4*progress*0.01));
-                        beanList.get(currentIndex).setHeight((int) (buttonHeight*2*progress*0.01));
+                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
+                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
                     case 3:
-                        beanList.get(currentIndex).setWidth((int) (buttonWidth*2*progress*0.01));
-                        beanList.get(currentIndex).setHeight((int) (buttonHeight*2*progress*0.01));
+                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*2*progress*0.01)));
+                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
                     case 5://十字键
-                        beanList.get(currentIndex).setWidth((int) (buttonWidth*2*progress*0.01));
-                        beanList.get(currentIndex).setHeight((int) (buttonHeight*2*progress*0.01));
+                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*2*progress*0.01)));
+                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
                 }
                 frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().width=beanList.get(currentIndex).getWidth();
+                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
                 frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().height=beanList.get(currentIndex).getHeight();
+                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
             }
 
             @Override
@@ -369,13 +371,14 @@ public class KeyBoardController {
                 beanList.get(currentIndex).setZoomW(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
                     case 2:
-                        beanList.get(currentIndex).setWidth((int) (buttonWidth*4*progress*0.01));
+                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
                         break;
                     case 4:
-                        beanList.get(currentIndex).setWidth((int) (buttonWidth*progress*0.01));
+                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*progress*0.01)));
                         break;
                 }
                 frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().width=beanList.get(currentIndex).getWidth();
+                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
             }
 
             @Override
@@ -396,13 +399,14 @@ public class KeyBoardController {
                 beanList.get(currentIndex).setZoomH(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
                     case 2:
-                        beanList.get(currentIndex).setHeight((int) (buttonHeight*2*progress*0.01));
+                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
                     case 4:
-                        beanList.get(currentIndex).setHeight((int) (buttonHeight*progress*0.01));
+                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*progress*0.01)));
                         break;
                 }
                 frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().height=beanList.get(currentIndex).getHeight();
+                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
             }
 
             @Override

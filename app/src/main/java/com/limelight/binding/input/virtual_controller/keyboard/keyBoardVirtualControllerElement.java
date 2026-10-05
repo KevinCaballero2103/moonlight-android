@@ -102,8 +102,8 @@ public abstract class keyBoardVirtualControllerElement extends View {
         int newHeight = height + (startSize_y - pressed_y);
         int newWidth = width + (startSize_x - pressed_x);
 
-        layoutParams.height = newHeight > 20 ? newHeight : 20;
-        layoutParams.width = newWidth > 20 ? newWidth : 20;
+        layoutParams.height = Math.max(1, newHeight);
+        layoutParams.width = Math.max(1, newWidth);
 
         requestLayout();
     }
