@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.limelight.ui.TouchRoutingLayout;
 import com.limelight.Game;
 import com.limelight.LimeLog;
 import com.limelight.R;
@@ -334,7 +335,8 @@ public class KeyBoardController {
                         beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*progress*0.01)));
                         beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*progress*0.01)));
                         break;
-                    case 2:
+                    case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
+            case 2:
                         beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
                         beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
@@ -370,6 +372,7 @@ public class KeyBoardController {
                 tx_zoom_w.setText("缩放宽度："+progress+"%");
                 beanList.get(currentIndex).setZoomW(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
+                    case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
                     case 2:
                         beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
                         break;
@@ -398,6 +401,7 @@ public class KeyBoardController {
                 tx_zoom_h.setText("缩放高度："+progress+"%");
                 beanList.get(currentIndex).setZoomH(progress);
                 switch (beanList.get(currentIndex).getBtnType()){
+                    case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
                     case 2:
                         beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
                         break;
@@ -457,7 +461,8 @@ public class KeyBoardController {
                 bean.setWidth(buttonWidth);
                 bean.setHeight(buttonHeight);
                 break;
-            case 2://触控板
+            case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
+                    case 2://触控板
                 bean.setWidth(buttonWidth*4);
                 bean.setHeight(buttonHeight*2);
                 break;
@@ -568,6 +573,9 @@ public class KeyBoardController {
         if(bean.getBtnType()==2){
             element=KeyBoardControllerConfigurationLoader.createDigitalTouchButton(bean.getId(),bean.getCode(),1,1,bean.getName(),-1,this,context);
         }
+        if (bean.getBtnType() == GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH) {
+            element = new KeyBoardPassthroughRegion(this, context, bean.getId());
+        }
         //摇杆
         if(bean.getBtnType()==3){
             if(bean.isGamePad()){
@@ -636,7 +644,8 @@ public class KeyBoardController {
         txDesc.setText("键值："+beanList.get(index).getDesc());
         tx_margin.setText("坐标："+beanList.get(index).getmLeft()+"，"+beanList.get(index).getmTop());
 
-        if(beanList.get(index).getBtnType()==4||beanList.get(index).getBtnType()==2){
+        if(beanList.get(index).getBtnType()==4||beanList.get(index).getBtnType()==2
+                ||beanList.get(index).getBtnType()==GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH){
             cb_round.setChecked(beanList.get(index).getShapeType()==1);
             cb_round.setVisibility(beanList.get(index).getBtnType()==4?View.VISIBLE:View.GONE);
 
@@ -924,12 +933,19 @@ public class KeyBoardController {
         }
     }
 
+    public boolean isInputSuppressed() {
+        return inputSuppressed;
+    }
+
     public void releaseAllVirtualInputs() {
         if (releasingInputs) {
             return;
         }
         releasingInputs = true;
         try {
+            if (frame_layout instanceof TouchRoutingLayout) {
+                ((TouchRoutingLayout) frame_layout).cancelPassthroughTouches();
+            }
             if (Game.instance != null) {
                 Game.instance.cancelVirtualSpecialKeyAction();
             }

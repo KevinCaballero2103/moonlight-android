@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="control_touch_passthrough">触摸直通区域</string>
+    <string name="control_touch_passthrough_description">区域内使用串流的原有触摸模式</string>
     <string name="control_attack_camera">攻击＋视角</string>
     <string name="control_attack_camera_description">按住攻击，拖动瞄准</string>
     <string name="pairing_backup_category">备份恢复数据</string>
