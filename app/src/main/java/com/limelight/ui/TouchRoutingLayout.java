@@ -51,7 +51,7 @@ public class TouchRoutingLayout extends FrameLayout {
 
     /** Let the normal stream listener accept a reserved DOWN even if input is suppressed. */
     public boolean isPassthroughTarget(View view) {
-        return view == promotedTarget;
+        return promotedTarget != null && view == promotedTarget;
     }
 
     private boolean contains(View child, float x, float y) {
@@ -91,8 +91,11 @@ public class TouchRoutingLayout extends FrameLayout {
         if (!inArea) {
             return null;
         }
-        View stream = findViewById(R.id.surfaceView);
-        View target = contains(stream, x, y) ? stream : findViewById(R.id.backgroundTouchView);
+        // Game binds its finger-touch listener ONLY to the background view.
+        // StreamView is a passive video SurfaceView: promoting it lets DOWN
+        // fall through to an OSC below it instead of reaching Game.onTouch.
+        // Use the same target as a normal touch with the controls hidden.
+        View target = findViewById(R.id.backgroundTouchView);
         return target != null && target.getParent() == this && contains(target, x, y)
                 ? target : null;
     }

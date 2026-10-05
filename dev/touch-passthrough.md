@@ -33,3 +33,26 @@ before. Device/Genshin testing is required for the streamed effect.
 References:
 - https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-15.0.0_r5/core/java/android/view/ViewGroup.java
 - https://developer.android.com/reference/android/view/ViewGroup#setMotionEventSplittingEnabled(boolean)
+
+## Device regression: v6 direct touches did nothing (2026-10-05)
+
+The user's reference test succeeds with the controls hidden at the same Genshin
+quick-burst icon, but fails inside a region over the camera pad. The initial
+review incorrectly assumed that Game binds a finger-touch listener to
+StreamView. It actually binds only generic motion/key listeners there, and
+binds Game.onTouch only to backgroundTouchView. A promoted passive SurfaceView
+rejects DOWN; the camera pad can then consume the touch.
+
+The root now promotes backgroundTouchView for every passthrough gesture, exactly
+as the existing normal input path does. Game retains its existing mapping from
+background coordinates to the video, normal absolute/relative/native touch
+mode, mouse-disable setting, input grab and editor checks. No new mouse macro or
+forced absolute mode is added. Native pointer splitting/merging/capture remains.
+
+The dispatch fixture now uses a real passive StreamView, rather than an
+accepting fake. New integration tests wire the actual Game.onTouch listener to a
+background View and use actual AbsoluteTouchContext/RelativeTouchContext with a
+recording NvConnection. They check the click position and down/up pair, parity
+with the hidden overlay, simultaneous camera hold, letterboxed mapping, relative
+mode, ungrabbed input and safe cancellation. The test-only reproduction commit
+is built against the old routing before the correction is applied.
