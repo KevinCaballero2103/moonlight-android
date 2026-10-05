@@ -431,4 +431,5 @@
     <string name="virtual_display_off">关闭</string>
     <string name="virtual_display_extend">扩展模式</string>
     <string name="virtual_display_only">仅虚拟显示器</string>
+    <string name="control_shape_rectangle">矩形形状</string>
 </resources>

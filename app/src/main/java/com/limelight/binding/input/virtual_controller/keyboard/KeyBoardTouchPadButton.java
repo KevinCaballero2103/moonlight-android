@@ -143,6 +143,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
     public KeyBoardTouchPadButton(KeyBoardController controller, String elementId, int layer, Context context) {
         super(controller, context, elementId);
         this.layer = layer;
+        shapeType = 1;
         preferenceConfiguration=PreferenceConfiguration.readPreferences(context);
     }
 
@@ -200,13 +201,13 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         // 逻辑：按下时填充 pressedColor，常规时根据 isNomal() 决定填充或描边
         paint.setColor(isPressed() ? pressedColor : getDefaultColor());
         paint.setStyle(isPressed() ? Paint.Style.FILL : (isNomal() ? Paint.Style.FILL : Paint.Style.STROKE));
-        canvas.drawRoundRect(rect, cornerRadius, cornerRadius, paint);
+        drawPadShape(canvas, cornerRadius);
 
         // 4. 绘制精致描边 (始终存在，提升边缘质感)
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(getDefaultStrokeWidth());
         paint.setColor(isPressed() ? Color.WHITE : strokeColor); // strokeColor 应在基类中统一定义
-        canvas.drawRoundRect(rect, cornerRadius, cornerRadius, paint);
+        drawPadShape(canvas, cornerRadius);
 
         // 5. 绘制内容 (图标或文字)
         if (icon != -1) {
@@ -218,7 +219,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
             Drawable d = getResources().getDrawable(drawable);
             // 动态计算 Padding：保持图标在中间，不紧贴边缘
             int padding = (int) (minSide * 0.15f);
-            if (code == CODE_ATTACK_CAMERA) {
+            if (code == CODE_ATTACK_CAMERA || shapeType == 0) {
                 int side = Math.max(1, (int) minSide - padding * 2);
                 int left = ((int) width - side) / 2;
                 int top = ((int) height - side) / 2;
@@ -235,7 +236,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
             if (bIsEditing) {
                 paint.setColor(Color.YELLOW); // 编辑模式使用显眼色
                 paint.setStrokeWidth(2);
-                canvas.drawRoundRect(rect, cornerRadius, cornerRadius, paint);
+                drawPadShape(canvas, cornerRadius);
             }
         } else if (!TextUtils.isEmpty(text)) {
             // --- 文字模式 ---
@@ -252,6 +253,20 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
 
             paint.setFakeBoldText(false);
         }
+    }
+
+    private void drawPadShape(Canvas canvas, float cornerRadius) {
+        if (shapeType == 0) {
+            canvas.drawCircle(getWidth() / 2f, getHeight() / 2f,
+                    Math.max(0, Math.min(getWidth(), getHeight()) / 2f - paint.getStrokeWidth()), paint);
+        } else {
+            canvas.drawRoundRect(rect, cornerRadius, cornerRadius, paint);
+        }
+    }
+
+    @Override
+    protected boolean containsTouchPoint(float x, float y) {
+        return TouchControlShape.contains(shapeType, getWidth(), getHeight(), x, y);
     }
 
     private void onClickCallback() {

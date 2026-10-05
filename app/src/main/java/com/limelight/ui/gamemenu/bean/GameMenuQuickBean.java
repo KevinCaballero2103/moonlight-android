@@ -51,6 +51,10 @@ public class GameMenuQuickBean {
     //0-圆形 1方形
     private int shapeType;
 
+    // Touchpads used to ignore shapeType, even when it was 0. A separate optional
+    // field keeps every old touchpad/region rectangular until explicitly edited.
+    private Integer touchShape;
+
     //开关模式
     private boolean switchMode;
 
@@ -179,11 +183,17 @@ public class GameMenuQuickBean {
     }
 
     public int getShapeType() {
+        if (btnType == 2 || btnType == TYPE_TOUCH_PASSTHROUGH) {
+            return touchShape != null && touchShape == 0 ? 0 : 1;
+        }
         return shapeType;
     }
 
     public GameMenuQuickBean setShapeType(int shapeType) {
         this.shapeType = shapeType;
+        if (btnType == 2 || btnType == TYPE_TOUCH_PASSTHROUGH) {
+            touchShape = shapeType == 0 ? 0 : 1;
+        }
         return this;
     }
 
