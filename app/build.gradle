@@ -182,5 +182,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'org.apmem.tools:layouts:1.10@aar'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.robolectric:robolectric:4.14.1'
+    testImplementation('org.robolectric:robolectric:4.14.1') {
+        // Keep the app's matching bcprov/bcpkix/bcutil versions in JVM tests.
+        // Robolectric's newer bcprov alone breaks existing certificate tests.
+        exclude group: 'org.bouncycastle'
+    }
 }
