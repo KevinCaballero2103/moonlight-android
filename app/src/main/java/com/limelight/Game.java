@@ -5612,6 +5612,60 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         }
     }
 
+    private int nextVirtualTapPointer = 0x10000;
+
+    /** Confirmed OSC tap, isolated from live background fingers and their timers. */
+    public Runnable beginVirtualScreenTap(View source, float x, float y,
+                                         Runnable mouseDown, Runnable mouseUp) {
+        if (!connected || conn == null || streamView == null || !grabbedInput
+                || disableMouseModel || streamSessionBackgrounded || source == null
+                || source.getVisibility() != View.VISIBLE || !(rootView instanceof View)) return null;
+        float[] point = {x, y};
+        View current = source;
+        while (current != rootView) {
+            if (!(current.getParent() instanceof View)) return null;
+            View parent = (View) current.getParent();
+            current.getMatrix().mapPoints(point);
+            point[0] += current.getLeft() - parent.getScrollX();
+            point[1] += current.getTop() - parent.getScrollY();
+            current = parent;
+        }
+        PointF normalized = new PointF();
+        int width = streamView.getWidth(), height = streamView.getHeight();
+        if (width <= 0 || height <= 0) return null;
+        if (videoZoomController != null) {
+            if (!videoZoomController.mapPointToNormalizedVideo(point[0], point[1], normalized)) return null;
+        } else {
+            float px = point[0] - streamView.getX(), py = point[1] - streamView.getY();
+            // Black bars are not video; never turn them into a click at its edge.
+            if (px < 0 || py < 0 || px >= width || py >= height) return null;
+            normalized.set(px / width, py / height);
+        }
+        if (Float.isNaN(normalized.x) || Float.isNaN(normalized.y)) return null;
+        final NvConnection target = conn;
+        final float nx = normalized.x, ny = normalized.y;
+        if (prefConfig.enableMultiTouchScreen && !prefConfig.touchscreenTrackpad) {
+            final int pointer = nextVirtualTapPointer++;
+            if (nextVirtualTapPointer < 0) nextVirtualTapPointer = 0x10000;
+            int result = target.sendTouchEvent(MoonBridge.LI_TOUCH_EVENT_DOWN, pointer,
+                    nx, ny, 0.5f, 0, 0, MoonBridge.LI_ROT_UNKNOWN);
+            if (result == 0) {
+                // IDs are outside Android's 0..31 range. UP affects only this
+                // contact, never a normal direct-touch finger or CANCEL_ALL.
+                return () -> target.sendTouchEvent(MoonBridge.LI_TOUCH_EVENT_UP, pointer,
+                        nx, ny, 0, 0, 0, MoonBridge.LI_ROT_UNKNOWN);
+            }
+            if (result != MoonBridge.LI_ERR_UNSUPPORTED) return null;
+        }
+        int referenceWidth = Math.min(Short.MAX_VALUE, width);
+        int referenceHeight = Math.min(Short.MAX_VALUE, height);
+        int px = Math.max(0, Math.min(referenceWidth - 1, Math.round(nx * referenceWidth)));
+        int py = Math.max(0, Math.min(referenceHeight - 1, Math.round(ny * referenceHeight)));
+        target.sendMousePosition((short) px, (short) py, (short) referenceWidth, (short) referenceHeight);
+        mouseDown.run();
+        return mouseUp;
+    }
+
     private void handleVideoZoomTap(float x, float y) {
         if (conn == null || videoZoomController == null
                 || !videoZoomController.mapPointToNormalizedVideo(x, y, videoZoomTapPoint)) {

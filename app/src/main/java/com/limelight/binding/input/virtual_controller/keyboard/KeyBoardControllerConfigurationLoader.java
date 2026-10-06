@@ -364,7 +364,7 @@ public class KeyBoardControllerConfigurationLoader {
             @Override
             public void onClick() {
                 LimeLog.info("axi->onclick:"+keyShort);
-                if(keyShort==13){
+                if(keyShort==13 || keyShort == KeyBoardTouchPadButton.CODE_CAMERA_TAP){
                     return;
                 }
                 int code=1;
@@ -392,7 +392,7 @@ public class KeyBoardControllerConfigurationLoader {
 
             @Override
             public void onRelease() {
-                if(keyShort==13){
+                if(keyShort==13 || keyShort == KeyBoardTouchPadButton.CODE_CAMERA_TAP){
                     return;
                 }
                 int code=1;

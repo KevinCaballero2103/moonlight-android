@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_camera_tap">Camera + screen tap</string>
+    <string name="control_camera_tap_description">Drag to move the camera; tap briefly to click where touched</string>
+</resources>

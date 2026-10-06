@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 
 import com.limelight.LimeLog;
 import com.limelight.R;
@@ -28,6 +29,14 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
 
     public static final int CODE_ATTACK_CAMERA = 14;
     public static final int CODE_KEY_CAMERA = 15;
+    public static final int CODE_CAMERA_TAP = 16;
+
+    private final TapCameraGesture tapCamera = new TapCameraGesture(new TapCameraGesture.Sink() {
+        @Override public void move(int x, int y) { onMoveCallback(x, y); }
+        @Override public void tap(float x, float y) {
+            virtualController.sendScreenTap(KeyBoardTouchPadButton.this, x, y);
+        }
+    });
 
     private boolean isHeldCamera() {
         return code == CODE_ATTACK_CAMERA || code == CODE_KEY_CAMERA;
@@ -325,14 +334,49 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         super.cancelInput();
         movingButton = null;
         setPressed(false);
-        if (isHeldCamera()) attackCamera.cancel();
+        if (code == CODE_CAMERA_TAP) {
+            tapCamera.cancel();
+            virtualController.cancelScreenTap(this);
+        } else if (isHeldCamera()) attackCamera.cancel();
         else onReleaseCallback();
         invalidate();
     }
 
     @Override
     protected boolean handlesSecondaryTouchEvents() {
-        return isHeldCamera();
+        return isHeldCamera() || code == CODE_CAMERA_TAP;
+    }
+
+    private boolean onTapCameraTouchEvent(MotionEvent event) {
+        int action = event.getActionMasked();
+        if (action == MotionEvent.ACTION_DOWN) {
+            virtualController.cancelScreenTap(this);
+            int index = event.getActionIndex();
+            tapCamera.begin(event.getPointerId(index), event.getX(index), event.getY(index),
+                    event.getEventTime(), ViewConfiguration.get(getContext()).getScaledTouchSlop(),
+                    1280.0 / Math.max(1, getWidth()) * preferenceConfiguration.touchPadSensitivity / 100.0,
+                    720.0 / Math.max(1, getHeight()) * preferenceConfiguration.touchPadYSensitity / 100.0);
+            setPressed(true);
+        } else if (action == MotionEvent.ACTION_MOVE) {
+            int pointer = tapCamera.getPointerId();
+            int index = event.findPointerIndex(pointer);
+            if (pointer != -1 && index == -1) cancelInput();
+            else if (index != -1) {
+                for (int i = 0; i < event.getHistorySize(); i++) {
+                    tapCamera.move(pointer, event.getHistoricalX(index, i), event.getHistoricalY(index, i));
+                }
+                tapCamera.move(pointer, event.getX(index), event.getY(index));
+            }
+        } else if (action == MotionEvent.ACTION_POINTER_UP || action == MotionEvent.ACTION_UP) {
+            int index = event.getActionIndex();
+            if (event.getPointerId(index) == tapCamera.getPointerId()) {
+                tapCamera.release(event.getPointerId(index), event.getX(index), event.getY(index),
+                        event.getEventTime(), (event.getFlags() & MotionEvent.FLAG_CANCELED) != 0);
+                setPressed(false);
+            } else if (action == MotionEvent.ACTION_UP) cancelInput();
+        } else if (action == MotionEvent.ACTION_CANCEL) cancelInput();
+        invalidate();
+        return true;
     }
 
     private boolean onAttackCameraTouchEvent(MotionEvent event) {
@@ -391,6 +435,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
 
     @Override
     public boolean onElementTouchEvent(MotionEvent event) {
+        if (code == CODE_CAMERA_TAP) return onTapCameraTouchEvent(event);
         if (isHeldCamera()) return onAttackCameraTouchEvent(event);
         // get masked (not specific to a pointer) action
         int action = event.getActionMasked();

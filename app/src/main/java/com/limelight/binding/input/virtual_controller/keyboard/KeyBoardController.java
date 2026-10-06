@@ -91,6 +91,7 @@ public class KeyBoardController {
     private final Object legacyInputOwner = new Object();
     private final VirtualInputState virtualInputs;
     private final TimedKeyCombination combinations;
+    private final ScreenTapPulse screenTaps;
     private boolean inputSuppressed;
     private boolean releasingInputs;
 
@@ -175,6 +176,20 @@ public class KeyBoardController {
                 handler.removeCallbacks(task);
             }
         }, virtualInputs);
+        this.screenTaps = new ScreenTapPulse(new TimedKeyCombination.Scheduler() {
+            @Override public void postDelayed(Runnable task, long delayMs) { handler.postDelayed(task, delayMs); }
+            @Override public void remove(Runnable task) { handler.removeCallbacks(task); }
+        }, (owner, x, y) -> {
+            if (inputSuppressed || currentMode != ControllerMode.Active
+                    || !(owner instanceof View) || Game.instance == null
+                    || virtualInputs.isMouseHeld(1)) return null;
+            // A distinct pulse owner prevents its release from affecting another
+            // held/locked left button or an Attack + camera gesture.
+            Object pulseOwner = new Object();
+            return Game.instance.beginVirtualScreenTap((View) owner, x, y,
+                    () -> virtualInputs.mouse(pulseOwner, 1, true),
+                    () -> virtualInputs.mouse(pulseOwner, 1, false));
+        });
         this.prefConfig=prefConfig;
         this.vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         buttonConfigure=View.inflate(context,R.layout.axi_keyboard_top_right_view,null);
@@ -862,6 +877,7 @@ public class KeyBoardController {
         }
         //1-鼠标 0-按键 2-摇杆 3-十字键
         if (keyEvent.getSource() == 1) {
+            if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) screenTaps.cancel();
             virtualInputs.mouse(owner, keyEvent.getKeyCode(), KeyEvent.ACTION_DOWN == keyEvent.getAction());
         } else {
             virtualInputs.keyboard(owner, keyEvent.getKeyCode(), keyEvent.getAction() == KeyEvent.ACTION_DOWN);
@@ -875,8 +891,16 @@ public class KeyBoardController {
         if (inputSuppressed || Game.instance == null || !Game.instance.connected) {
             return;
         }
+        // A confirmed tap must not turn into a held-button drag on a later MOVE.
+        screenTaps.cancel();
         Game.instance.mouseMove(x,y);
     }
+
+    public void sendScreenTap(View owner, float x, float y) {
+        screenTaps.tap(owner, x, y);
+    }
+
+    public void cancelScreenTap(Object owner) { screenTaps.cancel(owner); }
 
     public void sendAssembleKey(String codes,int action){
         sendAssembleKey(codes, codes, action);
@@ -962,6 +986,7 @@ public class KeyBoardController {
         }
         releasingInputs = true;
         try {
+            screenTaps.cancel();
             if (frame_layout instanceof TouchRoutingLayout) {
                 ((TouchRoutingLayout) frame_layout).cancelPassthroughTouches();
             }

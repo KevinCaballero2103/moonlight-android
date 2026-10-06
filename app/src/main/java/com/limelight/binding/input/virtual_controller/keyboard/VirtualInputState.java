@@ -31,6 +31,10 @@ final class VirtualInputState {
         set(owner, MOUSE_FLAG | button, down);
     }
 
+    boolean isMouseHeld(int button) {
+        return counts.containsKey(MOUSE_FLAG | button);
+    }
+
     private void set(Object owner, int input, boolean down) {
         Set<Integer> held = owners.get(owner);
         if (down) {
