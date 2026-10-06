@@ -414,6 +414,33 @@ public class KeyBoardControllerConfigurationLoader {
         return button;
     }
 
+    /** One configured Android key held while the same finger aims. */
+    public static KeyBoardTouchPadButton createKeyCameraButton(String elementId, String codes,
+            String text, KeyBoardController controller, Context context) {
+        int[] parsed = TimedKeyCombination.parse(codes);
+        final int key = parsed.length == 1 && parsed[0] <= KeyEvent.getMaxKeyCode()
+                ? parsed[0] : 0;
+        KeyBoardTouchPadButton button = new KeyBoardTouchPadButton(controller, elementId, 1, context);
+        button.setCode(KeyBoardTouchPadButton.CODE_KEY_CAMERA);
+        button.setText(text);
+        button.addDigitalButtonListener(new KeyBoardTouchPadButton.DigitalButtonListener() {
+            private void send(boolean down) {
+                if (key == 0) return;
+                KeyEvent event = new KeyEvent(down ? KeyEvent.ACTION_DOWN : KeyEvent.ACTION_UP, key);
+                // Source 0 is keyboard input; never emit a mouse click for this mode.
+                event.setSource(0);
+                controller.sendKeyEvent(button, event);
+            }
+            @Override public void onClick() { send(true); }
+            @Override public void onLongClick() {}
+            @Override public void onRelease() { send(false); }
+            @Override public void onMove(int x, int y) {
+                if (key != 0) controller.sendMouseMove(x, y);
+            }
+        });
+        return button;
+    }
+
     public static void createDefaultLayout(final KeyBoardController controller, final Context context,PreferenceConfiguration config) {
 
         DisplayMetrics screen = context.getResources().getDisplayMetrics();

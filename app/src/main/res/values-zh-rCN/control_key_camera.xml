@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_key_camera">按键＋视角</string>
+    <string name="control_key_camera_description">选择一个按键，按住并拖动瞄准</string>
+    <string name="control_key_camera_one_key">瞄准模式请选择一个按键</string>
+</resources>

@@ -580,7 +580,12 @@ public class KeyBoardController {
         }
         //触控板
         if(bean.getBtnType()==2){
-            element=KeyBoardControllerConfigurationLoader.createDigitalTouchButton(bean.getId(),bean.getCode(),1,1,bean.getName(),-1,this,context);
+            if (bean.getCode() == KeyBoardTouchPadButton.CODE_KEY_CAMERA) {
+                element = KeyBoardControllerConfigurationLoader.createKeyCameraButton(
+                        bean.getId(), bean.getCodes(), bean.getName(), this, context);
+            } else {
+                element=KeyBoardControllerConfigurationLoader.createDigitalTouchButton(bean.getId(),bean.getCode(),1,1,bean.getName(),-1,this,context);
+            }
         }
         if (bean.getBtnType() == GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH) {
             element = new KeyBoardPassthroughRegion(this, context, bean.getId());

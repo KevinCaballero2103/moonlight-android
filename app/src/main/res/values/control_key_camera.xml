@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_key_camera">Key + movement</string>
+    <string name="control_key_camera_description">Choose one key; hold it and drag to aim</string>
+    <string name="control_key_camera_one_key">Choose a single key for aiming</string>
+</resources>

@@ -99,8 +99,8 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".debug.touchshape8"
-            resValue "string", "app_label", "Axixi · formas y multitouch"
+            applicationIdSuffix ".debug.keycamera9"
+            resValue "string", "app_label", "Axixi · tecla y movimiento"
             resValue "string", "app_label_root", "DR·月光"
 
             minifyEnabled true

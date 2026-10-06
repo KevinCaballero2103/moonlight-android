@@ -27,6 +27,11 @@ import java.util.List;
 public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
 
     public static final int CODE_ATTACK_CAMERA = 14;
+    public static final int CODE_KEY_CAMERA = 15;
+
+    private boolean isHeldCamera() {
+        return code == CODE_ATTACK_CAMERA || code == CODE_KEY_CAMERA;
+    }
 
     private final AttackCameraGesture attackCamera = new AttackCameraGesture(new AttackCameraGesture.Sink() {
         @Override
@@ -277,7 +282,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         }
 
         virtualController.getHandler().removeCallbacks(longClickRunnable);
-        if (code != CODE_ATTACK_CAMERA) {
+        if (!isHeldCamera()) {
             virtualController.getHandler().postDelayed(longClickRunnable, timerLongClickTimeout);
         }
     }
@@ -320,14 +325,14 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
         super.cancelInput();
         movingButton = null;
         setPressed(false);
-        if (code == CODE_ATTACK_CAMERA) attackCamera.cancel();
+        if (isHeldCamera()) attackCamera.cancel();
         else onReleaseCallback();
         invalidate();
     }
 
     @Override
     protected boolean handlesSecondaryTouchEvents() {
-        return code == CODE_ATTACK_CAMERA;
+        return isHeldCamera();
     }
 
     private boolean onAttackCameraTouchEvent(MotionEvent event) {
@@ -386,7 +391,7 @@ public class KeyBoardTouchPadButton extends keyBoardVirtualControllerElement {
 
     @Override
     public boolean onElementTouchEvent(MotionEvent event) {
-        if (code == CODE_ATTACK_CAMERA) return onAttackCameraTouchEvent(event);
+        if (isHeldCamera()) return onAttackCameraTouchEvent(event);
         // get masked (not specific to a pointer) action
         int action = event.getActionMasked();
         switch (action) {
