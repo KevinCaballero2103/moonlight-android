@@ -3,6 +3,9 @@ package com.limelight.binding.input.virtual_controller.keyboard;
 import org.junit.Test;
 
 public class TimedKeyCombinationTest {
+    @Test public void singleCtrlTapHasNoDelayedRelease() { TimedKeyCombinationChecks.singleCtrlTapHasNoDelayedRelease(); }
+    @Test public void rapidCtrlTapsNeverQueueBehindJoystick() { TimedKeyCombinationChecks.rapidCtrlTapsNeverQueueBehindJoystick(); }
+    @Test public void heldSingleKeyAndCancelKeepOtherOwners() { TimedKeyCombinationChecks.heldSingleKeyAndCancelKeepOtherOwners(); }
     @Test public void shortTapOrdersAltBeforeNumber() { TimedKeyCombinationChecks.shortTapOrdersAltBeforeNumber(); }
     @Test public void heldChordStaysDownUntilRelease() { TimedKeyCombinationChecks.heldChordStaysDownUntilRelease(); }
     @Test public void allModifierVariantsAreRecognized() { TimedKeyCombinationChecks.allModifierVariantsAreRecognized(); }

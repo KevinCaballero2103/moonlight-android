@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
@@ -52,6 +53,7 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
     private TextView tx_content;
 
     private EditText edt_name;
+    private CheckBox cb_key_camera;
 
     private StringBuffer contentValues=new StringBuffer();
 
@@ -80,6 +82,16 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
         lv_digitpad_2=v.findViewById(R.id.lv_digitpad_2);
         tx_content=v.findViewById(R.id.tx_content);
         edt_name=v.findViewById(R.id.edt_name);
+        cb_key_camera=v.findViewById(R.id.cb_key_camera);
+        cb_key_camera.setVisibility(keyFrom == 0 ? View.VISIBLE : View.GONE);
+        cb_key_camera.setOnCheckedChangeListener((button, checked) -> {
+            if (checked && contentValues.toString().contains(",")) {
+                contentValues.setLength(0);
+                contentNames.setLength(0);
+                tx_content.setText("");
+                edt_name.setText("");
+            }
+        });
         rv_keyboard_mouse=v.findViewById(R.id.rv_keyboard_mouse);
         rv_keyboard_function=v.findViewById(R.id.rv_keyboard_function);
         if(!TextUtils.isEmpty(title)){
@@ -144,9 +156,13 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
                         v.setBackgroundResource(R.drawable.bg_ax_keyboard_button_confirm);
                         return true;
                     case MotionEvent.ACTION_UP:
-                    case MotionEvent.ACTION_CANCEL:
                         // 处理释放事件
                         v.setBackgroundResource(R.drawable.bg_ax_keyboard_button);
+                        if (cb_key_camera.isChecked()) {
+                            // Selecting another key replaces the aiming key.
+                            contentValues.setLength(0);
+                            contentNames.setLength(0);
+                        }
                         if(contentValues.toString().split(",").length>=5){
                             Toast.makeText(getActivity(),"限制只能输入5个按键！",Toast.LENGTH_SHORT).show();
                             return true;
@@ -163,6 +179,9 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
                         contentNames.append(view.getText().toString().trim());
                         tx_content.setText(contentNames.toString());
                         edt_name.setText(contentNames.toString());
+                        return true;
+                    case MotionEvent.ACTION_CANCEL:
+                        v.setBackgroundResource(R.drawable.bg_ax_keyboard_button);
                         return true;
                 }
                 return false;
@@ -212,6 +231,11 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
         beanList.add(new GameMenuQuickBean(getString(R.string.control_attack_camera),
                 KeyBoardTouchPadButton.CODE_ATTACK_CAMERA,
                 getString(R.string.control_attack_camera_description),2,false).setShapeType(1));
+        GameMenuQuickBean keyCamera = new GameMenuQuickBean(getString(R.string.control_key_camera),
+                KeyBoardTouchPadButton.CODE_KEY_CAMERA,
+                getString(R.string.control_key_camera_description), 2, false).setShapeType(1);
+        keyCamera.setCodes("33"); // Android E, selectable before saving.
+        beanList.add(keyCamera);
         beanList.add(new GameMenuQuickBean("触控板·右",9,"右键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·中",12,"中键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·无",13,"只转视野",2,false).setShapeType(1));
@@ -247,6 +271,17 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
 
         rv_keyboard_mouse.setOnItemClickListener((parent, view, position, id) -> {
             GameMenuQuickBean bean=beanList.get(position);
+            if (bean.getCode() == KeyBoardTouchPadButton.CODE_KEY_CAMERA && bean.getBtnType() == 2) {
+                cb_key_camera.setChecked(true);
+                contentValues.setLength(0);
+                contentValues.append("33");
+                contentNames.setLength(0);
+                contentNames.append("E");
+                tx_content.setText("E");
+                edt_name.setText("E");
+                rg_keyboard.check(R.id.rbt_keyboard_1);
+                return;
+            }
             bean.setId( PREF_KEYBOARD_LIST_KEY+System.currentTimeMillis());
             LimeLog.info("axi->rv:"+new Gson().toJson(bean));
             onClick.click(bean);
@@ -304,6 +339,15 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
             bean.setBtnType(4);
             bean.setCodes(contentValues.toString());
             bean.setDesc(contentNames.toString());
+            if (keyFrom == 0 && cb_key_camera.isChecked()) {
+                if (contentValues.toString().contains(",")) {
+                    Toast.makeText(getActivity(), R.string.control_key_camera_one_key, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                bean.setBtnType(2);
+                bean.setCode(KeyBoardTouchPadButton.CODE_KEY_CAMERA);
+                bean.setShapeType(1);
+            }
 //            saveKeyBoardListData(getActivity(),bean);
 //            Toast.makeText(getActivity(),"已保存！",Toast.LENGTH_SHORT).show();
             onClick.click(bean);
@@ -315,6 +359,7 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
             contentNames.delete(0,contentNames.length());
             tx_content.setText("");
             edt_name.setText("");
+            cb_key_camera.setChecked(false);
             return;
         }
     }

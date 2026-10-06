@@ -87,7 +87,10 @@ final class TimedKeyCombination {
         }
         session.releaseRequested = true;
         if (session.pressed == session.keys.length) {
-            session.schedule(session::releaseNext);
+            // A single key needs no chord sequencing. Queuing its UP makes a
+            // rapid re-press wait behind earlier taps (e.g. sprint on Ctrl).
+            if (session.keys.length == 1) session.releaseNext();
+            else session.schedule(session::releaseNext);
         }
     }
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_key_camera">Tecla + movimiento</string>
+    <string name="control_key_camera_description">Elige una tecla; mantén y desliza para apuntar</string>
+    <string name="control_key_camera_one_key">Elige una sola tecla para apuntar</string>
+</resources>

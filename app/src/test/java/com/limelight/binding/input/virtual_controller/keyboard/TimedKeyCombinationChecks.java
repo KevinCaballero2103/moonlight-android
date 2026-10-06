@@ -221,7 +221,51 @@ public final class TimedKeyCombinationChecks {
         f.expect("0:M1D", "0:K57D", "0:M1U", "0:K57U");
     }
 
+    static void singleCtrlTapHasNoDelayedRelease() {
+        Fixture f = new Fixture();
+        f.combo.down("sprint", "113");
+        f.combo.up("sprint");
+        f.expect("0:K113D", "0:K113U");
+        if (!f.clock.tasks.isEmpty()) throw new AssertionError("Single Ctrl queued a timer");
+    }
+
+    static void rapidCtrlTapsNeverQueueBehindJoystick() {
+        Fixture f = new Fixture();
+        f.input.keyboard("joystick", 51, true);
+        for (int i = 0; i < 12; i++) {
+            f.clock.to(i * 10);
+            f.combo.down("sprint", "113");
+            if (!f.events.get(f.events.size() - 1).equals(i * 10 + ":K113D")) {
+                throw new AssertionError("Sprint DOWN was delayed at tap " + i + ": " + f.events);
+            }
+            f.combo.up("sprint");
+        }
+        if (!f.clock.tasks.isEmpty()) throw new AssertionError("Rapid Ctrl taps queued timers");
+        if (f.events.size() != 25) throw new AssertionError("Lost a Ctrl tap: " + f.events);
+        f.input.keyboard("joystick", 51, false);
+        if (!f.events.get(25).equals("110:K51U")) throw new AssertionError("Joystick ownership changed");
+    }
+
+    static void heldSingleKeyAndCancelKeepOtherOwners() {
+        Fixture f = new Fixture();
+        f.combo.down("one", "33");
+        f.combo.down("one", "33");
+        f.combo.down("two", "33");
+        f.clock.to(5000);
+        f.expect("0:K33D");
+        f.combo.cancel("one");
+        f.expect("0:K33D");
+        f.combo.up("two");
+        f.expect("0:K33D", "5000:K33U");
+        f.combo.down("one", "113");
+        f.combo.cancelAll();
+        f.expect("0:K33D", "5000:K33U", "5000:K113D", "5000:K113U");
+    }
+
     public static void main(String[] args) {
+        singleCtrlTapHasNoDelayedRelease();
+        rapidCtrlTapsNeverQueueBehindJoystick();
+        heldSingleKeyAndCancelKeepOtherOwners();
         shortTapOrdersAltBeforeNumber();
         heldChordStaysDownUntilRelease();
         allModifierVariantsAreRecognized();
@@ -237,6 +281,6 @@ public final class TimedKeyCombinationChecks {
         nonModifierChordAndSingleKeyStillWork();
         duplicateDownAndUnmatchedUpAreHarmless();
         sharedMouseButtonAndReleaseAllAreSafe();
-        System.out.println("15 input checks passed");
+        System.out.println("18 input checks passed");
     }
 }
