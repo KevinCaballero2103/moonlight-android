@@ -239,6 +239,9 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
         beanList.add(new GameMenuQuickBean("触控板·右",9,"右键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·中",12,"中键",2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean("触控板·无",13,"只转视野",2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.control_camera_tap),
+                KeyBoardTouchPadButton.CODE_CAMERA_TAP,
+                getString(R.string.control_camera_tap_description), 2, false).setShapeType(1));
 
         beanList.add(new GameMenuQuickBean("摇杆","51,47,29,32","W-A-S-D",3,false));
         beanList.add(new GameMenuQuickBean("摇杆","19,20,21,22","上-左-下-右",3,false));
