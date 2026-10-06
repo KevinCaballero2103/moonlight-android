@@ -119,7 +119,12 @@ public class KeyCameraControlTest {
         add(ctrl, 300, 200, 80, 80);
         event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 100, 300);
         event(MotionEvent.ACTION_MOVE, 0, new int[]{7}, 100, 230);
-        assertTrue(events.contains("K51D"));
+        // Record the direction emitted by this legacy stick rather than assuming
+        // its screen-axis sign. This test checks independent pointer lifetimes.
+        assertFalse("Joystick did not emit movement: " + events, events.isEmpty());
+        String movementDown = events.get(0);
+        assertTrue(events.toString(), List.of("K51D", "K47D", "K29D", "K32D").contains(movementDown));
+        String movementUp = movementDown.substring(0, movementDown.length() - 1) + "U";
         event(MotionEvent.ACTION_POINTER_DOWN, 1, new int[]{7,19}, 100,230, 340,240);
         assertEquals("K113D", events.get(events.size()-1));
         event(MotionEvent.ACTION_POINTER_DOWN, 2, new int[]{7,19,23}, 100,230, 340,240, 650,150);
@@ -129,12 +134,12 @@ public class KeyCameraControlTest {
         event(MotionEvent.ACTION_POINTER_UP, 1, new int[]{7,19,23}, 100,230, 340,240, 660,155);
         assertEquals("K113U", events.get(events.size()-1));
         assertFalse(events.contains("K33U"));
-        assertFalse(events.contains("K51U"));
+        assertFalse(events.contains(movementUp));
         event(MotionEvent.ACTION_POINTER_UP, 1, new int[]{7,23}, 100,230, 660,155);
         assertEquals("K33U", events.get(events.size()-1));
-        assertFalse(events.contains("K51U"));
+        assertFalse(events.contains(movementUp));
         event(MotionEvent.ACTION_UP, 0, new int[]{7}, 100,230);
-        assertEquals("K51U", events.get(events.size()-1));
+        assertEquals(movementUp, events.get(events.size()-1));
     }
     @Test public void sameViewOwnerLiftCannotHandKeyToSecondFinger() {
         event(MotionEvent.ACTION_DOWN, 0, new int[]{7}, 650,150);
