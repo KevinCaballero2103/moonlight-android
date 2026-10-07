@@ -39,6 +39,19 @@ public class GameMenuQuickBeanGeometryStackTest {
         b.normalizeCircularBounds();assertEquals(150,b.getmLeft());
         b.setEditorShapeType(1);assertEquals(400,b.getWidth());assertEquals(50,b.getmLeft());
     }
+    @Test public void oddDiameterDoesNotAccumulateRoundingDriftAcrossReloads() {
+        GameMenuQuickBean b=rectangle(2);
+        for(int i=0;i<12;i++) {
+            b.setEditorShapeType(0);b.setCircleDiameter(75);
+            // Selecting the same control must not discard its fractional center.
+            b.setmLeft(b.getmLeft());b.setmTop(b.getmTop());
+            b=gson.fromJson(gson.toJson(b),GameMenuQuickBean.class);b.normalizeCircularBounds();
+            b.setEditorShapeType(1);assertEquals(50,b.getmLeft());assertEquals(100,b.getmTop());
+        }
+        b.setEditorShapeType(0);b.setmLeft(b.getmLeft()+10);b.setmTop(b.getmTop()+20);
+        float cx=b.getmLeft()+b.getWidth()/2f,cy=b.getmTop()+b.getHeight()/2f;
+        b.setEditorShapeType(1);assertEquals(cx,b.getmLeft()+b.getWidth()/2f,0.5f);assertEquals(cy,b.getmTop()+b.getHeight()/2f,0.5f);
+    }
     @Test public void oldRectanglesAndLayersStayUnchangedUntilEdited() {
         GameMenuQuickBean b=gson.fromJson("{\"btnType\":2,\"width\":417,\"height\":193}",GameMenuQuickBean.class);
         b.normalizeCircularBounds();assertEquals(417,b.getWidth());assertEquals(193,b.getHeight());assertEquals(2,b.getStackLevel());

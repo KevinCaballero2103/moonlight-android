@@ -59,6 +59,8 @@ public class GameMenuQuickBean {
     private Integer circleDiameter;
     private Integer rectangleWidth;
     private Integer rectangleHeight;
+    private Float sizeCenterX;
+    private Float sizeCenterY;
 
     public int getStackLevel() { return stackLevel == null ? 2 : Math.max(1, Math.min(99, stackLevel)); }
     public void setStackLevel(int level) { stackLevel = Math.max(1, Math.min(99, level)); }
@@ -104,8 +106,10 @@ public class GameMenuQuickBean {
     }
 
     private void resizeAroundCenter(int w, int h) {
-        mLeft += Math.round((width - w) / 2f);
-        mTop += Math.round((height - h) / 2f);
+        if (sizeCenterX == null) sizeCenterX = mLeft + width / 2f;
+        if (sizeCenterY == null) sizeCenterY = mTop + height / 2f;
+        mLeft = Math.round(sizeCenterX - w / 2f);
+        mTop = Math.round(sizeCenterY - h / 2f);
         width = w; height = h;
     }
 
@@ -201,6 +205,7 @@ public class GameMenuQuickBean {
     }
 
     public void setWidth(int width) {
+        if (this.width != width) sizeCenterX = null;
         this.width = width;
     }
 
@@ -209,6 +214,7 @@ public class GameMenuQuickBean {
     }
 
     public void setHeight(int height) {
+        if (this.height != height) sizeCenterY = null;
         this.height = height;
     }
 
@@ -217,6 +223,7 @@ public class GameMenuQuickBean {
     }
 
     public void setmLeft(int mLeft) {
+        if (this.mLeft != mLeft) sizeCenterX = null;
         this.mLeft = mLeft;
     }
 
@@ -225,6 +232,7 @@ public class GameMenuQuickBean {
     }
 
     public void setmTop(int mTop) {
+        if (this.mTop != mTop) sizeCenterY = null;
         this.mTop = mTop;
     }
 
