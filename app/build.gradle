@@ -99,8 +99,8 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".debug.geometrylayer11"
-            resValue "string", "app_label", "Axixi · formas y niveles"
+            applicationIdSuffix ".debug.largesizes12"
+            resValue "string", "app_label", "Axixi · tamaños ampliados"
             resValue "string", "app_label_root", "DR·月光"
 
             minifyEnabled true
