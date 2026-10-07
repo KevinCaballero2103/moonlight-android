@@ -13,6 +13,8 @@ import com.limelight.R;
 public class TouchRoutingLayout extends FrameLayout {
     public interface Control {
         boolean isEditing();
+        default int getControlLevel() { return 2; }
+        default boolean containsControlPoint(float x, float y) { return true; }
     }
 
     public interface PassthroughArea extends Control {
@@ -82,19 +84,27 @@ public class TouchRoutingLayout extends FrameLayout {
                 return null;
             }
         }
-        boolean inArea = false;
+        int areaLevel = -1;
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             if (child instanceof PassthroughArea
                     && ((PassthroughArea) child).isPassthroughEnabled()
                     && contains(child, x, y)
                     && ((PassthroughArea) child).containsPassthroughPoint(point[0], point[1])) {
-                inArea = true;
-                break;
+                areaLevel = Math.max(areaLevel, ((Control) child).getControlLevel());
             }
         }
-        if (!inArea) {
+        if (areaLevel == -1) {
             return null;
+        }
+        // Preserve legacy reserved holes at equal levels. An explicitly higher
+        // button can now cover a region, using its real circular hit area.
+        for (int i = 0; i < getChildCount(); i++) {
+            View child = getChildAt(i);
+            if (child instanceof Control && !(child instanceof PassthroughArea)
+                    && ((Control) child).getControlLevel() > areaLevel
+                    && contains(child, x, y)
+                    && ((Control) child).containsControlPoint(point[0], point[1])) return null;
         }
         // Game binds its finger-touch listener ONLY to the background view.
         // StreamView is a passive video SurfaceView: promoting it lets DOWN

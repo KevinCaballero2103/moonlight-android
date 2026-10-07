@@ -55,6 +55,64 @@ public class GameMenuQuickBean {
     // field keeps every old touchpad/region rectangular until explicitly edited.
     private Integer touchShape;
 
+    private Integer stackLevel;
+    private Integer circleDiameter;
+    private Integer rectangleWidth;
+    private Integer rectangleHeight;
+    private Float sizeCenterX;
+    private Float sizeCenterY;
+
+    public int getStackLevel() { return stackLevel == null ? 2 : Math.max(1, Math.min(99, stackLevel)); }
+    public void setStackLevel(int level) { stackLevel = Math.max(1, Math.min(99, level)); }
+
+    public boolean supportsShape() {
+        return btnType == 1 || btnType == 2 || btnType == 4 || btnType == TYPE_TOUCH_PASSTHROUGH;
+    }
+
+    public boolean isCircular() { return supportsShape() && getShapeType() == 0; }
+
+    public int getCircleDiameter() {
+        return circleDiameter == null ? Math.max(1, Math.min(width, height)) : Math.max(1, circleDiameter);
+    }
+
+    /** Legacy circles already used the shorter side; square bounds preserve that visible circle. */
+    public void normalizeCircularBounds() {
+        if (!isCircular()) return;
+        if (width != height && rectangleWidth == null) {
+            rectangleWidth = width; rectangleHeight = height;
+        }
+        setCircleDiameter(getCircleDiameter());
+    }
+
+    public void setCircleDiameter(int diameter) {
+        diameter = Math.max(1, diameter);
+        resizeAroundCenter(diameter, diameter);
+        circleDiameter = diameter;
+    }
+
+    /** Shape switching remembers each size and keeps the control's center in place. */
+    public void setEditorShapeType(int shape) {
+        if (!supportsShape() || shape == getShapeType()) return;
+        if (shape == 0) {
+            rectangleWidth = width; rectangleHeight = height;
+            setShapeType(0);
+            normalizeCircularBounds();
+        } else {
+            circleDiameter = Math.max(1, Math.min(width, height));
+            setShapeType(1);
+            resizeAroundCenter(rectangleWidth == null ? width : Math.max(1, rectangleWidth),
+                    rectangleHeight == null ? height : Math.max(1, rectangleHeight));
+        }
+    }
+
+    private void resizeAroundCenter(int w, int h) {
+        if (sizeCenterX == null) sizeCenterX = mLeft + width / 2f;
+        if (sizeCenterY == null) sizeCenterY = mTop + height / 2f;
+        mLeft = Math.round(sizeCenterX - w / 2f);
+        mTop = Math.round(sizeCenterY - h / 2f);
+        width = w; height = h;
+    }
+
     //开关模式
     private boolean switchMode;
 
@@ -147,6 +205,7 @@ public class GameMenuQuickBean {
     }
 
     public void setWidth(int width) {
+        if (this.width != width) sizeCenterX = null;
         this.width = width;
     }
 
@@ -155,6 +214,7 @@ public class GameMenuQuickBean {
     }
 
     public void setHeight(int height) {
+        if (this.height != height) sizeCenterY = null;
         this.height = height;
     }
 
@@ -163,6 +223,7 @@ public class GameMenuQuickBean {
     }
 
     public void setmLeft(int mLeft) {
+        if (this.mLeft != mLeft) sizeCenterX = null;
         this.mLeft = mLeft;
     }
 
@@ -171,6 +232,7 @@ public class GameMenuQuickBean {
     }
 
     public void setmTop(int mTop) {
+        if (this.mTop != mTop) sizeCenterY = null;
         this.mTop = mTop;
     }
 

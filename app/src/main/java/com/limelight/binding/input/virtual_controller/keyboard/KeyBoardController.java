@@ -134,6 +134,9 @@ public class KeyBoardController {
     private SeekBar sb_control_opacity;
     private TextView tx_control_opacity;
     private boolean bindingOpacity;
+    private boolean bindingSize;
+    private SeekBar sb_stack_level;
+    private TextView tx_stack_level;
 
     private int currentIndex=-1;
 
@@ -196,6 +199,8 @@ public class KeyBoardController {
         lv_left_view=View.inflate(context,R.layout.axi_keyboard_top_left_view,null);
         buttonWidth=UiHelper.dpToPx(context,50);
         buttonHeight=UiHelper.dpToPx(context,50);
+        buttonConfigure.setTranslationZ(100);
+        lv_left_view.setTranslationZ(100);
         initTopView();
     }
 
@@ -214,6 +219,22 @@ public class KeyBoardController {
         tx_zoom_w=lv_left_view.findViewById(R.id.tx_zoom_w);
         tx_zoom_h=lv_left_view.findViewById(R.id.tx_zoom_h);
         tx_margin=lv_left_view.findViewById(R.id.tx_margin);
+        sb_stack_level = lv_left_view.findViewById(R.id.sb_stack_level);
+        tx_stack_level = lv_left_view.findViewById(R.id.tx_stack_level);
+        sb_stack_level.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override public void onProgressChanged(SeekBar bar, int progress, boolean fromUser) {
+                if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
+                setSelectedStackLevel(progress + 1);
+            }
+            @Override public void onStartTrackingTouch(SeekBar bar) { }
+            @Override public void onStopTrackingTouch(SeekBar bar) { }
+        });
+        lv_left_view.findViewById(R.id.btn_stack_down).setOnClickListener(v -> {
+            if (currentIndex >= 0 && currentIndex < beanList.size()) setSelectedStackLevel(beanList.get(currentIndex).getStackLevel() - 1);
+        });
+        lv_left_view.findViewById(R.id.btn_stack_up).setOnClickListener(v -> {
+            if (currentIndex >= 0 && currentIndex < beanList.size()) setSelectedStackLevel(beanList.get(currentIndex).getStackLevel() + 1);
+        });
         cb_global_opacity = lv_left_view.findViewById(R.id.cb_global_opacity);
         sb_control_opacity = lv_left_view.findViewById(R.id.sb_control_opacity);
         tx_control_opacity = lv_left_view.findViewById(R.id.tx_control_opacity);
@@ -317,23 +338,14 @@ public class KeyBoardController {
             updateItem();
         });
         cb_round.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (currentIndex < 0 || currentIndex >= beanList.size()) return;
-            int type = beanList.get(currentIndex).getBtnType();
-            boolean separateSize = isChecked || type == 2
-                    || type == GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH;
-            //方形按钮
-            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(separateSize?View.VISIBLE:View.GONE);
-            txZoom.setVisibility(separateSize?View.GONE:View.VISIBLE);
-            sb_zoom_x.setVisibility(separateSize?View.GONE:View.VISIBLE);
-
-            cb_round.setChecked(isChecked);
-            beanList.get(currentIndex).setShapeType(isChecked?1:0);
-            keyBoardVirtualControllerElement element=frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode));
-            element.setShapeType(beanList.get(currentIndex).getShapeType());
-            element.invalidate();
+            if (bindingSize || currentIndex < 0 || currentIndex >= beanList.size()) return;
+            beanList.get(currentIndex).setEditorShapeType(isChecked ? 1 : 0);
+            applySelectedDimensions();
+            bindSizeEditor();
         });
 
         cb_switch_mode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (bindingSize || currentIndex < 0 || currentIndex >= beanList.size()) return;
             cb_switch_mode.setChecked(isChecked);
             beanList.get(currentIndex).setSwitchMode(isChecked);
             keyBoardVirtualControllerElement element=frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode));
@@ -347,32 +359,15 @@ public class KeyBoardController {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
-                txZoom.setText("缩放比例："+progress+"%");
-                beanList.get(currentIndex).setZoom(progress);
-                switch (beanList.get(currentIndex).getBtnType()){
-                    case 1://1鼠标 2触控板 3摇杆 4普通按钮 5十字键
-                    case 4:
-                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*progress*0.01)));
-                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*progress*0.01)));
-                        break;
-                    case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
-            case 2:
-                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
-                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
-                        break;
-                    case 3:
-                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*2*progress*0.01)));
-                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
-                        break;
-                    case 5://十字键
-                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*2*progress*0.01)));
-                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
-                        break;
+                GameMenuQuickBean bean = beanList.get(currentIndex);
+                bean.setZoom(progress);
+                if (bean.isCircular()) bean.setCircleDiameter(scaledSize(baseSize(bean, false), progress));
+                else {
+                    bean.setWidth(scaledSize(baseSize(bean, true), progress));
+                    bean.setHeight(scaledSize(baseSize(bean, false), progress));
                 }
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().width=beanList.get(currentIndex).getWidth();
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().height=beanList.get(currentIndex).getHeight();
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
+                applySelectedDimensions();
+                bindSizeEditor();
             }
 
             @Override
@@ -390,20 +385,12 @@ public class KeyBoardController {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
-                tx_zoom_w.setText("缩放宽度："+progress+"%");
-                beanList.get(currentIndex).setZoomW(progress);
-                switch (beanList.get(currentIndex).getBtnType()){
-                    case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
-                    case 2:
-                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*4*progress*0.01)));
-                        break;
-                    case 1:
-                    case 4:
-                        beanList.get(currentIndex).setWidth(Math.max(1, (int) (buttonWidth*progress*0.01)));
-                        break;
-                }
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().width=beanList.get(currentIndex).getWidth();
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
+                GameMenuQuickBean bean = beanList.get(currentIndex);
+                if (bean.isCircular()) return;
+                bean.setZoomW(progress);
+                bean.setWidth(scaledSize(baseSize(bean, true), progress));
+                applySelectedDimensions();
+                bindSizeEditor();
             }
 
             @Override
@@ -421,20 +408,12 @@ public class KeyBoardController {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (!fromUser || currentIndex < 0 || currentIndex >= beanList.size()) return;
-                tx_zoom_h.setText("缩放高度："+progress+"%");
-                beanList.get(currentIndex).setZoomH(progress);
-                switch (beanList.get(currentIndex).getBtnType()){
-                    case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH:
-                    case 2:
-                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*2*progress*0.01)));
-                        break;
-                    case 1:
-                    case 4:
-                        beanList.get(currentIndex).setHeight(Math.max(1, (int) (buttonHeight*progress*0.01)));
-                        break;
-                }
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams().height=beanList.get(currentIndex).getHeight();
-                frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).requestLayout();
+                GameMenuQuickBean bean = beanList.get(currentIndex);
+                if (bean.isCircular()) return;
+                bean.setZoomH(progress);
+                bean.setHeight(scaledSize(baseSize(bean, false), progress));
+                applySelectedDimensions();
+                bindSizeEditor();
             }
 
             @Override
@@ -447,6 +426,68 @@ public class KeyBoardController {
 
             }
         });
+    }
+
+    private void setSelectedStackLevel(int level) {
+        if (currentIndex < 0 || currentIndex >= beanList.size()) return;
+        GameMenuQuickBean bean = beanList.get(currentIndex);
+        bean.setStackLevel(level);
+        keyBoardVirtualControllerElement element = frame_layout.findViewWithTag(new TagInfo(currentIndex, isGamePadMode));
+        if (element != null) element.setControlLevel(bean.getStackLevel());
+        sb_stack_level.setProgress(bean.getStackLevel() - 1);
+        tx_stack_level.setText(context.getString(R.string.control_stack_level, bean.getStackLevel()));
+    }
+
+    private int baseSize(GameMenuQuickBean bean, boolean width) {
+        int base = width ? buttonWidth : buttonHeight;
+        switch (bean.getBtnType()) {
+            case 2:
+            case GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH: return base * (width ? 4 : 2);
+            case 3:
+            case 5: return base * 2;
+            default: return base;
+        }
+    }
+
+    private static int scaledSize(int base, int percent) { return Math.max(1, Math.round(base * percent / 100f)); }
+    private static int sizePercent(int size, int base) { return Math.max(1, Math.round(size * 100f / Math.max(1, base))); }
+    private void bindSizeBar(SeekBar bar, int percent) {
+        bar.setMax(Math.max(300, percent));
+        bar.setProgress(percent);
+    }
+
+    private void applySelectedDimensions() {
+        GameMenuQuickBean bean = beanList.get(currentIndex);
+        keyBoardVirtualControllerElement element = frame_layout.findViewWithTag(new TagInfo(currentIndex, isGamePadMode));
+        if (element == null) return;
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) element.getLayoutParams();
+        params.width = bean.getWidth(); params.height = bean.getHeight();
+        params.leftMargin = bean.getmLeft(); params.topMargin = bean.getmTop();
+        element.setShapeType(bean.getShapeType());
+        element.setLayoutParams(params);
+        element.invalidate();
+    }
+
+    private void bindSizeEditor() {
+        GameMenuQuickBean bean = beanList.get(currentIndex);
+        boolean rectangular = bean.supportsShape() && !bean.isCircular();
+        bindingSize = true;
+        cb_round.setVisibility(bean.supportsShape() ? View.VISIBLE : View.GONE);
+        cb_round.setChecked(bean.getShapeType() == 1);
+        lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(rectangular ? View.VISIBLE : View.GONE);
+        txZoom.setVisibility(rectangular ? View.GONE : View.VISIBLE);
+        sb_zoom_x.setVisibility(rectangular ? View.GONE : View.VISIBLE);
+        int size = bean.isCircular() ? bean.getCircleDiameter() : bean.getHeight();
+        int percent = sizePercent(size, baseSize(bean, false));
+        txZoom.setText(context.getString(bean.isCircular() ? R.string.control_diameter : R.string.control_size, percent));
+        bindSizeBar(sb_zoom_x, percent);
+        int w = sizePercent(bean.getWidth(), baseSize(bean, true));
+        int h = sizePercent(bean.getHeight(), baseSize(bean, false));
+        tx_zoom_w.setText(context.getString(R.string.control_width, w));
+        tx_zoom_h.setText(context.getString(R.string.control_height, h));
+        bindSizeBar(sb_zoom_w, w); bindSizeBar(sb_zoom_h, h);
+        bindingSize = false;
+        tx_margin.setText("坐标：" + bean.getmLeft() + "，" + bean.getmTop());
     }
 
     private void applySelectedOpacity() {
@@ -642,6 +683,8 @@ public class KeyBoardController {
         }
 
         if(element!=null){
+            bean.normalizeCircularBounds();
+            element.setControlLevel(bean.getStackLevel());
             element.setShapeType(bean.getShapeType());
             element.setTag(new TagInfo(i,isGamePadMode));
             element.setOnClick(tag -> {
@@ -656,7 +699,7 @@ public class KeyBoardController {
 
 
     private void updateItem(int index){
-        if(beanList.size()<index){
+        if(index < 0 || beanList.size() <= index){
             return;
         }
         lv_left_view.setVisibility(View.VISIBLE);
@@ -665,6 +708,10 @@ public class KeyBoardController {
             lastView=frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode));
         }
         currentIndex=index;
+        FrameLayout.LayoutParams selectedParams = (FrameLayout.LayoutParams)
+                frame_layout.findViewWithTag(new TagInfo(index, isGamePadMode)).getLayoutParams();
+        beanList.get(index).setmLeft(selectedParams.leftMargin);
+        beanList.get(index).setmTop(selectedParams.topMargin);
         bindOpacityEditor();
         if(lastView!=null){
             lastView.invalidate();
@@ -673,45 +720,15 @@ public class KeyBoardController {
         txDesc.setText("键值："+beanList.get(index).getDesc());
         tx_margin.setText("坐标："+beanList.get(index).getmLeft()+"，"+beanList.get(index).getmTop());
 
-        if(beanList.get(index).getBtnType()==1||beanList.get(index).getBtnType()==4||beanList.get(index).getBtnType()==2
-                ||beanList.get(index).getBtnType()==GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH){
-            cb_round.setChecked(beanList.get(index).getShapeType()==1);
-            cb_round.setVisibility(View.VISIBLE);
-
-            cb_switch_mode.setChecked(beanList.get(index).isSwitchMode());
-            if(beanList.get(index).getBtnType()==4){
-                //排除功能按钮
-                String codes=beanList.get(index).getCodes();
-                if(!TextUtils.isEmpty(codes)&&!codes.startsWith("29,52,37,52")){
-                    cb_switch_mode.setVisibility(View.VISIBLE);
-                }else{
-                    cb_switch_mode.setVisibility(View.GONE);
-                }
-            }else{
-                cb_switch_mode.setVisibility(View.GONE);
-            }
-            boolean separateSize = beanList.get(index).getShapeType() == 1
-                    || beanList.get(index).getBtnType() == 2
-                    || beanList.get(index).getBtnType() == GameMenuQuickBean.TYPE_TOUCH_PASSTHROUGH;
-            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(separateSize?View.VISIBLE:View.GONE);
-            txZoom.setVisibility(separateSize?View.GONE:View.VISIBLE);
-            sb_zoom_x.setVisibility(separateSize?View.GONE:View.VISIBLE);
-
-            txZoom.setText("缩放比例："+beanList.get(index).getZoom()+"%");
-            sb_zoom_x.setProgress(beanList.get(index).getZoom());
-            tx_zoom_w.setText("缩放宽度："+beanList.get(index).getZoomW()+"%");
-            tx_zoom_h.setText("缩放高度："+beanList.get(index).getZoomH()+"%");
-            sb_zoom_w.setProgress(beanList.get(index).getZoomW());
-            sb_zoom_h.setProgress(beanList.get(index).getZoomH());
-        }else{
-            cb_switch_mode.setVisibility(View.GONE);
-            cb_round.setVisibility(View.GONE);
-            lv_left_view.findViewById(R.id.lv_zoom_wh).setVisibility(View.GONE);
-            txZoom.setVisibility(View.VISIBLE);
-            sb_zoom_x.setVisibility(View.VISIBLE);
-            txZoom.setText("缩放比例："+beanList.get(index).getZoom()+"%");
-            sb_zoom_x.setProgress(beanList.get(index).getZoom());
-        }
+        bindSizeEditor();
+        sb_stack_level.setProgress(beanList.get(index).getStackLevel() - 1);
+        tx_stack_level.setText(context.getString(R.string.control_stack_level, beanList.get(index).getStackLevel()));
+        bindingSize = true;
+        cb_switch_mode.setChecked(beanList.get(index).isSwitchMode());
+        bindingSize = false;
+        String codes = beanList.get(index).getCodes();
+        cb_switch_mode.setVisibility(beanList.get(index).getBtnType() == 4 && !TextUtils.isEmpty(codes)
+                && !codes.startsWith("29,52,37,52") ? View.VISIBLE : View.GONE);
 
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode)).getLayoutParams();
         beanList.get(currentIndex).setmLeft(layoutParams.leftMargin);
@@ -761,7 +778,7 @@ public class KeyBoardController {
     Handler getHandler() {
         return handler;
     }
-    
+
     public TagInfo getCurrentIndex() {
         return new TagInfo(currentIndex,isGamePadMode);
     }

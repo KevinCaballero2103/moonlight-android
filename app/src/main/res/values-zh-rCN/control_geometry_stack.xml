@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_stack_label">层级</string>
+    <string name="control_stack_level">层级：%1$d</string>
+    <string name="control_stack_hint">数字越大越靠上。视角触控板可设为1，其他按钮设为2。</string>
+    <string name="control_diameter">直径：%1$d%%</string>
+    <string name="control_size">大小：%1$d%%</string>
+    <string name="control_width">宽度：%1$d%%</string>
+    <string name="control_height">高度：%1$d%%</string>
+    <string name="control_stack_down">降低层级</string>
+    <string name="control_stack_up">提高层级</string>
+</resources>

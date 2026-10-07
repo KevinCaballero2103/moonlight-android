@@ -388,6 +388,15 @@ public abstract class keyBoardVirtualControllerElement extends View implements T
 
     protected int shapeType;
 
+    private int controlLevel = 2;
+    @Override public int getControlLevel() { return controlLevel; }
+    public void setControlLevel(int level) {
+        controlLevel = Math.max(1, Math.min(99, level));
+        // Z orders both drawing and Android's native pointer hit testing.
+        setTranslationZ(controlLevel);
+    }
+    @Override public boolean containsControlPoint(float x, float y) { return containsTouchPoint(x, y); }
+
     public void setShapeType(int shapeType) {
         this.shapeType = shapeType;
     }

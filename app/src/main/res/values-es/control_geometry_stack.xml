@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_stack_label">Nivel</string>
+    <string name="control_stack_level">Nivel: %1$d</string>
+    <string name="control_stack_hint">Un número mayor queda encima. Usa nivel 1 para la cámara y nivel 2 para los botones.</string>
+    <string name="control_diameter">Diámetro: %1$d%%</string>
+    <string name="control_size">Tamaño: %1$d%%</string>
+    <string name="control_width">Ancho: %1$d%%</string>
+    <string name="control_height">Alto: %1$d%%</string>
+    <string name="control_stack_down">Bajar un nivel</string>
+    <string name="control_stack_up">Subir un nivel</string>
+</resources>
