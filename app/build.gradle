@@ -99,8 +99,8 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".debug.cameratap10"
-            resValue "string", "app_label", "Axixi · cámara y toque"
+            applicationIdSuffix ".debug.geometrylayer11"
+            resValue "string", "app_label", "Axixi · formas y niveles"
             resValue "string", "app_label_root", "DR·月光"
 
             minifyEnabled true

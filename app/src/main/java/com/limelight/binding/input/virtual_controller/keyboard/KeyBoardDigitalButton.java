@@ -70,6 +70,10 @@ public class KeyBoardDigitalButton extends keyBoardVirtualControllerElement {
     private int layer;
     private KeyBoardDigitalButton movingButton = null;
 
+    @Override protected boolean containsTouchPoint(float x, float y) {
+        return TouchControlShape.contains(shapeType, getWidth(), getHeight(), x, y);
+    }
+
     boolean inRange(float x, float y) {
         return (this.getX() < x && this.getX() + this.getWidth() > x) &&
                 (this.getY() < y && this.getY() + this.getHeight() > y);

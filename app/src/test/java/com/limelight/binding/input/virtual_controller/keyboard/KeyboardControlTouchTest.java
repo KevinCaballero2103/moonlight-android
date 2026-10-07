@@ -463,12 +463,15 @@ public class KeyboardControlTouchTest {
             assertTrue(shape.isChecked());
             shape.setChecked(false);
             assertEquals(0, bean.getShapeType());
-            assertEquals(View.VISIBLE, panel.findViewById(R.id.lv_zoom_wh).getVisibility());
+            assertEquals(View.GONE, panel.findViewById(R.id.lv_zoom_wh).getVisibility());
+            assertEquals(View.VISIBLE, panel.findViewById(R.id.sb_zoom_x).getVisibility());
+            assertEquals(17, bean.getWidth());
+            assertEquals(17, bean.getHeight());
+            assertEquals(Integer.valueOf(0), bean.getOpacity());
+            shape.setChecked(true);
             assertEquals(17, bean.getWidth());
             assertEquals(23, bean.getHeight());
-            assertEquals(Integer.valueOf(0), bean.getOpacity());
-            assertEquals(9, ((SeekBar) panel.findViewById(R.id.sb_zoom_w)).getProgress());
-            assertEquals(13, ((SeekBar) panel.findViewById(R.id.sb_zoom_h)).getProgress());
+            assertEquals(View.VISIBLE, panel.findViewById(R.id.lv_zoom_wh).getVisibility());
         }
     }
 }

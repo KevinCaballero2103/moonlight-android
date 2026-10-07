@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="control_stack_label">Layer</string>
+    <string name="control_stack_level">Layer: %1$d</string>
+    <string name="control_stack_hint">Higher numbers stay on top. Use layer 1 for a camera pad and layer 2 for buttons.</string>
+    <string name="control_diameter">Diameter: %1$d%%</string>
+    <string name="control_size">Size: %1$d%%</string>
+    <string name="control_width">Width: %1$d%%</string>
+    <string name="control_height">Height: %1$d%%</string>
+    <string name="control_stack_down">Lower layer</string>
+    <string name="control_stack_up">Raise layer</string>
+</resources>
