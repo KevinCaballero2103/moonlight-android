@@ -406,7 +406,7 @@
     <string name="axi_ui_mis_aplicaciones" formatted="false">"Mis aplicaciones"</string>
     <string name="axi_ui_modo_bloqueo" formatted="false">"Modo bloqueo"</string>
     <string name="axi_ui_modo_cambiar_tamano" formatted="false">"Modo cambiar tamaño"</string>
-    <string name="axi_ui_modo_combinacion_de_teclas" formatted="false">"Modo combinación de teclas"</string>
+    <string name="axi_ui_modo_combinacion_de_teclas" formatted="false">"Combinar teclas"</string>
     <string name="axi_ui_modo_de_pantalla" formatted="false">"Modo de pantalla"</string>
     <string name="axi_ui_modo_de_renderizado" formatted="false">"Modo de renderizado"</string>
     <string name="axi_ui_modo_desactivado" formatted="false">"Modo desactivado"</string>
