@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_get_res" formatted="false">"Recursos descargables"</string>
+    <string name="about_help" formatted="false">"Ayuda"</string>
+    <string name="about_update_tx" formatted="false">"Buscar actualizaciones"</string>
+    <string name="about_version_history" formatted="false">"Historial de versiones"</string>
+    <string name="accessibility_description_text" formatted="false">"Este servicio permite enviar al PC atajos de un teclado físico que algunos sistemas Android interceptan.\n\nAxixi Moonlight no lee el texto que escribes ni recopila contraseñas, tarjetas u otros datos personales.\n\nAutor: Axixi, en Bilibili."</string>
+    <string name="app_actions_detail">"ID de aplicación: %1$d"</string>
+    <string name="app_actions_details_format">"Nombre: %1$s\nCapacidad de vídeo: %2$s\nID de aplicación: %3$d"</string>
+    <string name="app_actions_details_title" formatted="false">"Detalles de la aplicación"</string>
+    <string name="app_actions_hdr_supported" formatted="false">"Compatible con HDR"</string>
+    <string name="app_actions_hdr_unknown" formatted="false">"Desconocido"</string>
+    <string name="app_actions_options_title" formatted="false">"Opciones"</string>
+    <string name="app_actions_subtitle" formatted="false">"Elige una acción para esta aplicación"</string>
+    <string name="app_status_hidden" formatted="false">"Oculta"</string>
+    <string name="app_status_running" formatted="false">"En ejecución"</string>
+    <string name="applist_menu_show_app" formatted="false">"Mostrar aplicación"</string>
+    <string name="applist_menu_start" formatted="false">"Iniciar transmisión"</string>
+    <string name="axi_add_computer_tips" formatted="false">"En el PC, activa GameStream o instala Sunshine y activa el streaming.\nEl puerto predeterminado es 47989; añádelo a la dirección solo si lo cambiaste.\nSe admiten IPv4 e IPv6, por ejemplo:\n192.168.1.123\n[fd00:6868:6868:0:fd6:e0ea:84d9:70ea]:47989"</string>
+    <string name="axi_question_1" formatted="false">"El mando funciona en la prueba, pero el juego no lo reconoce"</string>
+    <string name="axi_question_2" formatted="false">"Cómo llenar la pantalla y jugar con el monitor del PC apagado"</string>
+    <string name="axi_question_answer_1" formatted="false">"Comprueba los avisos de Sunshine y la instalación del controlador virtual ViGEmBus en el PC. Si el juego no admite el mando DS4, prueba Xbox 360 en la pestaña Entrada de Sunshine."</string>
+    <string name="axi_question_answer_2" formatted="false">"Usa una pantalla virtual o un adaptador HDMI con una resolución compatible con tu dispositivo. Sunshine suele capturar la pantalla principal; puedes cambiarla en el servidor. Con Win + P o los ajustes de Windows puedes seleccionar qué pantalla usar. Algunos servidores, como Apollo, incluyen pantalla virtual."</string>
+    <string name="axi_ui_abajo_centro" formatted="false">"Abajo, centro"</string>
+    <string name="axi_ui_abajo_derecha" formatted="false">"Abajo, derecha"</string>
+    <string name="axi_ui_abajo_izquierda" formatted="false">"Abajo, izquierda"</string>
+    <string name="axi_ui_abre_el_menu_del_juego_en_lugar_de_ejecutar_volver" formatted="false">"Abre el menú del juego en lugar de ejecutar Volver."</string>
+    <string name="axi_ui_abre_el_stream_directamente_al_tocar_una_aplicacion" formatted="false">"Abre el transmisión directamente al tocar una aplicación."</string>
+    <string name="axi_ui_abrir_ajustes" formatted="false">"Abrir ajustes"</string>
+    <string name="axi_ui_abrir_menu_del_juego_con_esc" formatted="false">"Abrir menú del juego con Esc"</string>
+    <string name="axi_ui_abrir_menu_ncon_esc" formatted="false">"Abrir menú\ncon Esc"</string>
+    <string name="axi_ui_abrir_portapapeles" formatted="false">"Abrir portapapeles"</string>
+    <string name="axi_ui_accion_al_tocar_rendimiento_compacto" formatted="false">"Acción al tocar rendimiento compacto"</string>
+    <string name="axi_ui_accion_del_boton_flotante" formatted="false">"Acción del botón flotante"</string>
+    <string name="axi_ui_acciones" formatted="false">"Acciones"</string>
+    <string name="axi_ui_acciones_rapidas" formatted="false">"Acciones rápidas"</string>
+    <string name="axi_ui_acerca_de" formatted="false">"Acerca de"</string>
+    <string name="axi_ui_acerca_del_proyecto" formatted="false">"Acerca del proyecto"</string>
+    <string name="axi_ui_activa_el_mando_virtual_antes_de_cambiar_el_modo" formatted="false">"Activa el mando virtual antes de cambiar el modo."</string>
+    <string name="axi_ui_activa_la_vibracion_del_telefono_al_tocar_controles_de_teclado_o" formatted="false">"Activa la vibración del teléfono al tocar controles de teclado o mando virtual."</string>
+    <string name="axi_ui_activa_los_controles_virtuales_antes_de_cambiar_el_modo" formatted="false">"Activa los controles virtuales antes de cambiar el modo."</string>
+    <string name="axi_ui_activa_por_defecto_el_modo_de_combinacion_de_teclas" formatted="false">"Activa por defecto el modo de combinación de teclas."</string>
+    <string name="axi_ui_activa_primero_el_mando_virtual" formatted="false">"Activa primero el mando virtual"</string>
+    <string name="axi_ui_activa_primero_los_controles_virtuales" formatted="false">"Activa primero los controles virtuales"</string>
+    <string name="axi_ui_activado" formatted="false">"Activado"</string>
+    <string name="axi_ui_activado_645432a5" formatted="false">", activado"</string>
+    <string name="axi_ui_activado_ce8153a3" formatted="false">"Activado"</string>
+    <string name="axi_ui_activalo_si_el_gatillo_izquierdo_hace_vibrar_el_agarre_derecho" formatted="false">"Actívalo si el gatillo izquierdo hace vibrar el agarre derecho."</string>
+    <string name="axi_ui_activalo_si_la_profundidad_aparece_invertida_o_el_orden_de_las_g" formatted="false">"Actívalo si la profundidad aparece invertida o el orden de las gafas no coincide."</string>
+    <string name="axi_ui_activalo_si_los_joy_con_no_responden_correctamente_requiere_andr" formatted="false">"Actívalo si los Joy-Con no responden correctamente. Requiere Android 10 o posterior."</string>
+    <string name="axi_ui_activar" formatted="false">"Activar"</string>
+    <string name="axi_ui_activar_al_pulsar_el_gatillo_izquierdo" formatted="false">"Activar al pulsar el gatillo izquierdo"</string>
+    <string name="axi_ui_activar_desactivar_hdr" formatted="false">"Activar/desactivar HDR"</string>
+    <string name="axi_ui_activar_desactivar_redireccion_de_vibracion" formatted="false">"Activar/desactivar redirección de vibración"</string>
+    <string name="axi_ui_activar_sensibilidad" formatted="false">"Activar sensibilidad"</string>
+    <string name="axi_ui_activar_vibracion_por_audio" formatted="false">"Activar vibración por audio"</string>
+    <string name="axi_ui_actualizar" formatted="false">"Actualizar"</string>
+    <string name="axi_ui_actualizar_configuracion" formatted="false">"Actualizar configuración"</string>
+    <string name="axi_ui_actualizar_lista_de_mandos" formatted="false">"Actualizar lista de mandos"</string>
+    <string name="axi_ui_administrador_de_tareas" formatted="false">"Administrador de tareas"</string>
+    <string name="axi_ui_admite_ancho_completo_de_38401080_1200_y_medio_ancho_de_19201080" formatted="false">"Admite ancho completo de 3840×1080/1200 y medio ancho de 1920×1080/1200."</string>
+    <string name="axi_ui_agradecimientos" formatted="false">"Agradecimientos"</string>
+    <string name="axi_ui_ajusta_la_altura_del_teclado_completo" formatted="false">"Ajusta la altura del teclado completo."</string>
+    <string name="axi_ui_ajusta_la_intensidad_de_vibracion_por_audio_del_telefono_o_del_m" formatted="false">"Ajusta la intensidad de vibración por audio del teléfono o del mando."</string>
+    <string name="axi_ui_ajusta_la_posicion_de_referencia_de_la_imagen_respecto_a_la_pant" formatted="false">"Ajusta la posición de referencia de la imagen respecto a la pantalla."</string>
+    <string name="axi_ui_ajustes_de_axixi" formatted="false">"Ajustes de Axixi"</string>
+    <string name="axi_ui_ajustes_de_windows" formatted="false">"Ajustes de Windows"</string>
+    <string name="axi_ui_al_desactivarla_se_utiliza_vibracion_normal_guarda_y_reconecta_p" formatted="false">"Al desactivarla se utiliza vibración normal. Guarda y reconecta para aplicar."</string>
+    <string name="axi_ui_algunas_opciones_requieren_reconectar_el_mando" formatted="false">"Algunas opciones requieren reconectar el mando."</string>
+    <string name="axi_ui_alt_enter_modo_ventana" formatted="false">"Alt + Enter (modo ventana)"</string>
+    <string name="axi_ui_alt_f4_cerrar_aplicacion" formatted="false">"Alt + F4 (cerrar aplicación)"</string>
+    <string name="axi_ui_altavoz_de_dualsense" formatted="false">"Altavoz de DualSense"</string>
+    <string name="axi_ui_altavoz_de_dualsense_3aa9a7b8" formatted="false">"Altavoz de DualSense"</string>
+    <string name="axi_ui_alto" formatted="false">"Alto"</string>
+    <string name="axi_ui_alto_100" formatted="false">"Alto: 100 %"</string>
+    <string name="axi_ui_alto_e1145d25" formatted="false">"Alto: "</string>
+    <string name="axi_ui_altura" formatted="false">"Altura: "</string>
+    <string name="axi_ui_altura_200" formatted="false">"Altura: 200"</string>
+    <string name="axi_ui_altura_del_teclado_completo" formatted="false">"Altura del teclado completo"</string>
+    <string name="axi_ui_altura_del_teclado_completo_209b651c" formatted="false">"Altura del teclado completo"</string>
+    <string name="axi_ui_anade_resolucion_hdr_decodificador_y_otros_datos" formatted="false">"Añade resolución, HDR, decodificador y otros datos."</string>
+    <string name="axi_ui_anadir" formatted="false">"Añadir"</string>
+    <string name="axi_ui_anadir_control" formatted="false">"Añadir control"</string>
+    <string name="axi_ui_anadir_puerto_de_razer" formatted="false">"Añadir puerto de Razer"</string>
+    <string name="axi_ui_ancho" formatted="false">"Ancho: "</string>
+    <string name="axi_ui_ancho_100" formatted="false">"Ancho: 100 %"</string>
+    <string name="axi_ui_ancho_de_banda" formatted="false">"Ancho de banda: "</string>
+    <string name="axi_ui_apagar_pc" formatted="false">"Apagar PC"</string>
+    <string name="axi_ui_aplica_desenfoque_al_fondo_personalizado_requiere_android_12_o_p" formatted="false">"Aplica desenfoque al fondo personalizado. Requiere Android 12 o posterior."</string>
+    <string name="axi_ui_aplicar" formatted="false">"Aplicar"</string>
+    <string name="axi_ui_aplicar_configuracion" formatted="false">"Aplicar configuración"</string>
+    <string name="axi_ui_aplicar_globalmente" formatted="false">"Aplicar globalmente"</string>
+    <string name="axi_ui_arriba_centro" formatted="false">"Arriba, centro"</string>
+    <string name="axi_ui_arriba_derecha" formatted="false">"Arriba, derecha"</string>
+    <string name="axi_ui_arriba_izquierda" formatted="false">"Arriba, izquierda"</string>
+    <string name="axi_ui_arriba_izquierda_abajo_derecha" formatted="false">"Arriba-izquierda-abajo-derecha"</string>
+    <string name="axi_ui_atajo_del_mando_para_menu_y_raton" formatted="false">"Atajo del mando para menú y ratón"</string>
+    <string name="axi_ui_atajos" formatted="false">"Atajos"</string>
+    <string name="axi_ui_atajos_manten_pulsado_uno_en_cursiva_para_eliminarlo" formatted="false">"Atajos (mantén pulsado uno en cursiva para eliminarlo)"</string>
+    <string name="axi_ui_audio_recibido" formatted="false">"Audio recibido"</string>
+    <string name="axi_ui_aumenta_el_brillo_general_en_algunos_dispositivos_puede_reducir" formatted="false">"Aumenta el brillo general. En algunos dispositivos puede reducir el contraste de las zonas brillantes."</string>
+    <string name="axi_ui_aumenta_el_brillo_hdr_en_dispositivos_compatibles" formatted="false">"Aumenta el brillo HDR en dispositivos compatibles."</string>
+    <string name="axi_ui_automatico" formatted="false">"Automático"</string>
+    <string name="axi_ui_aviso" formatted="false">"Aviso"</string>
+    <string name="axi_ui_ayuda_de_moonlight" formatted="false">"Ayuda de Moonlight"</string>
+    <string name="axi_ui_baidu_drive" formatted="false">"Baidu Drive"</string>
+    <string name="axi_ui_bajo" formatted="false">"Bajo"</string>
+    <string name="axi_ui_bitrate" formatted="false">"Bitrate"</string>
+    <string name="axi_ui_bitrate_de_audio" formatted="false">"Bitrate de audio"</string>
+    <string name="axi_ui_bitrate_de_video" formatted="false">"Bitrate de vídeo"</string>
+    <string name="axi_ui_bitrate_manual_mbps" formatted="false">"Bitrate manual (Mbps)"</string>
+    <string name="axi_ui_bitrate_manual_sustituye_al_deslizador" formatted="false">"Bitrate manual (sustituye al deslizador)"</string>
+    <string name="axi_ui_bitrate_objetivo" formatted="false">"Bitrate objetivo"</string>
+    <string name="axi_ui_blanco" formatted="false">"Blanco"</string>
+    <string name="axi_ui_boton_a" formatted="false">"Botón A"</string>
+    <string name="axi_ui_boton_b" formatted="false">"Botón B"</string>
+    <string name="axi_ui_boton_del_panel_tactil_ds4" formatted="false">"Botón del panel táctil DS4"</string>
+    <string name="axi_ui_boton_flotante" formatted="false">"Botón flotante"</string>
+    <string name="axi_ui_boton_menu" formatted="false">"Botón Menu"</string>
+    <string name="axi_ui_boton_share" formatted="false">"Botón Share"</string>
+    <string name="axi_ui_boton_superior_derecho" formatted="false">"Botón superior derecho"</string>
+    <string name="axi_ui_boton_superior_izquierdo" formatted="false">"Botón superior izquierdo"</string>
+    <string name="axi_ui_boton_view" formatted="false">"Botón View"</string>
+    <string name="axi_ui_boton_x" formatted="false">"Botón X"</string>
+    <string name="axi_ui_boton_xbox" formatted="false">"Botón Xbox"</string>
+    <string name="axi_ui_boton_y" formatted="false">"Botón Y"</string>
+    <string name="axi_ui_botones_del_mando" formatted="false">"Botones del mando"</string>
+    <string name="axi_ui_brillo_alto_en_hdr" formatted="false">"Brillo alto en HDR"</string>
+    <string name="axi_ui_brillo_maximo_en_hdr" formatted="false">"Brillo máximo en HDR"</string>
+    <string name="axi_ui_brillo_maximo_hdr_del_servidor" formatted="false">"Brillo máximo HDR del servidor"</string>
+    <string name="axi_ui_brillo_maximo_hdr_del_sistema" formatted="false">"Brillo máximo HDR del sistema"</string>
+    <string name="axi_ui_buscar_actualizaciones" formatted="false">"Buscar actualizaciones"</string>
+    <string name="axi_ui_cadena_de_renderizado" formatted="false">"Cadena de renderizado"</string>
+    <string name="axi_ui_cambiar_cursor_local_requiere_raton_fisico" formatted="false">"Cambiar cursor local (requiere ratón físico)"</string>
+    <string name="axi_ui_cambiar_modo" formatted="false">"Cambiar modo"</string>
+    <string name="axi_ui_cambiar_orientacion" formatted="false">"Cambiar orientación"</string>
+    <string name="axi_ui_cambiar_tamano" formatted="false">"Cambiar tamaño"</string>
+    <string name="axi_ui_cambios_guardados" formatted="false">"Cambios guardados"</string>
+    <string name="axi_ui_canales_y_destino_del_audio" formatted="false">"Canales y destino del audio"</string>
+    <string name="axi_ui_centrar_automaticamente" formatted="false">"Centrar automáticamente"</string>
+    <string name="axi_ui_centro" formatted="false">"Centro"</string>
+    <string name="axi_ui_centro_de_movilidad" formatted="false">"Centro de movilidad"</string>
+    <string name="axi_ui_cerca" formatted="false">"Cerca"</string>
+    <string name="axi_ui_cerrar_sesion" formatted="false">"Cerrar sesión"</string>
+    <string name="axi_ui_cinco_dedos" formatted="false">"Cinco dedos"</string>
+    <string name="axi_ui_clic_central" formatted="false">"Clic central"</string>
+    <string name="axi_ui_clic_derecho" formatted="false">"Clic derecho"</string>
+    <string name="axi_ui_clic_izquierdo" formatted="false">"Clic izquierdo"</string>
+    <string name="axi_ui_codec" formatted="false">"Códec"</string>
+    <string name="axi_ui_colaboradores" formatted="false">"Colaboradores"</string>
+    <string name="axi_ui_color_de_los_controles" formatted="false">"Color de los controles"</string>
+    <string name="axi_ui_combinacion_de_teclas" formatted="false">"Combinación de teclas"</string>
+    <string name="axi_ui_combinaciones_en_el_teclado_completo" formatted="false">"Combinaciones en el teclado completo"</string>
+    <string name="axi_ui_compacto" formatted="false">"Compacto"</string>
+    <string name="axi_ui_compatibilidad_con_joy_con_de_switch" formatted="false">"Compatibilidad con Joy-Con de Switch"</string>
+    <string name="axi_ui_compatibilidad_con_nbotones_de_switch" formatted="false">"Compatibilidad con\nbotones de Switch"</string>
+    <string name="axi_ui_compatibilidad_y_rendimiento" formatted="false">"Compatibilidad y rendimiento"</string>
+    <string name="axi_ui_compatible_con_snapdragon_8_gen_1_o_superiores_y_mediatek_9300_o" formatted="false">"Compatible con Snapdragon 8 Gen 1 o superiores y MediaTek 9300 o anteriores."</string>
+    <string name="axi_ui_compatible_con_sunshine_axixi_y_razer_apollo_admite_el_modo_exte" formatted="false">"Compatible con Sunshine · Axixi y Razer; Apollo admite el modo extendido."</string>
+    <string name="axi_ui_completo" formatted="false">"Completo"</string>
+    <string name="axi_ui_comportamiento_de_la_app" formatted="false">"Comportamiento de la app"</string>
+    <string name="axi_ui_comprueba_la_configuracion" formatted="false">"Comprueba la configuración"</string>
+    <string name="axi_ui_con_el_servicio_activo_muestra_los_codigos_de_las_teclas_fisicas" formatted="false">"Con el servicio activo, muestra los códigos de las teclas físicas para crear tu configuración."</string>
+    <string name="axi_ui_conectado" formatted="false">"Conectado"</string>
+    <string name="axi_ui_conectate_a_tu_pc_desde_cualquier_lugar" formatted="false">"Conéctate a tu PC desde cualquier lugar"</string>
+    <string name="axi_ui_conexion_asignacion_giroscopio_y_vibracion" formatted="false">"Conexión, asignación, giroscopio y vibración"</string>
+    <string name="axi_ui_conexion_y_asignacion" formatted="false">"Conexión y asignación"</string>
+    <string name="axi_ui_configuracion_aplicada" formatted="false">"Configuración aplicada"</string>
+    <string name="axi_ui_configurar_atajo" formatted="false">"Configurar atajo"</string>
+    <string name="axi_ui_confirmar" formatted="false">"Confirmar"</string>
+    <string name="axi_ui_confirmar_eliminacion" formatted="false">"Confirmar eliminación"</string>
+    <string name="axi_ui_conserva_la_vibracion_original_del_juego_al_enviar_vibracion_por" formatted="false">"Conserva la vibración original del juego al enviar vibración por audio al mando. Desactivado por defecto."</string>
+    <string name="axi_ui_conservar_imagen_nal_desactivar_zoom" formatted="false">"Conservar imagen\nal desactivar zoom"</string>
+    <string name="axi_ui_conservar_la_vibracion_del_juego" formatted="false">"Conservar la vibración del juego"</string>
+    <string name="axi_ui_conservar_vibracion_normal_del_mando" formatted="false">"Conservar vibración normal del mando"</string>
+    <string name="axi_ui_conservar_zoom_de_imagen" formatted="false">"Conservar zoom de imagen"</string>
+    <string name="axi_ui_consulta_las_novedades_antes_de_elegir_la_descarga" formatted="false">"Consulta las novedades antes de elegir la descarga."</string>
+    <string name="axi_ui_consultando" formatted="false">"Consultando…"</string>
+    <string name="axi_ui_consultando_version" formatted="false">"Consultando versión…"</string>
+    <string name="axi_ui_control_seleccionado" formatted="false">"Control seleccionado: "</string>
+    <string name="axi_ui_control_seleccionado_xx" formatted="false">"Control seleccionado: xx"</string>
+    <string name="axi_ui_controla_la_disparidad_maxima_entre_los_ojos_empieza_con_estanda" formatted="false">"Controla la disparidad máxima entre los ojos. Empieza con Estándar."</string>
+    <string name="axi_ui_controles_en_pantalla" formatted="false">"Controles en pantalla"</string>
+    <string name="axi_ui_controles_en_pantalla_y_teclado_completo" formatted="false">"Controles en pantalla y teclado completo"</string>
+    <string name="axi_ui_controles_virtuales" formatted="false">"Controles virtuales"</string>
+    <string name="axi_ui_convergencia" formatted="false">"Convergencia"</string>
+    <string name="axi_ui_convergencia_3d" formatted="false">"Convergencia 3D"</string>
+    <string name="axi_ui_conversion_a_sdr" formatted="false">"Conversión a SDR"</string>
+    <string name="axi_ui_conversion_a_sdr_c701e5b5" formatted="false">"Conversión a SDR"</string>
+    <string name="axi_ui_convierte_el_audio_del_stream_en_vibracion_especialmente_explosi" formatted="false">"Convierte el audio del transmisión en vibración, especialmente explosiones, impactos y sonidos graves"</string>
+    <string name="axi_ui_copias_de_seguridad" formatted="false">"Copias de seguridad"</string>
+    <string name="axi_ui_cruceta" formatted="false">"Cruceta"</string>
+    <string name="axi_ui_cruceta_abajo" formatted="false">"Cruceta abajo"</string>
+    <string name="axi_ui_cruceta_arriba" formatted="false">"Cruceta arriba"</string>
+    <string name="axi_ui_cruceta_derecha" formatted="false">"Cruceta derecha"</string>
+    <string name="axi_ui_cruceta_izquierda" formatted="false">"Cruceta izquierda"</string>
+    <string name="axi_ui_ctrl_shift_esc_administrador_de_tareas" formatted="false">"Ctrl + Shift + Esc (administrador de tareas)"</string>
+    <string name="axi_ui_cuatro_dedos" formatted="false">"Cuatro dedos"</string>
+    <string name="axi_ui_datos_adicionales_de_rendimiento" formatted="false">"Datos adicionales de rendimiento"</string>
+    <string name="axi_ui_decodificacion_de_baja_latencia_beta" formatted="false">"Decodificación de baja latencia (beta)"</string>
+    <string name="axi_ui_decodificacion_de_baja_latencia_beta_684bc21e" formatted="false">"Decodificación de baja latencia (beta)"</string>
+    <string name="axi_ui_decodificador" formatted="false">"Decodificador"</string>
+    <string name="axi_ui_depuracion_de_entrada" formatted="false">"Depuración de entrada"</string>
+    <string name="axi_ui_desactivado" formatted="false">"Desactivado"</string>
+    <string name="axi_ui_desactivado_5d0ae622" formatted="false">"Desactivado"</string>
+    <string name="axi_ui_desactivado_96e5815c" formatted="false">", desactivado"</string>
+    <string name="axi_ui_desactivado_bf2bec4a" formatted="false">"Desactivado"</string>
+    <string name="axi_ui_desactivar" formatted="false">"Desactivar"</string>
+    <string name="axi_ui_desactivar_atajos_incorporados" formatted="false">"Desactivar atajos incorporados"</string>
+    <string name="axi_ui_desactivar_modo_juego_de_android" formatted="false">"Desactivar modo juego de Android"</string>
+    <string name="axi_ui_desactivar_pulsacion_central_de_los_sticks" formatted="false">"Desactivar pulsación central de los sticks"</string>
+    <string name="axi_ui_desactivar_raton_y_tactil" formatted="false">"Desactivar ratón y táctil"</string>
+    <string name="axi_ui_desactivarlo_no_afecta_a_la_respuesta_haptica_nativa" formatted="false">"Desactivarlo no afecta a la respuesta háptica nativa"</string>
+    <string name="axi_ui_descargar" formatted="false">"Descargar"</string>
+    <string name="axi_ui_desenfocar_fondo" formatted="false">"Desenfocar fondo"</string>
+    <string name="axi_ui_despues_de_aplicar_vuelve_a_abrir_el_stream_para_utilizar_los_ca" formatted="false">"Después de aplicar, vuelve a abrir el transmisión para utilizar los cambios."</string>
+    <string name="axi_ui_despues_de_cambiar_la_resolucion_sal_de_ajustes_y_vuelve_a_abrir" formatted="false">"Después de cambiar la resolución, sal de Ajustes y vuelve a abrirlos."</string>
+    <string name="axi_ui_destino_de_la_vibracion_por_audio" formatted="false">"Destino de la vibración por audio"</string>
+    <string name="axi_ui_destino_intensidad_y_filtro_de_voz" formatted="false">"Destino, intensidad y filtro de voz"</string>
+    <string name="axi_ui_detener_prueba" formatted="false">"Detener prueba"</string>
+    <string name="axi_ui_detener_vibracion" formatted="false">"Detener vibración"</string>
+    <string name="axi_ui_direccion_de_conexion" formatted="false">"Dirección de conexión"</string>
+    <string name="axi_ui_disponible_desde_android_10" formatted="false">"Disponible desde Android 10"</string>
+    <string name="axi_ui_distancia" formatted="false">"Distancia: "</string>
+    <string name="axi_ui_distancia_5" formatted="false">"Distancia: 5"</string>
+    <string name="axi_ui_distancia_de_desplazamiento_de_la_rueda_virtual" formatted="false">"Distancia de desplazamiento de la rueda virtual"</string>
+    <string name="axi_ui_documentacion_oficial" formatted="false">"Documentación oficial"</string>
+    <string name="axi_ui_duracion_de_sesion" formatted="false">"Duración de sesión"</string>
+    <string name="axi_ui_eje_x" formatted="false">"Eje X: "</string>
+    <string name="axi_ui_eje_x_100" formatted="false">"Eje X: 100 %"</string>
+    <string name="axi_ui_eje_y" formatted="false">"Eje Y: "</string>
+    <string name="axi_ui_eje_y_100" formatted="false">"Eje Y: 100 %"</string>
+    <string name="axi_ui_el_registro_esta_vacio" formatted="false">"El registro está vacío"</string>
+    <string name="axi_ui_el_servidor_o_la_gpu_pueden_ignorar_la_seleccion_de_codec_si_no" formatted="false">"El servidor o la GPU pueden ignorar la selección de códec si no la admiten."</string>
+    <string name="axi_ui_elegir_descarga" formatted="false">"Elegir descarga"</string>
+    <string name="axi_ui_elegir_fondo" formatted="false">"Elegir fondo"</string>
+    <string name="axi_ui_elige_una_tasa_compatible_un_valor_incompatible_puede_dejar_la_p" formatted="false">"Elige una tasa compatible; un valor incompatible puede dejar la pantalla en negro."</string>
+    <string name="axi_ui_eliminar" formatted="false">"Eliminar"</string>
+    <string name="axi_ui_eliminar_este_control" formatted="false">"¿Eliminar este control?"</string>
+    <string name="axi_ui_eliminar_este_registro_de_streaming" formatted="false">"¿Eliminar este registro de streaming?"</string>
+    <string name="axi_ui_eliminar_la_resolucion" formatted="false">"¿Eliminar la resolución "</string>
+    <string name="axi_ui_eliminar_registro" formatted="false">"Eliminar registro"</string>
+    <string name="axi_ui_en_algunos_sistemas_como_coloros_es_necesario_para_ajustar_resol" formatted="false">"En algunos sistemas, como ColorOS, es necesario para ajustar resolución y frecuencia correctamente."</string>
+    <string name="axi_ui_en_espera" formatted="false">"En espera"</string>
+    <string name="axi_ui_en_este_dispositivo_y_en_el_pc" formatted="false">"En este dispositivo y en el PC"</string>
+    <string name="axi_ui_encuadre_de_imagen" formatted="false">"Encuadre de imagen"</string>
+    <string name="axi_ui_encuentra_al_desarrollador" formatted="false">"Encuentra al desarrollador"</string>
+    <string name="axi_ui_enter" formatted="false">"Enter"</string>
+    <string name="axi_ui_envia_audio_al_altavoz_de_mandos_dualsense_compatibles" formatted="false">"Envía audio al altavoz de mandos DualSense compatibles."</string>
+    <string name="axi_ui_envia_la_vibracion_al_telefono_o_a_un_mando_conectado" formatted="false">"Envía la vibración al teléfono o a un mando conectado."</string>
+    <string name="axi_ui_enviar_portapapeles" formatted="false">"Enviar portapapeles"</string>
+    <string name="axi_ui_equipos_y_datos_de_emparejamiento" formatted="false">"Equipos y datos de emparejamiento"</string>
+    <string name="axi_ui_esc_salir_menu" formatted="false">"Esc (salir/menú)"</string>
+    <string name="axi_ui_escala" formatted="false">"Escala: "</string>
+    <string name="axi_ui_escala_100" formatted="false">"Escala: 100 %"</string>
+    <string name="axi_ui_escala_100_561ff7dc" formatted="false">"Escala: 100 %"</string>
+    <string name="axi_ui_escala_7ef4a593" formatted="false">"Escala: "</string>
+    <string name="axi_ui_escala_de_rendimiento" formatted="false">"Escala de rendimiento: "</string>
+    <string name="axi_ui_escala_de_rendimiento_100" formatted="false">"Escala de rendimiento: 100 %"</string>
+    <string name="axi_ui_escala_del_mando_virtual" formatted="false">"Escala del mando virtual"</string>
+    <string name="axi_ui_escribe_el_texto_que_prefieras" formatted="false">"Escribe el texto que prefieras"</string>
+    <string name="axi_ui_escribe_el_texto_que_prefieras_d84f0209" formatted="false">"Escribe el texto que prefieras"</string>
+    <string name="axi_ui_escribe_un_nombre_corto" formatted="false">"Escribe un nombre corto"</string>
+    <string name="axi_ui_escritorio" formatted="false">"Escritorio"</string>
+    <string name="axi_ui_espacio" formatted="false">"Espacio"</string>
+    <string name="axi_ui_esperando_senal" formatted="false">"Esperando señal"</string>
+    <string name="axi_ui_esperando_senal_telefono" formatted="false">"Esperando señal / Teléfono"</string>
+    <string name="axi_ui_esta_lista_esta_dedicada_a_quienes_apoyan_axixi_y_hacen_posible" formatted="false">"Esta lista está dedicada a quienes apoyan Axixi y hacen posible que el proyecto siga avanzando."</string>
+    <string name="axi_ui_estado" formatted="false">"Estado"</string>
+    <string name="axi_ui_estandar" formatted="false">"Estándar"</string>
+    <string name="axi_ui_estas_opciones_requieren_volver_a_abrir_el_stream" formatted="false">"Estas opciones requieren volver a abrir el transmisión."</string>
+    <string name="axi_ui_este_dispositivo" formatted="false">"Este dispositivo"</string>
+    <string name="axi_ui_este_equipo" formatted="false">"Este equipo"</string>
+    <string name="axi_ui_estos_ajustes_se_guardan_en_la_configuracion" formatted="false">"Estos ajustes se guardan en la configuración"</string>
+    <string name="axi_ui_estos_ajustes_se_guardan_y_se_conservan_entre_sesiones" formatted="false">"Estos ajustes se guardan y se conservan entre sesiones."</string>
+    <string name="axi_ui_experimental_compatible_con_snapdragon_8_gen_1_o_superiores_y_me" formatted="false">"Experimental. Compatible con Snapdragon 8 Gen 1 o superiores y MediaTek 9300 o anteriores."</string>
+    <string name="axi_ui_exporta_el_layout_seleccionado_en_orientacion_horizontal" formatted="false">"Exporta el diseño seleccionado en orientación horizontal."</string>
+    <string name="axi_ui_exportar" formatted="false">"Exportar"</string>
+    <string name="axi_ui_exportar_layout_de_controles_virtuales" formatted="false">"Exportar diseño de controles virtuales"</string>
+    <string name="axi_ui_exportar_layout_del_mando_virtual" formatted="false">"Exportar diseño del mando virtual"</string>
+    <string name="axi_ui_exportar_o_importar_equipos_emparejados" formatted="false">"Exportar o importar equipos emparejados"</string>
+    <string name="axi_ui_f11_pantalla_completa" formatted="false">"F11 (pantalla completa)"</string>
+    <string name="axi_ui_filtro" formatted="false">" / Filtro "</string>
+    <string name="axi_ui_filtro_de_voz" formatted="false">"Filtro de voz"</string>
+    <string name="axi_ui_filtro_de_voz_314b0465" formatted="false">"Filtro de voz"</string>
+    <string name="axi_ui_flotante_recorrido_completo" formatted="false">"Flotante, recorrido completo"</string>
+    <string name="axi_ui_flotante_recorrido_completo_y_visible_al_tocar" formatted="false">"Flotante, recorrido completo y visible al tocar"</string>
+    <string name="axi_ui_flotante_visible_al_tocar" formatted="false">"Flotante, visible al tocar"</string>
+    <string name="axi_ui_fondo_personalizado" formatted="false">"Fondo personalizado"</string>
+    <string name="axi_ui_formato_de_importacion_incorrecto_comprueba_el_archivo" formatted="false">"Formato de importación incorrecto. Comprueba el archivo."</string>
+    <string name="axi_ui_forzar_modo_de_pantalla" formatted="false">"Forzar modo de pantalla"</string>
+    <string name="axi_ui_forzar_vibracion_del_dispositivo" formatted="false">"Forzar vibración del dispositivo"</string>
+    <string name="axi_ui_forzar_vibracion_ndel_dispositivo" formatted="false">"Forzar vibración\ndel dispositivo"</string>
+    <string name="axi_ui_fps" formatted="false">"FPS"</string>
+    <string name="axi_ui_fps_actuales" formatted="false">"FPS actuales"</string>
+    <string name="axi_ui_fps_objetivo" formatted="false">"FPS objetivo"</string>
+    <string name="axi_ui_frecuencia_de_vibracion" formatted="false">"Frecuencia de vibración"</string>
+    <string name="axi_ui_fuerte" formatted="false">"Fuerte"</string>
+    <string name="axi_ui_funciones" formatted="false">"Funciones"</string>
+    <string name="axi_ui_funciones_de_axixi" formatted="false">"Funciones de Axixi"</string>
+    <string name="axi_ui_funciones_y_acciones" formatted="false">"Funciones y acciones"</string>
+    <string name="axi_ui_gatillo" formatted="false">"Gatillo"</string>
+    <string name="axi_ui_gatillo_de_rifle_automatico" formatted="false">"Gatillo de rifle automático"</string>
+    <string name="axi_ui_gatillo_derecho" formatted="false">"Gatillo derecho"</string>
+    <string name="axi_ui_gatillo_izquierdo" formatted="false">"Gatillo izquierdo"</string>
+    <string name="axi_ui_gatillos_adaptativos_de_dualsense" formatted="false">"Gatillos adaptativos de DualSense"</string>
+    <string name="axi_ui_genera_un_registro_por_sesion_con_conexion_video_red_mandos_e_in" formatted="false">"Genera un registro por sesión con conexión, vídeo, red, mandos e interrupciones. Desactivado por defecto."</string>
+    <string name="axi_ui_general" formatted="false">"General"</string>
+    <string name="axi_ui_gesto_para_abrir_el_teclado_de_android" formatted="false">"Gesto para abrir el teclado de Android"</string>
+    <string name="axi_ui_girar_pantalla" formatted="false">"Girar pantalla"</string>
+    <string name="axi_ui_giroscopio_del_dispositivo_para_mando_virtual" formatted="false">"Giroscopio del dispositivo para mando virtual"</string>
+    <string name="axi_ui_gles_directo" formatted="false">"GLES directo"</string>
+    <string name="axi_ui_gles_permite_fsr_y_procesamiento_de_imagen" formatted="false">"GLES permite FSR y procesamiento de imagen."</string>
+    <string name="axi_ui_gles_permite_fsr_y_procesamiento_de_imagen_5d8d75eb" formatted="false">"GLES permite FSR y procesamiento de imagen."</string>
+    <string name="axi_ui_gracias_a_quienes_apoyan_y_acompanan_el_proyecto" formatted="false">"Gracias a quienes apoyan y acompañan el proyecto"</string>
+    <string name="axi_ui_gracias_por_acompanarnos" formatted="false">"Gracias por acompañarnos"</string>
+    <string name="axi_ui_gris" formatted="false">"Gris"</string>
+    <string name="axi_ui_guardar_layout" formatted="false">"Guardar diseño"</string>
+    <string name="axi_ui_hdr_nativo" formatted="false">"HDR nativo"</string>
+    <string name="axi_ui_hdr_nativo_ed695470" formatted="false">"HDR nativo"</string>
+    <string name="axi_ui_horizontal" formatted="false">"Horizontal"</string>
+    <string name="axi_ui_idioma_inicio_y_comportamiento_de_la_app" formatted="false">"Idioma, inicio y comportamiento de la app"</string>
+    <string name="axi_ui_importa_un_archivo_para_reemplazar_el_layout_seleccionado_en_ori" formatted="false">"Importa un archivo para reemplazar el diseño seleccionado en orientación horizontal."</string>
+    <string name="axi_ui_importar_configuracion_de_accesibilidad" formatted="false">"Importar configuración de accesibilidad"</string>
+    <string name="axi_ui_importar_layout_de_controles_virtuales" formatted="false">"Importar diseño de controles virtuales"</string>
+    <string name="axi_ui_importar_layout_del_mando_virtual" formatted="false">"Importar diseño del mando virtual"</string>
+    <string name="axi_ui_incluye_optimizaciones_para_dualsense_originales_conectados_por" formatted="false">"Incluye optimizaciones para DualSense originales conectados por cable con el controlador USB."</string>
+    <string name="axi_ui_informa_de_la_bateria_cuando_sea_posible_desactivalo_si_el_tacti" formatted="false">"Informa de la batería cuando sea posible. Desactívalo si el táctil, panel táctil, lápiz o ratón sufren interrupciones ocasionales."</string>
+    <string name="axi_ui_informacion" formatted="false">"Información"</string>
+    <string name="axi_ui_informacion_de_rendimiento" formatted="false">"Información de rendimiento"</string>
+    <string name="axi_ui_informacion_de_version" formatted="false">"Información de versión"</string>
+    <string name="axi_ui_informacion_de_video" formatted="false">"Información de vídeo"</string>
+    <string name="axi_ui_informacion_del_dispositivo_android" formatted="false">"Información del dispositivo Android"</string>
+    <string name="axi_ui_informacion_en_pantalla" formatted="false">"Información en pantalla"</string>
+    <string name="axi_ui_informar_bateria_del_mando" formatted="false">"Informar batería del mando"</string>
+    <string name="axi_ui_informar_bateria_ndel_mando" formatted="false">"Informar batería\ndel mando"</string>
+    <string name="axi_ui_intensidad" formatted="false">"Intensidad"</string>
+    <string name="axi_ui_intensidad_de_vibracion" formatted="false">"Intensidad de vibración"</string>
+    <string name="axi_ui_intensidad_de_vibracion_por_audio" formatted="false">"Intensidad de vibración por audio"</string>
+    <string name="axi_ui_intensidad_de_vibracion_por_audio_100" formatted="false">"Intensidad de vibración por audio: 100 %"</string>
+    <string name="axi_ui_intensidad_de_vibracion_por_audio_fb80d702" formatted="false">"Intensidad de vibración por audio: "</string>
+    <string name="axi_ui_intercambiar" formatted="false">"Intercambiar"</string>
+    <string name="axi_ui_intercambiar_ancho_y_alto" formatted="false">"Intercambiar ancho y alto"</string>
+    <string name="axi_ui_intercambiar_ojos" formatted="false">"Intercambiar ojos"</string>
+    <string name="axi_ui_interfaz" formatted="false">"Interfaz"</string>
+    <string name="axi_ui_interfaz_y_general" formatted="false">"Interfaz y general"</string>
+    <string name="axi_ui_introduce_ancho_y_alto_para_guardar_y_usar" formatted="false">"Introduce ancho y alto para guardar y usar"</string>
+    <string name="axi_ui_introduce_el_alto" formatted="false">"Introduce el alto"</string>
+    <string name="axi_ui_introduce_el_alto_por_ejemplo_1080" formatted="false">"Introduce el alto, por ejemplo 1080"</string>
+    <string name="axi_ui_introduce_el_ancho" formatted="false">"Introduce el ancho"</string>
+    <string name="axi_ui_introduce_el_ancho_por_ejemplo_1920" formatted="false">"Introduce el ancho, por ejemplo 1920"</string>
+    <string name="axi_ui_introduce_el_bitrate" formatted="false">"Introduce el bitrate"</string>
+    <string name="axi_ui_introduce_el_bitrate_en_mbps" formatted="false">"Introduce el bitrate en Mbps"</string>
+    <string name="axi_ui_introduce_el_bitrate_maximo_99999" formatted="false">"Introduce el bitrate, máximo 99999"</string>
+    <string name="axi_ui_introduce_el_bitrate_si_prefieres_no_usar_el_deslizador_los_valo" formatted="false">"Introduce el bitrate si prefieres no usar el deslizador. Los valores superiores a su máximo se aplican al transmisión aunque el deslizador no los muestre."</string>
+    <string name="axi_ui_introduce_los_fps" formatted="false">"Introduce los FPS"</string>
+    <string name="axi_ui_introduce_los_fps_c362d2cc" formatted="false">"Introduce los FPS"</string>
+    <string name="axi_ui_introduce_un_nombre" formatted="false">"Introduce un nombre"</string>
+    <string name="axi_ui_introduce_un_numero_los_decimales_se_redondean_a_pasos_de_0_5" formatted="false">"Introduce un número; los decimales se redondean a pasos de 0,5."</string>
+    <string name="axi_ui_invertir_ejes_x_y" formatted="false">"Invertir ejes X/Y"</string>
+    <string name="axi_ui_invertir_vibracion_de_los_agarres" formatted="false">"Invertir vibración de los agarres"</string>
+    <string name="axi_ui_invertir_vibracion_nde_los_agarres" formatted="false">"Invertir vibración\nde los agarres"</string>
+    <string name="axi_ui_joystick" formatted="false">"Joystick"</string>
+    <string name="axi_ui_joystick_flotante" formatted="false">"Joystick flotante"</string>
+    <string name="axi_ui_la_conversion_a_sdr_ofrece_mayor_compatibilidad_hdr_nativo_es_ex" formatted="false">"La conversión a SDR ofrece mayor compatibilidad. HDR nativo es experimental y requiere BT2020 PQ."</string>
+    <string name="axi_ui_latencia_de_decodificacion" formatted="false">"Latencia de decodificación"</string>
+    <string name="axi_ui_latencia_de_red" formatted="false">"Latencia de red"</string>
+    <string name="axi_ui_latencia_decodificacion" formatted="false">"Latencia/decodificación: "</string>
+    <string name="axi_ui_latencia_decodificacion_109_ms_7_ms_perdida_69_fps_60" formatted="false">"Latencia/decodificación: 109 ms/7 ms · Pérdida: 69 % · FPS: 60"</string>
+    <string name="axi_ui_latencia_del_servidor" formatted="false">"Latencia del servidor"</string>
+    <string name="axi_ui_layout_1" formatted="false">"diseño 1"</string>
+    <string name="axi_ui_layout_2" formatted="false">"diseño 2"</string>
+    <string name="axi_ui_layout_3" formatted="false">"diseño 3"</string>
+    <string name="axi_ui_layout_4" formatted="false">"diseño 4"</string>
+    <string name="axi_ui_layout_5" formatted="false">"diseño 5"</string>
+    <string name="axi_ui_layout_guardado" formatted="false">"diseño guardado"</string>
+    <string name="axi_ui_layout_opacidad_y_vibracion" formatted="false">"diseño, opacidad y vibración"</string>
+    <string name="axi_ui_layout_predeterminado" formatted="false">"diseño predeterminado"</string>
+    <string name="axi_ui_layouts_de_controles" formatted="false">"diseños de controles"</string>
+    <string name="axi_ui_layouts_del_mando" formatted="false">"diseños del mando"</string>
+    <string name="axi_ui_layouts_independientes_para_orientacion_horizontal_y_vertical" formatted="false">"diseños independientes para orientación horizontal y vertical."</string>
+    <string name="axi_ui_lejos" formatted="false">"Lejos"</string>
+    <string name="axi_ui_limpiar" formatted="false">"Limpiar"</string>
+    <string name="axi_ui_lista_de_registros" formatted="false">"Lista de registros"</string>
+    <string name="axi_ui_los_sticks_virtuales_dejaran_de_activar_l3_y_r3" formatted="false">"Los sticks virtuales dejarán de activar L3 y R3."</string>
+    <string name="axi_ui_mando" formatted="false">"Mando"</string>
+    <string name="axi_ui_mando_7e682037" formatted="false">" / Mando"</string>
+    <string name="axi_ui_mando_d_vibracion_alta_d_baja_d" formatted="false">"Mando %d · Vibración alta %d, baja %d"</string>
+    <string name="axi_ui_mando_en_pantalla" formatted="false">"Mando en pantalla"</string>
+    <string name="axi_ui_mando_usb" formatted="false">"Mando USB"</string>
+    <string name="axi_ui_mando_virtual" formatted="false">"Mando virtual"</string>
+    <string name="axi_ui_mando_y_controles_virtuales" formatted="false">"Mando y controles virtuales"</string>
+    <string name="axi_ui_mando_y_controles_virtuales_975d8f3e" formatted="false">"Mando y controles virtuales"</string>
+    <string name="axi_ui_manten_pulsado_para_ver_mas_opciones" formatted="false">"Mantén pulsado para ver más opciones"</string>
+    <string name="axi_ui_mantiene_el_encuadre_al_desactivar_el_ajuste_de_zoom" formatted="false">"Mantiene el encuadre al desactivar el ajuste de zoom."</string>
+    <string name="axi_ui_margen_de_rendimiento" formatted="false">"Margen de rendimiento: "</string>
+    <string name="axi_ui_margen_de_rendimiento_4" formatted="false">"Margen de rendimiento: 4"</string>
+    <string name="axi_ui_mas_aplicaciones" formatted="false">"Más aplicaciones"</string>
+    <string name="axi_ui_mas_funciones" formatted="false">"Más funciones"</string>
+    <string name="axi_ui_medio" formatted="false">"Medio"</string>
+    <string name="axi_ui_mejora_de_imagen" formatted="false">"Mejora de imagen"</string>
+    <string name="axi_ui_menu_del_juego" formatted="false">"Menú del juego"</string>
+    <string name="axi_ui_metodo_a_para_detener_vibracion" formatted="false">"Método A para detener vibración"</string>
+    <string name="axi_ui_microfono" formatted="false">"Micrófono"</string>
+    <string name="axi_ui_microfono_desactivado" formatted="false">"Micrófono desactivado"</string>
+    <string name="axi_ui_mis_aplicaciones" formatted="false">"Mis aplicaciones"</string>
+    <string name="axi_ui_modo_bloqueo" formatted="false">"Modo bloqueo"</string>
+    <string name="axi_ui_modo_cambiar_tamano" formatted="false">"Modo cambiar tamaño"</string>
+    <string name="axi_ui_modo_combinacion_de_teclas" formatted="false">"Modo combinación de teclas"</string>
+    <string name="axi_ui_modo_de_pantalla" formatted="false">"Modo de pantalla"</string>
+    <string name="axi_ui_modo_de_renderizado" formatted="false">"Modo de renderizado"</string>
+    <string name="axi_ui_modo_desactivado" formatted="false">"Modo desactivado"</string>
+    <string name="axi_ui_modo_edicion" formatted="false">"Modo edición"</string>
+    <string name="axi_ui_modo_edicion_activado_cierra_el_menu_para_ajustar_los_controles" formatted="false">"Modo edición activado. Cierra el menú para ajustar los controles."</string>
+    <string name="axi_ui_modo_mover" formatted="false">"Modo mover"</string>
+    <string name="axi_ui_modo_normal" formatted="false">"Modo normal"</string>
+    <string name="axi_ui_modo_normal_4e5d9917" formatted="false">"Modo normal"</string>
+    <string name="axi_ui_modo_normal_593ebfdf" formatted="false">"Modo normal"</string>
+    <string name="axi_ui_modo_tactil" formatted="false">"Modo táctil"</string>
+    <string name="axi_ui_modo_tactil_y_de_raton" formatted="false">"Modo táctil y de ratón"</string>
+    <string name="axi_ui_modo_vertical" formatted="false">"Modo vertical"</string>
+    <string name="axi_ui_moonlight_no_aplicara_su_zona_muerta_de_gatillos_salvo_en_determ" formatted="false">"Moonlight no aplicará su zona muerta de gatillos, salvo en determinados mandos ASUS."</string>
+    <string name="axi_ui_mostrar_boton_flotante" formatted="false">"Mostrar botón flotante"</string>
+    <string name="axi_ui_mostrar_controles_virtuales" formatted="false">"Mostrar controles virtuales"</string>
+    <string name="axi_ui_mostrar_datos_nadicionales" formatted="false">"Mostrar datos\nadicionales"</string>
+    <string name="axi_ui_mostrar_informacion_de_vibracion" formatted="false">"Mostrar información de vibración"</string>
+    <string name="axi_ui_mostrar_ocultar_cursor_del_pc" formatted="false">"Mostrar/ocultar cursor del PC"</string>
+    <string name="axi_ui_mostrar_teclas_capturadas_por_accesibilidad" formatted="false">"Mostrar teclas capturadas por accesibilidad"</string>
+    <string name="axi_ui_mover" formatted="false">"Mover"</string>
+    <string name="axi_ui_ms_variacion" formatted="false">" ms / Variación "</string>
+    <string name="axi_ui_muestra_el_cursor_de_android_al_conectar_un_raton_fisico" formatted="false">"Muestra el cursor de Android al conectar un ratón físico."</string>
+    <string name="axi_ui_muestra_el_video_en_la_pantalla_externa_y_los_controles_y_rendim" formatted="false">"Muestra el vídeo en la pantalla externa y los controles y rendimiento en el teléfono."</string>
+    <string name="axi_ui_muestra_velocidad_de_red_latencia_decodificacion_perdida_y_fps" formatted="false">"Muestra velocidad de red, latencia, decodificación, pérdida y FPS."</string>
+    <string name="axi_ui_multitactil" formatted="false">"Multitáctil"</string>
+    <string name="axi_ui_muy_fuerte" formatted="false">"Muy fuerte"</string>
+    <string name="axi_ui_negro" formatted="false">"Negro"</string>
+    <string name="axi_ui_ninguno" formatted="false">"Ninguno"</string>
+    <string name="axi_ui_nitidez" formatted="false">"Nitidez"</string>
+    <string name="axi_ui_nitidez_8f7917fe" formatted="false">" / Nitidez "</string>
+    <string name="axi_ui_no_hay_controles_anadelos_desde_menu_mando_y_controles_virtuales" formatted="false">"No hay controles. Añádelos desde Menú → Mando y controles virtuales → Modo edición."</string>
+    <string name="axi_ui_no_hay_enlaces_de_descarga_disponibles" formatted="false">"No hay enlaces de descarga disponibles"</string>
+    <string name="axi_ui_no_hay_notas_de_actualizacion" formatted="false">"No hay notas de actualización."</string>
+    <string name="axi_ui_no_informado_por_el_servidor" formatted="false">"No informado por el servidor"</string>
+    <string name="axi_ui_no_informado_por_el_sistema" formatted="false">"No informado por el sistema"</string>
+    <string name="axi_ui_no_se_encontro_el_servicio_limelightax_tcp" formatted="false">"No se encontró el servicio _limelightax._tcp"</string>
+    <string name="axi_ui_no_se_encontro_informacion_de_actualizacion" formatted="false">"No se encontró información de actualización"</string>
+    <string name="axi_ui_no_se_encontro_un_navegador" formatted="false">"No se encontró un navegador"</string>
+    <string name="axi_ui_no_se_pudo_consultar_la_actualizacion_se_abrio_el_enlace_de_desc" formatted="false">"No se pudo consultar la actualización. Se abrió el enlace de descarga predeterminado."</string>
+    <string name="axi_ui_no_se_pudo_eliminar_el_registro" formatted="false">"No se pudo eliminar el registro"</string>
+    <string name="axi_ui_no_se_pudo_exportar_el_registro" formatted="false">"No se pudo exportar el registro"</string>
+    <string name="axi_ui_no_se_pudo_interpretar_la_actualizacion_se_abrio_el_enlace_de_de" formatted="false">"No se pudo interpretar la actualización. Se abrió el enlace de descarga predeterminado."</string>
+    <string name="axi_ui_nombre_del_control" formatted="false">"Nombre del control"</string>
+    <string name="axi_ui_normal" formatted="false">"Normal"</string>
+    <string name="axi_ui_normal_recorrido_completo" formatted="false">"Normal, recorrido completo"</string>
+    <string name="axi_ui_novedades" formatted="false">"Novedades"</string>
+    <string name="axi_ui_nueva_version_disponible" formatted="false">"Nueva versión disponible"</string>
+    <string name="axi_ui_nultima_version" formatted="false">"\nÚltima versión: "</string>
+    <string name="axi_ui_obtener_del_servidor" formatted="false">"Obtener del servidor"</string>
+    <string name="axi_ui_omitir_comprobacion_hdr" formatted="false">"Omitir comprobación HDR"</string>
+    <string name="axi_ui_omitir_esta_actualizacion" formatted="false">"Omitir esta actualización"</string>
+    <string name="axi_ui_omitir_menu_de_aplicaciones" formatted="false">"Omitir menú de aplicaciones"</string>
+    <string name="axi_ui_omitir_zona_muerta_de_gatillos_del_13" formatted="false">"Omitir zona muerta de gatillos del 13 %"</string>
+    <string name="axi_ui_omitir_zona_muerta_nde_los_gatillos" formatted="false">"Omitir zona muerta\nde los gatillos"</string>
+    <string name="axi_ui_opacidad" formatted="false">"Opacidad: "</string>
+    <string name="axi_ui_opacidad_100" formatted="false">"Opacidad: 100 %"</string>
+    <string name="axi_ui_opacidad_100_0072e946" formatted="false">"Opacidad: 100 %"</string>
+    <string name="axi_ui_opacidad_del_teclado_completo" formatted="false">"Opacidad del teclado completo"</string>
+    <string name="axi_ui_opacidad_del_teclado_completo_944e0ab9" formatted="false">"Opacidad del teclado completo"</string>
+    <string name="axi_ui_opacidad_global_de_los_controles" formatted="false">"Opacidad global de los controles"</string>
+    <string name="axi_ui_opciones" formatted="false">"Opciones"</string>
+    <string name="axi_ui_optimizacion_para_xiaomi_xring_o1" formatted="false">"Optimización para Xiaomi Xring O1"</string>
+    <string name="axi_ui_orden_de_los_ojos" formatted="false">"Orden de los ojos"</string>
+    <string name="axi_ui_otros_ajustes" formatted="false">"Otros ajustes"</string>
+    <string name="axi_ui_otros_ajustes_03f3f337" formatted="false">"Otros ajustes"</string>
+    <string name="axi_ui_panel_tactil" formatted="false">"Panel táctil"</string>
+    <string name="axi_ui_panel_tactil_7f4ce565" formatted="false">"Panel táctil"</string>
+    <string name="axi_ui_panel_tactil_camara" formatted="false">"Panel táctil · cámara"</string>
+    <string name="axi_ui_panel_tactil_central" formatted="false">"Panel táctil · central"</string>
+    <string name="axi_ui_panel_tactil_derecho" formatted="false">"Panel táctil · derecho"</string>
+    <string name="axi_ui_panel_tactil_izquierdo" formatted="false">"Panel táctil · izquierdo"</string>
+    <string name="axi_ui_panel_tactil_movimiento_y_clic_izquierdo" formatted="false">"Panel táctil (movimiento y clic izquierdo)"</string>
+    <string name="axi_ui_panel_tactil_solo_movimiento" formatted="false">"Panel táctil (solo movimiento)"</string>
+    <string name="axi_ui_panel_tactil_varios_gestos" formatted="false">"Panel táctil (varios gestos)"</string>
+    <string name="axi_ui_pantalla" formatted="false">"Pantalla"</string>
+    <string name="axi_ui_pantalla_1" formatted="false">"Pantalla 1"</string>
+    <string name="axi_ui_pantalla_2" formatted="false">"Pantalla 2"</string>
+    <string name="axi_ui_pantalla_3" formatted="false">"Pantalla 3"</string>
+    <string name="axi_ui_pantalla_4" formatted="false">"Pantalla 4"</string>
+    <string name="axi_ui_pantalla_de_inicio" formatted="false">"Pantalla de inicio"</string>
+    <string name="axi_ui_pantalla_externa" formatted="false">"Pantalla externa"</string>
+    <string name="axi_ui_pantalla_externa_beta" formatted="false">"Pantalla externa (beta)"</string>
+    <string name="axi_ui_pantalla_tactil_raton_y_teclado_fisico" formatted="false">"Pantalla táctil, ratón y teclado físico"</string>
+    <string name="axi_ui_pantallas" formatted="false">"Pantallas"</string>
+    <string name="axi_ui_parametros_de_video" formatted="false">"Parámetros de vídeo"</string>
+    <string name="axi_ui_pcm_nativo" formatted="false">"PCM nativo"</string>
+    <string name="axi_ui_perdida_de_paquetes" formatted="false">"  Pérdida de paquetes: "</string>
+    <string name="axi_ui_perdida_de_paquetes_37772187" formatted="false">"Pérdida de paquetes"</string>
+    <string name="axi_ui_perifericos" formatted="false">"Periféricos"</string>
+    <string name="axi_ui_permitir_cambio_de_orientacion" formatted="false">"Permitir cambio de orientación"</string>
+    <string name="axi_ui_posicion" formatted="false">"Posición: "</string>
+    <string name="axi_ui_posicion_de_la_imagen" formatted="false">"Posición de la imagen"</string>
+    <string name="axi_ui_posicion_final" formatted="false">"Posición final"</string>
+    <string name="axi_ui_posicion_inicial" formatted="false">"Posición inicial"</string>
+    <string name="axi_ui_posicion_xx" formatted="false">"Posición: xx"</string>
+    <string name="axi_ui_predeterminado" formatted="false">"Predeterminado"</string>
+    <string name="axi_ui_prioriza_un_modo_de_pantalla_que_coincida_con_los_fps_del_stream" formatted="false">"Prioriza un modo de pantalla que coincida con los FPS del transmisión. Desactívalo si causa problemas de imagen."</string>
+    <string name="axi_ui_probar_teclas_del_teclado" formatted="false">"Probar teclas del teclado"</string>
+    <string name="axi_ui_probar_vibracion_del_dispositivo" formatted="false">"Probar vibración del dispositivo"</string>
+    <string name="axi_ui_probar_vibracion_del_mando" formatted="false">"Probar vibración del mando"</string>
+    <string name="axi_ui_probar_vibracion_del_mando_usb" formatted="false">"Probar vibración del mando USB"</string>
+    <string name="axi_ui_profundidad" formatted="false">" / Profundidad "</string>
+    <string name="axi_ui_profundidad_3d" formatted="false">"Profundidad 3D"</string>
+    <string name="axi_ui_profundidad_3d_42d65a8d" formatted="false">"Profundidad 3D"</string>
+    <string name="axi_ui_puede_ayudar_en_dispositivos_quest_con_android_13_o_posterior" formatted="false">"Puede ayudar en dispositivos Quest con Android 13 o posterior."</string>
+    <string name="axi_ui_pulsa_actualizar_para_ver_los_mandos_npara_probar_mandos_usb_act" formatted="false">"Pulsa actualizar para ver los mandos.\nPara probar mandos USB, activa el controlador USB en Ajustes."</string>
+    <string name="axi_ui_pulsa_aplicar_configuracion_despues_de_cada_conexion" formatted="false">"Pulsa Aplicar configuración después de cada conexión."</string>
+    <string name="axi_ui_pulsacion_del_stick_derecho" formatted="false">"Pulsación del stick derecho"</string>
+    <string name="axi_ui_pulsacion_del_stick_izquierdo" formatted="false">"Pulsación del stick izquierdo"</string>
+    <string name="axi_ui_quark_drive" formatted="false">"Quark Drive"</string>
+    <string name="axi_ui_raton_clic_central" formatted="false">"Ratón · clic central"</string>
+    <string name="axi_ui_raton_clic_derecho" formatted="false">"Ratón · clic derecho"</string>
+    <string name="axi_ui_raton_clic_izquierdo" formatted="false">"Ratón · clic izquierdo"</string>
+    <string name="axi_ui_raton_de_escritorio_remoto" formatted="false">"Ratón de escritorio remoto"</string>
+    <string name="axi_ui_raton_normal" formatted="false">"Ratón normal"</string>
+    <string name="axi_ui_raton_normal_botones_intercambiados" formatted="false">"Ratón normal (botones intercambiados)"</string>
+    <string name="axi_ui_raton_para_escritorio_remoto_requiere_el_modo_raton_normal" formatted="false">"Ratón para escritorio remoto (requiere el modo ratón normal)"</string>
+    <string name="axi_ui_raton_y_giroscopio" formatted="false">"Ratón y giroscopio"</string>
+    <string name="axi_ui_raton_y_pantalla_tactil" formatted="false">"Ratón y pantalla táctil"</string>
+    <string name="axi_ui_raton_y_rueda" formatted="false">"Ratón y rueda"</string>
+    <string name="axi_ui_raton_y_tactil" formatted="false">"Ratón y táctil"</string>
+    <string name="axi_ui_recibe_datos_hapticos_pcm_de_servidores_compatibles" formatted="false">"Recibe datos hápticos PCM de servidores compatibles."</string>
+    <string name="axi_ui_recopilacion_de_registros" formatted="false">"Recopilación de registros"</string>
+    <string name="axi_ui_recopilar_registros_de_streaming" formatted="false">"Recopilar registros de streaming"</string>
+    <string name="axi_ui_recordar_posicion_ndel_boton_flotante" formatted="false">"Recordar posición\ndel botón flotante"</string>
+    <string name="axi_ui_reduce_la_vibracion_provocada_por_voces_chat_y_anuncios" formatted="false">"Reduce la vibración provocada por voces, chat y anuncios"</string>
+    <string name="axi_ui_reemplaza_la_configuracion_anterior_conserva_una_copia_si_la_nec" formatted="false">"Reemplaza la configuración anterior. Conserva una copia si la necesitas."</string>
+    <string name="axi_ui_reescala_a_2k_o_4k_con_fsr_en_el_renderizador_gles" formatted="false">"Reescala a 2K o 4K con FSR en el renderizador GLES."</string>
+    <string name="axi_ui_reescalado" formatted="false">"Reescalado"</string>
+    <string name="axi_ui_reescalado_fsr" formatted="false">"Reescalado FSR"</string>
+    <string name="axi_ui_registrar_sesiones_y_administrar_archivos" formatted="false">"Registrar sesiones y administrar archivos"</string>
+    <string name="axi_ui_registro_exportado" formatted="false">"Registro exportado"</string>
+    <string name="axi_ui_registros_de_streaming" formatted="false">"Registros de streaming"</string>
+    <string name="axi_ui_registros_guardados" formatted="false">"Registros guardados: "</string>
+    <string name="axi_ui_reiniciar_pc" formatted="false">"Reiniciar PC"</string>
+    <string name="axi_ui_relacion_hdr_sdr" formatted="false">"Relación HDR/SDR"</string>
+    <string name="axi_ui_renderizado" formatted="false">"Renderizado"</string>
+    <string name="axi_ui_renderizado_del_sistema" formatted="false">"Renderizado del sistema"</string>
+    <string name="axi_ui_renderizado_gles" formatted="false">"Renderizado GLES"</string>
+    <string name="axi_ui_rendimiento_compacto" formatted="false">"Rendimiento compacto"</string>
+    <string name="axi_ui_rendimiento_compacto_b66e593c" formatted="false">"Rendimiento compacto"</string>
+    <string name="axi_ui_rendimiento_detallado" formatted="false">"Rendimiento detallado"</string>
+    <string name="axi_ui_rendimiento_y_boton_flotante" formatted="false">"Rendimiento y botón flotante"</string>
+    <string name="axi_ui_reproduccion_de_audio" formatted="false">"Reproducción de audio"</string>
+    <string name="axi_ui_requiere_sunshine_axixi" formatted="false">"Requiere Sunshine · Axixi"</string>
+    <string name="axi_ui_resistencia" formatted="false">"Resistencia"</string>
+    <string name="axi_ui_resolucion" formatted="false">"Resolución"</string>
+    <string name="axi_ui_resolucion_1920x1080" formatted="false">"Resolución: 1920x1080"</string>
+    <string name="axi_ui_resolucion_61bc2862" formatted="false">"Resolución: "</string>
+    <string name="axi_ui_resolucion_de_reescalado" formatted="false">"Resolución de reescalado"</string>
+    <string name="axi_ui_resolucion_fps_y_mejora_de_imagen" formatted="false">"Resolución, FPS y mejora de imagen"</string>
+    <string name="axi_ui_resoluciones_habituales" formatted="false">"Resoluciones habituales"</string>
+    <string name="axi_ui_resoluciones_personalizadas_manten_pulsado_para_eliminar" formatted="false">"Resoluciones personalizadas (mantén pulsado para eliminar)"</string>
+    <string name="axi_ui_respuesta_haptica_nativa_de_dualsense" formatted="false">"Respuesta háptica nativa de DualSense"</string>
+    <string name="axi_ui_respuesta_haptica_pcm_nativa_de_dualsense" formatted="false">"Respuesta háptica PCM nativa de DualSense"</string>
+    <string name="axi_ui_restablecer_layout" formatted="false">"Restablecer diseño"</string>
+    <string name="axi_ui_rueda" formatted="false">"Rueda ⬆"</string>
+    <string name="axi_ui_rueda_6cd0318e" formatted="false">"Rueda ⬇"</string>
+    <string name="axi_ui_rueda_abajo" formatted="false">"Rueda · abajo"</string>
+    <string name="axi_ui_rueda_arriba" formatted="false">"Rueda · arriba"</string>
+    <string name="axi_ui_salida_3d" formatted="false">"Salida 3D"</string>
+    <string name="axi_ui_salida_de_ancho_completo_38401080_1200_o_medio_ancho_19201080_12" formatted="false">"Salida de ancho completo 3840×1080/1200 o medio ancho 1920×1080/1200. Requiere GLES."</string>
+    <string name="axi_ui_salida_de_audio" formatted="false">"Salida de audio"</string>
+    <string name="axi_ui_salida_directa_del_sistema" formatted="false">"Salida directa del sistema"</string>
+    <string name="axi_ui_salida_hdr_de_fsr" formatted="false">"Salida HDR de FSR"</string>
+    <string name="axi_ui_sbs_de_ancho_completo" formatted="false">"SBS de ancho completo"</string>
+    <string name="axi_ui_sbs_de_ancho_completo_2ac06577" formatted="false">"SBS de ancho completo"</string>
+    <string name="axi_ui_sbs_de_medio_ancho" formatted="false">"SBS de medio ancho"</string>
+    <string name="axi_ui_sbs_de_medio_ancho_f6e8feb8" formatted="false">"SBS de medio ancho"</string>
+    <string name="axi_ui_selecciona_de_1_a_5_teclas" formatted="false">"Selecciona de 1 a 5 teclas"</string>
+    <string name="axi_ui_selecciona_el_modo_de_raton_el_modo_multitactil_requiere_sunshin" formatted="false">"Selecciona el modo de ratón. El modo multitáctil requiere Sunshine."</string>
+    <string name="axi_ui_selecciona_el_servicio_de_descarga_que_prefieras" formatted="false">"Selecciona el servicio de descarga que prefieras."</string>
+    <string name="axi_ui_selecciona_la_resolucion_de_salida_la_cadena_de_renderizado_gest" formatted="false">"Selecciona la resolución de salida. La cadena de renderizado gestiona HDR automáticamente."</string>
+    <string name="axi_ui_selecciona_una_combinacion_de_teclas" formatted="false">"Selecciona una combinación de teclas"</string>
+    <string name="axi_ui_selecciona_una_imagen_gira_la_pantalla_para_aplicarla_usa_un_arc" formatted="false">"Selecciona una imagen. Gira la pantalla para aplicarla. Usa un archivo de tamaño y formato compatibles con el dispositivo."</string>
+    <string name="axi_ui_seleccionado" formatted="false">", seleccionado"</string>
+    <string name="axi_ui_sensibilidad" formatted="false">"Sensibilidad: "</string>
+    <string name="axi_ui_sensibilidad_100" formatted="false">"Sensibilidad: 100 %"</string>
+    <string name="axi_ui_sensibilidad_de_los_controles_de_panel_tactil_siempre_activa" formatted="false">"Sensibilidad de los controles de panel táctil (siempre activa)"</string>
+    <string name="axi_ui_sensibilidad_del_cursor_al_usar_el_mando_como_raton" formatted="false">"Sensibilidad del cursor al usar el mando como ratón"</string>
+    <string name="axi_ui_sensibilidad_del_giroscopio" formatted="false">"Sensibilidad del giroscopio: "</string>
+    <string name="axi_ui_sensibilidad_del_giroscopio_120" formatted="false">"Sensibilidad del giroscopio: 120 %"</string>
+    <string name="axi_ui_sensibilidad_del_modo_panel_tactil_siempre_activa" formatted="false">"Sensibilidad del modo panel táctil (siempre activa)"</string>
+    <string name="axi_ui_sensibilidad_del_panel_tactil_externo" formatted="false">"Sensibilidad del panel táctil externo"</string>
+    <string name="axi_ui_sensibilidad_multitactil" formatted="false">"Sensibilidad multitáctil"</string>
+    <string name="axi_ui_sensibilidad_tactil" formatted="false">"Sensibilidad táctil"</string>
+    <string name="axi_ui_servidor_con_pantalla_virtual_microfono_mando_virtual_dualsense" formatted="false">"Servidor con pantalla virtual, micrófono, mando virtual DualSense y otras funciones"</string>
+    <string name="axi_ui_servidor_para_transmitir_desde_macos_con_moonlight" formatted="false">"Servidor para transmitir desde macOS con Moonlight"</string>
+    <string name="axi_ui_shift_tab_interfaz_de_steam" formatted="false">"Shift + Tab (interfaz de Steam)"</string>
+    <string name="axi_ui_si_el_layout_ya_aparecio_antes_pulsa_actualizar_arriba_a_la_dere" formatted="false">"Si el diseño ya apareció antes, pulsa actualizar arriba a la derecha."</string>
+    <string name="axi_ui_silenciar_dispositivo" formatted="false">"Silenciar dispositivo"</string>
+    <string name="axi_ui_simular_stick_derecho_con_giroscopio_beta" formatted="false">"Simular stick derecho con giroscopio (beta)"</string>
+    <string name="axi_ui_sin_iniciar" formatted="false">"Sin iniciar"</string>
+    <string name="axi_ui_sin_seleccionar" formatted="false">", sin seleccionar"</string>
+    <string name="axi_ui_solo_afecta_a_fsr_los_valores_altos_aumentan_la_nitidez_de_los_b" formatted="false">"Solo afecta a FSR. Los valores altos aumentan la nitidez de los bordes."</string>
+    <string name="axi_ui_solo_en_este_dispositivo" formatted="false">"Solo en este dispositivo"</string>
+    <string name="axi_ui_solo_mover_camara" formatted="false">"Solo mover cámara"</string>
+    <string name="axi_ui_solo_para_esta_sesion_de_streaming" formatted="false">"Solo para esta sesión de streaming"</string>
+    <string name="axi_ui_solo_para_xiaomi_xring_o1_utiliza_ajustes_especificos_de_compati" formatted="false">"Solo para Xiaomi Xring O1. Utiliza ajustes específicos de compatibilidad y baja latencia del decodificador."</string>
+    <string name="axi_ui_sonido" formatted="false">"Sonido"</string>
+    <string name="axi_ui_starcore" formatted="false">"StarCore"</string>
+    <string name="axi_ui_start_mantener" formatted="false">"Start (mantener)"</string>
+    <string name="axi_ui_stick_derecho" formatted="false">"Stick derecho"</string>
+    <string name="axi_ui_stick_izquierdo" formatted="false">"Stick izquierdo"</string>
+    <string name="axi_ui_suave" formatted="false">"Suave"</string>
+    <string name="axi_ui_suave_37e717d5" formatted="false">"Suave"</string>
+    <string name="axi_ui_sunshine_axixi" formatted="false">"Sunshine · Axixi"</string>
+    <string name="axi_ui_suspender" formatted="false">"Suspender"</string>
+    <string name="axi_ui_tactil_y_raton" formatted="false">"Táctil y ratón"</string>
+    <string name="axi_ui_tbitrate" formatted="false">"\tBitrate: "</string>
+    <string name="axi_ui_tbitrate_100_mbps" formatted="false">"\tBitrate: 100 Mbps"</string>
+    <string name="axi_ui_teclado" formatted="false">"Teclado"</string>
+    <string name="axi_ui_teclado_completo" formatted="false">"Teclado completo"</string>
+    <string name="axi_ui_teclado_completo_5ce1c7dc" formatted="false">"Teclado completo"</string>
+    <string name="axi_ui_teclado_completo_c1b36562" formatted="false">"Teclado completo"</string>
+    <string name="axi_ui_teclado_completo_virtual" formatted="false">"Teclado completo virtual"</string>
+    <string name="axi_ui_teclado_de_android" formatted="false">"Teclado de Android"</string>
+    <string name="axi_ui_teclado_de_android_48aef452" formatted="false">"Teclado de Android"</string>
+    <string name="axi_ui_teclado_fisico_y_accesibilidad" formatted="false">"Teclado físico y accesibilidad"</string>
+    <string name="axi_ui_teclado_numerico" formatted="false">"Teclado numérico"</string>
+    <string name="axi_ui_teclas" formatted="false">"Teclas: "</string>
+    <string name="axi_ui_teclas_de_la_combinacion" formatted="false">"Teclas de la combinación"</string>
+    <string name="axi_ui_teclas_xx" formatted="false">"Teclas: xx"</string>
+    <string name="axi_ui_telefono" formatted="false">"Teléfono"</string>
+    <string name="axi_ui_tema_claro_en_algunas_pantallas" formatted="false">"Tema claro en algunas pantallas"</string>
+    <string name="axi_ui_texto_de_la_pantalla_de_inicio" formatted="false">"Texto de la pantalla de inicio"</string>
+    <string name="axi_ui_tfps" formatted="false">"\tFPS: "</string>
+    <string name="axi_ui_tfps_60" formatted="false">"\tFPS: 60"</string>
+    <string name="axi_ui_tipo_de_gatillo" formatted="false">"Tipo de gatillo"</string>
+    <string name="axi_ui_tipo_de_mando_en_el_pc" formatted="false">"Tipo de mando en el PC"</string>
+    <string name="axi_ui_tmodo" formatted="false">"\tModo: "</string>
+    <string name="axi_ui_tmodo_pantalla_externa" formatted="false">"\tModo: pantalla externa"</string>
+    <string name="axi_ui_toca_el_boton_para_abrir_el_menu_rapido" formatted="false">"Toca el botón para abrir el menú rápido."</string>
+    <string name="axi_ui_toca_para_ver_exportar_o_eliminar" formatted="false">". Toca para ver, exportar o eliminar"</string>
+    <string name="axi_ui_tocar_para_abrir_nel_menu_del_juego" formatted="false">"Tocar para abrir\nel menú del juego"</string>
+    <string name="axi_ui_todas_las_ventanas" formatted="false">"Todas las ventanas"</string>
+    <string name="axi_ui_todavia_no_hay_registros_activa_la_recopilacion_para_generar_uno" formatted="false">"Todavía no hay registros; activa la recopilación para generar uno por sesión"</string>
+    <string name="axi_ui_todavia_no_hay_registros_nactiva_la_recopilacion_para_generar_un" formatted="false">"Todavía no hay registros.\nActiva la recopilación para generar uno por sesión."</string>
+    <string name="axi_ui_torientacion" formatted="false">"\tOrientación: "</string>
+    <string name="axi_ui_torientacion_horizontal" formatted="false">"\tOrientación: horizontal"</string>
+    <string name="axi_ui_tres_dedos" formatted="false">"Tres dedos"</string>
+    <string name="axi_ui_una_combinacion_admite_hasta_5_teclas" formatted="false">"Una combinación admite hasta 5 teclas"</string>
+    <string name="axi_ui_usa_el_giroscopio_del_telefono_con_el_mando_virtual_puede_requer" formatted="false">"Usa el giroscopio del teléfono con el mando virtual. Puede requerir mando PS4 en Sunshine. Desactívalo si conectas un mando físico."</string>
+    <string name="axi_ui_usa_el_motor_del_dispositivo_en_lugar_del_mando_no_afecta_a_mand" formatted="false">"Usa el motor del dispositivo en lugar del mando. No afecta a mandos gestionados por el controlador USB de Moonlight."</string>
+    <string name="axi_ui_usa_esc_del_teclado_fisico_para_abrir_el_menu_rapido_del_stream" formatted="false">"Usa Esc del teclado físico para abrir el menú rápido del transmisión."</string>
+    <string name="axi_ui_usa_una_resolucion_personalizada_vertical_compatible_con_el_serv" formatted="false">"Usa una resolución personalizada vertical compatible con el servidor y con la pantalla del PC."</string>
+    <string name="axi_ui_usa_unicamente_los_atajos_que_importes" formatted="false">"Usa únicamente los atajos que importes."</string>
+    <string name="axi_ui_usar_controlador_nusb_de_moonlight" formatted="false">"Usar controlador\nUSB de Moonlight"</string>
+    <string name="axi_ui_usar_cursor_local" formatted="false">"Usar cursor local"</string>
+    <string name="axi_ui_usar_giroscopio_ndel_mando_usb" formatted="false">"Usar giroscopio\ndel mando USB"</string>
+    <string name="axi_ui_usar_giroscopio_nsin_mando_fisico" formatted="false">"Usar giroscopio\nsin mando físico"</string>
+    <string name="axi_ui_usar_zona_de_la_camara_frontal" formatted="false">"Usar zona de la cámara frontal"</string>
+    <string name="axi_ui_util_para_plegables_y_tabletas_ajusta_la_resolucion_y_posicion_a" formatted="false">"Útil para plegables y tabletas; ajusta la resolución y posición a tu pantalla."</string>
+    <string name="axi_ui_utiliza_una_imagen_personalizada_requiere_android_10_o_posterior" formatted="false">"Utiliza una imagen personalizada. Requiere Android 10 o posterior."</string>
+    <string name="axi_ui_valores_habituales_de_bitrate" formatted="false">"Valores habituales de bitrate"</string>
+    <string name="axi_ui_valores_habituales_de_fps" formatted="false">"Valores habituales de FPS"</string>
+    <string name="axi_ui_velocidad_de_rueda" formatted="false">"Velocidad de rueda: "</string>
+    <string name="axi_ui_velocidad_de_rueda_5" formatted="false">"Velocidad de rueda: 5"</string>
+    <string name="axi_ui_ver" formatted="false">"Ver"</string>
+    <string name="axi_ui_ver_exportar_o_eliminar_los_registros_guardados" formatted="false">"Ver, exportar o eliminar los registros guardados."</string>
+    <string name="axi_ui_version" formatted="false">"Versión: "</string>
+    <string name="axi_ui_version_1_0_0" formatted="false">"Versión: 1.0.0"</string>
+    <string name="axi_ui_version_actual" formatted="false">"Versión actual: "</string>
+    <string name="axi_ui_version_actualizaciones_y_autor" formatted="false">"Versión, actualizaciones y autor"</string>
+    <string name="axi_ui_vertical_ajusta_tambien_la_orientacion_de_la_pantalla_del_pc" formatted="false">"Vertical (ajusta también la orientación de la pantalla del PC)"</string>
+    <string name="axi_ui_vibracion_al_tocar_controles" formatted="false">"Vibración al tocar controles"</string>
+    <string name="axi_ui_vibracion_del_dispositivo" formatted="false">"Vibración del dispositivo"</string>
+    <string name="axi_ui_vibracion_del_juego" formatted="false">"Vibración del juego"</string>
+    <string name="axi_ui_vibracion_del_mando_virtual" formatted="false">"Vibración del mando virtual"</string>
+    <string name="axi_ui_vibracion_intensa" formatted="false">"Vibración intensa"</string>
+    <string name="axi_ui_vibracion_normal" formatted="false">"Vibración normal"</string>
+    <string name="axi_ui_vibracion_normal_telefono" formatted="false">"Vibración normal / Teléfono"</string>
+    <string name="axi_ui_vibracion_por_audio" formatted="false">"Vibración por audio"</string>
+    <string name="axi_ui_vibracion_por_audio_beta" formatted="false">"Vibración por audio (beta)"</string>
+    <string name="axi_ui_vibracion_por_audio_beta_f2fca487" formatted="false">"Vibración por audio (beta)"</string>
+    <string name="axi_ui_vibracion_y_dualsense" formatted="false">"Vibración y DualSense"</string>
+    <string name="axi_ui_video_recibido" formatted="false">"Vídeo recibido"</string>
+    <string name="axi_ui_view_mantener" formatted="false">"View (mantener)"</string>
+    <string name="axi_ui_vincular_vibracion_nde_agarres_y_gatillos" formatted="false">"Vincular vibración\nde agarres y gatillos"</string>
+    <string name="axi_ui_visita_el_perfil_del_desarrollador_para_descubrir_mas_proyectos" formatted="false">"Visita el perfil del desarrollador para descubrir más proyectos"</string>
+    <string name="axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios" formatted="false">"Vuelve a abrir el transmisión para aplicar los cambios."</string>
+    <string name="axi_ui_win_d_escritorio" formatted="false">"Win + D (escritorio)"</string>
+    <string name="axi_ui_win_g_xbox_game_bar" formatted="false">"Win + G (Xbox Game Bar)"</string>
+    <string name="axi_ui_win_menu_inicio_de_windows" formatted="false">"Win (menú Inicio de Windows)"</string>
+    <string name="axi_ui_win_p_modo_de_pantalla" formatted="false">"Win + P (modo de pantalla)"</string>
+    <string name="axi_ui_win_shift_izquierda_cambiar_escritorio" formatted="false">"Win + Shift + izquierda (cambiar escritorio)"</string>
+    <string name="axi_ui_xbox_toque" formatted="false">"Xbox (toque)"</string>
+    <string name="axi_ui_ya_tienes_la_ultima_version" formatted="false">"Ya tienes la última versión"</string>
+    <string name="axi_ui_z_toque" formatted="false">"Z (toque)"</string>
+    <string name="axi_ui_zoom_de_imagen" formatted="false">"Zoom de imagen"</string>
+    <string name="context_actions_info" formatted="false">"Detalles"</string>
+    <string name="context_actions_options" formatted="false">"Opciones"</string>
+    <string name="credits_sponsored_dialog_message" formatted="false">"Si quieres apoyar las actualizaciones del proyecto, puedes escanear el código para hacer una donación. Gracias por tu apoyo."</string>
+    <string name="credits_sponsored_dialog_title" formatted="false">"Apoyar el proyecto"</string>
+    <string name="dialog_action_cancel" formatted="false">"Cancelar"</string>
+    <string name="dialog_action_close" formatted="false">"Cerrar"</string>
+    <string name="dialog_action_confirm" formatted="false">"Confirmar"</string>
+    <string name="extension_ime_key_alt_description" formatted="false">"ALT, se puede bloquear"</string>
+    <string name="extension_ime_key_cmd_description" formatted="false">"CMD, se puede bloquear"</string>
+    <string name="extension_ime_key_ctrl_description" formatted="false">"CTRL, se puede bloquear"</string>
+    <string name="game_menu_cancel" formatted="false">"Cancelar"</string>
+    <string name="game_menu_connect_gamepad" formatted="false">"Conecta un mando para utilizar esta función"</string>
+    <string name="game_menu_disable_virtual_mouse" formatted="false">"Ratón virtual"</string>
+    <string name="game_menu_disconnect" formatted="false">"Desconectar"</string>
+    <string name="game_menu_ds_touchpad" formatted="false">"Panel táctil DualSense"</string>
+    <string name="game_menu_ds_touchpad_drag_handle" formatted="false">"Mover panel DualSense"</string>
+    <string name="game_menu_ds_touchpad_hidden" formatted="false">"Panel DualSense oculto"</string>
+    <string name="game_menu_ds_touchpad_shown" formatted="false">"Panel DualSense activado. Se oculta tras 5 segundos sin actividad. Toca su posición para mostrarlo y mantén la esquina inferior derecha para moverlo."</string>
+    <string name="game_menu_enable_virtual_mouse" formatted="false">"Ratón virtual"</string>
+    <string name="game_menu_gamepad_mouse" formatted="false">"Usar mando como teclado y ratón"</string>
+    <string name="game_menu_gamepad_mouse_disabled" formatted="false">"Mando como teclado y ratón: desactivado"</string>
+    <string name="game_menu_gamepad_mouse_enabled" formatted="false">"Mando como teclado y ratón: activado"</string>
+    <string name="game_menu_hud" formatted="false">"Mostrar/ocultar rendimiento"</string>
+    <string name="game_menu_quit_steaming" formatted="false">"Cerrar transmisión"</string>
+    <string name="game_menu_send_keys" formatted="false">"Enviar teclas especiales"</string>
+    <string name="game_menu_send_keys_alt_b" formatted="false">"Alt + B (cambiar HDR)"</string>
+    <string name="game_menu_send_keys_alt_enter" formatted="false">"Enviar Alt + Enter"</string>
+    <string name="game_menu_send_keys_alt_f4" formatted="false">"Enviar Alt + F4"</string>
+    <string name="game_menu_send_keys_ctrl_alt_shift_f1" formatted="false">"Ctrl + Alt + Shift + F1 (cambiar pantalla)"</string>
+    <string name="game_menu_send_keys_ctrl_alt_shift_f12" formatted="false">"Ctrl + Alt + Shift + F12 (cambiar pantalla)"</string>
+    <string name="game_menu_send_keys_ctrl_alt_shift_q" formatted="false">"Ctrl + Alt + Shift + Q (cerrar transmisión en PC)"</string>
+    <string name="game_menu_send_keys_ctrl_v" formatted="false">"Ctrl + V (pegar portapapeles)"</string>
+    <string name="game_menu_send_keys_esc" formatted="false">"Enviar Esc"</string>
+    <string name="game_menu_send_keys_f11" formatted="false">"Enviar F11"</string>
+    <string name="game_menu_send_keys_shift_tab" formatted="false">"Shift + Tab (interfaz de Steam)"</string>
+    <string name="game_menu_send_keys_win" formatted="false">"Win (menú Inicio de Windows)"</string>
+    <string name="game_menu_send_keys_win_d" formatted="false">"Win + D (escritorio)"</string>
+    <string name="game_menu_send_keys_win_g" formatted="false">"Win + G (Xbox Game Bar)"</string>
+    <string name="game_menu_send_keys_win_p" formatted="false">"Win + P (modo de pantalla)"</string>
+    <string name="game_menu_send_keys_win_shift_left" formatted="false">"Win + Shift + izquierda (cambiar escritorio)"</string>
+    <string name="game_menu_send_keys_win_x_u_i" formatted="false">"Win + X → U + I (cerrar sesión)"</string>
+    <string name="game_menu_send_keys_win_x_u_r" formatted="false">"Win + X → U + R (reiniciar)"</string>
+    <string name="game_menu_send_keys_win_x_u_s" formatted="false">"Win + X → U + S (suspender)"</string>
+    <string name="game_menu_send_keys_win_x_u_u" formatted="false">"Win + X → U + U (apagar)"</string>
+    <string name="game_menu_switch_keyboard_model" formatted="false">"Mostrar/ocultar teclas especiales"</string>
+    <string name="game_menu_switch_mouse_model" formatted="false">"Cambiar modo de ratón"</string>
+    <string name="game_menu_switch_touch_sensitivity_model" formatted="false">"Activar/desactivar sensibilidad táctil"</string>
+    <string name="game_menu_switch_touch_sensitivity_update_x" formatted="false">"Ajustar sensibilidad táctil X"</string>
+    <string name="game_menu_switch_touch_sensitivity_update_y" formatted="false">"Ajustar sensibilidad táctil Y"</string>
+    <string name="game_menu_switch_virtual_keyboard_model" formatted="false">"Mostrar/ocultar teclado completo"</string>
+    <string name="game_menu_switch_virtual_model" formatted="false">"Mostrar/ocultar mando virtual"</string>
+    <string name="game_menu_toggle_keyboard" formatted="false">"Abrir teclado de Android"</string>
+    <string name="home_action_about" formatted="false">"Acerca de"</string>
+    <string name="home_action_back" formatted="false">"Volver"</string>
+    <string name="home_action_gamepad" formatted="false">"Herramientas del mando"</string>
+    <string name="home_action_settings" formatted="false">"Ajustes"</string>
+    <string name="home_action_support" formatted="false">"Apoyar el proyecto"</string>
+    <string name="home_add_host" formatted="false">"Añadir equipo"</string>
+    <string name="home_add_host_subtitle" formatted="false">"Introduce una IP o un nombre de equipo"</string>
+    <string name="home_add_host_title" formatted="false">"Añadir un equipo"</string>
+    <string name="home_always_available" formatted="false">"Siempre disponible"</string>
+    <string name="home_controller_connected" formatted="false">"Conectado"</string>
+    <string name="home_controller_count_format">"Mandos detectados: %1$d"</string>
+    <string name="home_controller_device_detail">"VID %1$s · PID %2$s · %3$s"</string>
+    <string name="home_controller_disconnected" formatted="false">"Sin conectar"</string>
+    <string name="home_controller_page_format">"%1$d / %2$d"</string>
+    <string name="home_controller_system_input" formatted="false">"Entrada del sistema Android"</string>
+    <string name="home_controller_vibration_supported" formatted="false">"Vibración"</string>
+    <string name="home_controller_waiting" formatted="false">"Esperando un mando"</string>
+    <string name="home_controller_waiting_detail" formatted="false">"Conecta un mando USB, Bluetooth o integrado"</string>
+    <string name="home_current_device" formatted="false">"Dispositivo actual"</string>
+    <string name="home_device_version_format">"Android %1$s · Kernel %2$s"</string>
+    <string name="home_discovery_active" formatted="false">"Búsqueda de equipos en la red local activa"</string>
+    <string name="home_host_actions" formatted="false">"Acciones del equipo"</string>
+    <string name="home_host_card_accessibility">"%1$s, %2$s, %3$s"</string>
+    <string name="home_host_checking" formatted="false">"Comprobando"</string>
+    <string name="home_host_connection_ipv6" formatted="false">"IPv6"</string>
+    <string name="home_host_connection_local" formatted="false">"Local"</string>
+    <string name="home_host_connection_manual" formatted="false">"Manual"</string>
+    <string name="home_host_connection_remote" formatted="false">"Remota"</string>
+    <string name="home_host_connection_unknown" formatted="false">"Dirección pendiente"</string>
+    <string name="home_host_count_format">"%1$d / %2$d"</string>
+    <string name="home_host_idle" formatted="false">"Listo para ver aplicaciones"</string>
+    <string name="home_host_more">"Más acciones para %1$s"</string>
+    <string name="home_host_offline" formatted="false">"Desconectado"</string>
+    <string name="home_host_pair" formatted="false">"Emparejar"</string>
+    <string name="home_host_pair_paired" formatted="false">"Emparejado"</string>
+    <string name="home_host_pair_required" formatted="false">"Necesita emparejamiento"</string>
+    <string name="home_host_pair_unpaired" formatted="false">"Sin emparejar"</string>
+    <string name="home_host_ready" formatted="false">"Listo"</string>
+    <string name="home_host_running" formatted="false">"Sesión de streaming activa"</string>
+    <string name="home_host_running_compact" formatted="false">"En ejecución"</string>
+    <string name="home_host_source_gamestream" formatted="false">"GameStream"</string>
+    <string name="home_host_source_sunshine" formatted="false">"Sunshine"</string>
+    <string name="home_host_view_apps" formatted="false">"Ver aplicaciones"</string>
+    <string name="home_host_wake_available" formatted="false">"Wake-on-LAN disponible"</string>
+    <string name="home_refresh_hosts" formatted="false">"Actualizar equipos"</string>
+    <string name="home_refreshing_hosts" formatted="false">"Actualizando equipos…"</string>
+    <string name="home_select_host" formatted="false">"Equipos disponibles"</string>
+    <string name="home_select_host_hint" formatted="false">"Desliza a los lados y abre el equipo del centro"</string>
+    <string name="home_select_host_list_hint" formatted="false">"Desliza arriba o abajo y toca un equipo para abrirlo"</string>
+    <string name="home_start_add" formatted="false">"Añadir equipo"</string>
+    <string name="home_switch_to_cards" formatted="false">"Ver tarjetas de equipos"</string>
+    <string name="home_switch_to_list" formatted="false">"Ver lista de equipos"</string>
+    <string name="host_actions_subtitle" formatted="false">"Elige una acción para este equipo"</string>
+    <string name="keyboard_service_label" formatted="false">"Teclado físico de Axixi Moonlight"</string>
+    <string name="mic_uplink_not_supported" formatted="false">"El micrófono requiere Android 10 o un codificador Opus. El transmisión continuará sin micrófono."</string>
+    <string name="mic_uplink_permission_denied" formatted="false">"No se concedió acceso al micrófono. El transmisión continuará sin micrófono."</string>
+    <string name="nettest_port_check_inconclusive" formatted="false">"La comprobación de puertos no fue concluyente, pero la prueba UDP llegó a un servidor de pruebas de Moonlight."</string>
+    <string name="nettest_udp_probe_blocked" formatted="false">"No se pudo medir UDP; el puerto UDP 47998 parece bloqueado."</string>
+    <string name="nettest_udp_probe_good" formatted="false">"No se observó pérdida de paquetes en esta muestra."</string>
+    <string name="nettest_udp_probe_heading" formatted="false">"Muestra de calidad UDP"</string>
+    <string name="nettest_udp_probe_minor_loss" formatted="false">"Se observó una pequeña pérdida. Repite la prueba para comprobar si persiste."</string>
+    <string name="nettest_udp_probe_poor" formatted="false">"Se observó una pérdida considerable. El streaming puede sufrir interrupciones en esta red."</string>
+    <string name="nettest_udp_probe_result">"Paquetes recibidos: %1$d/%2$d\nPérdida de ida y vuelta: %3$.1f%%\nRTT medio: %4$.1f ms\nVariación: %5$.1f ms"</string>
+    <string name="nettest_udp_probe_scope" formatted="false">"Esta muestra mide el trayecto de ida y vuelta entre el dispositivo y un servidor público de Moonlight. No prueba el PC seleccionado ni identifica en qué dirección se pierde un paquete."</string>
+    <string name="nettest_udp_probe_unavailable" formatted="false">"No se pudo medir UDP. El servidor puede no estar disponible o las respuestas pueden estar bloqueadas."</string>
+    <string name="pairing_backup_category" formatted="false">"Copias de seguridad"</string>
+    <string name="pairing_backup_export" formatted="false">"Exportar copia ZIP"</string>
+    <string name="pairing_backup_export_failed" formatted="false">"No se pudo exportar. Comprueba la ubicación y el espacio disponible."</string>
+    <string name="pairing_backup_export_success" formatted="false">"Copia ZIP guardada."</string>
+    <string name="pairing_backup_export_summary" formatted="false">"Guarda los equipos, el certificado y la clave privada del cliente en un ZIP. Conserva la copia en privado."</string>
+    <string name="pairing_backup_import" formatted="false">"Importar copia ZIP"</string>
+    <string name="pairing_backup_import_failed" formatted="false">"No se pudo restaurar. Selecciona un ZIP completo con la base de equipos, el certificado y la clave privada correspondientes."</string>
+    <string name="pairing_backup_import_success" formatted="false">"Copia restaurada. Cierra completamente la app y vuelve a abrirla para utilizar los equipos y la identidad restaurados."</string>
+    <string name="pairing_backup_import_summary" formatted="false">"Restaura los equipos y la identidad del cliente desde un ZIP. Actualiza los equipos coincidentes. Reinicia la app después de importar."</string>
+    <string name="pairing_backup_working" formatted="false">"Procesando copia…"</string>
+    <string name="pc_actions_details_format">"Estado: %1$s\nDirección actual: %2$s\nID del equipo: %3$s\nDirección local: %4$s\nDirección remota: %5$s\nDirección IPv6: %6$s\nDirección manual: %7$s\nDirección de hardware: %8$s\nEmparejamiento: %9$s\nID de aplicación: %10$d\nPuerto seguro: %11$d"</string>
+    <string name="pc_actions_details_title" formatted="false">"Detalles del equipo"</string>
+    <string name="pc_actions_options_title" formatted="false">"Opciones"</string>
+    <string name="pc_actions_pair_not_paired" formatted="false">"Sin emparejar"</string>
+    <string name="pc_actions_pair_paired" formatted="false">"Emparejado"</string>
+    <string name="pc_actions_pair_unknown" formatted="false">"Desconocido"</string>
+    <string name="pc_actions_state_offline" formatted="false">"Desconectado"</string>
+    <string name="pc_actions_state_online" formatted="false">"Conectado"</string>
+    <string name="pc_actions_state_unknown" formatted="false">"Desconocido"</string>
+    <string name="pc_actions_unavailable" formatted="false">"No disponible"</string>
+    <string name="pc_address_automatic" formatted="false">"Selección automática"</string>
+    <string name="pc_address_summary">"%1$s\nDirección actual: %2$s\nElige una dirección conocida. La selección manual permanece fija hasta elegir Selección automática."</string>
+    <string name="pc_address_switch_failed" formatted="false">"No se pudo cambiar la dirección. Comprueba que sea accesible y corresponda a este PC. Se conserva la selección anterior."</string>
+    <string name="pc_address_switched" formatted="false">"Dirección actualizada"</string>
+    <string name="pc_address_switching" formatted="false">"Comprobando la dirección…"</string>
+    <string name="pc_switch_address" formatted="false">"Cambiar dirección"</string>
+    <string name="perf_overlay_lite_decoder">"Decodificador: %1$s"</string>
+    <string name="perf_overlay_lite_dectime">"%1$.2f ms"</string>
+    <string name="perf_overlay_lite_fps">"%1$.2f"</string>
+    <string name="perf_overlay_lite_net">"%1$d ms"</string>
+    <string name="perf_overlay_lite_netdrops">"%1$.2f%%"</string>
+    <string name="perf_overlay_lite_streamdetails">"%1$s"</string>
+    <string name="perf_overlay_position_bottom" formatted="false">"Abajo"</string>
+    <string name="perf_overlay_position_top" formatted="false">"Arriba"</string>
+    <string name="settings_panel_apply" formatted="false">"Guardar"</string>
+    <string name="settings_panel_back" formatted="false">"Volver"</string>
+    <string name="settings_panel_bitrate_hint" formatted="false">"Entrada manual, máximo 99999 Mbps"</string>
+    <string name="settings_panel_bitrate_presets" formatted="false">"Valores habituales de bitrate · Mbps"</string>
+    <string name="settings_panel_close" formatted="false">"Desactivado"</string>
+    <string name="settings_panel_custom" formatted="false">"Resolución personalizada"</string>
+    <string name="settings_panel_empty" formatted="false">"No hay opciones disponibles en este dispositivo"</string>
+    <string name="settings_panel_height" formatted="false">"Alto"</string>
+    <string name="settings_panel_hint" formatted="false">"Configura las opciones de la próxima sesión"</string>
+    <string name="settings_panel_pixels" formatted="false">"Píxeles"</string>
+    <string name="settings_panel_range_error">"Introduce un valor entre %1$s y %2$s"</string>
+    <string name="settings_panel_reset" formatted="false">"Usar valores predeterminados"</string>
+    <string name="settings_panel_resolution_error" formatted="false">"Introduce ancho y alto pares entre 2 y 16384, por ejemplo 1920x1080"</string>
+    <string name="settings_panel_resolution_hint" formatted="false">"Ancho × alto, por ejemplo 1920x1080"</string>
+    <string name="settings_panel_swap" formatted="false">"Intercambiar ancho y alto"</string>
+    <string name="settings_panel_title" formatted="false">"Ajustes"</string>
+    <string name="settings_panel_width" formatted="false">"Ancho"</string>
+    <string name="settings_profile_choose_hint" formatted="false">"El perfil actual se guarda al cambiar. Los nuevos perfiles utilizan los ajustes predeterminados."</string>
+    <string name="settings_profile_current">"Actual: perfil %1$s"</string>
+    <string name="settings_profile_failed" formatted="false">"No se pudo guardar el perfil. Inténtalo de nuevo."</string>
+    <string name="settings_profile_name">"Perfil %1$s"</string>
+    <string name="settings_profile_reset" formatted="false">"Restablecer perfil"</string>
+    <string name="settings_profile_reset_action" formatted="false">"Restablecer valores"</string>
+    <string name="settings_profile_reset_confirm">"Restablecerá los ajustes del perfil %1$s. Se conservarán los otros perfiles, equipos emparejados, registros y archivos importados."</string>
+    <string name="settings_profile_reset_hint" formatted="false">"Restaurar los valores predeterminados del perfil actual"</string>
+    <string name="settings_profile_switch" formatted="false">"Cambiar perfil"</string>
+    <string name="settings_profile_title">"Ajustes · %1$s"</string>
+    <string name="settings_profile_working" formatted="false">"Guardando perfil…"</string>
+    <string name="stream_background_reconnecting">"Restaurando transmisión (%1$d/%2$d)…"</string>
+    <string name="stream_loading_back" formatted="false">"Volver"</string>
+    <string name="stream_loading_cancel" formatted="false">"Cancelar conexión"</string>
+    <string name="stream_loading_step_connect" formatted="false">"Conectar"</string>
+    <string name="stream_loading_step_picture" formatted="false">"Imagen"</string>
+    <string name="stream_loading_step_prepare" formatted="false">"Preparar"</string>
+    <string name="stream_loading_step_start" formatted="false">"Iniciar"</string>
+    <string name="stream_phase_connected" formatted="false">"transmisión conectado"</string>
+    <string name="stream_phase_connected_detail" formatted="false">"Primer fotograma listo"</string>
+    <string name="stream_phase_connecting" formatted="false">"Conectando al equipo"</string>
+    <string name="stream_phase_connecting_detail" formatted="false">"Resolviendo la dirección y negociando la sesión"</string>
+    <string name="stream_phase_failed" formatted="false">"No se pudo iniciar el transmisión"</string>
+    <string name="stream_phase_initializing" formatted="false">"Inicializando transmisión"</string>
+    <string name="stream_phase_initializing_detail" formatted="false">"Preparando vídeo, audio, entrada y canales de control"</string>
+    <string name="stream_phase_launching" formatted="false">"Iniciando aplicación en el PC"</string>
+    <string name="stream_phase_launching_detail" formatted="false">"Esperando a que la aplicación del PC esté lista"</string>
+    <string name="stream_phase_preparing" formatted="false">"Preparando transmisión"</string>
+    <string name="stream_phase_preparing_detail" formatted="false">"Preparando decodificador y pantalla"</string>
+    <string name="stream_phase_starting" formatted="false">"Iniciando transmisión"</string>
+    <string name="stream_phase_starting_detail" formatted="false">"Iniciando vídeo, audio y entrada"</string>
+    <string name="stream_phase_waiting" formatted="false">"Esperando imagen"</string>
+    <string name="stream_phase_waiting_detail" formatted="false">"Conectado. Esperando el primer fotograma"</string>
+    <string name="summary_gamepad_emulation" formatted="false">"Automático sigue la configuración de Sunshine y las capacidades del mando. Una selección explícita sustituye el tipo definido en Sunshine."</string>
+    <string name="summary_perf_overlay_lite_margin" formatted="false">"Distancia al borde superior o inferior seleccionado. Predeterminado: 4 dp."</string>
+    <string name="summary_show_guide_button" formatted="false">"Muestra el botón Guide en pantalla"</string>
+    <string name="summary_touch_stutter_compatibility" formatted="false">"Tolera variaciones breves de latencia de control para reducir interrupciones al arrastrar. Reconecta para aplicar."</string>
+    <string name="summary_virtual_display" formatted="false">"Compatible con Sunshine · Axixi y Razer; Apollo admite modo extendido. Se aplica al conectar el siguiente transmisión."</string>
+    <string name="title_gamepad_emulation" formatted="false">"Tipo de mando virtual en el PC"</string>
+    <string name="title_perf_overlay_lite_margin" formatted="false">"Margen del rendimiento compacto"</string>
+    <string name="title_perf_overlay_lite_position" formatted="false">"Posición del rendimiento compacto"</string>
+    <string name="title_show_guide_button" formatted="false">"Mostrar botón Guide"</string>
+    <string name="title_touch_stutter_compatibility" formatted="false">"Compatibilidad con interrupciones táctiles"</string>
+    <string name="title_virtual_display" formatted="false">"Pantalla virtual"</string>
+    <string name="version_history_current" formatted="false">"Versión actual"</string>
+    <string name="version_history_empty" formatted="false">"No hay historial de versiones"</string>
+    <string name="version_history_empty_description" formatted="false">"No hay notas de actualización"</string>
+    <string name="version_history_latest" formatted="false">"Última versión"</string>
+    <string name="version_history_load_failed" formatted="false">"No se pudo cargar el historial. Inténtalo de nuevo."</string>
+    <string name="version_history_loading" formatted="false">"Cargando historial de versiones…"</string>
+    <string name="version_history_retry" formatted="false">"Volver a cargar"</string>
+    <string name="version_history_title" formatted="false">"Historial de versiones"</string>
+    <string name="version_history_unknown" formatted="false">"Versión desconocida"</string>
+    <string name="version_history_version_format">"v%1$s"</string>
+    <string name="video_zoom_accessibility" formatted="false">"Zona de gestos de zoom"</string>
+    <string name="video_zoom_disabled" formatted="false">"Zoom desactivado"</string>
+    <string name="video_zoom_disabled_retained" formatted="false">"Zoom desactivado; se conserva el encuadre"</string>
+    <string name="video_zoom_enabled_hint" formatted="false">"Zoom activado: arrastra para mover, pellizca para ampliar, toca dos veces para restablecer y toca una vez para clic izquierdo"</string>
+    <string name="virtual_controller_config_move" formatted="false">"Mover"</string>
+    <string name="virtual_controller_config_resize" formatted="false">"Cambiar tamaño"</string>
+    <string name="virtual_controller_config_summary" formatted="false">"Elige cómo ajustar este control virtual."</string>
+    <string name="virtual_controller_config_title" formatted="false">"Configurar control"</string>
+    <string name="virtual_display_extend" formatted="false">"Modo extendido"</string>
+    <string name="virtual_display_off" formatted="false">"Desactivada"</string>
+    <string name="virtual_display_only" formatted="false">"Solo pantalla virtual"</string>
+    <string name="virtual_mouse_accessibility_compact" formatted="false">"Ratón virtual: toca para expandir y arrastra para mover"</string>
+    <string name="virtual_mouse_accessibility_expanded" formatted="false">"Ratón virtual expandido, con botones, rueda y zona de movimiento"</string>
+    <string name="virtual_mouse_accessibility_hidden" formatted="false">"Ratón virtual oculto"</string>
+    <string name="virtual_mouse_accessibility_scroll" formatted="false">"Desplazamiento del ratón virtual"</string>
+    <string name="axi_ui_guardar_archivo" formatted="false">"Guardar archivo de diseño"</string>
+    <string name="axi_ui_introduce_valor_0_9999" formatted="false">"Introduce un valor entre 0 y 9999."</string>
+    <string name="axi_ui_ajustes_guardados" formatted="false">"Ajustes guardados"</string>
+    <string name="axi_ui_archivo_vacio" formatted="false">"El archivo está vacío"</string>
+    <string name="axi_ui_importacion_correcta" formatted="false">"diseño importado"</string>
+    <string name="axi_ui_importacion_fallida" formatted="false">"No se pudo importar el diseño"</string>
+    <string name="axi_ui_error_archivo" formatted="false">"Error al leer el archivo: "</string>
+    <string name="axi_ui_3d_sdr" formatted="false">"La salida 3D utiliza SDR; HDR se ha desactivado para esta sesión."</string>
+</resources>

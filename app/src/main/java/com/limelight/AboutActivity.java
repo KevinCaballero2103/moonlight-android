@@ -33,7 +33,7 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
         ivLogo = findViewById(R.id.iv_logo);
         findViewById(R.id.iv_back).setOnClickListener(v -> finish());
         findViewById(R.id.iv_coffee).setOnClickListener(v -> showSponsoredQrDialog(this));
-        tvVersion.setText("版本号：" + BuildConfig.VERSION_NAME);
+        tvVersion.setText(getString(R.string.axi_ui_version) + BuildConfig.VERSION_NAME);
 
         ivLogo.setClipToOutline(true);
         ivLogo.setOutlineProvider(new ViewOutlineProvider() {

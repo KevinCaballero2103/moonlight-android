@@ -19,11 +19,11 @@
 
     <LinearLayout
         android:id="@+id/lv_right_view"
-        android:layout_width="230dp"
-        android:layout_height="30dp">
+        android:layout_width="280dp"
+        android:layout_height="48dp">
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
@@ -31,11 +31,12 @@
             android:drawablePadding="4dp"
             android:padding="4dp"
             android:id="@+id/btn_game_virtual_add"
-            android:text="新增按钮"
-            android:textSize="8dp" />
+            android:text="@string/axi_ui_anadir_control"
+            android:maxLines="2"
+            android:textSize="10sp" />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
@@ -43,11 +44,24 @@
             android:drawablePadding="4dp"
             android:padding="4dp"
             android:id="@+id/btn_game_virtual_reset"
-            android:text="重置布局"
-            android:textSize="8dp" />
+            android:text="@string/axi_ui_restablecer_layout"
+            android:maxLines="2"
+            android:textSize="10sp" />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_game_menu_btn_normal"
+            android:padding="4dp"
+            android:id="@+id/btn_game_virtual_genshin"
+            android:text="@string/genshin_preset_button"
+            android:maxLines="2"
+            android:textSize="10sp" />
+
+        <Button
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
@@ -55,8 +69,9 @@
             android:drawablePadding="4dp"
             android:padding="4dp"
             android:id="@+id/btn_game_virtual_save"
-            android:text="保存布局"
-            android:textSize="8dp" />
+            android:text="@string/axi_ui_guardar_layout"
+            android:maxLines="2"
+            android:textSize="10sp" />
 
     </LinearLayout>
 

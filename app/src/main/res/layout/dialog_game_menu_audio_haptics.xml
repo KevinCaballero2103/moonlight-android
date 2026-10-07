@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="音频震动"
+            android:text="@string/axi_ui_vibracion_por_audio"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
 
@@ -53,7 +53,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="功能"
+                    android:text="@string/axi_ui_funciones"
                     android:textColor="@android:color/white"
                     android:textSize="12dp"
                     android:textStyle="bold" />
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="以下选项开关会保存到配置文件"
+                    android:text="@string/axi_ui_estos_ajustes_se_guardan_en_la_configuracion"
                     android:textColor="@android:color/white"
                     android:textSize="8dp"
                     android:textStyle="italic|bold" />
@@ -85,7 +85,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="音频震动（Beta）"
+                        android:text="@string/axi_ui_vibracion_por_audio_beta"
                         android:textColor="@android:color/white"
                         android:textSize="8dp"
                         android:textStyle="italic|bold" />
@@ -94,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="把串流音频转换成震动反馈，更适合爆炸、撞击、低频场景"
+                        android:text="@string/axi_ui_convierte_el_audio_del_stream_en_vibracion_especialmente_explosi"
                         android:textColor="#FFC107"
                         android:textSize="6dp"
                         android:textStyle="italic|bold" />
@@ -118,7 +118,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="开启"
+                        android:text="@string/axi_ui_activado"
                         android:textSize="8dp" />
 
                     <RadioButton
@@ -131,7 +131,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:textSize="8dp" />
 
                 </RadioGroup>
@@ -151,7 +151,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="音频震动输出目标"
+                            android:text="@string/axi_ui_destino_de_la_vibracion_por_audio"
                             android:textColor="@android:color/white"
                             android:textSize="8dp"
                             android:textStyle="italic|bold" />
@@ -160,7 +160,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:text="其中原装DS5有线驱动接管模式，有特殊优化."
+                            android:text="@string/axi_ui_incluye_optimizaciones_para_dualsense_originales_conectados_por"
                             android:textColor="#FFC107"
                             android:textSize="6dp"
                             android:textStyle="italic|bold" />
@@ -184,7 +184,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="手机"
+                            android:text="@string/axi_ui_telefono"
                             android:textSize="8dp" />
 
                         <RadioButton
@@ -197,7 +197,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="手柄"
+                            android:text="@string/axi_ui_mando"
                             android:textSize="8dp" />
 
                     </RadioGroup>
@@ -207,7 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="保留游戏内手柄震动"
+                        android:text="@string/axi_ui_conservar_la_vibracion_del_juego"
                         android:textColor="@android:color/white"
                         android:textSize="8dp"
                         android:textStyle="italic|bold"
@@ -231,7 +231,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="开启"
+                            android:text="@string/axi_ui_activado"
                             android:textSize="8dp" />
 
                         <RadioButton
@@ -244,7 +244,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="关闭"
+                            android:text="@string/axi_ui_desactivado"
                             android:textSize="8dp" />
 
                     </RadioGroup>
@@ -254,7 +254,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="音频震动强度：100%"
+                        android:text="@string/axi_ui_intensidad_de_vibracion_por_audio_100"
                         android:textColor="@android:color/white"
                         android:textSize="8dp"
                         android:textStyle="italic|bold" />
@@ -282,7 +282,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="音频震动语音过滤"
+                            android:text="@string/axi_ui_filtro_de_voz"
                             android:textColor="@android:color/white"
                             android:textSize="8dp"
                             android:textStyle="italic|bold" />
@@ -291,7 +291,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:text="降低人声、语音聊天、播报声对震动的触发"
+                            android:text="@string/axi_ui_reduce_la_vibracion_provocada_por_voces_chat_y_anuncios"
                             android:textColor="#FFC107"
                             android:textSize="6dp"
                             android:textStyle="italic|bold" />
@@ -315,7 +315,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="关闭"
+                            android:text="@string/axi_ui_desactivado"
                             android:textSize="6dp" />
 
                         <RadioButton
@@ -328,7 +328,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="低"
+                            android:text="@string/axi_ui_bajo"
                             android:textSize="6dp" />
 
                         <RadioButton
@@ -341,7 +341,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="中"
+                            android:text="@string/axi_ui_medio"
                             android:textSize="6dp" />
 
                         <RadioButton
@@ -354,7 +354,7 @@
                             android:button="@null"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="高"
+                            android:text="@string/axi_ui_alto"
                             android:textSize="6dp" />
 
                     </RadioGroup>

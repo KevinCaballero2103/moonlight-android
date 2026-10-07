@@ -91,7 +91,7 @@ public final class UpdateChecker {
     public static void checkForUpdates(Activity activity, boolean interactive) {
         SpinnerDialog spinner = null;
         if (interactive) {
-            spinner = SpinnerDialog.displayDialog(activity, "检查更新", "正在获取版本信息...", false);
+            spinner = SpinnerDialog.displayDialog(activity, activity.getString(R.string.axi_ui_buscar_actualizaciones), activity.getString(R.string.axi_ui_consultando_version), false);
         }
 
         SpinnerDialog finalSpinner = spinner;
@@ -110,8 +110,8 @@ public final class UpdateChecker {
                     dismissSpinner(finalSpinner);
                     if (interactive) {
                         showToast(activity, parseError
-                                ? "更新信息解析失败，已打开默认下载链接"
-                                : "检查更新失败，已打开默认下载链接");
+                                ? activity.getString(R.string.axi_ui_no_se_pudo_interpretar_la_actualizacion_se_abrio_el_enlace_de_de)
+                                : activity.getString(R.string.axi_ui_no_se_pudo_consultar_la_actualizacion_se_abrio_el_enlace_de_desc));
                     }
                 });
             }
@@ -214,14 +214,14 @@ public final class UpdateChecker {
 
         if (latest == null || latest.code <= 0) {
             if (interactive) {
-                showToast(activity, "未找到可用更新信息");
+                showToast(activity, activity.getString(R.string.axi_ui_no_se_encontro_informacion_de_actualizacion));
             }
             return;
         }
 
         if (latest.code <= BuildConfig.AXI_CODE) {
             if (interactive) {
-                showToast(activity, "当前已是最新版本");
+                showToast(activity, activity.getString(R.string.axi_ui_ya_tienes_la_ultima_version));
             }
             return;
         }
@@ -243,9 +243,9 @@ public final class UpdateChecker {
         View cancelButton = dialogView.findViewById(R.id.btn_cancel_update);
         View downloadButton = dialogView.findViewById(R.id.btn_download_update);
 
-        versionsView.setText("当前版本：" + BuildConfig.VERSION_NAME + " (" + BuildConfig.AXI_CODE + ")"
-                + "\n最新版本：" + safeText(latest.versionName, "未知版本") + " (" + latest.code + ")");
-        descView.setText(TextUtils.isEmpty(description) ? "暂无更新说明。" : description);
+        versionsView.setText(activity.getString(R.string.axi_ui_version_actual) + BuildConfig.VERSION_NAME + " (" + BuildConfig.AXI_CODE + ")"
+                + activity.getString(R.string.axi_ui_nultima_version) + safeText(latest.versionName, activity.getString(R.string.version_history_unknown)) + " (" + latest.code + ")");
+        descView.setText(TextUtils.isEmpty(description) ? activity.getString(R.string.axi_ui_no_hay_notas_de_actualizacion) : description);
         skipRow.setVisibility(interactive ? View.GONE : View.VISIBLE);
 
         AlertDialog dialog = buildDialog(activity, dialogView);
@@ -271,11 +271,11 @@ public final class UpdateChecker {
         List<String> urls = new ArrayList<>();
 
         addDownloadOption(labels, urls, "GitHub Releases", latest.github);
-        addDownloadOption(labels, urls, "夸克网盘", latest.quark);
-        addDownloadOption(labels, urls, "百度网盘", latest.baidu);
+        addDownloadOption(labels, urls, activity.getString(R.string.axi_ui_quark_drive), latest.quark);
+        addDownloadOption(labels, urls, activity.getString(R.string.axi_ui_baidu_drive), latest.baidu);
 
         if (urls.isEmpty()) {
-            showToast(activity, "当前没有可用下载地址");
+            showToast(activity, activity.getString(R.string.axi_ui_no_hay_enlaces_de_descarga_disponibles));
             return;
         }
 
@@ -511,7 +511,7 @@ public final class UpdateChecker {
         if (intent.resolveActivity(activity.getPackageManager()) != null) {
             activity.startActivity(intent);
         } else {
-            showToast(activity, "未找到可用浏览器");
+            showToast(activity, activity.getString(R.string.axi_ui_no_se_encontro_un_navegador));
         }
     }
 

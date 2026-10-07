@@ -70,43 +70,43 @@ public class GameFunctionFragment extends BaseGameMenuDialog implements View.OnC
             return;
         }
         if(v.getId()==R.id.btn_logout){
-            click.click("注销",0);
+            click.click(getString(R.string.axi_ui_cerrar_sesion),0);
             return;
         }
         if(v.getId()==R.id.btn_shutdown){
-            click.click("关机",1);
+            click.click(getString(R.string.axi_ui_apagar_pc),1);
             return;
         }
         if(v.getId()==R.id.btn_sleep){
-            click.click("睡眠",2);
+            click.click(getString(R.string.axi_ui_suspender),2);
             return;
         }
         if(v.getId()==R.id.btn_reboot){
-            click.click("重启",3);
+            click.click(getString(R.string.axi_ui_reiniciar_pc),3);
             return;
         }
         if(v.getId()==R.id.btn_task_manager){
-            click.click("任务管理器",4);
+            click.click(getString(R.string.axi_ui_administrador_de_tareas),4);
             return;
         }
         if(v.getId()==R.id.btn_clipboard_send){
-            click.click("发送剪切板",5);
+            click.click(getString(R.string.axi_ui_enviar_portapapeles),5);
             return;
         }
         if(v.getId()==R.id.btn_clipboard_open){
-            click.click("打开剪切板",6);
+            click.click(getString(R.string.axi_ui_abrir_portapapeles),6);
             return;
         }
         if(v.getId()==R.id.btn_open_setting){
-            click.click("打开设置",7);
+            click.click(getString(R.string.axi_ui_abrir_ajustes),7);
             return;
         }
         if(v.getId()==R.id.btn_computer){
-            click.click("我的电脑",8);
+            click.click(getString(R.string.axi_ui_este_equipo),8);
             return;
         }
         if(v.getId()==R.id.btn_win_center){
-            click.click("移动中心",9);
+            click.click(getString(R.string.axi_ui_centro_de_movilidad),9);
             return;
         }
         if(v.getId()==R.id.btn_win_p){
@@ -115,23 +115,23 @@ public class GameFunctionFragment extends BaseGameMenuDialog implements View.OnC
         }
 
         if(v.getId()==R.id.btn_display_1){
-            click.click("显示器1",11);
+            click.click(getString(R.string.axi_ui_pantalla_1),11);
             return;
         }
         if(v.getId()==R.id.btn_display_2){
-            click.click("显示器2",12);
+            click.click(getString(R.string.axi_ui_pantalla_2),12);
             return;
         }
         if(v.getId()==R.id.btn_display_3){
-            click.click("显示器3",13);
+            click.click(getString(R.string.axi_ui_pantalla_3),13);
             return;
         }
         if(v.getId()==R.id.btn_display_4){
-            click.click("显示器4",14);
+            click.click(getString(R.string.axi_ui_pantalla_4),14);
             return;
         }
         if(v.getId()==R.id.btn_hdr){
-            click.click("HDR开关",15);
+            click.click(getString(R.string.axi_ui_activar_desactivar_hdr),15);
             return;
         }
 

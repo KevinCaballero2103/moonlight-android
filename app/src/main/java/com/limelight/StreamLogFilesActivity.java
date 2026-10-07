@@ -85,7 +85,7 @@ public class StreamLogFilesActivity extends BaseActivity {
     private void showActions(File file) {
         new AlertDialog.Builder(this)
                 .setTitle(file.getName())
-                .setItems(new String[]{"查看", "导出", "删除"}, (dialog, which) -> {
+                .setItems(new String[]{getString(R.string.axi_ui_ver), getString(R.string.axi_ui_exportar), getString(R.string.axi_ui_eliminar)}, (dialog, which) -> {
                     if (which == 0) {
                         showPreview(file);
                     }
@@ -103,9 +103,9 @@ public class StreamLogFilesActivity extends BaseActivity {
         String content = StreamLogStore.readPreview(this, file, 24000);
         new AlertDialog.Builder(this)
                 .setTitle(file.getName())
-                .setMessage(content.isEmpty() ? "日志内容为空" : content)
-                .setPositiveButton("关闭", null)
-                .setNeutralButton("导出", (dialog, which) -> exportFile(file))
+                .setMessage(content.isEmpty() ? getString(R.string.axi_ui_el_registro_esta_vacio) : content)
+                .setPositiveButton(getString(R.string.settings_panel_close), null)
+                .setNeutralButton(getString(R.string.axi_ui_exportar), (dialog, which) -> exportFile(file))
                 .show();
     }
 
@@ -120,15 +120,15 @@ public class StreamLogFilesActivity extends BaseActivity {
 
     private void confirmDelete(File file) {
         new AlertDialog.Builder(this)
-                .setTitle("删除日志")
-                .setMessage("确定删除这份串流日志吗？")
-                .setNegativeButton("取消", null)
-                .setPositiveButton("删除", (dialog, which) -> {
+                .setTitle(getString(R.string.axi_ui_eliminar_registro))
+                .setMessage(getString(R.string.axi_ui_eliminar_este_registro_de_streaming))
+                .setNegativeButton(getString(R.string.game_menu_cancel), null)
+                .setPositiveButton(getString(R.string.axi_ui_eliminar), (dialog, which) -> {
                     if (StreamLogStore.delete(this, file)) {
                         refreshList();
                     }
                     else {
-                        Toast.makeText(this, "日志删除失败", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.axi_ui_no_se_pudo_eliminar_el_registro), Toast.LENGTH_SHORT).show();
                     }
                 })
                 .show();
@@ -147,7 +147,7 @@ public class StreamLogFilesActivity extends BaseActivity {
         Uri destination = data.getData();
         boolean exported = destination != null && StreamLogStore.export(this, pendingExportFile, destination);
         pendingExportFile = null;
-        Toast.makeText(this, exported ? "日志已导出" : "日志导出失败", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, exported ? getString(R.string.axi_ui_registro_exportado) : getString(R.string.axi_ui_no_se_pudo_exportar_el_registro), Toast.LENGTH_SHORT).show();
     }
 
     private int dp(int value) {

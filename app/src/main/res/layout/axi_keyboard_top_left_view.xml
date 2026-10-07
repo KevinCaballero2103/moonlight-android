@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="当前按钮：xx"
+            android:text="@string/axi_ui_control_seleccionado_xx"
             android:textSize="12sp"
             android:id="@+id/tx_name"
             android:textStyle="bold"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
-            android:text="键值：xx"
+            android:text="@string/axi_ui_teclas_xx"
             android:id="@+id/tx_desc"
             android:textSize="11sp"
             android:textColor="@android:color/white"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:text="坐标：xx"
+            android:text="@string/axi_ui_posicion_xx"
             android:id="@+id/tx_margin"
             android:textSize="11sp"
             android:textColor="@android:color/white"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:text="缩放比例：100%"
+            android:text="@string/axi_ui_escala_100"
             android:textSize="11sp"
             android:id="@+id/tx_zoom"
             android:textColor="@android:color/white"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="缩放宽度：100%"
+                android:text="@string/axi_ui_ancho_100"
                 android:textSize="11sp"
                 android:id="@+id/tx_zoom_w"
                 android:textColor="@android:color/white"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:text="缩放高度：100%"
+                android:text="@string/axi_ui_alto_100"
                 android:textSize="11sp"
                 android:id="@+id/tx_zoom_h"
                 android:textColor="@android:color/white"
@@ -121,7 +121,7 @@
                 android:textSize="11sp"
                 android:id="@+id/cb_switch_mode"
                 android:buttonTint="#8C99E6"
-                android:text="锁定模式" />
+                android:text="@string/axi_ui_modo_bloqueo" />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
             android:text="@string/control_opacity_hint" />
 
         <TextView
-            android:text="删除"
+            android:text="@string/axi_ui_eliminar"
             android:textSize="12sp"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="5dp"
@@ -226,7 +226,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:text="取消"
+            android:text="@string/game_menu_cancel"
             android:textSize="12sp"
             android:gravity="center"
             android:layout_marginTop="4dp"

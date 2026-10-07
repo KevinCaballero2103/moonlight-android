@@ -149,12 +149,12 @@ public class VirtualController {
         String message="";
         switch (currentMode){
             case Active:
-                message="正常模式~";
+                message=context.getString(R.string.axi_ui_modo_normal_593ebfdf);
                 buttonConfigure.setVisibility(View.GONE);
                 VirtualControllerConfigurationLoader.saveProfile(VirtualController.this, context);
                 break;
             case MoveButtons:
-                message="位移模式~";
+                message=context.getString(R.string.axi_ui_modo_mover);
                 buttonConfigure.setVisibility(View.VISIBLE);
                 rg_game_virtual_pad.check(R.id.btn_game_virtual_move);
                 showEnabledElements();
@@ -162,12 +162,12 @@ public class VirtualController {
             case ResizeButtons:
                 buttonConfigure.setVisibility(View.VISIBLE);
                 rg_game_virtual_pad.check(R.id.btn_game_virtual_zoom);
-                message="缩放模式~";
+                message=context.getString(R.string.axi_ui_modo_cambiar_tamano);
                 break;
             case DisableEnableButtons:
                 buttonConfigure.setVisibility(View.VISIBLE);
                 rg_game_virtual_pad.check(R.id.btn_game_virtual_disable);
-                message="禁用模式~";
+                message=context.getString(R.string.axi_ui_modo_desactivado);
                 showElements();
                 break;
         }

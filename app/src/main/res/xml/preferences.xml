@@ -34,10 +34,10 @@
             android:key="edit_diy_bitrate"
             android:defaultValue="20"
             android:singleLine="true"
-            android:dialogTitle="输入视频码率Mbps"
-            android:summary="如果你感觉Seek控件滑动不太好用，可以选择手动输入。\n超过Seek滑动最大值，可能不显示但是串流时是生效的~"
-            android:dialogMessage="请输入数字，小数点只能识别到x.5，超过会四舍五入~"
-            android:title="强制设置视频码率（覆盖上方滑动码率）" />
+            android:dialogTitle="@string/axi_ui_bitrate_manual_mbps"
+            android:summary="@string/axi_ui_introduce_el_bitrate_si_prefieres_no_usar_el_deslizador_los_valo"
+            android:dialogMessage="@string/axi_ui_introduce_un_numero_los_decimales_se_redondean_a_pasos_de_0_5"
+            android:title="@string/axi_ui_bitrate_manual_sustituye_al_deslizador" />
 
         <Preference
             android:key="vdValue"
@@ -55,78 +55,78 @@
 
         <CheckBoxPreference
             android:key="enable_lowLatency_experiment"
-            android:title="优化解码低延迟模式(Beta)"
-            android:summary="(实验性) 高通8Gen1及以上和联发科9300及以下芯片机型生效。"
+            android:title="@string/axi_ui_decodificacion_de_baja_latencia_beta_684bc21e"
+            android:summary="@string/axi_ui_experimental_compatible_con_snapdragon_8_gen_1_o_superiores_y_me"
             android:defaultValue="true" />
 
         <CheckBoxPreference
             android:key="checkbox_enable_xiaomi_xring_o1_optimization"
-            android:title="小米玄戒 O1 优化"
-            android:summary="仅小米玄戒 O1 机型生效，启用后使用专属解码兼容与低延迟优化；关闭则保持原逻辑。"
+            android:title="@string/axi_ui_optimizacion_para_xiaomi_xring_o1"
+            android:summary="@string/axi_ui_solo_para_xiaomi_xring_o1_utiliza_ajustes_especificos_de_compati"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="list_video_render_mode"
-            android:title="渲染模式"
+            android:title="@string/axi_ui_modo_de_renderizado"
             android:entries="@array/video_render_mode_names"
             android:entryValues="@array/video_render_mode_values"
-            android:summary="GLES 渲染支持 FSR 和画面处理功能。"
+            android:summary="@string/axi_ui_gles_permite_fsr_y_procesamiento_de_imagen_5d8d75eb"
             android:defaultValue="system" />
 
         <ListPreference
             android:key="list_stereo_3d_mode"
-            android:title="3D输出"
+            android:title="@string/axi_ui_salida_3d"
             android:entries="@array/stereo_3d_mode_names"
             android:entryValues="@array/stereo_3d_mode_values"
-            android:summary="全宽输出3840×1080/1200，半宽输出1920×1080/1200；仅支持GLES渲染。"
+            android:summary="@string/axi_ui_salida_de_ancho_completo_38401080_1200_o_medio_ancho_19201080_12"
             android:defaultValue="off" />
 
         <ListPreference
             android:key="list_stereo_3d_depth"
-            android:title="3D景深"
+            android:title="@string/axi_ui_profundidad_3d_42d65a8d"
             android:entries="@array/stereo_3d_depth_names"
             android:entryValues="@array/stereo_3d_depth_values"
-            android:summary="控制左右眼最大视差，建议从标准开始。"
+            android:summary="@string/axi_ui_controla_la_disparidad_maxima_entre_los_ojos_empieza_con_estanda"
             android:defaultValue="standard" />
 
         <ListPreference
             android:key="list_stereo_3d_convergence"
-            android:title="3D汇聚"
+            android:title="@string/axi_ui_convergencia_3d"
             android:entries="@array/stereo_3d_convergence_names"
             android:entryValues="@array/stereo_3d_convergence_values"
-            android:summary="调整画面位于屏幕前后的基准位置。"
+            android:summary="@string/axi_ui_ajusta_la_posicion_de_referencia_de_la_imagen_respecto_a_la_pant"
             android:defaultValue="standard" />
 
         <CheckBoxPreference
             android:key="checkbox_stereo_3d_swap_eyes"
-            android:title="交换左右眼"
-            android:summary="当远近关系相反或眼镜眼序不一致时开启。"
+            android:title="@string/axi_ui_intercambiar_ojos"
+            android:summary="@string/axi_ui_activalo_si_la_profundidad_aparece_invertida_o_el_orden_de_las_g"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="list_fsr_target"
-            android:title="超分目标"
+            android:title="@string/axi_ui_resolucion_de_reescalado"
             android:entries="@array/fsr_target_names"
             android:entryValues="@array/fsr_target_values"
-            android:summary="GLES 渲染下启用 FSR 超分到 2K 或 4K。"
+            android:summary="@string/axi_ui_reescala_a_2k_o_4k_con_fsr_en_el_renderizador_gles"
             android:defaultValue="off" />
 
         <ListPreference
             android:key="list_fsr_sharpness"
             android:dependency="list_fsr_target"
-            android:title="锐化程度"
+            android:title="@string/axi_ui_nitidez"
             android:entries="@array/fsr_sharpness_names"
             android:entryValues="@array/fsr_sharpness_values"
-            android:summary="仅在启用 FSR 超分时生效，数值越高边缘越锐利。"
+            android:summary="@string/axi_ui_solo_afecta_a_fsr_los_valores_altos_aumentan_la_nitidez_de_los_b"
             android:defaultValue="standard" />
 
         <ListPreference
             android:key="list_fsr_hdr_output"
             android:dependency="list_fsr_target"
-            android:title="FSR HDR输出"
+            android:title="@string/axi_ui_salida_hdr_de_fsr"
             android:entries="@array/fsr_hdr_output_names"
             android:entryValues="@array/fsr_hdr_output_values"
-            android:summary="兼容 SDR 映射更稳定；原生 HDR 直出为实验性，需要设备支持 BT2020 PQ。"
+            android:summary="@string/axi_ui_la_conversion_a_sdr_ofrece_mayor_compatibilidad_hdr_nativo_es_ex"
             android:defaultValue="native" />
         <CheckBoxPreference
             android:key="checkbox_stretch_video"
@@ -135,26 +135,26 @@
 
         <CheckBoxPreference
             android:key="checkbox_cutout_mode_video"
-            android:title="填充刘海区域"
+            android:title="@string/axi_ui_usar_zona_de_la_camara_frontal"
             android:defaultValue="false" />
 
         <CheckBoxPreference
             android:key="checkbox_auto_screen_orientation"
-            android:title="横竖屏自由切换"
+            android:title="@string/axi_ui_permitir_cambio_de_orientacion"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="screen_gravity_list"
-            android:title="画面显示位置"
-            android:summary="可能对折叠屏手机或者平板有点帮助,请自行DIY分辨率和画面位置。"
+            android:title="@string/axi_ui_posicion_de_la_imagen"
+            android:summary="@string/axi_ui_util_para_plegables_y_tabletas_ajusta_la_resolucion_y_posicion_a"
             android:entries="@array/screen_gravity_list_names"
             android:entryValues="@array/screen_gravity_list_values"
             android:defaultValue="0" />
 
         <CheckBoxPreference
             android:key="checkbox_ui_theme_white"
-            android:title="部分页面主题色为白色"
-            android:summary="安卓10及以上生效"
+            android:title="@string/axi_ui_tema_claro_en_algunas_pantallas"
+            android:summary="@string/axi_ui_disponible_desde_android_10"
             android:defaultValue="true" />
 
     </PreferenceCategory>
@@ -241,8 +241,8 @@
 
         <CheckBoxPreference
             android:key="checkbox_flip_rumble_ff"
-            android:title="反转握把震动"
-            android:summary="如果你发现扣动左扳机是右边握把震动，则开启此选项。"
+            android:title="@string/axi_ui_invertir_vibracion_de_los_agarres"
+            android:summary="@string/axi_ui_activalo_si_el_gatillo_izquierdo_hace_vibrar_el_agarre_derecho"
             android:defaultValue="false" />
 
         <CheckBoxPreference
@@ -263,8 +263,8 @@
 
         <CheckBoxPreference
             android:key="checkbox_disable_trigger_deadzone"
-            android:title="禁用默认13%的手柄扳机死区"
-            android:summary="勾选后 手柄扳机死区 Moonlight不做限制【某些ASUS Gamepad设备除外】。"
+            android:title="@string/axi_ui_omitir_zona_muerta_de_gatillos_del_13"
+            android:summary="@string/axi_ui_moonlight_no_aplicara_su_zona_muerta_de_gatillos_salvo_en_determ"
             android:defaultValue="false"/>
 
     </PreferenceCategory>
@@ -273,8 +273,8 @@
 
         <ListPreference
             android:key="mouse_model_list_axi"
-            android:title="触控/鼠标模式"
-            android:summary="可选择一种鼠标模式，多点触控需要搭配sunshine使用~"
+            android:title="@string/axi_ui_modo_tactil_y_de_raton"
+            android:summary="@string/axi_ui_selecciona_el_modo_de_raton_el_modo_multitactil_requiere_sunshin"
             android:entries="@array/mouse_model_names_axi"
             android:entryValues="@array/mouse_model_values_axi"
             android:defaultValue="0" />
@@ -287,8 +287,8 @@
 
         <CheckBoxPreference
             android:key="checkbox_mouse_local_cursor"
-            android:title="使用本地鼠标光标"
-            android:summary="默认外接物理鼠标的光标会被捕获，此选项可显示安卓系统光标"
+            android:title="@string/axi_ui_usar_cursor_local"
+            android:summary="@string/axi_ui_muestra_el_cursor_de_android_al_conectar_un_raton_fisico"
             android:defaultValue="false" />
 
 <!--        <CheckBoxPreference-->
@@ -326,8 +326,8 @@
 
         <ListPreference
             android:key="gamepad_axi_list"
-            android:title="默认布局方案"
-            android:summary="横竖屏支持单独配置。"
+            android:title="@string/axi_ui_layout_predeterminado"
+            android:summary="@string/axi_ui_layouts_independientes_para_orientacion_horizontal_y_vertical"
             android:entries="@array/gamepad_axi_names"
             android:entryValues="@array/gamepad_axi_values"
             android:defaultValue="OSC_GAMEPAD_1" />
@@ -368,19 +368,19 @@
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="checkbox_rocker_click_L3R3"
-            android:summary="开启后，虚拟手柄摇杆无法触发L3和R3"
-            android:title="禁用虚拟手柄摇杆中心区域" />
+            android:summary="@string/axi_ui_los_sticks_virtuales_dejaran_de_activar_l3_y_r3"
+            android:title="@string/axi_ui_desactivar_pulsacion_central_de_los_sticks" />
 
         <Preference
             android:key="import_gamepad_file"
-            android:title="导入虚拟手柄配置"
-            android:summary="选择一个配置文件，覆盖默认选择的布局方案。(仅横屏模式)"
+            android:title="@string/axi_ui_importar_layout_del_mando_virtual"
+            android:summary="@string/axi_ui_importa_un_archivo_para_reemplazar_el_layout_seleccionado_en_ori"
             />
 
         <Preference
             android:key="export_gamepad_file"
-            android:title="导出虚拟手柄配置"
-            android:summary="导出默认选择的布局方案的配置文件。(仅横屏模式)"
+            android:title="@string/axi_ui_exportar_layout_del_mando_virtual"
+            android:summary="@string/axi_ui_exporta_el_layout_seleccionado_en_orientacion_horizontal"
             />
 
     </PreferenceCategory>
@@ -458,15 +458,15 @@
         <CheckBoxPreference
             android:key="checkbox_enable_perf_overlay_lite"
             android:dependency="checkbox_enable_perf_overlay"
-            android:title="开启Lite精简模式"
-            android:summary="展示简化版性能信息：网速/延迟/解码/丢包率/FPS"
+            android:title="@string/axi_ui_rendimiento_compacto_b66e593c"
+            android:summary="@string/axi_ui_muestra_velocidad_de_red_latencia_decodificacion_perdida_y_fps"
             android:defaultValue="true" />
 
         <CheckBoxPreference
             android:key="checkbox_enable_perf_overlay_lite_dialog"
             android:dependency="checkbox_enable_perf_overlay_lite"
-            android:title="精简模式点击选项"
-            android:summary="代替返回键逻辑，弹出游戏快捷菜单。"
+            android:title="@string/axi_ui_accion_al_tocar_rendimiento_compacto"
+            android:summary="@string/axi_ui_abre_el_menu_del_juego_en_lugar_de_ejecutar_volver"
             android:defaultValue="true" />
 
         <ListPreference
@@ -480,8 +480,8 @@
         <CheckBoxPreference
             android:key="checkbox_enable_perf_overlay_lite_ext"
             android:dependency="checkbox_enable_perf_overlay_lite"
-            android:title="精简模式扩展参数"
-            android:summary="开启后，增加分辨率、HDR、解码器等参数。"
+            android:title="@string/axi_ui_datos_adicionales_de_rendimiento"
+            android:summary="@string/axi_ui_anade_resolucion_hdr_decodificador_y_otros_datos"
             android:defaultValue="true" />
 
         <com.limelight.preferences.SeekBarPreference
@@ -502,43 +502,40 @@
             android:defaultValue="false"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="阿西西的日常设置"
+    <PreferenceCategory android:title="@string/axi_ui_ajustes_de_axixi"
         android:key="category_axixi_settings">
 
         <EditTextPreference
             android:key="edit_diy_w_h"
             android:defaultValue="1920x1080"
             android:singleLine="true"
-            android:dialogTitle="设置完分辨率后，退出设置页面 重新打开生效！"
-            android:summary="添加一个自定义分辨率,x号分割,比较奇怪的分辨率可能无法生效。
-            \n例如：1920x1080
-            \n非原生分辨率如果是刘海屏可能不会默认填充刘海区域，
-            \n如果画面比例一样，可手动设置拉伸画面来充满全屏"
-            android:title="自定义分辨率" />
+            android:dialogTitle="@string/axi_ui_despues_de_cambiar_la_resolucion_sal_de_ajustes_y_vuelve_a_abrir"
+            android:summary="@string/custom_resolution_help"
+            android:title="@string/settings_panel_custom" />
 
         <CheckBoxPreference
             android:key="checkbox_enable_portrait"
-            android:title="竖屏显示模式"
-            android:summary="搭配自定义分辨率使用，确保你使用的串流端支持并且PC端分辨率是竖直方向"
+            android:title="@string/axi_ui_modo_vertical"
+            android:summary="@string/axi_ui_usa_una_resolucion_personalizada_vertical_compatible_con_el_serv"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_enable_joyconfix"
-            android:title="兼容Switch JoyCon手柄"
-            android:summary="如果你的JoyCon无法使用或识别按键有问题，可以尝试开启此功能。适配Android 10及以上"
+            android:title="@string/axi_ui_compatibilidad_con_joy_con_de_switch"
+            android:summary="@string/axi_ui_activalo_si_los_joy_con_no_responden_correctamente_requiere_andr"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_gamepad_enable_battery_report"
-            android:summary="在可用时汇报手柄电池状态。\n如果在使用触摸屏/触摸板/手写笔/鼠标时偶尔有卡顿现象发生，关闭此选项可能会有用。"
-            android:title="启用手柄电池状态报告"
+            android:summary="@string/axi_ui_informa_de_la_bateria_cuando_sea_posible_desactivalo_si_el_tacti"
+            android:title="@string/axi_ui_informar_bateria_del_mando"
             android:defaultValue="true"
             />
 
         <CheckBoxPreference
             android:key="checkbox_enable_ax_floating"
-            android:title="启用悬浮球"
-            android:summary="开启后，点击打开快捷菜单。"
+            android:title="@string/axi_ui_mostrar_boton_flotante"
+            android:summary="@string/axi_ui_toca_el_boton_para_abrir_el_menu_rapido"
             android:defaultValue="true"/>
 
         <com.limelight.preferences.SeekBarPreference
@@ -549,7 +546,7 @@
             android:defaultValue="90"
             android:summary="@string/summary_osc_opacity"
             android:text="%"
-            android:title="虚拟全键盘透明度" />
+            android:title="@string/axi_ui_opacidad_del_teclado_completo_944e0ab9" />
 
         <com.limelight.preferences.SeekBarPreference
             android:key="seekbar_keyboard_axi_height"
@@ -557,75 +554,74 @@
             seekbar:step="10"
             android:max="400"
             android:defaultValue="200"
-            android:summary="调整虚拟全键盘的高度"
+            android:summary="@string/axi_ui_ajusta_la_altura_del_teclado_completo"
             android:text="dp"
-            android:title="虚拟全键盘高度" />
+            android:title="@string/axi_ui_altura_del_teclado_completo_209b651c" />
 
         <CheckBoxPreference
             android:key="checkbox_enable_keyboard_axi_combination"
-            android:title="全键盘组合键模式"
-            android:summary="勾选后默认为选中组合键模式"
+            android:title="@string/axi_ui_combinaciones_en_el_teclado_completo"
+            android:summary="@string/axi_ui_activa_por_defecto_el_modo_de_combinacion_de_teclas"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_enable_exdisplay"
-            android:title="外接显示器模式（Beta）"
-            android:summary="串流画面显示在显示器，虚拟按键及性能信息等控件在手机屏幕。"
+            android:title="@string/axi_ui_pantalla_externa_beta"
+            android:summary="@string/axi_ui_muestra_el_video_en_la_pantalla_externa_y_los_controles_y_rendim"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_enable_device_rumble"
-            android:title="强制使用设备本身的震动马达"
-            android:summary="你如果对连接的手柄本身震动效果不满意，可以开启此选项！【对强制使用月光自带USB驱动无效】"
+            android:title="@string/axi_ui_forzar_vibracion_del_dispositivo"
+            android:summary="@string/axi_ui_usa_el_motor_del_dispositivo_en_lugar_del_mando_no_afecta_a_mand"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_enable_virtual_motion"
-            android:title="虚拟手柄使用设备本身的陀螺仪"
-            android:summary="如果你希望虚拟手柄支持陀螺仪功能，开启此选项。\n可能需要在sunshine后台设置手柄强制为ps4手柄。\n建议连接物理手柄时关闭此选项。"
+            android:title="@string/axi_ui_giroscopio_del_dispositivo_para_mando_virtual"
+            android:summary="@string/axi_ui_usa_el_giroscopio_del_telefono_con_el_mando_virtual_puede_requer"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_enable_clear_default_special_button"
-            android:title="禁用默认的特殊按键指令(快捷键)"
-            android:summary="如果你感觉内置的指令对你没什么用的话，可以禁用，使用自己导入的。"
+            android:title="@string/axi_ui_desactivar_atajos_incorporados"
+            android:summary="@string/axi_ui_usa_unicamente_los_atajos_que_importes"
             android:defaultValue="false"/>
 
         <CheckBoxPreference
             android:key="checkbox_enable_game_manager_quest"
-            android:title="禁用游戏模式"
-            android:summary="可能对Quest 安卓13及以上版本有用"
+            android:title="@string/axi_ui_desactivar_modo_juego_de_android"
+            android:summary="@string/axi_ui_puede_ayudar_en_dispositivos_quest_con_android_13_o_posterior"
             android:defaultValue="false"/>
 
         <Preference
             android:key="import_switch_button_file"
-            android:title="导入自定义无障碍配置文件"
-            android:summary="每次都会覆盖原来的，请注意备份。"
+            android:title="@string/axi_ui_importar_configuracion_de_accesibilidad"
+            android:summary="@string/axi_ui_reemplaza_la_configuracion_anterior_conserva_una_copia_si_la_nec"
             />
 
         <CheckBoxPreference
             android:key="checkbox_enable_accessibility_show_log"
-            android:title="无障碍键盘模式显示捕获的键值"
-            android:summary="打开无障碍键盘，在月光app任意界面，输入按键，会弹出键值，用于自定义无障碍配置文件使用。"
+            android:title="@string/axi_ui_mostrar_teclas_capturadas_por_accesibilidad"
+            android:summary="@string/axi_ui_con_el_servicio_activo_muestra_los_codigos_de_las_teclas_fisicas"
             android:defaultValue="false"/>
 
     </PreferenceCategory>
 
 
-    <PreferenceCategory android:title="虚拟按键"
+    <PreferenceCategory android:title="@string/axi_ui_controles_virtuales"
         android:key="category_axixi_settings">
 
         <CheckBoxPreference
             android:key="checkbox_enable_keyboard"
-            android:title="显示虚拟按键"
-            android:summary="在触摸屏上显示一层虚拟特殊按键。
-            \n按键透明度与上方选项中虚拟手柄共用。"
+            android:title="@string/axi_ui_mostrar_controles_virtuales"
+            android:summary="@string/virtual_controls_help"
             android:defaultValue="false"/>
 
         <ListPreference
             android:key="keyboard_axi_list"
-            android:title="默认布局方案"
-            android:summary="横竖屏支持单独配置。"
+            android:title="@string/axi_ui_layout_predeterminado"
+            android:summary="@string/axi_ui_layouts_independientes_para_orientacion_horizontal_y_vertical"
             android:entries="@array/keyboard_axi_names"
             android:entryValues="@array/keyboard_axi_values"
             android:defaultValue="OSC_Keyboard" />
@@ -633,35 +629,35 @@
         <CheckBoxPreference
             android:key="checkbox_vibrate_keyboard"
             android:title="@string/title_checkbox_vibrate_osc"
-            android:summary="点按屏幕按键时，会触发手机马达震动，此选项也可用于虚拟手柄按钮。"
+            android:summary="@string/axi_ui_activa_la_vibracion_del_telefono_al_tocar_controles_de_teclado_o"
             android:defaultValue="false" />
 
         <Preference
             android:key="import_keyboard_file"
-            android:title="导入虚拟按键配置"
-            android:summary="选择一个配置文件，覆盖默认选择的布局方案。(仅横屏模式)"
+            android:title="@string/axi_ui_importar_layout_de_controles_virtuales"
+            android:summary="@string/axi_ui_importa_un_archivo_para_reemplazar_el_layout_seleccionado_en_ori"
             />
 
         <Preference
             android:key="export_keyboard_file"
-            android:title="导出虚拟按键配置"
-            android:summary="导出默认选择的布局方案的配置文件。(仅横屏模式)"
+            android:title="@string/axi_ui_exportar_layout_de_controles_virtuales"
+            android:summary="@string/axi_ui_exporta_el_layout_seleccionado_en_orientacion_horizontal"
             />
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="音频震动Beta"
+    <PreferenceCategory android:title="@string/axi_ui_vibracion_por_audio_beta_f2fca487"
         android:key="category_axixi_audio_rumble">
         <CheckBoxPreference
             android:key="checkbox_enable_audio_haptics"
-            android:title="启用音频震动"
-            android:summary="把串流音频转换成震动反馈，更适合爆炸、撞击、低频场景"
+            android:title="@string/axi_ui_activar_vibracion_por_audio"
+            android:summary="@string/axi_ui_convierte_el_audio_del_stream_en_vibracion_especialmente_explosi"
             android:defaultValue="false" />
         <ListPreference
             android:key="list_audio_haptics_output_target"
             android:dependency="checkbox_enable_audio_haptics"
-            android:title="音频震动输出目标"
-            android:summary="选择输出到手机，或输出到已接入的手柄"
+            android:title="@string/axi_ui_destino_de_la_vibracion_por_audio"
+            android:summary="@string/axi_ui_envia_la_vibracion_al_telefono_o_a_un_mando_conectado"
             android:entries="@array/audio_haptics_output_target_names"
             android:entryValues="@array/audio_haptics_output_target_values"
             android:defaultValue="phone" />
@@ -673,22 +669,22 @@
             seekbar:step="5"
             seekbar:keyStep="5"
             android:max="200"
-            android:summary="调整手机或者手柄音频震动强度。"
+            android:summary="@string/axi_ui_ajusta_la_intensidad_de_vibracion_por_audio_del_telefono_o_del_m"
             android:text="%"
-            android:title="音频震动强度" />
+            android:title="@string/axi_ui_intensidad_de_vibracion_por_audio" />
         <ListPreference
             android:key="list_audio_haptics_voice_filter"
             android:dependency="checkbox_enable_audio_haptics"
-            android:title="语音过滤"
-            android:summary="降低人声、语音聊天、播报声对震动的触发"
+            android:title="@string/axi_ui_filtro_de_voz_314b0465"
+            android:summary="@string/axi_ui_reduce_la_vibracion_provocada_por_voces_chat_y_anuncios"
             android:entries="@array/audio_haptics_voice_filter_names"
             android:entryValues="@array/audio_haptics_voice_filter_values"
             android:defaultValue="off" />
         <CheckBoxPreference
             android:key="checkbox_audio_haptics_keep_controller_rumble"
             android:dependency="checkbox_enable_audio_haptics"
-            android:title="保留普通手柄震动"
-            android:summary="当输出目标为手柄时，是否继续保留游戏原本的手柄震动。默认关闭。"
+            android:title="@string/axi_ui_conservar_vibracion_normal_del_mando"
+            android:summary="@string/axi_ui_conserva_la_vibracion_original_del_juego_al_enviar_vibracion_por"
             android:defaultValue="false" />
 
     </PreferenceCategory>
@@ -708,110 +704,110 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="主屏幕设置"
+    <PreferenceCategory android:title="@string/axi_ui_pantalla_de_inicio"
         android:key="category_axixi_screen">
 
         <CheckBoxPreference
             android:key="checkbox_enable_screen_bg"
-            android:title="使用自定义背景图"
-            android:summary="不勾选则使用默认背景,安卓10以上支持"
+            android:title="@string/axi_ui_fondo_personalizado"
+            android:summary="@string/axi_ui_utiliza_una_imagen_personalizada_requiere_android_10_o_posterior"
             android:defaultValue="false" />
 
         <Preference
             android:key="import_image_file_key"
-            android:title="设置主屏幕背景图"
-            android:summary="选择一张图片，旋转屏幕生效~\n容错率不是很高，所以图片大小和类型别太过分，小心崩溃~\n如果崩溃了清除数据可解决~"
+            android:title="@string/axi_ui_elegir_fondo"
+            android:summary="@string/axi_ui_selecciona_una_imagen_gira_la_pantalla_para_aplicarla_usa_un_arc"
             />
 
         <CheckBoxPreference
             android:key="checkbox_enable_screen_obscure"
-            android:title="背景图高斯模糊"
-            android:summary="自定义背景图是否进行高斯模糊处理，安卓12以上支持。"
+            android:title="@string/axi_ui_desenfocar_fondo"
+            android:summary="@string/axi_ui_aplica_desenfoque_al_fondo_personalizado_requiere_android_12_o_p"
             android:defaultValue="true" />
 
         <EditTextPreference
             android:key="change_screen_label_key"
             android:defaultValue="@string/app_label"
             android:singleLine="true"
-            android:dialogTitle="设置主屏幕左侧文本"
-            android:summary="输入你喜欢的文本"
-            android:dialogMessage="输入你喜欢的文本~"
-            android:title="设置主屏幕左侧文本" />
+            android:dialogTitle="@string/axi_ui_texto_de_la_pantalla_de_inicio"
+            android:summary="@string/axi_ui_escribe_el_texto_que_prefieras"
+            android:dialogMessage="@string/axi_ui_escribe_el_texto_que_prefieras_d84f0209"
+            android:title="@string/axi_ui_texto_de_la_pantalla_de_inicio" />
 
         <CheckBoxPreference
             android:key="checkbox_enable_pass_menu"
-            android:title="忽略掉应用列表菜单选项"
-            android:summary="开启此功能，点击图标可直接进入串流界面，无需再点击弹出的菜单选项。"
+            android:title="@string/axi_ui_omitir_menu_de_aplicaciones"
+            android:summary="@string/axi_ui_abre_el_stream_directamente_al_tocar_una_aplicacion"
             android:defaultValue="false" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="关于"
+    <PreferenceCategory android:title="@string/axi_ui_acerca_de"
         android:key="category_axi_about">
 
         <com.limelight.preferences.WebLauncherPreference
             android:key="settings_about"
-            android:title="关于我们"
-            android:summary="版本信息·获取更新·关注作者"
+            android:title="@string/axi_ui_acerca_del_proyecto"
+            android:summary="@string/axi_ui_version_actualizaciones_y_autor"
             url="about"/>
 
         <com.limelight.preferences.WebLauncherPreference
             android:key="settings_help"
-            android:title="Moonlight帮助指南"
-            android:summary="官方使用文档"
+            android:title="@string/axi_ui_ayuda_de_moonlight"
+            android:summary="@string/axi_ui_documentacion_oficial"
             url="https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="category_stream_logs"
-        android:title="串流日志">
+        android:title="@string/axi_ui_registros_de_streaming">
 
         <CheckBoxPreference
             android:key="checkbox_enable_stream_session_logging"
-            android:title="串流日志采集"
-            android:summary="每次串流生成一份新日志，用于记录连接、画面、网络、手柄和异常中断；默认关闭"
+            android:title="@string/axi_ui_recopilar_registros_de_streaming"
+            android:summary="@string/axi_ui_genera_un_registro_por_sesion_con_conexion_video_red_mandos_e_in"
             android:defaultValue="false" />
 
         <Preference
             android:key="manage_stream_session_logs"
-            android:title="日志列表"
-            android:summary="查看、导出或删除已保存的串流日志" />
+            android:title="@string/axi_ui_lista_de_registros"
+            android:summary="@string/axi_ui_ver_exportar_o_eliminar_los_registros_guardados" />
 
     </PreferenceCategory>
 
 
     <!-- Additional persistent controls also available through the in-stream quick menu. -->
-    <PreferenceCategory android:key="category_settings_additional" android:title="其他配置">
+    <PreferenceCategory android:key="category_settings_additional" android:title="@string/axi_ui_otros_ajustes_03f3f337">
         <CheckBoxPreference
             android:key="checkbox_enable_hdr_high_brightness"
-            android:title="HDR 高亮度"
-            android:summary="在支持的设备上提高 HDR 画面亮度"
+            android:title="@string/axi_ui_brillo_alto_en_hdr"
+            android:summary="@string/axi_ui_aumenta_el_brillo_hdr_en_dispositivos_compatibles"
             android:defaultValue="false" />
         <CheckBoxPreference
             android:key="checkbox_enforce_display_mode"
-            android:title="强制显示模式"
-            android:summary="优先使用匹配串流帧率的显示模式；显示异常时可关闭"
+            android:title="@string/axi_ui_forzar_modo_de_pantalla"
+            android:summary="@string/axi_ui_prioriza_un_modo_de_pantalla_que_coincida_con_los_fps_del_stream"
             android:defaultValue="false" />
         <CheckBoxPreference
             android:key="checkbox_keep_video_zoom_on_disable"
-            android:title="保留画面缩放"
-            android:summary="关闭缩放调节时保留已调整的画面比例"
+            android:title="@string/axi_ui_conservar_zoom_de_imagen"
+            android:summary="@string/axi_ui_mantiene_el_encuadre_al_desactivar_el_ajuste_de_zoom"
             android:defaultValue="false" />
         <CheckBoxPreference
             android:key="checkbox_keyboard_esc_opens_game_menu"
-            android:title="Esc 打开游戏菜单"
-            android:summary="使用实体键盘 Esc 键打开串流快捷菜单"
+            android:title="@string/axi_ui_abrir_menu_del_juego_con_esc"
+            android:summary="@string/axi_ui_usa_esc_del_teclado_fisico_para_abrir_el_menu_rapido_del_stream"
             android:defaultValue="false" />
         <CheckBoxPreference
             android:key="checkbox_ds5_native_pcm"
-            android:title="DualSense 原生音频震动"
-            android:summary="接收支持的主机发送的原生 PCM 触觉数据"
+            android:title="@string/axi_ui_respuesta_haptica_nativa_de_dualsense"
+            android:summary="@string/axi_ui_recibe_datos_hapticos_pcm_de_servidores_compatibles"
             android:defaultValue="true" />
         <CheckBoxPreference
             android:key="checkbox_ds5_controller_speaker"
-            android:title="DualSense 手柄扬声器"
-            android:summary="向支持的 DualSense 手柄输出游戏扬声器音频"
+            android:title="@string/axi_ui_altavoz_de_dualsense_3aa9a7b8"
+            android:summary="@string/axi_ui_envia_audio_al_altavoz_de_mandos_dualsense_compatibles"
             android:defaultValue="false" />
     </PreferenceCategory>
 

@@ -290,7 +290,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
     private String getRecentHapticsRoute(String route, long outputTimeMs) {
         if (route == null || route.isEmpty() || outputTimeMs <= 0L ||
                 SystemClock.uptimeMillis() - outputTimeMs > HAPTICS_ROUTE_RECENT_MS) {
-            return "待触发";
+            return activityContext.getString(R.string.axi_ui_esperando_senal);
         }
         return route;
     }
@@ -319,7 +319,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
         if (name.contains("kishi")) {
             return "Kishi";
         }
-        return "手柄";
+        return activityContext.getString(R.string.axi_ui_mando);
     }
 
     private String getUsbControllerTypeDisplayName(AbstractController controller) {
@@ -413,7 +413,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
         }
 
         if (!outputDevices.isEmpty()) {
-            markAudioHapticsOutput("普通震动", outputDevices);
+            markAudioHapticsOutput(activityContext.getString(R.string.axi_ui_vibracion_normal), outputDevices);
         }
         return vibrated;
     }
@@ -456,7 +456,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
 
         if (submitted) {
             if (outputDevices.isEmpty()) {
-                addOutputDevice(outputDevices, "USB手柄");
+                addOutputDevice(outputDevices, activityContext.getString(R.string.axi_ui_mando_usb));
             }
             markAudioHapticsOutput("PCM", outputDevices);
         }
@@ -3082,7 +3082,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
             if (!foundMatchingDevice && prefConfig.onscreenController && !prefConfig.onlyL3R3 && PreferenceConfiguration.readPreferences(activityContext).vibrateOsc) {
                 rumbleSingleVibrator(deviceVibrator, lowFreqMotor, highFreqMotor);
                 if (hasRumbleAmplitude(lowFreqMotor, highFreqMotor)) {
-                    addOutputDevice(outputDevices, "手机");
+                    addOutputDevice(outputDevices, activityContext.getString(R.string.axi_ui_telefono));
                 }
             }
             else if (foundMatchingDevice && !vibrated && prefConfig.vibrateFallbackToDevice) {
@@ -3099,13 +3099,13 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
 
                 rumbleSingleVibrator(deviceVibrator, lowFreqMotorAdjusted, highFreqMotorAdjusted);
                 if (hasRumbleAmplitude(lowFreqMotorAdjusted, highFreqMotorAdjusted)) {
-                    addOutputDevice(outputDevices, "手机");
+                    addOutputDevice(outputDevices, activityContext.getString(R.string.axi_ui_telefono));
                 }
             }
         }
 
         if (!outputDevices.isEmpty()) {
-            markNativeGameHapticsOutput("普通震动", outputDevices);
+            markNativeGameHapticsOutput(activityContext.getString(R.string.axi_ui_vibracion_normal), outputDevices);
         }
     }
 
@@ -3626,7 +3626,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
 
         if (submitted) {
             lastNativeControllerPcmTimeMs = SystemClock.uptimeMillis();
-            markNativeGameHapticsOutput("原生PCM", outputDevices);
+            markNativeGameHapticsOutput(activityContext.getString(R.string.axi_ui_pcm_nativo), outputDevices);
         }
         return submitted;
     }
@@ -4398,7 +4398,7 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
     /** Privacy-safe summary for distinguishing Android system input from app-owned USB drivers. */
     public synchronized String getSystemControllerDiagnosticsDisplayName() {
         if (inputDeviceContexts.size() == 0) {
-            return "无";
+            return activityContext.getString(R.string.axi_ui_ninguno);
         }
 
         StringBuilder summary = new StringBuilder();

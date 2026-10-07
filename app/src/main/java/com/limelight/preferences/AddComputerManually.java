@@ -324,8 +324,8 @@ public class AddComputerManually extends Activity {
                     Toast.makeText(AddComputerManually.this, getResources().getString(R.string.addpc_enter_ip), Toast.LENGTH_LONG).show();
                     return;
                 }
-                SpinnerDialog dialog = SpinnerDialog.displayDialog(AddComputerManually.this, "提示",
-                        "请求中....", false);
+                SpinnerDialog dialog = SpinnerDialog.displayDialog(AddComputerManually.this, getString(R.string.axi_ui_aviso),
+                        getString(R.string.axi_ui_consultando), false);
                 //"wtb.plus"
                 executor.execute(() -> {
                     // 在后台线程中执行网络请求
@@ -341,7 +341,7 @@ public class AddComputerManually extends Activity {
                             return;
                         }
                         if(TextUtils.isEmpty(result.getResult())){
-                            Toast.makeText(AddComputerManually.this,"没有检索到_limelightax._tcp",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddComputerManually.this,getString(R.string.axi_ui_no_se_encontro_el_servicio_limelightax_tcp),Toast.LENGTH_SHORT).show();
                             return;
                         }
                         hostText.setText(result.getResult());

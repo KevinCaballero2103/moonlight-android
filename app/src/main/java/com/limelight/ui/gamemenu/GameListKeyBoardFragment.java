@@ -74,7 +74,7 @@ public class GameListKeyBoardFragment extends BaseGameMenuDialog {
                 GameKeyboardUpdateFragment fragment=new GameKeyboardUpdateFragment();
                 fragment.setWidth(getActivity().getResources().getDisplayMetrics().widthPixels);
                 fragment.setDimAmount(0.8f);
-                fragment.setTitle("组合键");
+                fragment.setTitle(getString(R.string.axi_ui_combinacion_de_teclas));
                 fragment.setOnClick(new GameKeyboardUpdateFragment.onClick() {
                     @Override
                     public void click(GameMenuQuickBean bean) {
@@ -97,8 +97,8 @@ public class GameListKeyBoardFragment extends BaseGameMenuDialog {
                 AppDialog.showConfirm(
                         getActivity(),
                         gameMenus.get(position).getName(),
-                        "是否删除此键值？",
-                        "删除",
+                        getString(R.string.axi_ui_eliminar_este_control),
+                        getString(R.string.axi_ui_eliminar),
                         true,
                         () -> {
                             removeKeyBoardListData(getActivity(), gameMenus.get(position));

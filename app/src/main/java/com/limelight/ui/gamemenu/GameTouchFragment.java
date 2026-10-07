@@ -155,41 +155,41 @@ public class GameTouchFragment extends BaseGameMenuDialog implements View.OnClic
     private void initViewTouch(){
         sb_touch_x.setProgress(prefConfig.touchSensitivityX);
         sb_touch_y.setProgress(prefConfig.touchSensitivityY);
-        tx_touch_x.setText("X轴："+prefConfig.touchSensitivityX+"%");
-        tx_touch_y.setText("Y轴："+prefConfig.touchSensitivityY+"%");
+        tx_touch_x.setText(getString(R.string.axi_ui_eje_x)+prefConfig.touchSensitivityX+"%");
+        tx_touch_y.setText(getString(R.string.axi_ui_eje_y)+prefConfig.touchSensitivityY+"%");
     }
 
     private void initViewTouchPad(){
         sb_touchpad_x.setProgress(prefConfig.mouseTouchPadSensitityX);
         sb_touchpad_y.setProgress(prefConfig.mouseTouchPadSensitityY);
-        tx_touchpad_x.setText("X轴："+prefConfig.mouseTouchPadSensitityX+"%");
-        tx_touchpad_y.setText("Y轴："+prefConfig.mouseTouchPadSensitityY+"%");
+        tx_touchpad_x.setText(getString(R.string.axi_ui_eje_x)+prefConfig.mouseTouchPadSensitityX+"%");
+        tx_touchpad_y.setText(getString(R.string.axi_ui_eje_y)+prefConfig.mouseTouchPadSensitityY+"%");
     }
 
     private void initViewTouchPadView(){
         sb_touchpad_view_x.setProgress(prefConfig.touchPadSensitivity);
         sb_touchpad_view_y.setProgress(prefConfig.touchPadYSensitity);
-        tx_touchpad_view_x.setText("X轴："+prefConfig.touchPadSensitivity+"%");
-        tx_touchpad_view_y.setText("Y轴："+prefConfig.touchPadYSensitity+"%");
+        tx_touchpad_view_x.setText(getString(R.string.axi_ui_eje_x)+prefConfig.touchPadSensitivity+"%");
+        tx_touchpad_view_y.setText(getString(R.string.axi_ui_eje_y)+prefConfig.touchPadYSensitity+"%");
     }
 
     private void initViewMouseGamePadView(){
         sb_mouse_gamepad_sensitity.setProgress(prefConfig.mouseGamePadSensitity);
-        tx_mouse_gamepad_sensitity.setText("灵敏度："+prefConfig.mouseGamePadSensitity+"%");
+        tx_mouse_gamepad_sensitity.setText(getString(R.string.axi_ui_sensibilidad)+prefConfig.mouseGamePadSensitity+"%");
     }
 
     private void initViewMouseSCView(){
         sb_mouse_sc_amount.setProgress(prefConfig.mouseSCAmount);
-        tx_mouse_sc_amount.setText("距离："+prefConfig.mouseSCAmount);
+        tx_mouse_sc_amount.setText(getString(R.string.axi_ui_distancia)+prefConfig.mouseSCAmount);
     }
 
     private void initViewExternalTouchPadView(){
         sb_touchpad_equipment_view_x.setProgress(prefConfig.externalTouchPadSensitityX);
         sb_touchpad_equipment_view_y.setProgress(prefConfig.externalTouchPadSensitityY);
         sb_touchpad_equipment_amount.setProgress(prefConfig.externalTouchPadScrollAmount);
-        tx_touchpad_equipment_view_x.setText("X轴：" + prefConfig.externalTouchPadSensitityX + "%");
-        tx_touchpad_equipment_view_y.setText("Y轴：" + prefConfig.externalTouchPadSensitityY + "%");
-        tx_touchpad_equipment_amount.setText("滚轮速度：" + prefConfig.externalTouchPadScrollAmount);
+        tx_touchpad_equipment_view_x.setText(getString(R.string.axi_ui_eje_x) + prefConfig.externalTouchPadSensitityX + "%");
+        tx_touchpad_equipment_view_y.setText(getString(R.string.axi_ui_eje_y) + prefConfig.externalTouchPadSensitityY + "%");
+        tx_touchpad_equipment_amount.setText(getString(R.string.axi_ui_velocidad_de_rueda) + prefConfig.externalTouchPadScrollAmount);
     }
 
     @Override

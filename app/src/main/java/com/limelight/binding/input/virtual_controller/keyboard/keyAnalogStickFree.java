@@ -1,5 +1,7 @@
 package com.limelight.binding.input.virtual_controller.keyboard;
 
+import com.limelight.R;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -39,7 +41,7 @@ public class keyAnalogStickFree extends keyBoardVirtualControllerElement {
     private float touchStartX;
     private float touchStartY;
 
-    protected String strStickSide = "摇杆";
+    protected String strStickSide;
     protected String[] textTipValues = {"▲", "◀", "▼", "▶"};
 
     private enum STICK_STATE { NO_MOVEMENT, MOVED_IN_DEAD_ZONE, MOVED_ACTIVE }
@@ -54,6 +56,7 @@ public class keyAnalogStickFree extends keyBoardVirtualControllerElement {
 
     public keyAnalogStickFree(KeyBoardController controller, Context context, String elementId) {
         super(controller, context, elementId);
+        strStickSide = getContext().getString(R.string.axi_ui_joystick);
         paint.setSubpixelText(true);
     }
 

@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="随时随地，畅连你的电脑！"
+                    android:text="@string/axi_ui_conectate_a_tu_pc_desde_cualquier_lugar"
                     android:layout_marginTop="5dp"
                     android:textColor="@android:color/white"
                     android:textSize="10sp"/>
@@ -97,7 +97,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="版本号：1.0.0"
+                    android:text="@string/axi_ui_version_1_0_0"
                     android:textStyle="bold"
                     android:id="@+id/tv_version"
                     android:layout_marginTop="5dp"
@@ -190,7 +190,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="鸣谢"
+                        android:text="@string/axi_ui_agradecimientos"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="13sp"/>
@@ -198,7 +198,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="感谢每一位支持与陪伴的朋友"
+                        android:text="@string/axi_ui_gracias_a_quienes_apoyan_y_acompanan_el_proyecto"
                         android:textColor="@android:color/white"
                         android:textSize="10sp"/>
 
@@ -235,7 +235,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sunshine·阿西西"
+                        android:text="@string/axi_ui_sunshine_axixi"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="13sp"/>
@@ -243,7 +243,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="搭配月光支持虚拟显示器、麦克风、DS5虚拟手柄等功能"
+                        android:text="@string/axi_ui_servidor_con_pantalla_virtual_microfono_mando_virtual_dualsense"
                         android:textColor="@android:color/white"
                         android:textSize="10sp"/>
 
@@ -279,7 +279,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="StarCore 星核"
+                        android:text="@string/axi_ui_starcore"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="13sp"/>
@@ -287,7 +287,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mac被控端应用，搭配月光实现macOS端串流。"
+                        android:text="@string/axi_ui_servidor_para_transmitir_desde_macos_con_moonlight"
                         android:textColor="@android:color/white"
                         android:textSize="10sp"/>
 
@@ -324,7 +324,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="更多应用"
+                        android:text="@string/axi_ui_mas_aplicaciones"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="13sp"/>
@@ -332,7 +332,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="前往开发者个人空间，发现更多应用与作品"
+                        android:text="@string/axi_ui_visita_el_perfil_del_desarrollador_para_descubrir_mas_proyectos"
                         android:textColor="@android:color/white"
                         android:textSize="10sp"/>
 
@@ -344,7 +344,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="在这里找到开发者"
+                android:text="@string/axi_ui_encuentra_al_desarrollador"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"

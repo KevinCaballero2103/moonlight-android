@@ -91,7 +91,7 @@
                     android:id="@+id/performanceOverlayBigTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="性能信息"
+                    android:text="@string/axi_ui_informacion_de_rendimiento"
                     android:textColor="@android:color/white"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -113,7 +113,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/performanceOverlayLite"
-                tools:text="延迟/解码：109ms/7ms 丢包率：69% FPS：60"
+                tools:text="@string/axi_ui_latencia_decodificacion_109_ms_7_ms_perdida_69_fps_60"
                 android:textSize="10sp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/ic_hud_bg"

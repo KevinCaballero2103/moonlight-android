@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <!-- Same touch-only packaging used for the v8-v12 validated APKs. -->
+        <service android:name="com.limelight.KeyboardAccessibilityService" tools:node="remove" />
+    </application>
+</manifest>

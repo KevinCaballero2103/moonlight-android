@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="gamepad_emulation_names">
-        <item>自动</item>
+        <item>@string/axi_ui_automatico</item>
         <item>Xbox 360</item>
         <item>DualShock 4</item>
         <item>DualSense</item>
@@ -46,8 +46,8 @@
     </string-array>
 
     <string-array name="video_render_mode_names">
-        <item>系统渲染</item>
-        <item>GLES渲染</item>
+        <item>@string/axi_ui_renderizado_del_sistema</item>
+        <item>@string/axi_ui_renderizado_gles</item>
     </string-array>
     <string-array name="video_render_mode_values" translatable="false">
         <item>system</item>
@@ -55,9 +55,9 @@
     </string-array>
 
     <string-array name="stereo_3d_mode_names">
-        <item>关闭</item>
-        <item>左右全宽</item>
-        <item>左右半宽</item>
+        <item>@string/axi_ui_desactivado</item>
+        <item>@string/axi_ui_sbs_de_ancho_completo</item>
+        <item>@string/axi_ui_sbs_de_medio_ancho</item>
     </string-array>
     <string-array name="stereo_3d_mode_values" translatable="false">
         <item>off</item>
@@ -66,9 +66,9 @@
     </string-array>
 
     <string-array name="stereo_3d_depth_names">
-        <item>弱</item>
-        <item>标准</item>
-        <item>强</item>
+        <item>@string/axi_ui_suave</item>
+        <item>@string/axi_ui_estandar</item>
+        <item>@string/axi_ui_fuerte</item>
     </string-array>
     <string-array name="stereo_3d_depth_values" translatable="false">
         <item>soft</item>
@@ -77,9 +77,9 @@
     </string-array>
 
     <string-array name="stereo_3d_convergence_names">
-        <item>近</item>
-        <item>标准</item>
-        <item>远</item>
+        <item>@string/axi_ui_cerca</item>
+        <item>@string/axi_ui_estandar</item>
+        <item>@string/axi_ui_lejos</item>
     </string-array>
     <string-array name="stereo_3d_convergence_values" translatable="false">
         <item>near</item>
@@ -88,7 +88,7 @@
     </string-array>
 
     <string-array name="fsr_target_names">
-        <item>关闭</item>
+        <item>@string/axi_ui_desactivado</item>
         <item>2K</item>
         <item>4K</item>
     </string-array>
@@ -99,10 +99,10 @@
     </string-array>
 
     <string-array name="fsr_sharpness_names">
-        <item>柔和</item>
-        <item>标准</item>
-        <item>强</item>
-        <item>极强</item>
+        <item>@string/axi_ui_suave_37e717d5</item>
+        <item>@string/axi_ui_estandar</item>
+        <item>@string/axi_ui_fuerte</item>
+        <item>@string/axi_ui_muy_fuerte</item>
     </string-array>
     <string-array name="fsr_sharpness_values" translatable="false">
         <item>soft</item>
@@ -112,8 +112,8 @@
     </string-array>
 
     <string-array name="fsr_hdr_output_names">
-        <item>兼容 SDR 映射</item>
-        <item>原生 HDR 直出</item>
+        <item>@string/axi_ui_conversion_a_sdr_c701e5b5</item>
+        <item>@string/axi_ui_hdr_nativo_ed695470</item>
     </string-array>
     <string-array name="fsr_hdr_output_values" translatable="false">
         <item>sdr</item>
@@ -132,10 +132,10 @@
     </string-array>
 
     <string-array name="audio_haptics_voice_filter_names">
-        <item>关闭</item>
-        <item>低</item>
-        <item>中</item>
-        <item>高</item>
+        <item>@string/axi_ui_desactivado</item>
+        <item>@string/axi_ui_bajo</item>
+        <item>@string/axi_ui_medio</item>
+        <item>@string/axi_ui_alto</item>
     </string-array>
     <string-array name="audio_haptics_voice_filter_values" translatable="false">
         <item>off</item>
@@ -145,8 +145,8 @@
     </string-array>
 
     <string-array name="audio_haptics_output_target_names">
-        <item>手机</item>
-        <item>手柄</item>
+        <item>@string/axi_ui_telefono</item>
+        <item>@string/axi_ui_mando</item>
     </string-array>
     <string-array name="audio_haptics_output_target_values" translatable="false">
         <item>phone</item>
@@ -155,7 +155,7 @@
 
     <!-- Don't forget to update locales_config.xml when you modify this! -->
     <string-array name="language_names" translatable="false">
-        <item>Default</item>
+        <item>@string/preference_system_language</item>
         <item>English</item>
         <item>Italiano</item>
         <item>日本語</item>
@@ -244,11 +244,11 @@
 
 
     <string-array name="keyboard_axi_names">
-        <item>方案1</item>
-        <item>方案2</item>
-        <item>方案3</item>
-        <item>方案4</item>
-        <item>方案5</item>
+        <item>@string/axi_ui_layout_1</item>
+        <item>@string/axi_ui_layout_2</item>
+        <item>@string/axi_ui_layout_3</item>
+        <item>@string/axi_ui_layout_4</item>
+        <item>@string/axi_ui_layout_5</item>
     </string-array>
     <string-array name="keyboard_axi_values" translatable="false">
         <item>OSC_Keyboard</item>
@@ -259,15 +259,15 @@
     </string-array>
 
     <string-array name="mouse_model_names_axi">
-        <item>多点触控模式</item>
-        <item>普通鼠标模式</item>
-        <item>触控板模式</item>
-        <item>禁用鼠标/触控</item>
-        <item>普通鼠标「左右键互换」</item>
-        <item>触控板「仅移动」</item>
-        <item>触控板「移动+左键点击」</item>
+        <item>@string/axi_ui_multitactil</item>
+        <item>@string/axi_ui_raton_normal</item>
+        <item>@string/axi_ui_panel_tactil_7f4ce565</item>
+        <item>@string/axi_ui_desactivar_raton_y_tactil</item>
+        <item>@string/axi_ui_raton_normal_botones_intercambiados</item>
+        <item>@string/axi_ui_panel_tactil_solo_movimiento</item>
+        <item>@string/axi_ui_panel_tactil_movimiento_y_clic_izquierdo</item>
         <!-- EXTENSION DEVELOPMENT [EXT-TOUCHPAD-MULTI-GESTURE] [MODIFIED] BEGIN -->
-        <item>触控板「多手势」</item>
+        <item>@string/axi_ui_panel_tactil_varios_gestos</item>
         <!-- EXTENSION DEVELOPMENT [EXT-TOUCHPAD-MULTI-GESTURE] [MODIFIED] END -->
     </string-array>
 
@@ -286,13 +286,13 @@
 
 
     <string-array name="screen_gravity_list_names">
-        <item>默认居中</item>
-        <item>顶部居中</item>
-        <item>顶部居左</item>
-        <item>顶部居右</item>
-        <item>底部居中</item>
-        <item>底部居左</item>
-        <item>底部居右</item>
+        <item>@string/axi_ui_centro</item>
+        <item>@string/axi_ui_arriba_centro</item>
+        <item>@string/axi_ui_arriba_izquierda</item>
+        <item>@string/axi_ui_arriba_derecha</item>
+        <item>@string/axi_ui_abajo_centro</item>
+        <item>@string/axi_ui_abajo_izquierda</item>
+        <item>@string/axi_ui_abajo_derecha</item>
     </string-array>
 
     <string-array name="screen_gravity_list_values" translatable="false">
@@ -306,11 +306,11 @@
     </string-array>
 
     <string-array name="gamepad_axi_names">
-        <item>方案1</item>
-        <item>方案2</item>
-        <item>方案3</item>
-        <item>方案4</item>
-        <item>方案5</item>
+        <item>@string/axi_ui_layout_1</item>
+        <item>@string/axi_ui_layout_2</item>
+        <item>@string/axi_ui_layout_3</item>
+        <item>@string/axi_ui_layout_4</item>
+        <item>@string/axi_ui_layout_5</item>
     </string-array>
     <string-array name="gamepad_axi_values" translatable="false">
         <item>gamePad</item>

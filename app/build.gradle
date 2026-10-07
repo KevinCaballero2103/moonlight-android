@@ -14,8 +14,8 @@ android {
         minSdk 21
         targetSdk 34
 
-        versionName "26.09.12"
-        versionCode = 500
+        versionName "26.10.07-es13"
+        versionCode = 513
         buildConfigField "int", "AXI_CODE", "28"
         buildConfigField "boolean", "HAS_KISHI_HAPTICS", gradle.ext.hasKishiHaptics.toString()
         buildConfigField "boolean", "HAS_STEREO3D_AI", gradle.ext.hasStereo3dAi.toString()
@@ -99,8 +99,8 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".debug"
-            resValue "string", "app_label", "月光"
+            applicationIdSuffix ".debug.spanish13"
+            resValue "string", "app_label", "Axixi Moonlight ES"
             resValue "string", "app_label_root", "DR·月光"
 
             minifyEnabled true
@@ -139,7 +139,7 @@ android {
             // TL;DR: Leave the following line alone!
             applicationIdSuffix ".unofficialA"
 //            resValue "string", "app_label", "安兔兔·月光"
-            resValue "string", "app_label", "月光·阿西西"
+            resValue "string", "app_label", "Axixi Moonlight ES"
             resValue "string", "app_label_root", "Moonlight (Root)"
 
             minifyEnabled true

@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/appListText"
-            tools:text="我的电脑"
+            tools:text="@string/axi_ui_este_equipo"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
             android:textSize="20dp"/>
 
         <TextView
-            android:text="长按选中菜单有更多选项"
+            android:text="@string/axi_ui_manten_pulsado_para_ver_mas_opciones"
             android:layout_marginTop="25dp"
             android:textStyle="italic"
             android:textSize="10dp"

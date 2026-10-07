@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="操作"
+            android:text="@string/axi_ui_acciones"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -52,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="快捷操作"
+                    android:text="@string/axi_ui_acciones_rapidas"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -85,7 +85,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_display_1"
-                    android:text="显示器1"
+                    android:text="@string/axi_ui_pantalla_1"
                     android:textSize="9dp" />
 
                 <Button
@@ -99,7 +99,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_display_2"
-                    android:text="显示器2"
+                    android:text="@string/axi_ui_pantalla_2"
                     android:textSize="9dp" />
 
                 <Button
@@ -113,7 +113,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_display_3"
-                    android:text="显示器3"
+                    android:text="@string/axi_ui_pantalla_3"
                     android:textSize="9dp" />
 
                 <Button
@@ -127,7 +127,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_display_4"
-                    android:text="显示器4"
+                    android:text="@string/axi_ui_pantalla_4"
                     android:textSize="9dp" />
 
             </LinearLayout>
@@ -149,7 +149,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_logout"
-                    android:text="注销"
+                    android:text="@string/axi_ui_cerrar_sesion"
                     android:textSize="9dp" />
 
                 <Button
@@ -163,7 +163,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_shutdown"
-                    android:text="关机"
+                    android:text="@string/axi_ui_apagar_pc"
                     android:textSize="9dp" />
 
                 <Button
@@ -177,7 +177,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_sleep"
-                    android:text="睡眠"
+                    android:text="@string/axi_ui_suspender"
                     android:textSize="9dp" />
 
                 <Button
@@ -191,7 +191,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_reboot"
-                    android:text="重启"
+                    android:text="@string/axi_ui_reiniciar_pc"
                     android:textSize="9dp" />
 
             </LinearLayout>
@@ -213,7 +213,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_task_manager"
-                    android:text="任务管理器"
+                    android:text="@string/axi_ui_administrador_de_tareas"
                     android:textSize="9dp" />
 
                 <Button
@@ -227,7 +227,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_clipboard_send"
-                    android:text="发送剪切板"
+                    android:text="@string/axi_ui_enviar_portapapeles"
                     android:textSize="9dp" />
 
 
@@ -242,7 +242,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_clipboard_open"
-                    android:text="打开剪切板"
+                    android:text="@string/axi_ui_abrir_portapapeles"
                     android:textSize="9dp" />
 
                 <Button
@@ -256,7 +256,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_open_setting"
-                    android:text="Win系统设置"
+                    android:text="@string/axi_ui_ajustes_de_windows"
                     android:textSize="9dp" />
 
             </LinearLayout>
@@ -278,7 +278,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_computer"
-                    android:text="我的电脑"
+                    android:text="@string/axi_ui_este_equipo"
                     android:textSize="9dp" />
 
                 <Button
@@ -292,7 +292,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_win_center"
-                    android:text="移动中心"
+                    android:text="@string/axi_ui_centro_de_movilidad"
                     android:textSize="9dp" />
 
                 <Button
@@ -306,7 +306,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_win_p"
-                    android:text="显示器模式"
+                    android:text="@string/axi_ui_modo_de_pantalla"
                     android:textSize="9dp" />
 
                 <Button
@@ -320,7 +320,7 @@
                     android:gravity="center"
                     android:id="@+id/btn_hdr"
                     android:padding="4dp"
-                    android:text="HDR开关"
+                    android:text="@string/axi_ui_activar_desactivar_hdr"
                     android:textSize="9dp" />
 
 

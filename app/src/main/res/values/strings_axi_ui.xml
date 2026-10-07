@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="axi_ui_abajo_centro" formatted="false">"底部居中"</string>
+    <string name="axi_ui_abajo_derecha" formatted="false">"底部居右"</string>
+    <string name="axi_ui_abajo_izquierda" formatted="false">"底部居左"</string>
+    <string name="axi_ui_abre_el_menu_del_juego_en_lugar_de_ejecutar_volver" formatted="false">"代替返回键逻辑，弹出游戏快捷菜单。"</string>
+    <string name="axi_ui_abre_el_stream_directamente_al_tocar_una_aplicacion" formatted="false">"开启此功能，点击图标可直接进入串流界面，无需再点击弹出的菜单选项。"</string>
+    <string name="axi_ui_abrir_ajustes" formatted="false">"打开设置"</string>
+    <string name="axi_ui_abrir_menu_del_juego_con_esc" formatted="false">"Esc 打开游戏菜单"</string>
+    <string name="axi_ui_abrir_menu_ncon_esc" formatted="false">"ESC 呼出\n游戏菜单"</string>
+    <string name="axi_ui_abrir_portapapeles" formatted="false">"打开剪切板"</string>
+    <string name="axi_ui_accion_al_tocar_rendimiento_compacto" formatted="false">"精简模式点击选项"</string>
+    <string name="axi_ui_accion_del_boton_flotante" formatted="false">"悬浮球点击操作"</string>
+    <string name="axi_ui_acciones" formatted="false">"操作"</string>
+    <string name="axi_ui_acciones_rapidas" formatted="false">"快捷操作"</string>
+    <string name="axi_ui_acerca_de" formatted="false">"关于"</string>
+    <string name="axi_ui_acerca_del_proyecto" formatted="false">"关于我们"</string>
+    <string name="axi_ui_activa_el_mando_virtual_antes_de_cambiar_el_modo" formatted="false">"模式切换:需要先打开虚拟手柄开关~"</string>
+    <string name="axi_ui_activa_la_vibracion_del_telefono_al_tocar_controles_de_teclado_o" formatted="false">"点按屏幕按键时，会触发手机马达震动，此选项也可用于虚拟手柄按钮。"</string>
+    <string name="axi_ui_activa_los_controles_virtuales_antes_de_cambiar_el_modo" formatted="false">"模式切换:需要先打开虚拟按键开关~"</string>
+    <string name="axi_ui_activa_por_defecto_el_modo_de_combinacion_de_teclas" formatted="false">"勾选后默认为选中组合键模式"</string>
+    <string name="axi_ui_activa_primero_el_mando_virtual" formatted="false">"请先打开虚拟手柄开关！"</string>
+    <string name="axi_ui_activa_primero_los_controles_virtuales" formatted="false">"请先打开虚拟按键开关！"</string>
+    <string name="axi_ui_activado" formatted="false">"开启"</string>
+    <string name="axi_ui_activado_645432a5" formatted="false">"，已开启"</string>
+    <string name="axi_ui_activado_ce8153a3" formatted="false">"已启用！"</string>
+    <string name="axi_ui_activalo_si_el_gatillo_izquierdo_hace_vibrar_el_agarre_derecho" formatted="false">"如果你发现扣动左扳机是右边握把震动，则开启此选项。"</string>
+    <string name="axi_ui_activalo_si_la_profundidad_aparece_invertida_o_el_orden_de_las_g" formatted="false">"当远近关系相反或眼镜眼序不一致时开启。"</string>
+    <string name="axi_ui_activalo_si_los_joy_con_no_responden_correctamente_requiere_andr" formatted="false">"如果你的JoyCon无法使用或识别按键有问题，可以尝试开启此功能。适配Android 10及以上"</string>
+    <string name="axi_ui_activar" formatted="false">"启用"</string>
+    <string name="axi_ui_activar_al_pulsar_el_gatillo_izquierdo" formatted="false">"按下左扳机启用"</string>
+    <string name="axi_ui_activar_desactivar_hdr" formatted="false">"HDR开关"</string>
+    <string name="axi_ui_activar_desactivar_redireccion_de_vibracion" formatted="false">"【开/关】振动重定向"</string>
+    <string name="axi_ui_activar_sensibilidad" formatted="false">"灵敏度开启"</string>
+    <string name="axi_ui_activar_vibracion_por_audio" formatted="false">"启用音频震动"</string>
+    <string name="axi_ui_actualizar" formatted="false">"刷新"</string>
+    <string name="axi_ui_actualizar_configuracion" formatted="false">"更新配置"</string>
+    <string name="axi_ui_actualizar_lista_de_mandos" formatted="false">"刷新手柄列表"</string>
+    <string name="axi_ui_administrador_de_tareas" formatted="false">"任务管理器"</string>
+    <string name="axi_ui_admite_ancho_completo_de_38401080_1200_y_medio_ancho_de_19201080" formatted="false">"支持全宽3840×1080/1200和半宽1920×1080/1200。"</string>
+    <string name="axi_ui_agradecimientos" formatted="false">"鸣谢"</string>
+    <string name="axi_ui_ajusta_la_altura_del_teclado_completo" formatted="false">"调整虚拟全键盘的高度"</string>
+    <string name="axi_ui_ajusta_la_intensidad_de_vibracion_por_audio_del_telefono_o_del_m" formatted="false">"调整手机或者手柄音频震动强度。"</string>
+    <string name="axi_ui_ajusta_la_posicion_de_referencia_de_la_imagen_respecto_a_la_pant" formatted="false">"调整画面位于屏幕前后的基准位置。"</string>
+    <string name="axi_ui_ajustes_de_axixi" formatted="false">"阿西西的日常设置"</string>
+    <string name="axi_ui_ajustes_de_windows" formatted="false">"Win系统设置"</string>
+    <string name="axi_ui_al_desactivarla_se_utiliza_vibracion_normal_guarda_y_reconecta_p" formatted="false">"关闭后退回普通震动，保存后重连生效"</string>
+    <string name="axi_ui_algunas_opciones_requieren_reconectar_el_mando" formatted="false">"以下功能可能需要重新连接手柄生效！"</string>
+    <string name="axi_ui_alt_enter_modo_ventana" formatted="false">"Alt + Enter (窗口大小)"</string>
+    <string name="axi_ui_alt_f4_cerrar_aplicacion" formatted="false">"Alt + F4 (关闭应用)"</string>
+    <string name="axi_ui_altavoz_de_dualsense" formatted="false">"DS5手柄扬声器"</string>
+    <string name="axi_ui_altavoz_de_dualsense_3aa9a7b8" formatted="false">"DualSense 手柄扬声器"</string>
+    <string name="axi_ui_alto" formatted="false">"高"</string>
+    <string name="axi_ui_alto_100" formatted="false">"缩放高度：100%"</string>
+    <string name="axi_ui_alto_e1145d25" formatted="false">"缩放高度："</string>
+    <string name="axi_ui_altura" formatted="false">"高度："</string>
+    <string name="axi_ui_altura_200" formatted="false">"高度:200"</string>
+    <string name="axi_ui_altura_del_teclado_completo" formatted="false">"全键盘高度"</string>
+    <string name="axi_ui_altura_del_teclado_completo_209b651c" formatted="false">"虚拟全键盘高度"</string>
+    <string name="axi_ui_anade_resolucion_hdr_decodificador_y_otros_datos" formatted="false">"开启后，增加分辨率、HDR、解码器等参数。"</string>
+    <string name="axi_ui_anadir" formatted="false">"新增"</string>
+    <string name="axi_ui_anadir_control" formatted="false">"新增按钮"</string>
+    <string name="axi_ui_anadir_puerto_de_razer" formatted="false">"追加Razer雷游端口号"</string>
+    <string name="axi_ui_ancho" formatted="false">"缩放宽度："</string>
+    <string name="axi_ui_ancho_100" formatted="false">"缩放宽度：100%"</string>
+    <string name="axi_ui_ancho_de_banda" formatted="false">"带宽："</string>
+    <string name="axi_ui_apagar_pc" formatted="false">"关机"</string>
+    <string name="axi_ui_aplica_desenfoque_al_fondo_personalizado_requiere_android_12_o_p" formatted="false">"自定义背景图是否进行高斯模糊处理，安卓12以上支持。"</string>
+    <string name="axi_ui_aplicar" formatted="false">"应用"</string>
+    <string name="axi_ui_aplicar_configuracion" formatted="false">"应用配置"</string>
+    <string name="axi_ui_aplicar_globalmente" formatted="false">"全局生效"</string>
+    <string name="axi_ui_arriba_centro" formatted="false">"顶部居中"</string>
+    <string name="axi_ui_arriba_derecha" formatted="false">"顶部居右"</string>
+    <string name="axi_ui_arriba_izquierda" formatted="false">"顶部居左"</string>
+    <string name="axi_ui_arriba_izquierda_abajo_derecha" formatted="false">"上-左-下-右"</string>
+    <string name="axi_ui_atajo_del_mando_para_menu_y_raton" formatted="false">"游戏菜单 摇杆鼠标 快捷键"</string>
+    <string name="axi_ui_atajos" formatted="false">"快捷键"</string>
+    <string name="axi_ui_atajos_manten_pulsado_uno_en_cursiva_para_eliminarlo" formatted="false">"快捷键(字体倾斜项可长按删除)"</string>
+    <string name="axi_ui_audio_recibido" formatted="false">"累计音频流量"</string>
+    <string name="axi_ui_aumenta_el_brillo_general_en_algunos_dispositivos_puede_reducir" formatted="false">"提高整体亮度，部分设备可能降低HDR高光对比度。"</string>
+    <string name="axi_ui_aumenta_el_brillo_hdr_en_dispositivos_compatibles" formatted="false">"在支持的设备上提高 HDR 画面亮度"</string>
+    <string name="axi_ui_automatico" formatted="false">"自动"</string>
+    <string name="axi_ui_aviso" formatted="false">"提示"</string>
+    <string name="axi_ui_ayuda_de_moonlight" formatted="false">"Moonlight帮助指南"</string>
+    <string name="axi_ui_baidu_drive" formatted="false">"百度网盘"</string>
+    <string name="axi_ui_bajo" formatted="false">"低"</string>
+    <string name="axi_ui_bitrate" formatted="false">"码率"</string>
+    <string name="axi_ui_bitrate_de_audio" formatted="false">"音频码率"</string>
+    <string name="axi_ui_bitrate_de_video" formatted="false">"视频码率"</string>
+    <string name="axi_ui_bitrate_manual_mbps" formatted="false">"输入视频码率Mbps"</string>
+    <string name="axi_ui_bitrate_manual_sustituye_al_deslizador" formatted="false">"强制设置视频码率（覆盖上方滑动码率）"</string>
+    <string name="axi_ui_bitrate_objetivo" formatted="false">"目标码率"</string>
+    <string name="axi_ui_blanco" formatted="false">"白色"</string>
+    <string name="axi_ui_boton_a" formatted="false">"A键"</string>
+    <string name="axi_ui_boton_b" formatted="false">"B键"</string>
+    <string name="axi_ui_boton_del_panel_tactil_ds4" formatted="false">"DS4触控板按键"</string>
+    <string name="axi_ui_boton_flotante" formatted="false">"悬浮球"</string>
+    <string name="axi_ui_boton_menu" formatted="false">"菜单键"</string>
+    <string name="axi_ui_boton_share" formatted="false">"手柄分享键"</string>
+    <string name="axi_ui_boton_superior_derecho" formatted="false">"右肩键"</string>
+    <string name="axi_ui_boton_superior_izquierdo" formatted="false">"左肩键"</string>
+    <string name="axi_ui_boton_view" formatted="false">"视图键"</string>
+    <string name="axi_ui_boton_x" formatted="false">"X键"</string>
+    <string name="axi_ui_boton_xbox" formatted="false">"XBOX键"</string>
+    <string name="axi_ui_boton_y" formatted="false">"Y键"</string>
+    <string name="axi_ui_botones_del_mando" formatted="false">"手柄按键"</string>
+    <string name="axi_ui_brillo_alto_en_hdr" formatted="false">"HDR 高亮度"</string>
+    <string name="axi_ui_brillo_maximo_en_hdr" formatted="false">"HDR窗口亮度最大"</string>
+    <string name="axi_ui_brillo_maximo_hdr_del_servidor" formatted="false">"主机HDR母版峰值"</string>
+    <string name="axi_ui_brillo_maximo_hdr_del_sistema" formatted="false">"系统HDR峰值亮度"</string>
+    <string name="axi_ui_buscar_actualizaciones" formatted="false">"检查更新"</string>
+    <string name="axi_ui_cadena_de_renderizado" formatted="false">"实际渲染链"</string>
+    <string name="axi_ui_cambiar_cursor_local_requiere_raton_fisico" formatted="false">"切换本地鼠标(需外接物理鼠标)"</string>
+    <string name="axi_ui_cambiar_modo" formatted="false">"模式切换"</string>
+    <string name="axi_ui_cambiar_orientacion" formatted="false">"方向交换"</string>
+    <string name="axi_ui_cambiar_tamano" formatted="false">"缩放"</string>
+    <string name="axi_ui_cambios_guardados" formatted="false">"修改成功！"</string>
+    <string name="axi_ui_canales_y_destino_del_audio" formatted="false">"声道与播放位置"</string>
+    <string name="axi_ui_centrar_automaticamente" formatted="false">"自动回中"</string>
+    <string name="axi_ui_centro" formatted="false">"默认居中"</string>
+    <string name="axi_ui_centro_de_movilidad" formatted="false">"移动中心"</string>
+    <string name="axi_ui_cerca" formatted="false">"近"</string>
+    <string name="axi_ui_cerrar_sesion" formatted="false">"注销"</string>
+    <string name="axi_ui_cinco_dedos" formatted="false">"五指"</string>
+    <string name="axi_ui_clic_central" formatted="false">"中键"</string>
+    <string name="axi_ui_clic_derecho" formatted="false">"右键"</string>
+    <string name="axi_ui_clic_izquierdo" formatted="false">"左键"</string>
+    <string name="axi_ui_codec" formatted="false">"编码"</string>
+    <string name="axi_ui_colaboradores" formatted="false">"鸣谢墙"</string>
+    <string name="axi_ui_color_de_los_controles" formatted="false">"控件默认模式颜色(手柄与按键通用)"</string>
+    <string name="axi_ui_combinacion_de_teclas" formatted="false">"组合键"</string>
+    <string name="axi_ui_combinaciones_en_el_teclado_completo" formatted="false">"全键盘组合键模式"</string>
+    <string name="axi_ui_compacto" formatted="false">"精简"</string>
+    <string name="axi_ui_compatibilidad_con_joy_con_de_switch" formatted="false">"兼容Switch JoyCon手柄"</string>
+    <string name="axi_ui_compatibilidad_con_nbotones_de_switch" formatted="false">"兼容NS\n手柄按键"</string>
+    <string name="axi_ui_compatibilidad_y_rendimiento" formatted="false">"兼容与性能"</string>
+    <string name="axi_ui_compatible_con_snapdragon_8_gen_1_o_superiores_y_mediatek_9300_o" formatted="false">"高通8Gen1及以上和联发科9300及以下芯片机型生效！"</string>
+    <string name="axi_ui_compatible_con_sunshine_axixi_y_razer_apollo_admite_el_modo_exte" formatted="false">"使用sunshine·阿西西、雷蛇雷游生效，兼容Apollo扩展模式"</string>
+    <string name="axi_ui_completo" formatted="false">"完整"</string>
+    <string name="axi_ui_comportamiento_de_la_app" formatted="false">"应用行为"</string>
+    <string name="axi_ui_comprueba_la_configuracion" formatted="false">"请检查配置信息！"</string>
+    <string name="axi_ui_con_el_servicio_activo_muestra_los_codigos_de_las_teclas_fisicas" formatted="false">"打开无障碍键盘，在月光app任意界面，输入按键，会弹出键值，用于自定义无障碍配置文件使用。"</string>
+    <string name="axi_ui_conectado" formatted="false">"已连接"</string>
+    <string name="axi_ui_conectate_a_tu_pc_desde_cualquier_lugar" formatted="false">"随时随地，畅连你的电脑！"</string>
+    <string name="axi_ui_conexion_asignacion_giroscopio_y_vibracion" formatted="false">"连接、映射、体感与震动"</string>
+    <string name="axi_ui_conexion_y_asignacion" formatted="false">"连接与映射"</string>
+    <string name="axi_ui_configuracion_aplicada" formatted="false">"已生效！"</string>
+    <string name="axi_ui_configurar_atajo" formatted="false">"设置快捷键"</string>
+    <string name="axi_ui_confirmar" formatted="false">"确认"</string>
+    <string name="axi_ui_confirmar_eliminacion" formatted="false">"确认删除"</string>
+    <string name="axi_ui_conserva_la_vibracion_original_del_juego_al_enviar_vibracion_por" formatted="false">"当输出目标为手柄时，是否继续保留游戏原本的手柄震动。默认关闭。"</string>
+    <string name="axi_ui_conservar_imagen_nal_desactivar_zoom" formatted="false">"关闭缩放后\n保留画面"</string>
+    <string name="axi_ui_conservar_la_vibracion_del_juego" formatted="false">"保留游戏内手柄震动"</string>
+    <string name="axi_ui_conservar_vibracion_normal_del_mando" formatted="false">"保留普通手柄震动"</string>
+    <string name="axi_ui_conservar_zoom_de_imagen" formatted="false">"保留画面缩放"</string>
+    <string name="axi_ui_consulta_las_novedades_antes_de_elegir_la_descarga" formatted="false">"新版本已经准备好了，可以查看更新内容后选择下载。"</string>
+    <string name="axi_ui_consultando" formatted="false">"请求中...."</string>
+    <string name="axi_ui_consultando_version" formatted="false">"正在获取版本信息..."</string>
+    <string name="axi_ui_control_seleccionado" formatted="false">"当前按钮："</string>
+    <string name="axi_ui_control_seleccionado_xx" formatted="false">"当前按钮：xx"</string>
+    <string name="axi_ui_controla_la_disparidad_maxima_entre_los_ojos_empieza_con_estanda" formatted="false">"控制左右眼最大视差，建议从标准开始。"</string>
+    <string name="axi_ui_controles_en_pantalla" formatted="false">"屏幕按键"</string>
+    <string name="axi_ui_controles_en_pantalla_y_teclado_completo" formatted="false">"屏幕按键与完整键盘"</string>
+    <string name="axi_ui_controles_virtuales" formatted="false">"虚拟按键"</string>
+    <string name="axi_ui_convergencia" formatted="false">"汇聚位置"</string>
+    <string name="axi_ui_convergencia_3d" formatted="false">"3D汇聚"</string>
+    <string name="axi_ui_conversion_a_sdr" formatted="false">"SDR映射"</string>
+    <string name="axi_ui_conversion_a_sdr_c701e5b5" formatted="false">"兼容 SDR 映射"</string>
+    <string name="axi_ui_convierte_el_audio_del_stream_en_vibracion_especialmente_explosi" formatted="false">"把串流音频转换成震动反馈，更适合爆炸、撞击、低频场景"</string>
+    <string name="axi_ui_copias_de_seguridad" formatted="false">"备份与恢复"</string>
+    <string name="axi_ui_cruceta" formatted="false">"十字键"</string>
+    <string name="axi_ui_cruceta_abajo" formatted="false">"十字键·下"</string>
+    <string name="axi_ui_cruceta_arriba" formatted="false">"十字键·上"</string>
+    <string name="axi_ui_cruceta_derecha" formatted="false">"十字键·右"</string>
+    <string name="axi_ui_cruceta_izquierda" formatted="false">"十字键·左"</string>
+    <string name="axi_ui_ctrl_shift_esc_administrador_de_tareas" formatted="false">"Ctrl+Shift+ESC (任务管理器)"</string>
+    <string name="axi_ui_cuatro_dedos" formatted="false">"四指"</string>
+    <string name="axi_ui_datos_adicionales_de_rendimiento" formatted="false">"精简模式扩展参数"</string>
+    <string name="axi_ui_decodificacion_de_baja_latencia_beta" formatted="false">"解码低延迟模式Beta"</string>
+    <string name="axi_ui_decodificacion_de_baja_latencia_beta_684bc21e" formatted="false">"优化解码低延迟模式(Beta)"</string>
+    <string name="axi_ui_decodificador" formatted="false">"解码器"</string>
+    <string name="axi_ui_depuracion_de_entrada" formatted="false">"输入调试"</string>
+    <string name="axi_ui_desactivado" formatted="false">"已停用"</string>
+    <string name="axi_ui_desactivado_5d0ae622" formatted="false">"关"</string>
+    <string name="axi_ui_desactivado_96e5815c" formatted="false">"，已关闭"</string>
+    <string name="axi_ui_desactivado_bf2bec4a" formatted="false">"已禁用！"</string>
+    <string name="axi_ui_desactivar" formatted="false">"禁用"</string>
+    <string name="axi_ui_desactivar_atajos_incorporados" formatted="false">"禁用默认的特殊按键指令(快捷键)"</string>
+    <string name="axi_ui_desactivar_modo_juego_de_android" formatted="false">"禁用游戏模式"</string>
+    <string name="axi_ui_desactivar_pulsacion_central_de_los_sticks" formatted="false">"禁用虚拟手柄摇杆中心区域"</string>
+    <string name="axi_ui_desactivar_raton_y_tactil" formatted="false">"禁用鼠标/触控"</string>
+    <string name="axi_ui_desactivarlo_no_afecta_a_la_respuesta_haptica_nativa" formatted="false">"关闭不影响原生触觉反馈"</string>
+    <string name="axi_ui_descargar" formatted="false">"下载"</string>
+    <string name="axi_ui_desenfocar_fondo" formatted="false">"背景图高斯模糊"</string>
+    <string name="axi_ui_despues_de_aplicar_vuelve_a_abrir_el_stream_para_utilizar_los_ca" formatted="false">"应用配置后，页面关闭，需重新打开串流页面生效！"</string>
+    <string name="axi_ui_despues_de_cambiar_la_resolucion_sal_de_ajustes_y_vuelve_a_abrir" formatted="false">"设置完分辨率后，退出设置页面 重新打开生效！"</string>
+    <string name="axi_ui_destino_de_la_vibracion_por_audio" formatted="false">"音频震动输出目标"</string>
+    <string name="axi_ui_destino_intensidad_y_filtro_de_voz" formatted="false">"输出目标、强度与语音过滤"</string>
+    <string name="axi_ui_detener_prueba" formatted="false">"停止测试"</string>
+    <string name="axi_ui_detener_vibracion" formatted="false">"取消震动"</string>
+    <string name="axi_ui_direccion_de_conexion" formatted="false">"连接地址"</string>
+    <string name="axi_ui_disponible_desde_android_10" formatted="false">"安卓10及以上生效"</string>
+    <string name="axi_ui_distancia" formatted="false">"距离："</string>
+    <string name="axi_ui_distancia_5" formatted="false">"距离:5"</string>
+    <string name="axi_ui_distancia_de_desplazamiento_de_la_rueda_virtual" formatted="false">"虚拟鼠标滚轮移动距离"</string>
+    <string name="axi_ui_documentacion_oficial" formatted="false">"官方使用文档"</string>
+    <string name="axi_ui_duracion_de_sesion" formatted="false">"本地时长"</string>
+    <string name="axi_ui_eje_x" formatted="false">"X轴："</string>
+    <string name="axi_ui_eje_x_100" formatted="false">"X轴:100%"</string>
+    <string name="axi_ui_eje_y" formatted="false">"Y轴："</string>
+    <string name="axi_ui_eje_y_100" formatted="false">"Y轴:100%"</string>
+    <string name="axi_ui_el_registro_esta_vacio" formatted="false">"日志内容为空"</string>
+    <string name="axi_ui_el_servidor_o_la_gpu_pueden_ignorar_la_seleccion_de_codec_si_no" formatted="false">"如果主机软件或显卡不支持编解码器选择，则可能会忽略编解码器选择。"</string>
+    <string name="axi_ui_elegir_descarga" formatted="false">"选择下载渠道"</string>
+    <string name="axi_ui_elegir_fondo" formatted="false">"设置主屏幕背景图"</string>
+    <string name="axi_ui_elige_una_tasa_compatible_un_valor_incompatible_puede_dejar_la_p" formatted="false">"选择合适的帧率，异常帧率可能黑屏。"</string>
+    <string name="axi_ui_eliminar" formatted="false">"删除"</string>
+    <string name="axi_ui_eliminar_este_control" formatted="false">"是否删除此键值？"</string>
+    <string name="axi_ui_eliminar_este_registro_de_streaming" formatted="false">"确定删除这份串流日志吗？"</string>
+    <string name="axi_ui_eliminar_la_resolucion" formatted="false">"是否删除分辨率 "</string>
+    <string name="axi_ui_eliminar_registro" formatted="false">"删除日志"</string>
+    <string name="axi_ui_en_algunos_sistemas_como_coloros_es_necesario_para_ajustar_resol" formatted="false">"在某些系统(如ColorOS)上启用才能正确设置刷新率/分辨率。"</string>
+    <string name="axi_ui_en_espera" formatted="false">"待机"</string>
+    <string name="axi_ui_en_este_dispositivo_y_en_el_pc" formatted="false">"本设备和PC同时发声"</string>
+    <string name="axi_ui_encuadre_de_imagen" formatted="false">"画面布局"</string>
+    <string name="axi_ui_encuentra_al_desarrollador" formatted="false">"在这里找到开发者"</string>
+    <string name="axi_ui_enter" formatted="false">"回车"</string>
+    <string name="axi_ui_envia_audio_al_altavoz_de_mandos_dualsense_compatibles" formatted="false">"向支持的 DualSense 手柄输出游戏扬声器音频"</string>
+    <string name="axi_ui_envia_la_vibracion_al_telefono_o_a_un_mando_conectado" formatted="false">"选择输出到手机，或输出到已接入的手柄"</string>
+    <string name="axi_ui_enviar_portapapeles" formatted="false">"发送剪切板"</string>
+    <string name="axi_ui_equipos_y_datos_de_emparejamiento" formatted="false">"主机与配对数据"</string>
+    <string name="axi_ui_esc_salir_menu" formatted="false">"ESC (退出/菜单)"</string>
+    <string name="axi_ui_escala" formatted="false">"缩放比例："</string>
+    <string name="axi_ui_escala_100" formatted="false">"缩放比例：100%"</string>
+    <string name="axi_ui_escala_100_561ff7dc" formatted="false">"缩放：100%"</string>
+    <string name="axi_ui_escala_7ef4a593" formatted="false">"缩放："</string>
+    <string name="axi_ui_escala_de_rendimiento" formatted="false">"性能信息·缩放："</string>
+    <string name="axi_ui_escala_de_rendimiento_100" formatted="false">"性能信息 缩放：100%"</string>
+    <string name="axi_ui_escala_del_mando_virtual" formatted="false">"虚拟手柄按键缩放"</string>
+    <string name="axi_ui_escribe_el_texto_que_prefieras" formatted="false">"输入你喜欢的文本"</string>
+    <string name="axi_ui_escribe_el_texto_que_prefieras_d84f0209" formatted="false">"输入你喜欢的文本~"</string>
+    <string name="axi_ui_escribe_un_nombre_corto" formatted="false">"请输入按键名称，不易过长~"</string>
+    <string name="axi_ui_escritorio" formatted="false">"桌面"</string>
+    <string name="axi_ui_espacio" formatted="false">"空格"</string>
+    <string name="axi_ui_esperando_senal" formatted="false">"待触发"</string>
+    <string name="axi_ui_esperando_senal_telefono" formatted="false">"待触发 / 手机"</string>
+    <string name="axi_ui_esta_lista_esta_dedicada_a_quienes_apoyan_axixi_y_hacen_posible" formatted="false">"这份名单献给每一位支持阿西西的朋友，因为你们，项目才得以持续前进。"</string>
+    <string name="axi_ui_estado" formatted="false">"状态"</string>
+    <string name="axi_ui_estandar" formatted="false">"标准"</string>
+    <string name="axi_ui_estas_opciones_requieren_volver_a_abrir_el_stream" formatted="false">"以下功能需要重新打开串流页面生效！"</string>
+    <string name="axi_ui_este_dispositivo" formatted="false">"本机"</string>
+    <string name="axi_ui_este_equipo" formatted="false">"我的电脑"</string>
+    <string name="axi_ui_estos_ajustes_se_guardan_en_la_configuracion" formatted="false">"以下选项开关会保存到配置文件"</string>
+    <string name="axi_ui_estos_ajustes_se_guardan_y_se_conservan_entre_sesiones" formatted="false">"选项会保存到磁盘中，一直有效！"</string>
+    <string name="axi_ui_experimental_compatible_con_snapdragon_8_gen_1_o_superiores_y_me" formatted="false">"(实验性) 高通8Gen1及以上和联发科9300及以下芯片机型生效。"</string>
+    <string name="axi_ui_exporta_el_layout_seleccionado_en_orientacion_horizontal" formatted="false">"导出默认选择的布局方案的配置文件。(仅横屏模式)"</string>
+    <string name="axi_ui_exportar" formatted="false">"导出"</string>
+    <string name="axi_ui_exportar_layout_de_controles_virtuales" formatted="false">"导出虚拟按键配置"</string>
+    <string name="axi_ui_exportar_layout_del_mando_virtual" formatted="false">"导出虚拟手柄配置"</string>
+    <string name="axi_ui_exportar_o_importar_equipos_emparejados" formatted="false">"导出或导入主机配对数据"</string>
+    <string name="axi_ui_f11_pantalla_completa" formatted="false">"F11 (网页全屏)"</string>
+    <string name="axi_ui_filtro" formatted="false">" / 滤"</string>
+    <string name="axi_ui_filtro_de_voz" formatted="false">"音频震动语音过滤"</string>
+    <string name="axi_ui_filtro_de_voz_314b0465" formatted="false">"语音过滤"</string>
+    <string name="axi_ui_flotante_recorrido_completo" formatted="false">"自由摇杆·最大偏转"</string>
+    <string name="axi_ui_flotante_recorrido_completo_y_visible_al_tocar" formatted="false">"自由·最大偏转·触发显示"</string>
+    <string name="axi_ui_flotante_visible_al_tocar" formatted="false">"自由摇杆·触发显示"</string>
+    <string name="axi_ui_fondo_personalizado" formatted="false">"使用自定义背景图"</string>
+    <string name="axi_ui_formato_de_importacion_incorrecto_comprueba_el_archivo" formatted="false">"自定义导入格式出错了，请检查！"</string>
+    <string name="axi_ui_forzar_modo_de_pantalla" formatted="false">"强制显示模式"</string>
+    <string name="axi_ui_forzar_vibracion_del_dispositivo" formatted="false">"强制使用设备本身的震动马达"</string>
+    <string name="axi_ui_forzar_vibracion_ndel_dispositivo" formatted="false">"强制使用\n机身震动"</string>
+    <string name="axi_ui_fps" formatted="false">"帧率"</string>
+    <string name="axi_ui_fps_actuales" formatted="false">"实时帧率"</string>
+    <string name="axi_ui_fps_objetivo" formatted="false">"目标帧率"</string>
+    <string name="axi_ui_frecuencia_de_vibracion" formatted="false">"震动频率"</string>
+    <string name="axi_ui_fuerte" formatted="false">"强"</string>
+    <string name="axi_ui_funciones" formatted="false">"功能"</string>
+    <string name="axi_ui_funciones_de_axixi" formatted="false">"功能按键"</string>
+    <string name="axi_ui_funciones_y_acciones" formatted="false">"功能与操作"</string>
+    <string name="axi_ui_gatillo" formatted="false">"扳机"</string>
+    <string name="axi_ui_gatillo_de_rifle_automatico" formatted="false">"自动步枪扳机"</string>
+    <string name="axi_ui_gatillo_derecho" formatted="false">"右扳机"</string>
+    <string name="axi_ui_gatillo_izquierdo" formatted="false">"左扳机"</string>
+    <string name="axi_ui_gatillos_adaptativos_de_dualsense" formatted="false">"PS5手柄自适应扳机"</string>
+    <string name="axi_ui_genera_un_registro_por_sesion_con_conexion_video_red_mandos_e_in" formatted="false">"每次串流生成一份新日志，用于记录连接、画面、网络、手柄和异常中断；默认关闭"</string>
+    <string name="axi_ui_general" formatted="false">"通用"</string>
+    <string name="axi_ui_gesto_para_abrir_el_teclado_de_android" formatted="false">"多点触控打开软键盘"</string>
+    <string name="axi_ui_girar_pantalla" formatted="false">"旋转屏幕"</string>
+    <string name="axi_ui_giroscopio_del_dispositivo_para_mando_virtual" formatted="false">"虚拟手柄使用设备本身的陀螺仪"</string>
+    <string name="axi_ui_gles_directo" formatted="false">"GLES直通"</string>
+    <string name="axi_ui_gles_permite_fsr_y_procesamiento_de_imagen" formatted="false">"GLES渲染支持FSR和画面处理。"</string>
+    <string name="axi_ui_gles_permite_fsr_y_procesamiento_de_imagen_5d8d75eb" formatted="false">"GLES 渲染支持 FSR 和画面处理功能。"</string>
+    <string name="axi_ui_gracias_a_quienes_apoyan_y_acompanan_el_proyecto" formatted="false">"感谢每一位支持与陪伴的朋友"</string>
+    <string name="axi_ui_gracias_por_acompanarnos" formatted="false">"感谢一路同行的你们"</string>
+    <string name="axi_ui_gris" formatted="false">"灰色"</string>
+    <string name="axi_ui_guardar_layout" formatted="false">"保存布局"</string>
+    <string name="axi_ui_hdr_nativo" formatted="false">"HDR直出"</string>
+    <string name="axi_ui_hdr_nativo_ed695470" formatted="false">"原生 HDR 直出"</string>
+    <string name="axi_ui_horizontal" formatted="false">"横屏"</string>
+    <string name="axi_ui_idioma_inicio_y_comportamiento_de_la_app" formatted="false">"语言、首页与应用行为"</string>
+    <string name="axi_ui_importa_un_archivo_para_reemplazar_el_layout_seleccionado_en_ori" formatted="false">"选择一个配置文件，覆盖默认选择的布局方案。(仅横屏模式)"</string>
+    <string name="axi_ui_importar_configuracion_de_accesibilidad" formatted="false">"导入自定义无障碍配置文件"</string>
+    <string name="axi_ui_importar_layout_de_controles_virtuales" formatted="false">"导入虚拟按键配置"</string>
+    <string name="axi_ui_importar_layout_del_mando_virtual" formatted="false">"导入虚拟手柄配置"</string>
+    <string name="axi_ui_incluye_optimizaciones_para_dualsense_originales_conectados_por" formatted="false">"其中原装DS5有线驱动接管模式，有特殊优化."</string>
+    <string name="axi_ui_informa_de_la_bateria_cuando_sea_posible_desactivalo_si_el_tacti" formatted="false">"在可用时汇报手柄电池状态。\n如果在使用触摸屏/触摸板/手写笔/鼠标时偶尔有卡顿现象发生，关闭此选项可能会有用。"</string>
+    <string name="axi_ui_informacion" formatted="false">"信息"</string>
+    <string name="axi_ui_informacion_de_rendimiento" formatted="false">"性能信息"</string>
+    <string name="axi_ui_informacion_de_version" formatted="false">"版本信息"</string>
+    <string name="axi_ui_informacion_de_video" formatted="false">"视频信息"</string>
+    <string name="axi_ui_informacion_del_dispositivo_android" formatted="false">"安卓设备信息"</string>
+    <string name="axi_ui_informacion_en_pantalla" formatted="false">"悬浮信息"</string>
+    <string name="axi_ui_informar_bateria_del_mando" formatted="false">"启用手柄电池状态报告"</string>
+    <string name="axi_ui_informar_bateria_ndel_mando" formatted="false">"上报手柄\n电池状态"</string>
+    <string name="axi_ui_intensidad" formatted="false">"振幅强度"</string>
+    <string name="axi_ui_intensidad_de_vibracion" formatted="false">"震动强度"</string>
+    <string name="axi_ui_intensidad_de_vibracion_por_audio" formatted="false">"音频震动强度"</string>
+    <string name="axi_ui_intensidad_de_vibracion_por_audio_100" formatted="false">"音频震动强度：100%"</string>
+    <string name="axi_ui_intensidad_de_vibracion_por_audio_fb80d702" formatted="false">"音频震动强度："</string>
+    <string name="axi_ui_intercambiar" formatted="false">"交换"</string>
+    <string name="axi_ui_intercambiar_ancho_y_alto" formatted="false">"宽高交换"</string>
+    <string name="axi_ui_intercambiar_ojos" formatted="false">"交换左右眼"</string>
+    <string name="axi_ui_interfaz" formatted="false">"界面"</string>
+    <string name="axi_ui_interfaz_y_general" formatted="false">"界面与通用"</string>
+    <string name="axi_ui_introduce_ancho_y_alto_para_guardar_y_usar" formatted="false">"输入宽和高 (保存并使用)"</string>
+    <string name="axi_ui_introduce_el_alto" formatted="false">"高度不能为空！"</string>
+    <string name="axi_ui_introduce_el_alto_por_ejemplo_1080" formatted="false">"请输入高度，比如1080"</string>
+    <string name="axi_ui_introduce_el_ancho" formatted="false">"宽度不能为空！"</string>
+    <string name="axi_ui_introduce_el_ancho_por_ejemplo_1920" formatted="false">"请输入宽度，比如1920"</string>
+    <string name="axi_ui_introduce_el_bitrate" formatted="false">"码率不能为空！"</string>
+    <string name="axi_ui_introduce_el_bitrate_en_mbps" formatted="false">"输入码率 单位mbps (只校验非空，别填奇怪的数值)"</string>
+    <string name="axi_ui_introduce_el_bitrate_maximo_99999" formatted="false">"请输入码率，最大99999"</string>
+    <string name="axi_ui_introduce_el_bitrate_si_prefieres_no_usar_el_deslizador_los_valo" formatted="false">"如果你感觉Seek控件滑动不太好用，可以选择手动输入。\n超过Seek滑动最大值，可能不显示但是串流时是生效的~"</string>
+    <string name="axi_ui_introduce_los_fps" formatted="false">"请输入帧率"</string>
+    <string name="axi_ui_introduce_los_fps_c362d2cc" formatted="false">"fps不能为空！"</string>
+    <string name="axi_ui_introduce_un_nombre" formatted="false">"请输入名称！"</string>
+    <string name="axi_ui_introduce_un_numero_los_decimales_se_redondean_a_pasos_de_0_5" formatted="false">"请输入数字，小数点只能识别到x.5，超过会四舍五入~"</string>
+    <string name="axi_ui_invertir_ejes_x_y" formatted="false">"反转XY轴"</string>
+    <string name="axi_ui_invertir_vibracion_de_los_agarres" formatted="false">"反转握把震动"</string>
+    <string name="axi_ui_invertir_vibracion_nde_los_agarres" formatted="false">"反转握把\n震动方向"</string>
+    <string name="axi_ui_joystick" formatted="false">"摇杆"</string>
+    <string name="axi_ui_joystick_flotante" formatted="false">"自由摇杆"</string>
+    <string name="axi_ui_la_conversion_a_sdr_ofrece_mayor_compatibilidad_hdr_nativo_es_ex" formatted="false">"兼容 SDR 映射更稳定；原生 HDR 直出为实验性，需要设备支持 BT2020 PQ。"</string>
+    <string name="axi_ui_latencia_de_decodificacion" formatted="false">"解码延迟"</string>
+    <string name="axi_ui_latencia_de_red" formatted="false">"网络延迟"</string>
+    <string name="axi_ui_latencia_decodificacion" formatted="false">"延迟/解码："</string>
+    <string name="axi_ui_latencia_decodificacion_109_ms_7_ms_perdida_69_fps_60" formatted="false">"延迟/解码：109ms/7ms 丢包率：69% FPS：60"</string>
+    <string name="axi_ui_latencia_del_servidor" formatted="false">"主机延迟"</string>
+    <string name="axi_ui_layout_1" formatted="false">"方案1"</string>
+    <string name="axi_ui_layout_2" formatted="false">"方案2"</string>
+    <string name="axi_ui_layout_3" formatted="false">"方案3"</string>
+    <string name="axi_ui_layout_4" formatted="false">"方案4"</string>
+    <string name="axi_ui_layout_5" formatted="false">"方案5"</string>
+    <string name="axi_ui_layout_guardado" formatted="false">"已保存！"</string>
+    <string name="axi_ui_layout_opacidad_y_vibracion" formatted="false">"布局、透明度与触感"</string>
+    <string name="axi_ui_layout_predeterminado" formatted="false">"默认布局方案"</string>
+    <string name="axi_ui_layouts_de_controles" formatted="false">"按键配置"</string>
+    <string name="axi_ui_layouts_del_mando" formatted="false">"手柄配置"</string>
+    <string name="axi_ui_layouts_independientes_para_orientacion_horizontal_y_vertical" formatted="false">"横竖屏支持单独配置。"</string>
+    <string name="axi_ui_lejos" formatted="false">"远"</string>
+    <string name="axi_ui_limpiar" formatted="false">"清空"</string>
+    <string name="axi_ui_lista_de_registros" formatted="false">"日志列表"</string>
+    <string name="axi_ui_los_sticks_virtuales_dejaran_de_activar_l3_y_r3" formatted="false">"开启后，虚拟手柄摇杆无法触发L3和R3"</string>
+    <string name="axi_ui_mando" formatted="false">"手柄"</string>
+    <string name="axi_ui_mando_7e682037" formatted="false">" / 手柄"</string>
+    <string name="axi_ui_mando_d_vibracion_alta_d_baja_d" formatted="false">"手柄%d 震动信号 高%d 低%d"</string>
+    <string name="axi_ui_mando_en_pantalla" formatted="false">"屏幕手柄"</string>
+    <string name="axi_ui_mando_usb" formatted="false">"USB手柄"</string>
+    <string name="axi_ui_mando_virtual" formatted="false">"虚拟手柄"</string>
+    <string name="axi_ui_mando_y_controles_virtuales" formatted="false">"虚拟手柄与按键"</string>
+    <string name="axi_ui_mando_y_controles_virtuales_975d8f3e" formatted="false">"虚拟手柄与虚拟按键"</string>
+    <string name="axi_ui_manten_pulsado_para_ver_mas_opciones" formatted="false">"长按选中菜单有更多选项"</string>
+    <string name="axi_ui_mantiene_el_encuadre_al_desactivar_el_ajuste_de_zoom" formatted="false">"关闭缩放调节时保留已调整的画面比例"</string>
+    <string name="axi_ui_margen_de_rendimiento" formatted="false">"性能信息·边距："</string>
+    <string name="axi_ui_margen_de_rendimiento_4" formatted="false">"性能信息 边距：4"</string>
+    <string name="axi_ui_mas_aplicaciones" formatted="false">"更多应用"</string>
+    <string name="axi_ui_mas_funciones" formatted="false">"特色功能"</string>
+    <string name="axi_ui_medio" formatted="false">"中"</string>
+    <string name="axi_ui_mejora_de_imagen" formatted="false">"画面增强"</string>
+    <string name="axi_ui_menu_del_juego" formatted="false">"游戏菜单"</string>
+    <string name="axi_ui_metodo_a_para_detener_vibracion" formatted="false">"震动停止方案A"</string>
+    <string name="axi_ui_microfono" formatted="false">"麦克风"</string>
+    <string name="axi_ui_microfono_desactivado" formatted="false">"麦克风已关闭"</string>
+    <string name="axi_ui_mis_aplicaciones" formatted="false">"我的应用"</string>
+    <string name="axi_ui_modo_bloqueo" formatted="false">"锁定模式"</string>
+    <string name="axi_ui_modo_cambiar_tamano" formatted="false">"缩放模式~"</string>
+    <string name="axi_ui_modo_combinacion_de_teclas" formatted="false">"组合键模式"</string>
+    <string name="axi_ui_modo_de_pantalla" formatted="false">"显示器模式"</string>
+    <string name="axi_ui_modo_de_renderizado" formatted="false">"渲染模式"</string>
+    <string name="axi_ui_modo_desactivado" formatted="false">"禁用模式~"</string>
+    <string name="axi_ui_modo_edicion" formatted="false">"编辑模式"</string>
+    <string name="axi_ui_modo_edicion_activado_cierra_el_menu_para_ajustar_los_controles" formatted="false">"已进入编辑模式，关闭游戏菜单，进行操作！"</string>
+    <string name="axi_ui_modo_mover" formatted="false">"位移模式~"</string>
+    <string name="axi_ui_modo_normal" formatted="false">"常规模式"</string>
+    <string name="axi_ui_modo_normal_4e5d9917" formatted="false">"正常模式"</string>
+    <string name="axi_ui_modo_normal_593ebfdf" formatted="false">"正常模式~"</string>
+    <string name="axi_ui_modo_tactil" formatted="false">"触控模式"</string>
+    <string name="axi_ui_modo_tactil_y_de_raton" formatted="false">"触控/鼠标模式"</string>
+    <string name="axi_ui_modo_vertical" formatted="false">"竖屏显示模式"</string>
+    <string name="axi_ui_moonlight_no_aplicara_su_zona_muerta_de_gatillos_salvo_en_determ" formatted="false">"勾选后 手柄扳机死区 Moonlight不做限制【某些ASUS Gamepad设备除外】。"</string>
+    <string name="axi_ui_mostrar_boton_flotante" formatted="false">"启用悬浮球"</string>
+    <string name="axi_ui_mostrar_controles_virtuales" formatted="false">"显示虚拟按键"</string>
+    <string name="axi_ui_mostrar_datos_nadicionales" formatted="false">"显示更多\n扩展参数"</string>
+    <string name="axi_ui_mostrar_informacion_de_vibracion" formatted="false">"显示震动信息"</string>
+    <string name="axi_ui_mostrar_ocultar_cursor_del_pc" formatted="false">"隐藏/显示电脑端鼠标光标"</string>
+    <string name="axi_ui_mostrar_teclas_capturadas_por_accesibilidad" formatted="false">"无障碍键盘模式显示捕获的键值"</string>
+    <string name="axi_ui_mover" formatted="false">"位移"</string>
+    <string name="axi_ui_ms_variacion" formatted="false">" ms / 抖动 "</string>
+    <string name="axi_ui_muestra_el_cursor_de_android_al_conectar_un_raton_fisico" formatted="false">"默认外接物理鼠标的光标会被捕获，此选项可显示安卓系统光标"</string>
+    <string name="axi_ui_muestra_el_video_en_la_pantalla_externa_y_los_controles_y_rendim" formatted="false">"串流画面显示在显示器，虚拟按键及性能信息等控件在手机屏幕。"</string>
+    <string name="axi_ui_muestra_velocidad_de_red_latencia_decodificacion_perdida_y_fps" formatted="false">"展示简化版性能信息：网速/延迟/解码/丢包率/FPS"</string>
+    <string name="axi_ui_multitactil" formatted="false">"多点触控模式"</string>
+    <string name="axi_ui_muy_fuerte" formatted="false">"极强"</string>
+    <string name="axi_ui_negro" formatted="false">"黑色"</string>
+    <string name="axi_ui_ninguno" formatted="false">"无"</string>
+    <string name="axi_ui_nitidez" formatted="false">"锐化程度"</string>
+    <string name="axi_ui_nitidez_8f7917fe" formatted="false">" / 锐化 "</string>
+    <string name="axi_ui_no_hay_controles_anadelos_desde_menu_mando_y_controles_virtuales" formatted="false">"无按键可用，打开编辑模式新增按钮后使用！(菜单-虚拟手柄与按键-编辑模式)"</string>
+    <string name="axi_ui_no_hay_enlaces_de_descarga_disponibles" formatted="false">"当前没有可用下载地址"</string>
+    <string name="axi_ui_no_hay_notas_de_actualizacion" formatted="false">"暂无更新说明。"</string>
+    <string name="axi_ui_no_informado_por_el_servidor" formatted="false">"主机未提供"</string>
+    <string name="axi_ui_no_informado_por_el_sistema" formatted="false">"系统未报告"</string>
+    <string name="axi_ui_no_se_encontro_el_servicio_limelightax_tcp" formatted="false">"没有检索到_limelightax._tcp"</string>
+    <string name="axi_ui_no_se_encontro_informacion_de_actualizacion" formatted="false">"未找到可用更新信息"</string>
+    <string name="axi_ui_no_se_encontro_un_navegador" formatted="false">"未找到可用浏览器"</string>
+    <string name="axi_ui_no_se_pudo_consultar_la_actualizacion_se_abrio_el_enlace_de_desc" formatted="false">"检查更新失败，已打开默认下载链接"</string>
+    <string name="axi_ui_no_se_pudo_eliminar_el_registro" formatted="false">"日志删除失败"</string>
+    <string name="axi_ui_no_se_pudo_exportar_el_registro" formatted="false">"日志导出失败"</string>
+    <string name="axi_ui_no_se_pudo_interpretar_la_actualizacion_se_abrio_el_enlace_de_de" formatted="false">"更新信息解析失败，已打开默认下载链接"</string>
+    <string name="axi_ui_nombre_del_control" formatted="false">"按键名称"</string>
+    <string name="axi_ui_normal" formatted="false">"正常"</string>
+    <string name="axi_ui_normal_recorrido_completo" formatted="false">"常规·最大偏转"</string>
+    <string name="axi_ui_novedades" formatted="false">"更新内容"</string>
+    <string name="axi_ui_nueva_version_disponible" formatted="false">"发现新版本"</string>
+    <string name="axi_ui_nultima_version" formatted="false">"\n最新版本："</string>
+    <string name="axi_ui_obtener_del_servidor" formatted="false">"根据svr获取"</string>
+    <string name="axi_ui_omitir_comprobacion_hdr" formatted="false">"忽略HDR校验"</string>
+    <string name="axi_ui_omitir_esta_actualizacion" formatted="false">"跳过本次更新"</string>
+    <string name="axi_ui_omitir_menu_de_aplicaciones" formatted="false">"忽略掉应用列表菜单选项"</string>
+    <string name="axi_ui_omitir_zona_muerta_de_gatillos_del_13" formatted="false">"禁用默认13%的手柄扳机死区"</string>
+    <string name="axi_ui_omitir_zona_muerta_nde_los_gatillos" formatted="false">"忽略扳机\n默认死区"</string>
+    <string name="axi_ui_opacidad" formatted="false">"透明度："</string>
+    <string name="axi_ui_opacidad_100" formatted="false">"不透明度:100%"</string>
+    <string name="axi_ui_opacidad_100_0072e946" formatted="false">"不透明度：100%"</string>
+    <string name="axi_ui_opacidad_del_teclado_completo" formatted="false">"全键盘面板透明度"</string>
+    <string name="axi_ui_opacidad_del_teclado_completo_944e0ab9" formatted="false">"虚拟全键盘透明度"</string>
+    <string name="axi_ui_opacidad_global_de_los_controles" formatted="false">"控件透明度(手柄与按键通用)"</string>
+    <string name="axi_ui_opciones" formatted="false">"选项"</string>
+    <string name="axi_ui_optimizacion_para_xiaomi_xring_o1" formatted="false">"小米玄戒 O1 优化"</string>
+    <string name="axi_ui_orden_de_los_ojos" formatted="false">"左右眼"</string>
+    <string name="axi_ui_otros_ajustes" formatted="false">"杂项"</string>
+    <string name="axi_ui_otros_ajustes_03f3f337" formatted="false">"其他配置"</string>
+    <string name="axi_ui_panel_tactil" formatted="false">"触控板"</string>
+    <string name="axi_ui_panel_tactil_7f4ce565" formatted="false">"触控板模式"</string>
+    <string name="axi_ui_panel_tactil_camara" formatted="false">"触控板·无"</string>
+    <string name="axi_ui_panel_tactil_central" formatted="false">"触控板·中"</string>
+    <string name="axi_ui_panel_tactil_derecho" formatted="false">"触控板·右"</string>
+    <string name="axi_ui_panel_tactil_izquierdo" formatted="false">"触控板·左"</string>
+    <string name="axi_ui_panel_tactil_movimiento_y_clic_izquierdo" formatted="false">"触控板「移动+左键点击」"</string>
+    <string name="axi_ui_panel_tactil_solo_movimiento" formatted="false">"触控板「仅移动」"</string>
+    <string name="axi_ui_panel_tactil_varios_gestos" formatted="false">"触控板「多手势」"</string>
+    <string name="axi_ui_pantalla" formatted="false">"显示"</string>
+    <string name="axi_ui_pantalla_1" formatted="false">"显示器1"</string>
+    <string name="axi_ui_pantalla_2" formatted="false">"显示器2"</string>
+    <string name="axi_ui_pantalla_3" formatted="false">"显示器3"</string>
+    <string name="axi_ui_pantalla_4" formatted="false">"显示器4"</string>
+    <string name="axi_ui_pantalla_de_inicio" formatted="false">"主屏幕设置"</string>
+    <string name="axi_ui_pantalla_externa" formatted="false">"外接显示器"</string>
+    <string name="axi_ui_pantalla_externa_beta" formatted="false">"外接显示器模式（Beta）"</string>
+    <string name="axi_ui_pantalla_tactil_raton_y_teclado_fisico" formatted="false">"触屏、鼠标与实体键盘"</string>
+    <string name="axi_ui_pantallas" formatted="false">"显示器"</string>
+    <string name="axi_ui_parametros_de_video" formatted="false">"视频参数"</string>
+    <string name="axi_ui_pcm_nativo" formatted="false">"原生PCM"</string>
+    <string name="axi_ui_perdida_de_paquetes" formatted="false">"  丢包率："</string>
+    <string name="axi_ui_perdida_de_paquetes_37772187" formatted="false">"丢包率"</string>
+    <string name="axi_ui_perifericos" formatted="false">"外设"</string>
+    <string name="axi_ui_permitir_cambio_de_orientacion" formatted="false">"横竖屏自由切换"</string>
+    <string name="axi_ui_posicion" formatted="false">"坐标："</string>
+    <string name="axi_ui_posicion_de_la_imagen" formatted="false">"画面显示位置"</string>
+    <string name="axi_ui_posicion_final" formatted="false">"结束位置"</string>
+    <string name="axi_ui_posicion_inicial" formatted="false">"起始位置"</string>
+    <string name="axi_ui_posicion_xx" formatted="false">"坐标：xx"</string>
+    <string name="axi_ui_predeterminado" formatted="false">"默认"</string>
+    <string name="axi_ui_prioriza_un_modo_de_pantalla_que_coincida_con_los_fps_del_stream" formatted="false">"优先使用匹配串流帧率的显示模式；显示异常时可关闭"</string>
+    <string name="axi_ui_probar_teclas_del_teclado" formatted="false">"测试键盘按键"</string>
+    <string name="axi_ui_probar_vibracion_del_dispositivo" formatted="false">"测试设备震动"</string>
+    <string name="axi_ui_probar_vibracion_del_mando" formatted="false">"测试手柄震动"</string>
+    <string name="axi_ui_probar_vibracion_del_mando_usb" formatted="false">"测试USB手柄震动"</string>
+    <string name="axi_ui_profundidad" formatted="false">" / 景深"</string>
+    <string name="axi_ui_profundidad_3d" formatted="false">"景深强度"</string>
+    <string name="axi_ui_profundidad_3d_42d65a8d" formatted="false">"3D景深"</string>
+    <string name="axi_ui_puede_ayudar_en_dispositivos_quest_con_android_13_o_posterior" formatted="false">"可能对Quest 安卓13及以上版本有用"</string>
+    <string name="axi_ui_pulsa_actualizar_para_ver_los_mandos_npara_probar_mandos_usb_act" formatted="false">"点击刷新按钮刷新手柄信息\nUSB手柄测试 设置-勾选覆盖USB驱动"</string>
+    <string name="axi_ui_pulsa_aplicar_configuracion_despues_de_cada_conexion" formatted="false">"右上角应用配置生效！(每次连接手动执行下)"</string>
+    <string name="axi_ui_pulsacion_del_stick_derecho" formatted="false">"右摇杆按下"</string>
+    <string name="axi_ui_pulsacion_del_stick_izquierdo" formatted="false">"左摇杆按下"</string>
+    <string name="axi_ui_quark_drive" formatted="false">"夸克网盘"</string>
+    <string name="axi_ui_raton_clic_central" formatted="false">"鼠标·中键"</string>
+    <string name="axi_ui_raton_clic_derecho" formatted="false">"鼠标·右键"</string>
+    <string name="axi_ui_raton_clic_izquierdo" formatted="false">"鼠标·左键"</string>
+    <string name="axi_ui_raton_de_escritorio_remoto" formatted="false">"远程桌面鼠标模式"</string>
+    <string name="axi_ui_raton_normal" formatted="false">"普通鼠标模式"</string>
+    <string name="axi_ui_raton_normal_botones_intercambiados" formatted="false">"普通鼠标「左右键互换」"</string>
+    <string name="axi_ui_raton_para_escritorio_remoto_requiere_el_modo_raton_normal" formatted="false">"适合远程桌面的鼠标模式(需切换到普通鼠标模式)"</string>
+    <string name="axi_ui_raton_y_giroscopio" formatted="false">"鼠标与体感"</string>
+    <string name="axi_ui_raton_y_pantalla_tactil" formatted="false">"鼠标与触屏"</string>
+    <string name="axi_ui_raton_y_rueda" formatted="false">"鼠标与轮盘按键"</string>
+    <string name="axi_ui_raton_y_tactil" formatted="false">"鼠标与触控"</string>
+    <string name="axi_ui_recibe_datos_hapticos_pcm_de_servidores_compatibles" formatted="false">"接收支持的主机发送的原生 PCM 触觉数据"</string>
+    <string name="axi_ui_recopilacion_de_registros" formatted="false">"日志采集"</string>
+    <string name="axi_ui_recopilar_registros_de_streaming" formatted="false">"串流日志采集"</string>
+    <string name="axi_ui_recordar_posicion_ndel_boton_flotante" formatted="false">"悬浮球\n记住位置"</string>
+    <string name="axi_ui_reduce_la_vibracion_provocada_por_voces_chat_y_anuncios" formatted="false">"降低人声、语音聊天、播报声对震动的触发"</string>
+    <string name="axi_ui_reemplaza_la_configuracion_anterior_conserva_una_copia_si_la_nec" formatted="false">"每次都会覆盖原来的，请注意备份。"</string>
+    <string name="axi_ui_reescala_a_2k_o_4k_con_fsr_en_el_renderizador_gles" formatted="false">"GLES 渲染下启用 FSR 超分到 2K 或 4K。"</string>
+    <string name="axi_ui_reescalado" formatted="false">"超分状态"</string>
+    <string name="axi_ui_reescalado_fsr" formatted="false">"FSR 超分"</string>
+    <string name="axi_ui_registrar_sesiones_y_administrar_archivos" formatted="false">"记录串流并管理日志文件"</string>
+    <string name="axi_ui_registro_exportado" formatted="false">"日志已导出"</string>
+    <string name="axi_ui_registros_de_streaming" formatted="false">"串流日志"</string>
+    <string name="axi_ui_registros_guardados" formatted="false">"已保存 "</string>
+    <string name="axi_ui_reiniciar_pc" formatted="false">"重启"</string>
+    <string name="axi_ui_relacion_hdr_sdr" formatted="false">"HDR/SDR比率"</string>
+    <string name="axi_ui_renderizado" formatted="false">"渲染方式"</string>
+    <string name="axi_ui_renderizado_del_sistema" formatted="false">"系统渲染"</string>
+    <string name="axi_ui_renderizado_gles" formatted="false">"GLES渲染"</string>
+    <string name="axi_ui_rendimiento_compacto" formatted="false">"精简性能信息"</string>
+    <string name="axi_ui_rendimiento_compacto_b66e593c" formatted="false">"开启Lite精简模式"</string>
+    <string name="axi_ui_rendimiento_detallado" formatted="false">"完整性能"</string>
+    <string name="axi_ui_rendimiento_y_boton_flotante" formatted="false">"性能数据与悬浮球"</string>
+    <string name="axi_ui_reproduccion_de_audio" formatted="false">"播放声音"</string>
+    <string name="axi_ui_requiere_sunshine_axixi" formatted="false">"使用 sunshine·阿西西 生效"</string>
+    <string name="axi_ui_resistencia" formatted="false">"阻尼"</string>
+    <string name="axi_ui_resolucion" formatted="false">"分辨率"</string>
+    <string name="axi_ui_resolucion_1920x1080" formatted="false">"分辨率：1920x1080"</string>
+    <string name="axi_ui_resolucion_61bc2862" formatted="false">"分辨率："</string>
+    <string name="axi_ui_resolucion_de_reescalado" formatted="false">"超分目标"</string>
+    <string name="axi_ui_resolucion_fps_y_mejora_de_imagen" formatted="false">"分辨率、帧率与画面增强"</string>
+    <string name="axi_ui_resoluciones_habituales" formatted="false">"常用分辨率"</string>
+    <string name="axi_ui_resoluciones_personalizadas_manten_pulsado_para_eliminar" formatted="false">"自定义分辨率 (长按删除)"</string>
+    <string name="axi_ui_respuesta_haptica_nativa_de_dualsense" formatted="false">"DualSense 原生音频震动"</string>
+    <string name="axi_ui_respuesta_haptica_pcm_nativa_de_dualsense" formatted="false">"原生 DS5 触觉 PCM"</string>
+    <string name="axi_ui_restablecer_layout" formatted="false">"重置布局"</string>
+    <string name="axi_ui_rueda" formatted="false">"滚轮⬆"</string>
+    <string name="axi_ui_rueda_6cd0318e" formatted="false">"滚轮⬇"</string>
+    <string name="axi_ui_rueda_abajo" formatted="false">"滚轮·下"</string>
+    <string name="axi_ui_rueda_arriba" formatted="false">"滚轮·上"</string>
+    <string name="axi_ui_salida_3d" formatted="false">"3D输出"</string>
+    <string name="axi_ui_salida_de_ancho_completo_38401080_1200_o_medio_ancho_19201080_12" formatted="false">"全宽输出3840×1080/1200，半宽输出1920×1080/1200；仅支持GLES渲染。"</string>
+    <string name="axi_ui_salida_de_audio" formatted="false">"音频输出"</string>
+    <string name="axi_ui_salida_directa_del_sistema" formatted="false">"系统直出"</string>
+    <string name="axi_ui_salida_hdr_de_fsr" formatted="false">"FSR HDR输出"</string>
+    <string name="axi_ui_sbs_de_ancho_completo" formatted="false">"左右全宽"</string>
+    <string name="axi_ui_sbs_de_ancho_completo_2ac06577" formatted="false">"SBS 全宽"</string>
+    <string name="axi_ui_sbs_de_medio_ancho" formatted="false">"左右半宽"</string>
+    <string name="axi_ui_sbs_de_medio_ancho_f6e8feb8" formatted="false">"SBS 半宽"</string>
+    <string name="axi_ui_selecciona_de_1_a_5_teclas" formatted="false">"请输入1~5个按键"</string>
+    <string name="axi_ui_selecciona_el_modo_de_raton_el_modo_multitactil_requiere_sunshin" formatted="false">"可选择一种鼠标模式，多点触控需要搭配sunshine使用~"</string>
+    <string name="axi_ui_selecciona_el_servicio_de_descarga_que_prefieras" formatted="false">"可根据你的习惯选择下载渠道。"</string>
+    <string name="axi_ui_selecciona_la_resolucion_de_salida_la_cadena_de_renderizado_gest" formatted="false">"选择超分输出目标，HDR由渲染链路自动处理。"</string>
+    <string name="axi_ui_selecciona_una_combinacion_de_teclas" formatted="false">"请输入组合键！"</string>
+    <string name="axi_ui_selecciona_una_imagen_gira_la_pantalla_para_aplicarla_usa_un_arc" formatted="false">"选择一张图片，旋转屏幕生效~\n容错率不是很高，所以图片大小和类型别太过分，小心崩溃~\n如果崩溃了清除数据可解决~"</string>
+    <string name="axi_ui_seleccionado" formatted="false">"，已选中"</string>
+    <string name="axi_ui_sensibilidad" formatted="false">"灵敏度："</string>
+    <string name="axi_ui_sensibilidad_100" formatted="false">"灵敏度:100%"</string>
+    <string name="axi_ui_sensibilidad_de_los_controles_de_panel_tactil_siempre_activa" formatted="false">"触控板控件灵敏度（默认启用没有开关）"</string>
+    <string name="axi_ui_sensibilidad_del_cursor_al_usar_el_mando_como_raton" formatted="false">"手柄键鼠模式 鼠标指针灵敏度"</string>
+    <string name="axi_ui_sensibilidad_del_giroscopio" formatted="false">"强制体感·灵敏度："</string>
+    <string name="axi_ui_sensibilidad_del_giroscopio_120" formatted="false">"强制体感灵敏度：120%"</string>
+    <string name="axi_ui_sensibilidad_del_modo_panel_tactil_siempre_activa" formatted="false">"触控板模式灵敏度（默认启用没有开关）"</string>
+    <string name="axi_ui_sensibilidad_del_panel_tactil_externo" formatted="false">"触控板外设灵敏度"</string>
+    <string name="axi_ui_sensibilidad_multitactil" formatted="false">"多点触控灵敏度"</string>
+    <string name="axi_ui_sensibilidad_tactil" formatted="false">"触控灵敏度"</string>
+    <string name="axi_ui_servidor_con_pantalla_virtual_microfono_mando_virtual_dualsense" formatted="false">"搭配月光支持虚拟显示器、麦克风、DS5虚拟手柄等功能"</string>
+    <string name="axi_ui_servidor_para_transmitir_desde_macos_con_moonlight" formatted="false">"Mac被控端应用，搭配月光实现macOS端串流。"</string>
+    <string name="axi_ui_shift_tab_interfaz_de_steam" formatted="false">"Shift + Tab (打开Steam Overlay)"</string>
+    <string name="axi_ui_si_el_layout_ya_aparecio_antes_pulsa_actualizar_arriba_a_la_dere" formatted="false">"如果按键布局出现过，点击右上角按钮刷新"</string>
+    <string name="axi_ui_silenciar_dispositivo" formatted="false">"设备静音"</string>
+    <string name="axi_ui_simular_stick_derecho_con_giroscopio_beta" formatted="false">"手柄陀螺仪模拟右摇杆 Beta"</string>
+    <string name="axi_ui_sin_iniciar" formatted="false">"未启动"</string>
+    <string name="axi_ui_sin_seleccionar" formatted="false">"，未选中"</string>
+    <string name="axi_ui_solo_afecta_a_fsr_los_valores_altos_aumentan_la_nitidez_de_los_b" formatted="false">"仅在启用 FSR 超分时生效，数值越高边缘越锐利。"</string>
+    <string name="axi_ui_solo_en_este_dispositivo" formatted="false">"本设备发声"</string>
+    <string name="axi_ui_solo_mover_camara" formatted="false">"只转视野"</string>
+    <string name="axi_ui_solo_para_esta_sesion_de_streaming" formatted="false">"(只对本次串流生效)"</string>
+    <string name="axi_ui_solo_para_xiaomi_xring_o1_utiliza_ajustes_especificos_de_compati" formatted="false">"仅小米玄戒 O1 机型生效，启用后使用专属解码兼容与低延迟优化；关闭则保持原逻辑。"</string>
+    <string name="axi_ui_sonido" formatted="false">"声音"</string>
+    <string name="axi_ui_starcore" formatted="false">"StarCore 星核"</string>
+    <string name="axi_ui_start_mantener" formatted="false">"开始键【长按】"</string>
+    <string name="axi_ui_stick_derecho" formatted="false">"右摇杆"</string>
+    <string name="axi_ui_stick_izquierdo" formatted="false">"左摇杆"</string>
+    <string name="axi_ui_suave" formatted="false">"弱"</string>
+    <string name="axi_ui_suave_37e717d5" formatted="false">"柔和"</string>
+    <string name="axi_ui_sunshine_axixi" formatted="false">"Sunshine·阿西西"</string>
+    <string name="axi_ui_suspender" formatted="false">"睡眠"</string>
+    <string name="axi_ui_tactil_y_raton" formatted="false">"触摸与鼠标"</string>
+    <string name="axi_ui_tbitrate" formatted="false">"\t码率："</string>
+    <string name="axi_ui_tbitrate_100_mbps" formatted="false">"\t码率：100 mbps"</string>
+    <string name="axi_ui_teclado" formatted="false">"键盘"</string>
+    <string name="axi_ui_teclado_completo" formatted="false">"电脑全键盘"</string>
+    <string name="axi_ui_teclado_completo_5ce1c7dc" formatted="false">"全键盘"</string>
+    <string name="axi_ui_teclado_completo_c1b36562" formatted="false">"完整键盘"</string>
+    <string name="axi_ui_teclado_completo_virtual" formatted="false">"虚拟全键盘"</string>
+    <string name="axi_ui_teclado_de_android" formatted="false">"手机软键盘"</string>
+    <string name="axi_ui_teclado_de_android_48aef452" formatted="false">"软键盘"</string>
+    <string name="axi_ui_teclado_fisico_y_accesibilidad" formatted="false">"实体键盘与辅助输入"</string>
+    <string name="axi_ui_teclado_numerico" formatted="false">"数字键盘"</string>
+    <string name="axi_ui_teclas" formatted="false">"键值："</string>
+    <string name="axi_ui_teclas_de_la_combinacion" formatted="false">"组合键值"</string>
+    <string name="axi_ui_teclas_xx" formatted="false">"键值：xx"</string>
+    <string name="axi_ui_telefono" formatted="false">"手机"</string>
+    <string name="axi_ui_tema_claro_en_algunas_pantallas" formatted="false">"部分页面主题色为白色"</string>
+    <string name="axi_ui_texto_de_la_pantalla_de_inicio" formatted="false">"设置主屏幕左侧文本"</string>
+    <string name="axi_ui_tfps" formatted="false">"\t帧率："</string>
+    <string name="axi_ui_tfps_60" formatted="false">"\t帧率：60 fps"</string>
+    <string name="axi_ui_tipo_de_gatillo" formatted="false">"扳机类型"</string>
+    <string name="axi_ui_tipo_de_mando_en_el_pc" formatted="false">"串流手柄类型"</string>
+    <string name="axi_ui_tmodo" formatted="false">"\t模式："</string>
+    <string name="axi_ui_tmodo_pantalla_externa" formatted="false">"\t模式：外接显示器"</string>
+    <string name="axi_ui_toca_el_boton_para_abrir_el_menu_rapido" formatted="false">"开启后，点击打开快捷菜单。"</string>
+    <string name="axi_ui_toca_para_ver_exportar_o_eliminar" formatted="false">" 份日志；点击查看、导出或删除"</string>
+    <string name="axi_ui_tocar_para_abrir_nel_menu_del_juego" formatted="false">"点击打开\n游戏菜单"</string>
+    <string name="axi_ui_todas_las_ventanas" formatted="false">"全部窗口"</string>
+    <string name="axi_ui_todavia_no_hay_registros_activa_la_recopilacion_para_generar_uno" formatted="false">"暂无日志；开启采集后，每次串流生成一份"</string>
+    <string name="axi_ui_todavia_no_hay_registros_nactiva_la_recopilacion_para_generar_un" formatted="false">"暂无串流日志\n开启采集后，每次串流会生成一份新日志"</string>
+    <string name="axi_ui_torientacion" formatted="false">"\t方向："</string>
+    <string name="axi_ui_torientacion_horizontal" formatted="false">"\t方向：横向"</string>
+    <string name="axi_ui_tres_dedos" formatted="false">"三指"</string>
+    <string name="axi_ui_una_combinacion_admite_hasta_5_teclas" formatted="false">"限制只能输入5个按键！"</string>
+    <string name="axi_ui_usa_el_giroscopio_del_telefono_con_el_mando_virtual_puede_requer" formatted="false">"如果你希望虚拟手柄支持陀螺仪功能，开启此选项。\n可能需要在sunshine后台设置手柄强制为ps4手柄。\n建议连接物理手柄时关闭此选项。"</string>
+    <string name="axi_ui_usa_el_motor_del_dispositivo_en_lugar_del_mando_no_afecta_a_mand" formatted="false">"你如果对连接的手柄本身震动效果不满意，可以开启此选项！【对强制使用月光自带USB驱动无效】"</string>
+    <string name="axi_ui_usa_esc_del_teclado_fisico_para_abrir_el_menu_rapido_del_stream" formatted="false">"使用实体键盘 Esc 键打开串流快捷菜单"</string>
+    <string name="axi_ui_usa_una_resolucion_personalizada_vertical_compatible_con_el_serv" formatted="false">"搭配自定义分辨率使用，确保你使用的串流端支持并且PC端分辨率是竖直方向"</string>
+    <string name="axi_ui_usa_unicamente_los_atajos_que_importes" formatted="false">"如果你感觉内置的指令对你没什么用的话，可以禁用，使用自己导入的。"</string>
+    <string name="axi_ui_usar_controlador_nusb_de_moonlight" formatted="false">"启用月光\nUSB手柄驱动"</string>
+    <string name="axi_ui_usar_cursor_local" formatted="false">"使用本地鼠标光标"</string>
+    <string name="axi_ui_usar_giroscopio_ndel_mando_usb" formatted="false">"启用USB驱动\n手柄陀螺仪"</string>
+    <string name="axi_ui_usar_giroscopio_nsin_mando_fisico" formatted="false">"无手柄使用\n设备陀螺仪"</string>
+    <string name="axi_ui_usar_zona_de_la_camara_frontal" formatted="false">"填充刘海区域"</string>
+    <string name="axi_ui_util_para_plegables_y_tabletas_ajusta_la_resolucion_y_posicion_a" formatted="false">"可能对折叠屏手机或者平板有点帮助,请自行DIY分辨率和画面位置。"</string>
+    <string name="axi_ui_utiliza_una_imagen_personalizada_requiere_android_10_o_posterior" formatted="false">"不勾选则使用默认背景,安卓10以上支持"</string>
+    <string name="axi_ui_valores_habituales_de_bitrate" formatted="false">"常用码率"</string>
+    <string name="axi_ui_valores_habituales_de_fps" formatted="false">"常用帧率"</string>
+    <string name="axi_ui_velocidad_de_rueda" formatted="false">"滚轮速度："</string>
+    <string name="axi_ui_velocidad_de_rueda_5" formatted="false">"滚轮速度:5"</string>
+    <string name="axi_ui_ver" formatted="false">"查看"</string>
+    <string name="axi_ui_ver_exportar_o_eliminar_los_registros_guardados" formatted="false">"查看、导出或删除已保存的串流日志"</string>
+    <string name="axi_ui_version" formatted="false">"版本号："</string>
+    <string name="axi_ui_version_1_0_0" formatted="false">"版本号：1.0.0"</string>
+    <string name="axi_ui_version_actual" formatted="false">"当前版本："</string>
+    <string name="axi_ui_version_actualizaciones_y_autor" formatted="false">"版本信息·获取更新·关注作者"</string>
+    <string name="axi_ui_vertical_ajusta_tambien_la_orientacion_de_la_pantalla_del_pc" formatted="false">"竖屏(旋转功能失效，自行在PC端显示器改成竖向)"</string>
+    <string name="axi_ui_vibracion_al_tocar_controles" formatted="false">"按键震动"</string>
+    <string name="axi_ui_vibracion_del_dispositivo" formatted="false">"设备震动相关"</string>
+    <string name="axi_ui_vibracion_del_juego" formatted="false">"游戏震动"</string>
+    <string name="axi_ui_vibracion_del_mando_virtual" formatted="false">"虚拟手柄震动"</string>
+    <string name="axi_ui_vibracion_intensa" formatted="false">"强烈震动"</string>
+    <string name="axi_ui_vibracion_normal" formatted="false">"普通震动"</string>
+    <string name="axi_ui_vibracion_normal_telefono" formatted="false">"普通震动 / 手机"</string>
+    <string name="axi_ui_vibracion_por_audio" formatted="false">"音频震动"</string>
+    <string name="axi_ui_vibracion_por_audio_beta" formatted="false">"音频震动（Beta）"</string>
+    <string name="axi_ui_vibracion_por_audio_beta_f2fca487" formatted="false">"音频震动Beta"</string>
+    <string name="axi_ui_vibracion_y_dualsense" formatted="false">"震动与 DualSense"</string>
+    <string name="axi_ui_video_recibido" formatted="false">"累计视频流量"</string>
+    <string name="axi_ui_view_mantener" formatted="false">"视图键【长按】"</string>
+    <string name="axi_ui_vincular_vibracion_nde_agarres_y_gatillos" formatted="false">"握把震动联动\n扳机震动"</string>
+    <string name="axi_ui_visita_el_perfil_del_desarrollador_para_descubrir_mas_proyectos" formatted="false">"前往开发者个人空间，发现更多应用与作品"</string>
+    <string name="axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios" formatted="false">"重新打开串流页面生效！"</string>
+    <string name="axi_ui_win_d_escritorio" formatted="false">"Win + D (返回桌面)"</string>
+    <string name="axi_ui_win_g_xbox_game_bar" formatted="false">"Win + G (打开Xbox Game Bar)"</string>
+    <string name="axi_ui_win_menu_inicio_de_windows" formatted="false">"Win (打开Windows开始菜单)"</string>
+    <string name="axi_ui_win_p_modo_de_pantalla" formatted="false">"Win + P (显示器模式)"</string>
+    <string name="axi_ui_win_shift_izquierda_cambiar_escritorio" formatted="false">"Win + Shift + left (切换桌面)"</string>
+    <string name="axi_ui_xbox_toque" formatted="false">"Xbox键【单击】"</string>
+    <string name="axi_ui_ya_tienes_la_ultima_version" formatted="false">"当前已是最新版本"</string>
+    <string name="axi_ui_z_toque" formatted="false">"Z键【单击】"</string>
+    <string name="axi_ui_zoom_de_imagen" formatted="false">"画面缩放"</string>
+    <string name="axi_ui_guardar_archivo" formatted="false">"保存配置文件"</string>
+    <string name="axi_ui_introduce_valor_0_9999" formatted="false">"请输入0-9999的数值。"</string>
+    <string name="axi_ui_ajustes_guardados" formatted="false">"设置成功！"</string>
+    <string name="axi_ui_archivo_vacio" formatted="false">"空文件~"</string>
+    <string name="axi_ui_importacion_correcta" formatted="false">"导入成功！"</string>
+    <string name="axi_ui_importacion_fallida" formatted="false">"导入失败！"</string>
+    <string name="axi_ui_error_archivo" formatted="false">"出错啦~"</string>
+    <string name="axi_ui_3d_sdr" formatted="false">"3D输出首版使用SDR串流，已临时关闭HDR"</string>
+</resources>

@@ -71,7 +71,7 @@ public class GameDS5Fragment extends BaseGameMenuDialog implements SeekBar.OnSee
             public void onClick(View v) {
                 if(onClick!=null){
                     onClick.click(1,true);
-                    Toast.makeText(getActivity(),"已生效！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_configuracion_aplicada),Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="触控灵敏度"
+            android:text="@string/axi_ui_sensibilidad_tactil"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -34,7 +34,7 @@
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="恢复默认"
+            android:text="@string/settings_profile_reset_action"
             android:background="@drawable/ic_game_menu_btn_side_selector"
             android:layout_marginRight="5dp"
             android:gravity="center"
@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="多点触控灵敏度"
+                    android:text="@string/axi_ui_sensibilidad_multitactil"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="选项会保存到磁盘中，一直有效！"
+                    android:text="@string/axi_ui_estos_ajustes_se_guardan_y_se_conservan_entre_sesiones"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="8dp" />
@@ -96,7 +96,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_touch_switch"
-                    android:text="灵敏度开启"
+                    android:text="@string/axi_ui_activar_sensibilidad"
                     android:textSize="11dp" />
 
                 <Button
@@ -109,7 +109,7 @@
                     android:drawableTop="@drawable/ic_axi_touch_center"
                     android:padding="4dp"
                     android:id="@+id/btn_touch_center"
-                    android:text="自动回中"
+                    android:text="@string/axi_ui_centrar_automaticamente"
                     android:textSize="11dp" />
 
                 <Button
@@ -123,7 +123,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_touch_all"
-                    android:text="全局生效"
+                    android:text="@string/axi_ui_aplicar_globalmente"
                     android:textSize="11dp" />
 
             </LinearLayout>
@@ -151,7 +151,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="X轴:100%"
+                    android:text="@string/axi_ui_eje_x_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_touch_x"
@@ -175,7 +175,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="Y轴:100%"
+                    android:text="@string/axi_ui_eje_y_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_touch_y"
@@ -187,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="触控板模式灵敏度（默认启用没有开关）"
+                android:text="@string/axi_ui_sensibilidad_del_modo_panel_tactil_siempre_activa"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:textSize="12dp" />
@@ -215,7 +215,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="X轴:100%"
+                    android:text="@string/axi_ui_eje_x_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_touchpad_x"
@@ -240,7 +240,7 @@
                     android:id="@+id/tx_touchpad_y"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="Y轴:100%"
+                    android:text="@string/axi_ui_eje_y_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:textSize="10dp" />
@@ -251,7 +251,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="触控板控件灵敏度（默认启用没有开关）"
+                android:text="@string/axi_ui_sensibilidad_de_los_controles_de_panel_tactil_siempre_activa"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:textSize="12dp" />
@@ -279,7 +279,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="X轴:100%"
+                    android:text="@string/axi_ui_eje_x_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_touchpad_view_x"
@@ -303,7 +303,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="Y轴:100%"
+                    android:text="@string/axi_ui_eje_y_100"
                     android:textStyle="italic"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_touchpad_view_y"
@@ -315,7 +315,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="手柄键鼠模式 鼠标指针灵敏度"
+                android:text="@string/axi_ui_sensibilidad_del_cursor_al_usar_el_mando_como_raton"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:textSize="12dp" />
@@ -343,7 +343,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="灵敏度:100%"
+                    android:text="@string/axi_ui_sensibilidad_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_mouse_gamepad_sensitity"
@@ -355,7 +355,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="虚拟鼠标滚轮移动距离"
+                android:text="@string/axi_ui_distancia_de_desplazamiento_de_la_rueda_virtual"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:textSize="12dp" />
@@ -383,7 +383,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="距离:5"
+                    android:text="@string/axi_ui_distancia_5"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_mouse_sc_amount"
@@ -396,7 +396,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="触控板外设灵敏度"
+                android:text="@string/axi_ui_sensibilidad_del_panel_tactil_externo"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:textSize="12dp" />
@@ -425,7 +425,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="X轴:100%"
+                    android:text="@string/axi_ui_eje_x_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_touchpad_equipment_view_x"
@@ -449,7 +449,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="Y轴:100%"
+                    android:text="@string/axi_ui_eje_y_100"
                     android:textStyle="italic"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_touchpad_equipment_view_y"
@@ -473,7 +473,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="滚轮速度:5"
+                    android:text="@string/axi_ui_velocidad_de_rueda_5"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_touchpad_equipment_amount"

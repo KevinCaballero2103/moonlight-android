@@ -164,7 +164,7 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
                             contentNames.setLength(0);
                         }
                         if(contentValues.toString().split(",").length>=5){
-                            Toast.makeText(getActivity(),"限制只能输入5个按键！",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),getString(R.string.axi_ui_una_combinacion_admite_hasta_5_teclas),Toast.LENGTH_SHORT).show();
                             return true;
                         }
                         if(!TextUtils.isEmpty(contentValues.toString())){
@@ -207,17 +207,17 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
             lv_digitpad_2.getChildAt(i).setOnTouchListener(touchListener);
         }
 
-        beanList.add(new GameMenuQuickBean("鼠标·左键",1,"常规模式",1,false));
-        beanList.add(new GameMenuQuickBean("鼠标·左键",1,"锁定模式",1,true));
-        beanList.add(new GameMenuQuickBean("鼠标·右键",3,"常规模式",1,false));
-        beanList.add(new GameMenuQuickBean("鼠标·右键",3,"锁定模式",1,true));
-        beanList.add(new GameMenuQuickBean("鼠标·中键",2,"常规模式",1,false));
-        beanList.add(new GameMenuQuickBean("鼠标·中键",2,"锁定模式",1,true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_raton_clic_izquierdo),1,getString(R.string.axi_ui_modo_normal),1,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_raton_clic_izquierdo),1,getString(R.string.axi_ui_modo_bloqueo),1,true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_raton_clic_derecho),3,getString(R.string.axi_ui_modo_normal),1,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_raton_clic_derecho),3,getString(R.string.axi_ui_modo_bloqueo),1,true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_raton_clic_central),2,getString(R.string.axi_ui_modo_normal),1,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_raton_clic_central),2,getString(R.string.axi_ui_modo_bloqueo),1,true));
 
-        beanList.add(new GameMenuQuickBean("滚轮·上",4,"常规模式",1,false));
-        beanList.add(new GameMenuQuickBean("滚轮·上",4,"锁定模式",1,true));
-        beanList.add(new GameMenuQuickBean("滚轮·下",5,"常规模式",1,false));
-        beanList.add(new GameMenuQuickBean("滚轮·下",5,"锁定模式",1,true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_rueda_arriba),4,getString(R.string.axi_ui_modo_normal),1,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_rueda_arriba),4,getString(R.string.axi_ui_modo_bloqueo),1,true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_rueda_abajo),5,getString(R.string.axi_ui_modo_normal),1,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_rueda_abajo),5,getString(R.string.axi_ui_modo_bloqueo),1,true));
 
         GameMenuQuickBean passthrough = new GameMenuQuickBean(
                 getString(R.string.control_touch_passthrough), 0,
@@ -226,8 +226,8 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
         passthrough.setOpacity(0);
         beanList.add(passthrough);
 
-        beanList.add(new GameMenuQuickBean("触控板",10,"常规模式",2,false).setShapeType(1));
-        beanList.add(new GameMenuQuickBean("触控板·左",11,"左键",2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_panel_tactil),10,getString(R.string.axi_ui_modo_normal),2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_panel_tactil_izquierdo),11,getString(R.string.axi_ui_clic_izquierdo),2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean(getString(R.string.control_attack_camera),
                 KeyBoardTouchPadButton.CODE_ATTACK_CAMERA,
                 getString(R.string.control_attack_camera_description),2,false).setShapeType(1));
@@ -236,30 +236,30 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
                 getString(R.string.control_key_camera_description), 2, false).setShapeType(1);
         keyCamera.setCodes("33"); // Android E, selectable before saving.
         beanList.add(keyCamera);
-        beanList.add(new GameMenuQuickBean("触控板·右",9,"右键",2,false).setShapeType(1));
-        beanList.add(new GameMenuQuickBean("触控板·中",12,"中键",2,false).setShapeType(1));
-        beanList.add(new GameMenuQuickBean("触控板·无",13,"只转视野",2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_panel_tactil_derecho),9,getString(R.string.axi_ui_clic_derecho),2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_panel_tactil_central),12,getString(R.string.axi_ui_clic_central),2,false).setShapeType(1));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_panel_tactil_camara),13,getString(R.string.axi_ui_solo_mover_camara),2,false).setShapeType(1));
         beanList.add(new GameMenuQuickBean(getString(R.string.control_camera_tap),
                 KeyBoardTouchPadButton.CODE_CAMERA_TAP,
                 getString(R.string.control_camera_tap_description), 2, false).setShapeType(1));
 
-        beanList.add(new GameMenuQuickBean("摇杆","51,47,29,32","W-A-S-D",3,false));
-        beanList.add(new GameMenuQuickBean("摇杆","19,20,21,22","上-左-下-右",3,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_joystick),"51,47,29,32","W-A-S-D",3,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_joystick),"19,20,21,22",getString(R.string.axi_ui_arriba_izquierda_abajo_derecha),3,false));
 
-        beanList.add(new GameMenuQuickBean("自由摇杆","51,47,29,32","W-A-S-D",3,false).setFreeStick(true));
-        beanList.add(new GameMenuQuickBean("自由摇杆","19,20,21,22","上-左-下-右",3,false).setFreeStick(true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_joystick_flotante),"51,47,29,32","W-A-S-D",3,false).setFreeStick(true));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_joystick_flotante),"19,20,21,22",getString(R.string.axi_ui_arriba_izquierda_abajo_derecha),3,false).setFreeStick(true));
 
-        beanList.add(new GameMenuQuickBean("十字键","51,47,29,32","W-A-S-D",5,false));
-        beanList.add(new GameMenuQuickBean("十字键","19,20,21,22","↑-←-↓-→",5,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_cruceta),"51,47,29,32","W-A-S-D",5,false));
+        beanList.add(new GameMenuQuickBean(getString(R.string.axi_ui_cruceta),"19,20,21,22","↑-←-↓-→",5,false));
 
         //快捷键：AXIX前缀，例如AXIX0(软键盘)，AXIX1(虚拟按键)，AXIX2(虚拟全键盘)，AXIX3(虚拟手柄)，AXIX4(悬浮球)，AXIX5(性能信息),AXIX6(游戏菜单)
-        beanFunctionList.add(new GameMenuQuickBean("软键盘","29,52,37,52,7","AXIX0",4,false));
-        beanFunctionList.add(new GameMenuQuickBean("虚拟按键","29,52,37,52,8","AXIX1",4,false));
-        beanFunctionList.add(new GameMenuQuickBean("虚拟全键盘","29,52,37,52,9","AXIX2",4,false));
-        beanFunctionList.add(new GameMenuQuickBean("虚拟手柄","29,52,37,52,10","AXIX3",4,false));
-        beanFunctionList.add(new GameMenuQuickBean("悬浮球","29,52,37,52,11","AXIX4",4,false));
-        beanFunctionList.add(new GameMenuQuickBean("性能信息","29,52,37,52,12","AXIX5",4,false));
-        beanFunctionList.add(new GameMenuQuickBean("游戏菜单","29,52,37,52,13","AXIX6",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_teclado_de_android_48aef452),"29,52,37,52,7","AXIX0",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_controles_virtuales),"29,52,37,52,8","AXIX1",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_teclado_completo_virtual),"29,52,37,52,9","AXIX2",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_mando_virtual),"29,52,37,52,10","AXIX3",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_boton_flotante),"29,52,37,52,11","AXIX4",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_informacion_de_rendimiento),"29,52,37,52,12","AXIX5",4,false));
+        beanFunctionList.add(new GameMenuQuickBean(getString(R.string.axi_ui_menu_del_juego),"29,52,37,52,13","AXIX6",4,false));
 
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -324,11 +324,11 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
                 name=name.trim();
             }
             if(TextUtils.isEmpty(name)){
-                Toast.makeText(getActivity(),"请输入名称！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.axi_ui_introduce_un_nombre),Toast.LENGTH_SHORT).show();
                 return;
             }
             if(TextUtils.isEmpty(contentValues.toString())){
-                Toast.makeText(getActivity(),"请输入组合键！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.axi_ui_selecciona_una_combinacion_de_teclas),Toast.LENGTH_SHORT).show();
                 return;
             }
             GameMenuQuickBean bean=new GameMenuQuickBean();
@@ -352,7 +352,7 @@ public class GameKeyboardUpdateFragment extends BaseGameMenuDialog implements Vi
                 bean.setShapeType(1);
             }
 //            saveKeyBoardListData(getActivity(),bean);
-//            Toast.makeText(getActivity(),"已保存！",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(),getString(R.string.axi_ui_layout_guardado),Toast.LENGTH_SHORT).show();
             onClick.click(bean);
             dismiss();
             return;

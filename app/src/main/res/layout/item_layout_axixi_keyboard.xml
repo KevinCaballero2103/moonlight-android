@@ -847,7 +847,7 @@
             android:background="@drawable/bg_ax_keyboard_button"
             android:gravity="center"
             android:tag="62"
-            android:text="空格"
+            android:text="@string/axi_ui_espacio"
             android:textColor="@android:color/white"
             android:textSize="12sp" />
 

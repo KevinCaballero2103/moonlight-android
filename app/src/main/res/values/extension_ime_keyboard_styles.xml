@@ -13,11 +13,11 @@
     <string name="extension_ime_key_page_up" translatable="false">PGUP</string>
     <string name="extension_ime_key_tab" translatable="false">TAB</string>
     <string name="extension_ime_key_cmd" translatable="false">CMD</string>
-    <string name="extension_ime_key_cmd_description" translatable="false">CMD，可锁定</string>
+    <string name="extension_ime_key_cmd_description">CMD，可锁定</string>
     <string name="extension_ime_key_ctrl" translatable="false">CTRL</string>
-    <string name="extension_ime_key_ctrl_description" translatable="false">CTRL，可锁定</string>
+    <string name="extension_ime_key_ctrl_description">CTRL，可锁定</string>
     <string name="extension_ime_key_alt" translatable="false">ALT</string>
-    <string name="extension_ime_key_alt_description" translatable="false">ALT，可锁定</string>
+    <string name="extension_ime_key_alt_description">ALT，可锁定</string>
     <string name="extension_ime_key_left" translatable="false">←</string>
     <string name="extension_ime_key_left_description" translatable="false">LEFT</string>
     <string name="extension_ime_key_down" translatable="false">↓</string>

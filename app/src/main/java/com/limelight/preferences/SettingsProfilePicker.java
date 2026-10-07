@@ -49,7 +49,7 @@ public class SettingsProfilePicker extends DialogFragment {
             indicator.setTextColor(i == active ? getResources().getColor(R.color.home_accent_bright) : 0xFFAAAAAA);
             indicator.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
             item.addView(indicator, new LinearLayout.LayoutParams(dp(26), -2));
-            item.setContentDescription(profileName + (i == active ? "，已选中" : "，未选中"));
+            item.setContentDescription(profileName + (i == active ? getString(R.string.axi_ui_seleccionado) : getString(R.string.axi_ui_sin_seleccionar)));
             item.setBackgroundResource(R.drawable.settings_control_row_background);
             item.setFocusable(true);
             item.setSelected(i == active);

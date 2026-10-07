@@ -38,6 +38,7 @@ import com.limelight.nvstream.input.ControllerPacket;
 import com.limelight.preferences.PreferenceConfiguration;
 import com.limelight.ui.gamemenu.GameKeyboardUpdateFragment;
 import com.limelight.ui.gamemenu.GamePadAddFragment;
+import com.limelight.ui.AppDialog;
 import com.limelight.ui.gamemenu.bean.GameMenuQuickBean;
 import com.limelight.utils.FileUriUtils;
 import com.limelight.utils.UiHelper;
@@ -287,7 +288,7 @@ public class KeyBoardController {
                 }else{
                     fragment.setWidth((context.getResources().getDisplayMetrics().heightPixels*2)/3);
                 }
-                fragment.setTitle("手柄按键");
+                fragment.setTitle(context.getString(R.string.axi_ui_botones_del_mando));
                 fragment.setOnClick(bean -> {
                     LimeLog.info("axi->组合键:"+new Gson().toJson(bean));
                     addItem(bean);
@@ -307,7 +308,7 @@ public class KeyBoardController {
             }else{
                 fragment.setWidth((context.getResources().getDisplayMetrics().heightPixels*2)/3);
             }
-            fragment.setTitle("组合键");
+            fragment.setTitle(context.getString(R.string.axi_ui_combinacion_de_teclas));
             fragment.setOnClick(bean -> {
                 LimeLog.info("axi->组合键:"+new Gson().toJson(bean));
                 addItem(bean);
@@ -323,6 +324,14 @@ public class KeyBoardController {
             refreshLayout();
             buttonConfigure.setVisibility(View.VISIBLE);
         });
+
+        View genshin = buttonConfigure.findViewById(R.id.btn_game_virtual_genshin);
+        genshin.setVisibility(isGamePadMode ? View.GONE : View.VISIBLE);
+        genshin.setOnClickListener(v -> AppDialog.showConfirm(context,
+                context.getString(R.string.genshin_preset_title),
+                context.getString(R.string.genshin_preset_confirm),
+                context.getString(R.string.genshin_preset_load), false,
+                this::loadGenshinPreset, null));
 
         lv_left_view.findViewById(R.id.tx_cancel).setOnClickListener(v -> {
             View view=frame_layout.findViewWithTag(new TagInfo(currentIndex,isGamePadMode));
@@ -495,7 +504,7 @@ public class KeyBoardController {
         bindSizeBar(sb_zoom_w, w, baseSize(bean, true));
         bindSizeBar(sb_zoom_h, h, baseSize(bean, false));
         bindingSize = false;
-        tx_margin.setText("坐标：" + bean.getmLeft() + "，" + bean.getmTop());
+        tx_margin.setText(context.getString(R.string.axi_ui_posicion) + bean.getmLeft() + "，" + bean.getmTop());
     }
 
     private void applySelectedOpacity() {
@@ -581,7 +590,7 @@ public class KeyBoardController {
                 return;
             }
             if(TextUtils.isEmpty(tips)){
-                tips="无按键可用，打开编辑模式新增按钮后使用！(菜单-虚拟手柄与按键-编辑模式)";
+                tips=context.getString(R.string.axi_ui_no_hay_controles_anadelos_desde_menu_mando_y_controles_virtuales);
                 Toast.makeText(context,tips,Toast.LENGTH_LONG).show();
             }
 //            switchMode(ControllerMode.MoveButtons);
@@ -590,6 +599,23 @@ public class KeyBoardController {
         for (int i = 0; i < beanList.size(); i++) {
             GameMenuQuickBean bean=beanList.get(i);
             addView(bean,i);
+        }
+    }
+
+    private void loadGenshinPreset() {
+        if (isGamePadMode) return;
+        try (InputStream input = context.getAssets().open("config/genshin_touch_es.json");
+             BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
+            GameMenuQuickBean[] preset = new Gson().fromJson(reader, GameMenuQuickBean[].class);
+            if (preset == null || preset.length == 0) throw new IllegalArgumentException("Empty preset");
+            releaseAllVirtualInputs();
+            beanList.clear();
+            Collections.addAll(beanList, preset);
+            updateItem();
+            Toast.makeText(context, R.string.genshin_preset_loaded, Toast.LENGTH_LONG).show();
+        } catch (Exception error) {
+            LimeLog.warning("Unable to load Genshin preset: " + error.getMessage());
+            Toast.makeText(context, R.string.genshin_preset_error, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -724,9 +750,9 @@ public class KeyBoardController {
         if(lastView!=null){
             lastView.invalidate();
         }
-        txName.setText("当前按钮："+beanList.get(index).getName());
-        txDesc.setText("键值："+beanList.get(index).getDesc());
-        tx_margin.setText("坐标："+beanList.get(index).getmLeft()+"，"+beanList.get(index).getmTop());
+        txName.setText(context.getString(R.string.axi_ui_control_seleccionado)+beanList.get(index).getName());
+        txDesc.setText(context.getString(R.string.axi_ui_teclas)+beanList.get(index).getDesc());
+        tx_margin.setText(context.getString(R.string.axi_ui_posicion)+beanList.get(index).getmLeft()+"，"+beanList.get(index).getmTop());
 
         bindSizeEditor();
         sb_stack_level.setProgress(beanList.get(index).getStackLevel() - 1);
@@ -753,7 +779,7 @@ public class KeyBoardController {
         for (keyBoardVirtualControllerElement element : elements) {
             element.invalidate();
         }
-        Toast.makeText(context,"已保存！",Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,context.getString(R.string.axi_ui_layout_guardado),Toast.LENGTH_SHORT).show();
     }
 
 
@@ -765,12 +791,12 @@ public class KeyBoardController {
         String message="";
         switch (currentMode){
             case Active:
-                message="正常模式~";
+                message=context.getString(R.string.axi_ui_modo_normal_593ebfdf);
                 buttonConfigure.setVisibility(View.GONE);
                 lv_left_view.setVisibility(View.GONE);
                 break;
             case MoveButtons:
-                message="位移模式~";
+                message=context.getString(R.string.axi_ui_modo_mover);
                 buttonConfigure.setVisibility(View.VISIBLE);
                 break;
         }

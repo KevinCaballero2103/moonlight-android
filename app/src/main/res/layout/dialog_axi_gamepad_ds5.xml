@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="外设"
+            android:text="@string/axi_ui_perifericos"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -34,7 +34,7 @@
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="应用配置"
+            android:text="@string/axi_ui_aplicar_configuracion"
             android:visibility="visible"
             android:background="@drawable/ic_game_menu_btn_side_selector"
             android:layout_marginRight="5dp"
@@ -71,7 +71,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="扳机类型"
+                        android:text="@string/axi_ui_tipo_de_gatillo"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="10dp" />
@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="右上角应用配置生效！(每次连接手动执行下)"
+                        android:text="@string/axi_ui_pulsa_aplicar_configuracion_despues_de_cada_conexion"
                         android:textStyle="italic|bold"
                         android:textColor="#FFC107"
                         android:textSize="8dp" />
@@ -107,7 +107,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_control_ds5_1"
                         android:button="@null"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:checked="true"
                         android:textSize="8dp" />
 
@@ -121,7 +121,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_control_ds5_2"
                         android:button="@null"
-                        android:text="阻尼"
+                        android:text="@string/axi_ui_resistencia"
                         android:textSize="8dp" />
 
                     <RadioButton
@@ -134,7 +134,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_control_ds5_3"
                         android:button="@null"
-                        android:text="扳机"
+                        android:text="@string/axi_ui_gatillo"
                         android:textSize="8dp" />
 
                     <RadioButton
@@ -147,7 +147,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_control_ds5_4"
                         android:button="@null"
-                        android:text="自动步枪扳机"
+                        android:text="@string/axi_ui_gatillo_de_rifle_automatico"
                         android:textSize="8dp" />
 
                 </RadioGroup>
@@ -160,7 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="震动强度"
+                        android:text="@string/axi_ui_intensidad_de_vibracion"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="8dp" />
@@ -190,7 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="震动频率"
+                        android:text="@string/axi_ui_frecuencia_de_vibracion"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="8dp" />
@@ -220,7 +220,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="起始位置"
+                        android:text="@string/axi_ui_posicion_inicial"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="8dp" />
@@ -250,7 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="结束位置"
+                        android:text="@string/axi_ui_posicion_final"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="8dp" />

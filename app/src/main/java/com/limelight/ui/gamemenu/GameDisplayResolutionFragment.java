@@ -147,9 +147,9 @@ public class GameDisplayResolutionFragment extends BaseGameMenuDialog implements
     private void showDeleteConfirmDialog(String res) {
         AppDialog.showConfirm(
                 getActivity(),
-                "确认删除",
-                "是否删除分辨率 " + res + "？",
-                "删除",
+                getString(R.string.axi_ui_confirmar_eliminacion),
+                getString(R.string.axi_ui_eliminar_la_resolucion) + res + "？",
+                getString(R.string.axi_ui_eliminar),
                 true,
                 () -> deleteResolution(res),
                 null);
@@ -198,11 +198,11 @@ public class GameDisplayResolutionFragment extends BaseGameMenuDialog implements
             String width=edt_width.getText().toString().trim();
             String height=edt_height.getText().toString().trim();
             if(TextUtils.isEmpty(width)){
-                Toast.makeText(getActivity(),"宽度不能为空！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.axi_ui_introduce_el_ancho),Toast.LENGTH_SHORT).show();
                 return;
             }
             if(TextUtils.isEmpty(height)){
-                Toast.makeText(getActivity(),"高度不能为空！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.axi_ui_introduce_el_alto),Toast.LENGTH_SHORT).show();
                 return;
             }
             

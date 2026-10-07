@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="custom_resolution_help" formatted="false">"添加一个自定义分辨率,x号分割,比较奇怪的分辨率可能无法生效。             \n例如：1920x1080             \n非原生分辨率如果是刘海屏可能不会默认填充刘海区域，             \n如果画面比例一样，可手动设置拉伸画面来充满全屏"</string>
+    <string name="virtual_controls_help" formatted="false">"在触摸屏上显示一层虚拟特殊按键。             \n按键透明度与上方选项中虚拟手柄共用。"</string>
+    <string name="genshin_preset_button" formatted="false">"Genshin"</string>
+    <string name="genshin_preset_title" formatted="false">"Genshin controls"</string>
+    <string name="genshin_preset_confirm" formatted="false">"Replace the controls being edited with the Genshin preset? Your saved design stays unchanged until you save."</string>
+    <string name="genshin_preset_load" formatted="false">"Load preset"</string>
+    <string name="genshin_preset_loaded" formatted="false">"Genshin preset loaded. Check the positions and save the design."</string>
+    <string name="genshin_preset_error" formatted="false">"Could not load the Genshin preset."</string>
+    <string name="preference_system_language">System language</string>
+</resources>

@@ -313,8 +313,8 @@ public class SettingsPanelDialog extends BaseGameMenuFragmentDialog {
                 for (int j = i; j < Math.min(i + 2, tileCount); j++) {
                     final int index = j;
                     boolean reset = j == SettingsCatalog.GROUPS.length;
-                    String tileTitle = reset ? getString(R.string.settings_profile_reset) : SettingsCatalog.GROUPS[j].title;
-                    String tileHint = reset ? getString(R.string.settings_profile_reset_hint) : SettingsCatalog.GROUPS[j].description;
+                    String tileTitle = reset ? getString(R.string.settings_profile_reset) : getString(SettingsCatalog.GROUPS[j].title);
+                    String tileHint = reset ? getString(R.string.settings_profile_reset_hint) : getString(SettingsCatalog.GROUPS[j].description);
                     LinearLayout tile = vertical();
                     tile.setPadding(dp(12), dp(10), dp(10), dp(10));
                     tile.setMinimumHeight(dp(68));
@@ -352,7 +352,7 @@ public class SettingsPanelDialog extends BaseGameMenuFragmentDialog {
             }
         } else {
             SettingsCatalog.Group page = SettingsCatalog.GROUPS[group];
-            title.setText(page.title);
+            title.setText(getString(page.title));
             int rowCount = 0;
             for (SettingsCatalog.Section section : page.sections) {
                 boolean headingAdded = false;
@@ -360,11 +360,11 @@ public class SettingsPanelDialog extends BaseGameMenuFragmentDialog {
                     Preference pref = preference(key);
                     if (!HUD.equals(key) && (pref == null || !visible(pref))) continue;
                     if (!headingAdded) {
-                        heading(section.title);
+                        heading(getString(section.title));
                         headingAdded = true;
                     }
                     if (HUD.equals(key)) {
-                        row("性能信息", null, hudLabel(), null, key, () -> openEditor(key));
+                        row(getString(R.string.axi_ui_informacion_de_rendimiento), null, hudLabel(), null, key, () -> openEditor(key));
                     } else {
                         addPreference(pref);
                     }
@@ -460,8 +460,8 @@ public class SettingsPanelDialog extends BaseGameMenuFragmentDialog {
 
     private void renderEditor() {
         if (HUD.equals(editor)) {
-            title.setText("性能信息");
-            String[] labels = {"关闭", "精简", "完整"};
+            title.setText(getString(R.string.axi_ui_informacion_de_rendimiento));
+            String[] labels = {getString(R.string.axi_ui_desactivado), getString(R.string.axi_ui_compacto), getString(R.string.axi_ui_completo)};
             for (int i = 0; i < labels.length; i++) {
                 final int mode = i;
                 choice(labels[i], labels[i].equals(hudLabel()), () -> {
@@ -530,7 +530,7 @@ public class SettingsPanelDialog extends BaseGameMenuFragmentDialog {
     private String hudLabel() {
         int mode = SettingsCatalog.overlayMode(checked("checkbox_enable_perf_overlay"),
                 checked("checkbox_enable_perf_overlay_lite"));
-        return new String[] {"关闭", "精简", "完整"}[mode];
+        return new String[] {getString(R.string.axi_ui_desactivado), getString(R.string.axi_ui_compacto), getString(R.string.axi_ui_completo)}[mode];
     }
 
     private void numericEditor(SeekBarPreference pref) {
@@ -844,7 +844,7 @@ public class SettingsPanelDialog extends BaseGameMenuFragmentDialog {
             toggle.setThumbTintList(getResources().getColorStateList(R.color.settings_toggle_thumb));
             toggle.setTrackTintList(getResources().getColorStateList(R.color.settings_toggle_track));
             row.addView(toggle);
-            row.setContentDescription(label + (checked ? "，已开启" : "，已关闭")
+            row.setContentDescription(label + (checked ? getString(R.string.axi_ui_activado_645432a5) : getString(R.string.axi_ui_desactivado_96e5815c))
                     + (TextUtils.isEmpty(detail) ? "" : "，" + detail));
         } else {
             TextView arrow = text("›", 22, 0xFFAAAAAA);

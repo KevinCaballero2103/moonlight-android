@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="触控模式"
+            android:text="@string/axi_ui_modo_tactil"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -33,7 +33,7 @@
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="新增"
+            android:text="@string/axi_ui_anadir"
             android:visibility="visible"
             android:background="@drawable/ic_game_menu_btn_side_selector"
             android:layout_marginRight="5dp"

@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="选择下载渠道"
+            android:text="@string/axi_ui_elegir_descarga"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:lineSpacingExtra="2dp"
-            android:text="可根据你的习惯选择下载渠道。"
+            android:text="@string/axi_ui_selecciona_el_servicio_de_descarga_que_prefieras"
             android:textColor="#D9FFFFFF"
             android:textSize="12sp" />
 
@@ -62,7 +62,7 @@
                 android:paddingTop="8dp"
                 android:paddingRight="14dp"
                 android:paddingBottom="8dp"
-                android:text="取消"
+                android:text="@string/game_menu_cancel"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:textStyle="bold" />

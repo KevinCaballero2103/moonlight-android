@@ -27,7 +27,7 @@
             android:padding="4dp"
             android:button="@null"
             android:id="@+id/btn_game_virtual_move"
-            android:text="位移"
+            android:text="@string/axi_ui_mover"
             android:textSize="8dp" />
 
         <RadioButton
@@ -42,7 +42,7 @@
             android:padding="4dp"
             android:button="@null"
             android:id="@+id/btn_game_virtual_zoom"
-            android:text="缩放"
+            android:text="@string/axi_ui_cambiar_tamano"
             android:textSize="8dp" />
 
         <RadioButton
@@ -57,7 +57,7 @@
             android:padding="4dp"
             android:button="@null"
             android:id="@+id/btn_game_virtual_disable"
-            android:text="禁用"
+            android:text="@string/axi_ui_desactivar"
             android:textSize="8dp" />
 
         <RadioButton
@@ -70,7 +70,7 @@
             android:padding="4dp"
             android:button="@null"
             android:id="@+id/btn_game_virtual_nomall"
-            android:text="应用"
+            android:text="@string/axi_ui_aplicar"
             android:textSize="8dp" />
     </RadioGroup>
 

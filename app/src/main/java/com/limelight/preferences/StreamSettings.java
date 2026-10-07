@@ -503,8 +503,8 @@ public class StreamSettings extends Activity {
             }
             int count = StreamLogStore.list(activity).size();
             preference.setSummary(count == 0
-                    ? "暂无日志；开启采集后，每次串流生成一份"
-                    : "已保存 " + count + " 份日志；点击查看、导出或删除");
+                    ? getString(R.string.axi_ui_todavia_no_hay_registros_activa_la_recopilacion_para_generar_uno)
+                    : getString(R.string.axi_ui_registros_guardados) + count + getString(R.string.axi_ui_toca_para_ver_exportar_o_eliminar));
         }
 
 
@@ -1046,7 +1046,7 @@ public class StreamSettings extends Activity {
                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                     intent.putExtra(Intent.EXTRA_STREAM, uri);
                     intent.setType("text/plain");
-                    startActivity(Intent.createChooser(intent,"保存配置文件"));
+                    startActivity(Intent.createChooser(intent,getString(R.string.axi_ui_guardar_archivo)));
                     return false;
                 }
             });
@@ -1065,7 +1065,7 @@ public class StreamSettings extends Activity {
                         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                         intent.putExtra(Intent.EXTRA_STREAM, uri);
                         intent.setType("text/plain");
-                        startActivity(Intent.createChooser(intent,"保存配置文件"));
+                        startActivity(Intent.createChooser(intent,getString(R.string.axi_ui_guardar_archivo)));
                         return false;
                     }
                 });
@@ -1103,7 +1103,7 @@ public class StreamSettings extends Activity {
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     String value= (String) newValue;
                     if(TextUtils.isEmpty(value)){
-                        Toast.makeText(getActivity(),"请输入0-9999的数值。",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),getString(R.string.axi_ui_introduce_valor_0_9999),Toast.LENGTH_SHORT).show();
                         return false;
                     }
                     float bitrateValue=Float.valueOf(value)*1000;
@@ -1112,7 +1112,7 @@ public class StreamSettings extends Activity {
                     LimeLog.info("axi-bitrate:"+bitrate);
                     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
                     prefs.edit().putInt(PreferenceConfiguration.BITRATE_PREF_STRING,bitrate).apply();
-                    Toast.makeText(getActivity(),"设置成功！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_ajustes_guardados),Toast.LENGTH_SHORT).show();
                     return true;
                 }
             });
@@ -1146,7 +1146,7 @@ public class StreamSettings extends Activity {
                     Uri uri = data.getData();
                     String json=FileUriUtils.openUriForRead(getActivity(),uri);
                     if(TextUtils.isEmpty(json)){
-                        Toast.makeText(getActivity(),"空文件~",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),getString(R.string.axi_ui_archivo_vacio),Toast.LENGTH_SHORT).show();
                         return;
                     }
                     String name = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(KeyBoardControllerConfigurationLoader.OSC_PREFERENCE, KeyBoardControllerConfigurationLoader.OSC_PREFERENCE_VALUE);
@@ -1155,13 +1155,13 @@ public class StreamSettings extends Activity {
                     }
                     boolean result=FileUriUtils.saveKeyBoardJson(getActivity(),"axi_"+name+".txt",json);
                     if(result){
-                        Toast.makeText(getActivity(),"导入成功！",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),getString(R.string.axi_ui_importacion_correcta),Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(getActivity(),"导入失败！",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),getString(R.string.axi_ui_importacion_fallida),Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getActivity(),"出错啦~"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_error_archivo)+e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
@@ -1173,10 +1173,10 @@ public class StreamSettings extends Activity {
                     String displayName = "axi_switch_keyboard.json";
                     dataBaseFile=new File(getActivity().getFilesDir().getAbsolutePath(), displayName);
                     FileUriUtils.copyUriToInternalStorage(getActivity(),uri,dataBaseFile);
-                    Toast.makeText(getActivity(),"导入成功!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_importacion_correcta),Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getActivity(),"出错啦~"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_error_archivo)+e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
                 return;
 
@@ -1192,10 +1192,10 @@ public class StreamSettings extends Activity {
                             .edit()
                             .putString("screen_bg_file_name",displayName)
                             .apply();
-                    Toast.makeText(getActivity(),"设置成功!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_ajustes_guardados),Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getActivity(),"出错啦~"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getString(R.string.axi_ui_error_archivo)+e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
                 return;
 

@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="杂项"
+            android:text="@string/axi_ui_otros_ajustes"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -52,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="功能"
+                    android:text="@string/axi_ui_funciones"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -60,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="以下选项开关会保存到配置文件"
+                    android:text="@string/axi_ui_estos_ajustes_se_guardan_en_la_configuracion"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -93,7 +93,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_full_performance"
-                        android:text="完整性能"
+                        android:text="@string/axi_ui_rendimiento_detallado"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -106,7 +106,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_float_ball"
-                        android:text="悬浮球"
+                        android:text="@string/axi_ui_boton_flotante"
                         android:textSize="8dp" />
 
 <!--                    <CheckBox-->
@@ -132,7 +132,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_float_ball_postion"
-                        android:text="悬浮球\n记住位置"
+                        android:text="@string/axi_ui_recordar_posicion_ndel_boton_flotante"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -145,7 +145,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_audio_mute"
-                        android:text="设备静音"
+                        android:text="@string/axi_ui_silenciar_dispositivo"
                         android:textSize="8dp" />
 
                 </LinearLayout>
@@ -166,7 +166,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="关闭缩放后\n保留画面"
+                        android:text="@string/axi_ui_conservar_imagen_nal_desactivar_zoom"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -178,7 +178,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="ESC 呼出\n游戏菜单"
+                        android:text="@string/axi_ui_abrir_menu_ncon_esc"
                         android:textSize="8dp" />
 
                 </LinearLayout>
@@ -187,7 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="悬浮球点击操作"
+                    android:text="@string/axi_ui_accion_del_boton_flotante"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -209,7 +209,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_float_ball_1"
                         android:button="@null"
-                        android:text="游戏菜单"
+                        android:text="@string/axi_ui_menu_del_juego"
                         android:checked="true"
                         android:textSize="8dp" />
 
@@ -223,7 +223,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_float_ball_2"
                         android:button="@null"
-                        android:text="软键盘"
+                        android:text="@string/axi_ui_teclado_de_android_48aef452"
                         android:textSize="8dp" />
 
                     <RadioButton
@@ -236,7 +236,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_float_ball_3"
                         android:button="@null"
-                        android:text="全键盘"
+                        android:text="@string/axi_ui_teclado_completo_5ce1c7dc"
                         android:textSize="8dp" />
 
                 </RadioGroup>
@@ -245,7 +245,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="精简性能信息"
+                    android:text="@string/axi_ui_rendimiento_compacto"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -266,7 +266,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_lite_ext"
-                        android:text="显示更多\n扩展参数"
+                        android:text="@string/axi_ui_mostrar_datos_nadicionales"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -279,7 +279,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_lite_click"
-                        android:text="点击打开\n游戏菜单"
+                        android:text="@string/axi_ui_tocar_para_abrir_nel_menu_del_juego"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -292,7 +292,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_rumble_hud"
-                        android:text="显示震动信息"
+                        android:text="@string/axi_ui_mostrar_informacion_de_vibracion"
                         android:textSize="8dp" />
 
                 </LinearLayout>
@@ -301,7 +301,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="游戏菜单 摇杆鼠标 快捷键"
+                    android:text="@string/axi_ui_atajo_del_mando_para_menu_y_raton"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -323,7 +323,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_control_1"
                         android:button="@null"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:checked="true"
                         android:textSize="6dp" />
 
@@ -337,7 +337,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_control_2"
                         android:button="@null"
-                        android:text="开始键【长按】"
+                        android:text="@string/axi_ui_start_mantener"
                         android:textSize="6dp" />
 
                     <RadioButton
@@ -350,7 +350,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_control_3"
                         android:button="@null"
-                        android:text="Xbox键【单击】"
+                        android:text="@string/axi_ui_xbox_toque"
                         android:textSize="6dp" />
 
                     <RadioButton
@@ -363,7 +363,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_control_4"
                         android:button="@null"
-                        android:text="视图键【长按】"
+                        android:text="@string/axi_ui_view_mantener"
                         android:textSize="6dp" />
 
                     <RadioButton
@@ -376,7 +376,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_control_5"
                         android:button="@null"
-                        android:text="Z键【单击】"
+                        android:text="@string/axi_ui_z_toque"
                         android:textSize="6dp" />
 
                 </RadioGroup>
@@ -385,7 +385,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="多点触控打开软键盘"
+                    android:text="@string/axi_ui_gesto_para_abrir_el_teclado_de_android"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -407,7 +407,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_touch_1"
                         android:button="@null"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:checked="true"
                         android:textSize="6dp" />
 
@@ -421,7 +421,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_touch_2"
                         android:button="@null"
-                        android:text="三指"
+                        android:text="@string/axi_ui_tres_dedos"
                         android:textSize="6dp" />
 
                     <RadioButton
@@ -434,7 +434,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_touch_3"
                         android:button="@null"
-                        android:text="四指"
+                        android:text="@string/axi_ui_cuatro_dedos"
                         android:textSize="6dp" />
 
                     <RadioButton
@@ -447,7 +447,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_setting_touch_4"
                         android:button="@null"
-                        android:text="五指"
+                        android:text="@string/axi_ui_cinco_dedos"
                         android:textSize="6dp" />
 
                 </RadioGroup>
@@ -456,7 +456,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="设备震动相关"
+                    android:text="@string/axi_ui_vibracion_del_dispositivo"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -478,7 +478,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_rumble_force_stop"
-                        android:text="震动停止方案A"
+                        android:text="@string/axi_ui_metodo_a_para_detener_vibracion"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -491,7 +491,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_rumble_force"
-                        android:text="强烈震动"
+                        android:text="@string/axi_ui_vibracion_intensa"
                         android:textSize="8dp" />
 
                 </LinearLayout>
@@ -500,7 +500,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="手柄陀螺仪模拟右摇杆 Beta"
+                    android:text="@string/axi_ui_simular_stick_derecho_con_giroscopio_beta"
                     android:textStyle="italic|bold"
                     android:visibility="visible"
                     android:textColor="@android:color/white"
@@ -524,7 +524,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_force_gyro"
-                        android:text="启用"
+                        android:text="@string/axi_ui_activar"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -537,7 +537,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_force_gyro_left_trgger"
-                        android:text="按下左扳机启用"
+                        android:text="@string/axi_ui_activar_al_pulsar_el_gatillo_izquierdo"
                         android:textSize="8dp" />
 
                     <CheckBox
@@ -550,7 +550,7 @@
                         android:padding="4dp"
                         android:button="@null"
                         android:id="@+id/btn_game_force_gyro_switch"
-                        android:text="反转XY轴"
+                        android:text="@string/axi_ui_invertir_ejes_x_y"
                         android:textSize="8dp" />
 
                 </LinearLayout>
@@ -559,7 +559,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="强制体感灵敏度：120%"
+                    android:text="@string/axi_ui_sensibilidad_del_giroscopio_120"
                     android:textStyle="italic|bold"
                     android:visibility="visible"
                     android:id="@+id/tx_game_setting_gyro_sensitivity"
@@ -586,7 +586,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="性能信息 缩放：100%"
+                    android:text="@string/axi_ui_escala_de_rendimiento_100"
                     android:textStyle="italic|bold"
                     android:visibility="visible"
                     android:id="@+id/tx_game_setting_pref_zoom"
@@ -612,7 +612,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="性能信息 边距：4"
+                    android:text="@string/axi_ui_margen_de_rendimiento_4"
                     android:textStyle="italic|bold"
                     android:visibility="visible"
                     android:id="@+id/tx_game_setting_pref_magin_top"

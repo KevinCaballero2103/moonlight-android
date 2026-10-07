@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="分辨率"
+            android:text="@string/axi_ui_resolucion"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -34,7 +34,7 @@
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="确认"
+            android:text="@string/axi_ui_confirmar"
             android:background="@drawable/ic_game_menu_btn_side_selector"
             android:layout_marginRight="5dp"
             android:gravity="center"
@@ -65,7 +65,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="信息"
+                    android:text="@string/axi_ui_informacion"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="输入宽和高 (保存并使用)"
+                    android:text="@string/axi_ui_introduce_ancho_y_alto_para_guardar_y_usar"
                     android:textStyle="italic"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -90,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="宽度"
+                    android:text="@string/settings_panel_width"
                     android:textStyle="bold"
                     android:textSize="10dp" />
 
@@ -98,7 +98,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:layout_marginTop="4dp"
-                    android:hint="请输入宽度，比如1920"
+                    android:hint="@string/axi_ui_introduce_el_ancho_por_ejemplo_1920"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:textSize="12dp"
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="4dp"
-                    android:text="高度"
+                    android:text="@string/settings_panel_height"
                     android:textStyle="bold"
                     android:textSize="10dp" />
 
@@ -120,7 +120,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:layout_marginTop="4dp"
-                    android:hint="请输入高度，比如1080"
+                    android:hint="@string/axi_ui_introduce_el_alto_por_ejemplo_1080"
                     android:id="@+id/edt_height"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -135,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="4dp"
-                    android:text="常用分辨率"
+                    android:text="@string/axi_ui_resoluciones_habituales"
                     android:textStyle="bold"
                     android:textSize="10dp" />
 
@@ -210,7 +210,7 @@
                         android:layout_marginTop="5dp"
                         android:background="@drawable/ic_game_menu_btn_selector"
                         android:gravity="center"
-                        android:text="本机"
+                        android:text="@string/axi_ui_este_dispositivo"
                         android:tag="5"
                         android:textColor="@android:color/white"
                         android:textSize="9sp" />
@@ -223,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="10dp"
-                    android:text="自定义分辨率 (长按删除)"
+                    android:text="@string/axi_ui_resoluciones_personalizadas_manten_pulsado_para_eliminar"
                     android:textStyle="bold"
                     android:textSize="10dp"
                     android:visibility="gone" />

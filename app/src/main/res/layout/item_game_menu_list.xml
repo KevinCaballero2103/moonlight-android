@@ -16,7 +16,7 @@
         android:ellipsize="end"
         android:gravity="left|center_vertical"
         android:padding="10dp"
-        android:text="触控模式"
+        android:text="@string/axi_ui_modo_tactil"
         android:textSize="11dp" />
 
 </RelativeLayout>

@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="显示"
+            android:text="@string/axi_ui_pantalla"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -34,7 +34,7 @@
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="应用配置"
+            android:text="@string/axi_ui_aplicar_configuracion"
             android:background="@drawable/ic_game_menu_btn_side_selector"
             android:layout_marginRight="5dp"
             android:gravity="center"
@@ -66,7 +66,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="视频信息"
+                    android:text="@string/axi_ui_informacion_de_video"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="应用配置后，页面关闭，需重新打开串流页面生效！"
+                    android:text="@string/axi_ui_despues_de_aplicar_vuelve_a_abrir_el_stream_para_utilizar_los_ca"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="8dp" />
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="分辨率：1920x1080"
+                    android:text="@string/axi_ui_resolucion_1920x1080"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_game_display_screen"
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="4dp"
-                    android:text="\t码率：100 mbps"
+                    android:text="@string/axi_ui_tbitrate_100_mbps"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_game_display_bit"
                     android:textStyle="italic|bold"
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="4dp"
-                    android:text="\t帧率：60 fps"
+                    android:text="@string/axi_ui_tfps_60"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_game_display_fps"
                     android:textStyle="italic|bold"
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="4dp"
-                    android:text="\t方向：横向"
+                    android:text="@string/axi_ui_torientacion_horizontal"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_game_display_direction"
                     android:textStyle="italic|bold"
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="4dp"
-                    android:text="\t模式：外接显示器"
+                    android:text="@string/axi_ui_tmodo_pantalla_externa"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_game_display_ex"
                     android:textStyle="italic|bold"
@@ -143,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="选项"
+                android:text="@string/axi_ui_opciones"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:textSize="12dp" />
@@ -169,7 +169,7 @@
                     android:drawableRight="@drawable/ic_axi_arrow"
                     android:gravity="left|center_vertical"
                     android:padding="10dp"
-                    android:text="分辨率"
+                    android:text="@string/axi_ui_resolucion"
                     android:textSize="11dp" />
 
                 <LinearLayout
@@ -186,7 +186,7 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:id="@+id/bt_display_ex"
-                        android:text="模式切换"
+                        android:text="@string/axi_ui_cambiar_modo"
                         android:textSize="10dp" />
 
                     <Button
@@ -197,7 +197,7 @@
                         android:id="@+id/bt_display_exchange"
                         android:background="@drawable/ic_game_menu_btn_selector"
                         android:gravity="center"
-                        android:text="宽高交换"
+                        android:text="@string/axi_ui_intercambiar_ancho_y_alto"
                         android:textSize="10dp" />
 
                     <Button
@@ -208,7 +208,7 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:id="@+id/bt_display_direction"
-                        android:text="方向交换"
+                        android:text="@string/axi_ui_cambiar_orientacion"
                         android:textSize="10dp" />
 
 
@@ -228,7 +228,7 @@
                 android:drawableRight="@drawable/ic_axi_arrow"
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
-                android:text="码率"
+                android:text="@string/axi_ui_bitrate"
                 android:textSize="11dp" />
 
             <Button
@@ -242,7 +242,7 @@
                 android:drawableRight="@drawable/ic_axi_arrow"
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
-                android:text="帧率"
+                android:text="@string/axi_ui_fps"
                 android:textSize="11dp" />
 
             <LinearLayout
@@ -255,7 +255,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="解码器"
+                    android:text="@string/axi_ui_decodificador"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -265,7 +265,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="如果主机软件或显卡不支持编解码器选择，则可能会忽略编解码器选择。"
+                    android:text="@string/axi_ui_el_servidor_o_la_gpu_pueden_ignorar_la_seleccion_de_codec_si_no"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -291,7 +291,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_video_format_1"
                     android:button="@null"
-                    android:text="自动"
+                    android:text="@string/axi_ui_automatico"
                     android:checked="true"
                     android:textSize="10dp" />
 
@@ -356,7 +356,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="重新打开串流页面生效！"
+                    android:text="@string/axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="8dp" />
@@ -382,7 +382,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_hdr_1"
                     android:button="@null"
-                    android:text="开启"
+                    android:text="@string/axi_ui_activado"
                     android:checked="true"
                     android:textSize="10dp" />
 
@@ -396,7 +396,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_hdr_2"
                     android:button="@null"
-                    android:text="关闭"
+                    android:text="@string/axi_ui_desactivado"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -417,7 +417,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HDR窗口亮度最大"
+                        android:text="@string/axi_ui_brillo_maximo_en_hdr"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:textSize="12dp" />
@@ -427,7 +427,7 @@
                         android:layout_marginLeft="5dp"
                         android:singleLine="true"
                         android:ellipsize="end"
-                        android:text="提高整体亮度，部分设备可能降低HDR高光对比度。"
+                        android:text="@string/axi_ui_aumenta_el_brillo_general_en_algunos_dispositivos_puede_reducir"
                         android:textStyle="italic|bold"
                         android:textColor="#FFC107"
                         android:textSize="8dp" />
@@ -453,7 +453,7 @@
                         android:gravity="center"
                         android:padding="4dp"
                         android:button="@null"
-                        android:text="开启"
+                        android:text="@string/axi_ui_activado"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -466,7 +466,7 @@
                         android:gravity="center"
                         android:padding="4dp"
                         android:button="@null"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:checked="true"
                         android:textSize="10dp" />
 
@@ -484,7 +484,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="解码低延迟模式Beta"
+                    android:text="@string/axi_ui_decodificacion_de_baja_latencia_beta"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -494,7 +494,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="高通8Gen1及以上和联发科9300及以下芯片机型生效！"
+                    android:text="@string/axi_ui_compatible_con_snapdragon_8_gen_1_o_superiores_y_mediatek_9300_o"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -520,7 +520,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_lowlatency_1"
                     android:button="@null"
-                    android:text="开启"
+                    android:text="@string/axi_ui_activado"
                     android:checked="true"
                     android:textSize="10dp" />
 
@@ -534,7 +534,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_lowlatency_2"
                     android:button="@null"
-                    android:text="关闭"
+                    android:text="@string/axi_ui_desactivado"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -549,7 +549,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="渲染模式"
+                    android:text="@string/axi_ui_modo_de_renderizado"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -559,7 +559,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="GLES渲染支持FSR和画面处理。"
+                    android:text="@string/axi_ui_gles_permite_fsr_y_procesamiento_de_imagen"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -585,7 +585,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:button="@null"
-                    android:text="系统渲染"
+                    android:text="@string/axi_ui_renderizado_del_sistema"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -598,7 +598,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:button="@null"
-                    android:text="GLES渲染"
+                    android:text="@string/axi_ui_renderizado_gles"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -615,7 +615,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3D输出"
+                    android:text="@string/axi_ui_salida_3d"
                     android:textColor="@android:color/white"
                     android:textSize="12dp"
                     android:textStyle="bold" />
@@ -626,7 +626,7 @@
                     android:layout_marginLeft="5dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="支持全宽3840×1080/1200和半宽1920×1080/1200。"
+                    android:text="@string/axi_ui_admite_ancho_completo_de_38401080_1200_y_medio_ancho_de_19201080"
                     android:textColor="#FFC107"
                     android:textSize="6dp"
                     android:textStyle="italic|bold" />
@@ -652,7 +652,7 @@
                     android:button="@null"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="关闭"
+                    android:text="@string/axi_ui_desactivado"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -665,7 +665,7 @@
                     android:button="@null"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="左右全宽"
+                    android:text="@string/axi_ui_sbs_de_ancho_completo"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -678,7 +678,7 @@
                     android:button="@null"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="左右半宽"
+                    android:text="@string/axi_ui_sbs_de_medio_ancho"
                     android:textSize="10dp" />
             </RadioGroup>
 
@@ -695,7 +695,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="5dp"
-                    android:text="景深强度"
+                    android:text="@string/axi_ui_profundidad_3d"
                     android:textColor="@android:color/white"
                     android:textSize="8dp"
                     android:textStyle="italic|bold" />
@@ -720,7 +720,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="弱"
+                        android:text="@string/axi_ui_suave"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -733,7 +733,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="标准"
+                        android:text="@string/axi_ui_estandar"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -746,7 +746,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="强"
+                        android:text="@string/axi_ui_fuerte"
                         android:textSize="10dp" />
                 </RadioGroup>
 
@@ -756,7 +756,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="5dp"
-                    android:text="汇聚位置"
+                    android:text="@string/axi_ui_convergencia"
                     android:textColor="@android:color/white"
                     android:textSize="8dp"
                     android:textStyle="italic|bold" />
@@ -781,7 +781,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="近"
+                        android:text="@string/axi_ui_cerca"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -794,7 +794,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="标准"
+                        android:text="@string/axi_ui_estandar"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -807,7 +807,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="远"
+                        android:text="@string/axi_ui_lejos"
                         android:textSize="10dp" />
                 </RadioGroup>
 
@@ -817,7 +817,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="5dp"
-                    android:text="左右眼"
+                    android:text="@string/axi_ui_orden_de_los_ojos"
                     android:textColor="@android:color/white"
                     android:textSize="8dp"
                     android:textStyle="italic|bold" />
@@ -842,7 +842,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="正常"
+                        android:text="@string/axi_ui_normal"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -855,7 +855,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="交换"
+                        android:text="@string/axi_ui_intercambiar"
                         android:textSize="10dp" />
                 </RadioGroup>
             </LinearLayout>
@@ -871,7 +871,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="FSR 超分"
+                    android:text="@string/axi_ui_reescalado_fsr"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -881,7 +881,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="选择超分输出目标，HDR由渲染链路自动处理。"
+                    android:text="@string/axi_ui_selecciona_la_resolucion_de_salida_la_cadena_de_renderizado_gest"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -907,7 +907,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_fsr_1"
                     android:button="@null"
-                    android:text="关闭"
+                    android:text="@string/axi_ui_desactivado"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -951,7 +951,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="锐化程度"
+                android:text="@string/axi_ui_nitidez"
                 android:textStyle="italic|bold"
                 android:visibility="visible"
                 android:textColor="@android:color/white"
@@ -977,7 +977,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_display_fsr_sharpness_1"
                         android:button="@null"
-                        android:text="柔和"
+                        android:text="@string/axi_ui_suave_37e717d5"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -990,7 +990,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_display_fsr_sharpness_2"
                         android:button="@null"
-                        android:text="标准"
+                        android:text="@string/axi_ui_estandar"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -1003,7 +1003,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_display_fsr_sharpness_3"
                         android:button="@null"
-                        android:text="强"
+                        android:text="@string/axi_ui_fuerte"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -1016,7 +1016,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_display_fsr_sharpness_4"
                         android:button="@null"
-                        android:text="极强"
+                        android:text="@string/axi_ui_muy_fuerte"
                         android:textSize="10dp" />
 
                 </RadioGroup>
@@ -1027,7 +1027,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:text="FSR HDR输出"
+                    android:text="@string/axi_ui_salida_hdr_de_fsr"
                     android:textStyle="italic|bold"
                     android:textColor="@android:color/white"
                     android:textSize="8dp" />
@@ -1052,7 +1052,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_display_fsr_hdr_output_1"
                         android:button="@null"
-                        android:text="SDR映射"
+                        android:text="@string/axi_ui_conversion_a_sdr"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -1065,7 +1065,7 @@
                         android:padding="4dp"
                         android:id="@+id/rbt_game_display_fsr_hdr_output_2"
                         android:button="@null"
-                        android:text="HDR直出"
+                        android:text="@string/axi_ui_hdr_nativo"
                         android:textSize="10dp" />
 
                 </RadioGroup>
@@ -1092,7 +1092,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="使用sunshine·阿西西、雷蛇雷游生效，兼容Apollo扩展模式"
+                    android:text="@string/axi_ui_compatible_con_sunshine_axixi_y_razer_apollo_admite_el_modo_exte"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -1161,7 +1161,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="串流手柄类型"
+                    android:text="@string/axi_ui_tipo_de_mando_en_el_pc"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -1171,7 +1171,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="使用 sunshine·阿西西 生效"
+                    android:text="@string/axi_ui_requiere_sunshine_axixi"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -1196,7 +1196,7 @@
                     android:background="@drawable/ic_game_menu_btn_selector"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="自动"
+                    android:text="@string/axi_ui_automatico"
                     android:textSize="8dp" />
 
                 <RadioButton
@@ -1253,7 +1253,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="DS5手柄扬声器"
+                        android:text="@string/axi_ui_altavoz_de_dualsense"
                         android:textColor="@android:color/white"
                         android:textSize="12dp"
                         android:textStyle="bold" />
@@ -1264,7 +1264,7 @@
                         android:layout_marginLeft="5dp"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="关闭不影响原生触觉反馈"
+                        android:text="@string/axi_ui_desactivarlo_no_afecta_a_la_respuesta_haptica_nativa"
                         android:textColor="#FFC107"
                         android:textSize="8dp"
                         android:textStyle="italic|bold" />
@@ -1290,7 +1290,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="开启"
+                        android:text="@string/axi_ui_activado"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -1304,7 +1304,7 @@
                         android:checked="true"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:textSize="10dp" />
                 </RadioGroup>
             </LinearLayout>
@@ -1327,7 +1327,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="原生 DS5 触觉 PCM"
+                        android:text="@string/axi_ui_respuesta_haptica_pcm_nativa_de_dualsense"
                         android:textColor="@android:color/white"
                         android:textSize="12dp"
                         android:textStyle="bold" />
@@ -1338,7 +1338,7 @@
                         android:layout_marginLeft="5dp"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="关闭后退回普通震动，保存后重连生效"
+                        android:text="@string/axi_ui_al_desactivarla_se_utiliza_vibracion_normal_guarda_y_reconecta_p"
                         android:textColor="#FFC107"
                         android:textSize="8dp"
                         android:textStyle="italic|bold" />
@@ -1365,7 +1365,7 @@
                         android:checked="true"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="开启"
+                        android:text="@string/axi_ui_activado"
                         android:textSize="10dp" />
 
                     <RadioButton
@@ -1378,7 +1378,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="关闭"
+                        android:text="@string/axi_ui_desactivado"
                         android:textSize="10dp" />
                 </RadioGroup>
             </LinearLayout>
@@ -1394,7 +1394,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="强制显示模式"
+                    android:text="@string/axi_ui_forzar_modo_de_pantalla"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -1404,7 +1404,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="在某些系统(如ColorOS)上启用才能正确设置刷新率/分辨率。"
+                    android:text="@string/axi_ui_en_algunos_sistemas_como_coloros_es_necesario_para_ajustar_resol"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -1430,7 +1430,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_enforce_1"
                     android:button="@null"
-                    android:text="开启"
+                    android:text="@string/axi_ui_activado"
                     android:checked="true"
                     android:textSize="10dp" />
 
@@ -1444,7 +1444,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_enforce_2"
                     android:button="@null"
-                    android:text="关闭"
+                    android:text="@string/axi_ui_desactivado"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -1459,7 +1459,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="忽略HDR校验"
+                    android:text="@string/axi_ui_omitir_comprobacion_hdr"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -1469,7 +1469,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="重新打开串流页面生效！"
+                    android:text="@string/axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -1495,7 +1495,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_ignore_hdr_1"
                     android:button="@null"
-                    android:text="开启"
+                    android:text="@string/axi_ui_activado"
                     android:checked="true"
                     android:textSize="10dp" />
 
@@ -1509,7 +1509,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_ignore_hdr_2"
                     android:button="@null"
-                    android:text="关闭"
+                    android:text="@string/axi_ui_desactivado"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -1524,7 +1524,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="播放声音"
+                    android:text="@string/axi_ui_reproduccion_de_audio"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -1534,7 +1534,7 @@
                     android:layout_marginLeft="5dp"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:text="重新打开串流页面生效！"
+                    android:text="@string/axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios"
                     android:textStyle="italic|bold"
                     android:textColor="#FFC107"
                     android:textSize="6dp" />
@@ -1560,7 +1560,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_audio_1"
                     android:button="@null"
-                    android:text="本设备发声"
+                    android:text="@string/axi_ui_solo_en_este_dispositivo"
                     android:checked="true"
                     android:textSize="10dp" />
 
@@ -1574,7 +1574,7 @@
                     android:padding="4dp"
                     android:id="@+id/rbt_game_display_audio_2"
                     android:button="@null"
-                    android:text="本设备和PC同时发声"
+                    android:text="@string/axi_ui_en_este_dispositivo_y_en_el_pc"
                     android:textSize="10dp" />
 
             </RadioGroup>

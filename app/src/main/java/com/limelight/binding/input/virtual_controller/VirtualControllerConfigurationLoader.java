@@ -400,7 +400,7 @@ public class VirtualControllerConfigurationLoader {
 
             controller.addElement(createDigitalButton(
                             VirtualControllerElement.EID_TOUCHPAD,
-                            ControllerPacket.TOUCHPAD_FLAG, 0, 1, "触控板", R.mipmap.face_ps_touchpad_normal,R.mipmap.face_ps_touchpad_press, controller, context),
+                            ControllerPacket.TOUCHPAD_FLAG, 0, 1, context.getString(R.string.axi_ui_panel_tactil), R.mipmap.face_ps_touchpad_normal,R.mipmap.face_ps_touchpad_press, controller, context),
                     screenScale(50, height),
                     screenScale(50, height),
                     screenScale(20, height),

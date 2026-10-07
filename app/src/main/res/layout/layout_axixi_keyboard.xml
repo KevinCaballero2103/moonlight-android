@@ -29,7 +29,7 @@
                 android:padding="4dp"
                 android:button="@null"
                 android:id="@+id/rbt_keyboard_1"
-                android:text="电脑全键盘"
+                android:text="@string/axi_ui_teclado_completo"
                 android:textSize="10dp" />
 
             <RadioButton
@@ -42,7 +42,7 @@
                 android:padding="4dp"
                 android:button="@null"
                 android:id="@+id/rbt_keyboard_2"
-                android:text="数字键盘"
+                android:text="@string/axi_ui_teclado_numerico"
                 android:textSize="10dp" />
 
         </RadioGroup>
@@ -56,7 +56,7 @@
             android:layout_marginRight="5dp"
             android:button="@null"
             android:id="@+id/btn_combination"
-            android:text="组合键模式"
+            android:text="@string/axi_ui_modo_combinacion_de_teclas"
             android:textSize="10dp" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_marginRight="5dp"
             android:padding="4dp"
             android:id="@+id/btn_soft_phone"
-            android:text="手机软键盘"
+            android:text="@string/axi_ui_teclado_de_android"
             android:textColor="@android:color/white"
             android:textSize="10dp" />
 

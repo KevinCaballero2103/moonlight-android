@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="虚拟手柄与虚拟按键"
+            android:text="@string/axi_ui_mando_y_controles_virtuales_975d8f3e"
             android:id="@+id/tx_title"
             android:textColor="@android:color/white"
             android:textSize="13dp" />
@@ -34,7 +34,7 @@
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="更新配置"
+            android:text="@string/axi_ui_actualizar_configuracion"
             android:visibility="visible"
             android:background="@drawable/ic_game_menu_btn_side_selector"
             android:layout_marginRight="5dp"
@@ -66,7 +66,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="虚拟手柄"
+                    android:text="@string/axi_ui_mando_virtual"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="模式切换:需要先打开虚拟手柄开关~"
+                    android:text="@string/axi_ui_activa_el_mando_virtual_antes_de_cambiar_el_modo"
                     android:textStyle="italic"
                     android:textColor="#FFC107"
                     android:textSize="9dp" />
@@ -102,7 +102,7 @@
                     android:padding="4dp"
                     android:button="@null"
                     android:id="@+id/btn_game_virtual_nomall"
-                    android:text="默认"
+                    android:text="@string/axi_ui_predeterminado"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -116,7 +116,7 @@
                     android:padding="4dp"
                     android:button="@null"
                     android:id="@+id/btn_game_virtual_move"
-                    android:text="编辑模式"
+                    android:text="@string/axi_ui_modo_edicion"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -125,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="默认布局方案"
+                android:text="@string/axi_ui_layout_predeterminado"
                 android:textStyle="italic"
                 android:textColor="@android:color/white"
                 android:textSize="9dp" />
@@ -150,7 +150,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_game_scheme_1"
                     android:button="@null"
-                    android:text="方案1"
+                    android:text="@string/axi_ui_layout_1"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -163,7 +163,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_game_scheme_2"
                     android:button="@null"
-                    android:text="方案2"
+                    android:text="@string/axi_ui_layout_2"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -176,7 +176,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_game_scheme_3"
                     android:button="@null"
-                    android:text="方案3"
+                    android:text="@string/axi_ui_layout_3"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -189,7 +189,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_game_scheme_4"
                     android:button="@null"
-                    android:text="方案4"
+                    android:text="@string/axi_ui_layout_4"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -201,7 +201,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_game_scheme_5"
                     android:button="@null"
-                    android:text="方案5"
+                    android:text="@string/axi_ui_layout_5"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -278,7 +278,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="虚拟按键"
+                    android:text="@string/axi_ui_controles_virtuales"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -286,7 +286,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="模式切换:需要先打开虚拟按键开关~"
+                    android:text="@string/axi_ui_activa_los_controles_virtuales_antes_de_cambiar_el_modo"
                     android:textStyle="italic"
                     android:textColor="#FFC107"
                     android:textSize="9dp" />
@@ -314,7 +314,7 @@
                     android:padding="4dp"
                     android:button="@null"
                     android:id="@+id/btn_game_virtual_key_nomall"
-                    android:text="默认"
+                    android:text="@string/axi_ui_predeterminado"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -328,7 +328,7 @@
                     android:padding="4dp"
                     android:button="@null"
                     android:id="@+id/btn_game_virtual_key_move"
-                    android:text="编辑模式"
+                    android:text="@string/axi_ui_modo_edicion"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -338,7 +338,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="默认布局方案"
+                android:text="@string/axi_ui_layout_predeterminado"
                 android:textStyle="italic"
                 android:textColor="@android:color/white"
                 android:textSize="9dp" />
@@ -363,7 +363,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_scheme_1"
                     android:button="@null"
-                    android:text="方案1"
+                    android:text="@string/axi_ui_layout_1"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -376,7 +376,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_scheme_2"
                     android:button="@null"
-                    android:text="方案2"
+                    android:text="@string/axi_ui_layout_2"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -389,7 +389,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_scheme_3"
                     android:button="@null"
-                    android:text="方案3"
+                    android:text="@string/axi_ui_layout_3"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -402,7 +402,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_scheme_4"
                     android:button="@null"
-                    android:text="方案4"
+                    android:text="@string/axi_ui_layout_4"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -414,7 +414,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_scheme_5"
                     android:button="@null"
-                    android:text="方案5"
+                    android:text="@string/axi_ui_layout_5"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -517,7 +517,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="通用"
+                    android:text="@string/axi_ui_general"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
@@ -525,7 +525,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="如果按键布局出现过，点击右上角按钮刷新"
+                    android:text="@string/axi_ui_si_el_layout_ya_aparecio_antes_pulsa_actualizar_arriba_a_la_dere"
                     android:textStyle="italic"
                     android:textColor="#FFC107"
                     android:textSize="9dp" />
@@ -549,7 +549,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_vibration"
-                    android:text="按键震动"
+                    android:text="@string/axi_ui_vibracion_al_tocar_controles"
                     android:textSize="11dp" />
 
                 <Button
@@ -563,7 +563,7 @@
                     android:gravity="center"
                     android:padding="4dp"
                     android:id="@+id/btn_vibration_gamepad"
-                    android:text="虚拟手柄震动"
+                    android:text="@string/axi_ui_vibracion_del_mando_virtual"
                     android:textSize="11dp" />
 
                 <Button
@@ -622,7 +622,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="控件默认模式颜色(手柄与按键通用)"
+                android:text="@string/axi_ui_color_de_los_controles"
                 android:textColor="@android:color/white"
                 android:textSize="10dp" />
 
@@ -646,7 +646,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_color_1"
                     android:button="@null"
-                    android:text="黑色"
+                    android:text="@string/axi_ui_negro"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -659,7 +659,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_color_2"
                     android:button="@null"
-                    android:text="白色"
+                    android:text="@string/axi_ui_blanco"
                     android:textSize="10dp" />
 
                 <RadioButton
@@ -672,7 +672,7 @@
                     android:padding="4dp"
                     android:id="@+id/btn_game_virtual_key_color_3"
                     android:button="@null"
-                    android:text="灰色"
+                    android:text="@string/axi_ui_gris"
                     android:textSize="10dp" />
 
             </RadioGroup>
@@ -682,7 +682,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="控件透明度(手柄与按键通用)"
+                android:text="@string/axi_ui_opacidad_global_de_los_controles"
                 android:textColor="@android:color/white"
                 android:textSize="10dp" />
 
@@ -709,7 +709,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="不透明度:100%"
+                    android:text="@string/axi_ui_opacidad_100"
                     android:textColor="@android:color/white"
                     android:textStyle="italic"
                     android:id="@+id/tx_adjust_virtual_gamepad"
@@ -721,7 +721,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="全键盘面板透明度"
+                android:text="@string/axi_ui_opacidad_del_teclado_completo"
                 android:textColor="@android:color/white"
                 android:textSize="10dp" />
 
@@ -748,7 +748,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="不透明度：100%"
+                    android:text="@string/axi_ui_opacidad_100_0072e946"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_adjust_keyboard_all"
                     android:textStyle="italic"
@@ -760,7 +760,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="全键盘高度"
+                android:text="@string/axi_ui_altura_del_teclado_completo"
                 android:textColor="@android:color/white"
                 android:textSize="10dp" />
 
@@ -787,7 +787,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="高度:200"
+                    android:text="@string/axi_ui_altura_200"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_height_keyboard_all"
                     android:textStyle="italic"
@@ -798,7 +798,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="虚拟手柄按键缩放"
+                android:text="@string/axi_ui_escala_del_mando_virtual"
                 android:textColor="@android:color/white"
                 android:textSize="10dp" />
 
@@ -825,7 +825,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="4dp"
-                    android:text="缩放：100%"
+                    android:text="@string/axi_ui_escala_100_561ff7dc"
                     android:textColor="@android:color/white"
                     android:id="@+id/tx_gamepad_scale_factor"
                     android:textStyle="italic"

@@ -98,7 +98,7 @@ public class GameDisplayFpsFragment extends BaseGameMenuDialog implements View.O
         if(v.getId()==R.id.btn_right){
             String fps=edt_fps.getText().toString().trim();
             if(TextUtils.isEmpty(fps)){
-                Toast.makeText(getActivity(),"fps不能为空！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.axi_ui_introduce_los_fps_c362d2cc),Toast.LENGTH_SHORT).show();
                 return;
             }
             dismiss();

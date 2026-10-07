@@ -186,7 +186,7 @@ public class GameAudioHapticsFragment extends BaseGameMenuDialog {
     }
 
     private void updateStrengthLabel() {
-        txStrength.setText("音频震动强度：" + prefConfig.audioHapticsStrength + "%");
+        txStrength.setText(getString(R.string.axi_ui_intensidad_de_vibracion_por_audio_fb80d702) + prefConfig.audioHapticsStrength + "%");
     }
 
     private void updateDetailsVisibility() {

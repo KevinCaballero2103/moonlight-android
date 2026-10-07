@@ -27,7 +27,7 @@
                 android:gravity="center"
                 android:background="@drawable/ic_game_menu_btn_side_selector"
                 android:padding="4dp"
-                android:text="操作"
+                android:text="@string/axi_ui_acciones"
                 android:id="@+id/btn_soft_function"
                 android:textSize="11dp" />
         </LinearLayout>
@@ -45,7 +45,7 @@
                 android:gravity="center"
                 android:background="@drawable/ic_game_menu_btn_side_selector"
                 android:padding="4dp"
-                android:text="键盘"
+                android:text="@string/axi_ui_teclado"
                 android:id="@+id/btn_soft_keyboard"
                 android:textSize="11dp" />
         </LinearLayout>
@@ -62,7 +62,7 @@
                 android:gravity="center"
                 android:background="@drawable/ic_game_menu_btn_side_selector"
                 android:padding="4dp"
-                android:text="桌面"
+                android:text="@string/axi_ui_escritorio"
                 android:id="@+id/btn_desktop"
                 android:textSize="11dp" />
         </LinearLayout>
@@ -79,7 +79,7 @@
                 android:gravity="center"
                 android:background="@drawable/ic_game_menu_btn_side_selector"
                 android:padding="4dp"
-                android:text="全部窗口"
+                android:text="@string/axi_ui_todas_las_ventanas"
                 android:id="@+id/btn_window"
                 android:textSize="11dp" />
         </LinearLayout>
@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="功能与操作"
+                android:text="@string/axi_ui_funciones_y_acciones"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:id="@+id/tx_title_name"
@@ -120,7 +120,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(只对本次串流生效)"
+                android:text="@string/axi_ui_solo_para_esta_sesion_de_streaming"
                 android:textStyle="italic"
                 android:layout_marginLeft="4dp"
                 android:layout_centerVertical="true"
@@ -170,7 +170,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_unlink"
-                android:text="断开连接"
+                android:text="@string/game_menu_disconnect"
                 android:textSize="11dp" />
 
             <Button
@@ -184,7 +184,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_exit"
-                android:text="退出串流"
+                android:text="@string/game_menu_quit_steaming"
                 android:textSize="11dp" />
 
             <Button
@@ -198,7 +198,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_swicth_screen"
-                android:text="旋转屏幕"
+                android:text="@string/axi_ui_girar_pantalla"
                 android:textSize="11dp" />
 
             <Button
@@ -211,7 +211,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_performance"
-                android:text="性能信息"
+                android:text="@string/axi_ui_informacion_de_rendimiento"
                 android:textSize="11dp" />
 
         </LinearLayout>
@@ -233,7 +233,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_game_pad"
-                android:text="虚拟手柄"
+                android:text="@string/axi_ui_mando_virtual"
                 android:textSize="11dp" />
 
             <Button
@@ -247,7 +247,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_v_keyboard"
-                android:text="虚拟按键"
+                android:text="@string/axi_ui_controles_virtuales"
                 android:textSize="11dp" />
 
             <Button
@@ -260,7 +260,7 @@
                 android:drawableTop="@drawable/ic_axi_quick"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="全键盘"
+                android:text="@string/axi_ui_teclado_completo_5ce1c7dc"
                 android:id="@+id/btn_keyboard"
                 android:textSize="11dp" />
 
@@ -274,7 +274,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_screen_move"
-                android:text="画面缩放"
+                android:text="@string/axi_ui_zoom_de_imagen"
                 android:textSize="11dp" />
 
         </LinearLayout>
@@ -296,7 +296,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_display_1"
-                android:text="显示器"
+                android:text="@string/axi_ui_pantallas"
                 android:textSize="11dp" />
 
             <Button
@@ -310,7 +310,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:id="@+id/btn_mic"
-                android:text="麦克风"
+                android:text="@string/axi_ui_microfono"
                 android:textSize="11dp" />
 
             <Button
@@ -347,7 +347,7 @@
             android:layout_margin="5dp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:text="特色功能"
+            android:text="@string/axi_ui_mas_funciones"
             android:textSize="11dp" />
 
         <LinearLayout
@@ -366,7 +366,7 @@
                 android:drawableRight="@drawable/ic_axi_arrow"
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
-                android:text="鼠标与触控"
+                android:text="@string/axi_ui_raton_y_tactil"
                 android:textSize="11dp" />
 
             <Button
@@ -379,7 +379,7 @@
                 android:drawableRight="@drawable/ic_axi_arrow"
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
-                android:text="快捷键"
+                android:text="@string/axi_ui_atajos"
                 android:id="@+id/bt_quick_list"
                 android:textSize="11dp" />
 
@@ -394,7 +394,7 @@
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
                 android:id="@+id/bt_virtual_view"
-                android:text="虚拟手柄与按键"
+                android:text="@string/axi_ui_mando_y_controles_virtuales"
                 android:textSize="11dp" />
 
             <Button
@@ -408,7 +408,7 @@
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
                 android:id="@+id/bt_display"
-                android:text="显示"
+                android:text="@string/axi_ui_pantalla"
                 android:textSize="11dp" />
 
             <Button
@@ -422,7 +422,7 @@
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
                 android:id="@+id/bt_device"
-                android:text="外设"
+                android:text="@string/axi_ui_perifericos"
                 android:textSize="11dp" />
 
             <Button
@@ -436,7 +436,7 @@
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
                 android:id="@+id/bt_audio_rumble"
-                android:text="音频震动"
+                android:text="@string/axi_ui_vibracion_por_audio"
                 android:textSize="11dp" />
 
             <Button
@@ -450,7 +450,7 @@
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
                 android:id="@+id/bt_touch_sensitivity"
-                android:text="触控灵敏度"
+                android:text="@string/axi_ui_sensibilidad_tactil"
                 android:textSize="11dp" />
 
             <Button
@@ -464,7 +464,7 @@
                 android:gravity="left|center_vertical"
                 android:padding="10dp"
                 android:id="@+id/bt_other_setting"
-                android:text="杂项"
+                android:text="@string/axi_ui_otros_ajustes"
                 android:textSize="11dp" />
 
         </LinearLayout>

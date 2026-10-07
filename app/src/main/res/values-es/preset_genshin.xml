@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="custom_resolution_help" formatted="false">"Introduce una resolución personalizada separando ancho y alto con x, por ejemplo 1920x1080. Algunas resoluciones pueden no ser compatibles. Si tu pantalla tiene una muesca, puedes ajustar el estiramiento de la imagen para llenar la pantalla."</string>
+    <string name="virtual_controls_help" formatted="false">"Muestra controles virtuales sobre la pantalla táctil. Cada control puede usar la opacidad global o una opacidad individual."</string>
+    <string name="genshin_preset_button" formatted="false">"Genshin"</string>
+    <string name="genshin_preset_title" formatted="false">"Diseño de Genshin"</string>
+    <string name="genshin_preset_confirm" formatted="false">"¿Cargar el diseño de Genshin en lugar de los controles que estás editando? Tu diseño guardado se conserva hasta que pulses Guardar."</string>
+    <string name="genshin_preset_load" formatted="false">"Cargar diseño"</string>
+    <string name="genshin_preset_loaded" formatted="false">"Diseño de Genshin cargado. Revisa las posiciones y guarda el diseño."</string>
+    <string name="genshin_preset_error" formatted="false">"No se pudo cargar el diseño de Genshin."</string>
+    <string name="preference_system_language">Idioma del sistema</string>
+</resources>
