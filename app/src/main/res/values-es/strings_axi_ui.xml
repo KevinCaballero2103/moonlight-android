@@ -16,7 +16,7 @@
     <string name="app_status_running" formatted="false">"En ejecución"</string>
     <string name="applist_menu_show_app" formatted="false">"Mostrar aplicación"</string>
     <string name="applist_menu_start" formatted="false">"Iniciar transmisión"</string>
-    <string name="axi_add_computer_tips" formatted="false">"En el PC, activa GameStream o instala Sunshine y activa el streaming.\nEl puerto predeterminado es 47989; añádelo a la dirección solo si lo cambiaste.\nSe admiten IPv4 e IPv6, por ejemplo:\n192.168.1.123\n[fd00:6868:6868:0:fd6:e0ea:84d9:70ea]:47989"</string>
+    <string name="axi_add_computer_tips" formatted="false">"En el PC, activa GameStream o instala Sunshine y activa la transmisión.\nEl puerto predeterminado es 47989; añádelo a la dirección solo si lo cambiaste.\nSe admiten IPv4 e IPv6, por ejemplo:\n192.168.1.123\n[fd00:6868:6868:0:fd6:e0ea:84d9:70ea]:47989"</string>
     <string name="axi_question_1" formatted="false">"El mando funciona en la prueba, pero el juego no lo reconoce"</string>
     <string name="axi_question_2" formatted="false">"Cómo llenar la pantalla y jugar con el monitor del PC apagado"</string>
     <string name="axi_question_answer_1" formatted="false">"Comprueba los avisos de Sunshine y la instalación del controlador virtual ViGEmBus en el PC. Si el juego no admite el mando DS4, prueba Xbox 360 en la pestaña Entrada de Sunshine."</string>
@@ -25,7 +25,7 @@
     <string name="axi_ui_abajo_derecha" formatted="false">"Abajo, derecha"</string>
     <string name="axi_ui_abajo_izquierda" formatted="false">"Abajo, izquierda"</string>
     <string name="axi_ui_abre_el_menu_del_juego_en_lugar_de_ejecutar_volver" formatted="false">"Abre el menú del juego en lugar de ejecutar Volver."</string>
-    <string name="axi_ui_abre_el_stream_directamente_al_tocar_una_aplicacion" formatted="false">"Abre el transmisión directamente al tocar una aplicación."</string>
+    <string name="axi_ui_abre_el_stream_directamente_al_tocar_una_aplicacion" formatted="false">"Abre la transmisión directamente al tocar una aplicación."</string>
     <string name="axi_ui_abrir_ajustes" formatted="false">"Abrir ajustes"</string>
     <string name="axi_ui_abrir_menu_del_juego_con_esc" formatted="false">"Abrir menú del juego con Esc"</string>
     <string name="axi_ui_abrir_menu_ncon_esc" formatted="false">"Abrir menú\ncon Esc"</string>
@@ -187,7 +187,7 @@
     <string name="axi_ui_convergencia_3d" formatted="false">"Convergencia 3D"</string>
     <string name="axi_ui_conversion_a_sdr" formatted="false">"Conversión a SDR"</string>
     <string name="axi_ui_conversion_a_sdr_c701e5b5" formatted="false">"Conversión a SDR"</string>
-    <string name="axi_ui_convierte_el_audio_del_stream_en_vibracion_especialmente_explosi" formatted="false">"Convierte el audio del transmisión en vibración, especialmente explosiones, impactos y sonidos graves"</string>
+    <string name="axi_ui_convierte_el_audio_del_stream_en_vibracion_especialmente_explosi" formatted="false">"Convierte el audio de la transmisión en vibración, especialmente explosiones, impactos y sonidos graves"</string>
     <string name="axi_ui_copias_de_seguridad" formatted="false">"Copias de seguridad"</string>
     <string name="axi_ui_cruceta" formatted="false">"Cruceta"</string>
     <string name="axi_ui_cruceta_abajo" formatted="false">"Cruceta abajo"</string>
@@ -213,7 +213,7 @@
     <string name="axi_ui_desactivarlo_no_afecta_a_la_respuesta_haptica_nativa" formatted="false">"Desactivarlo no afecta a la respuesta háptica nativa"</string>
     <string name="axi_ui_descargar" formatted="false">"Descargar"</string>
     <string name="axi_ui_desenfocar_fondo" formatted="false">"Desenfocar fondo"</string>
-    <string name="axi_ui_despues_de_aplicar_vuelve_a_abrir_el_stream_para_utilizar_los_ca" formatted="false">"Después de aplicar, vuelve a abrir el transmisión para utilizar los cambios."</string>
+    <string name="axi_ui_despues_de_aplicar_vuelve_a_abrir_el_stream_para_utilizar_los_ca" formatted="false">"Después de aplicar, vuelve a abrir la transmisión para utilizar los cambios."</string>
     <string name="axi_ui_despues_de_cambiar_la_resolucion_sal_de_ajustes_y_vuelve_a_abrir" formatted="false">"Después de cambiar la resolución, sal de Ajustes y vuelve a abrirlos."</string>
     <string name="axi_ui_destino_de_la_vibracion_por_audio" formatted="false">"Destino de la vibración por audio"</string>
     <string name="axi_ui_destino_intensidad_y_filtro_de_voz" formatted="false">"Destino, intensidad y filtro de voz"</string>
@@ -237,7 +237,7 @@
     <string name="axi_ui_elige_una_tasa_compatible_un_valor_incompatible_puede_dejar_la_p" formatted="false">"Elige una tasa compatible; un valor incompatible puede dejar la pantalla en negro."</string>
     <string name="axi_ui_eliminar" formatted="false">"Eliminar"</string>
     <string name="axi_ui_eliminar_este_control" formatted="false">"¿Eliminar este control?"</string>
-    <string name="axi_ui_eliminar_este_registro_de_streaming" formatted="false">"¿Eliminar este registro de streaming?"</string>
+    <string name="axi_ui_eliminar_este_registro_de_streaming" formatted="false">"¿Eliminar este registro de transmisión?"</string>
     <string name="axi_ui_eliminar_la_resolucion" formatted="false">"¿Eliminar la resolución "</string>
     <string name="axi_ui_eliminar_registro" formatted="false">"Eliminar registro"</string>
     <string name="axi_ui_en_algunos_sistemas_como_coloros_es_necesario_para_ajustar_resol" formatted="false">"En algunos sistemas, como ColorOS, es necesario para ajustar resolución y frecuencia correctamente."</string>
@@ -268,7 +268,7 @@
     <string name="axi_ui_esta_lista_esta_dedicada_a_quienes_apoyan_axixi_y_hacen_posible" formatted="false">"Esta lista está dedicada a quienes apoyan Axixi y hacen posible que el proyecto siga avanzando."</string>
     <string name="axi_ui_estado" formatted="false">"Estado"</string>
     <string name="axi_ui_estandar" formatted="false">"Estándar"</string>
-    <string name="axi_ui_estas_opciones_requieren_volver_a_abrir_el_stream" formatted="false">"Estas opciones requieren volver a abrir el transmisión."</string>
+    <string name="axi_ui_estas_opciones_requieren_volver_a_abrir_el_stream" formatted="false">"Estas opciones requieren volver a abrir la transmisión."</string>
     <string name="axi_ui_este_dispositivo" formatted="false">"Este dispositivo"</string>
     <string name="axi_ui_este_equipo" formatted="false">"Este equipo"</string>
     <string name="axi_ui_estos_ajustes_se_guardan_en_la_configuracion" formatted="false">"Estos ajustes se guardan en la configuración"</string>
@@ -352,7 +352,7 @@
     <string name="axi_ui_introduce_el_bitrate" formatted="false">"Introduce el bitrate"</string>
     <string name="axi_ui_introduce_el_bitrate_en_mbps" formatted="false">"Introduce el bitrate en Mbps"</string>
     <string name="axi_ui_introduce_el_bitrate_maximo_99999" formatted="false">"Introduce el bitrate, máximo 99999"</string>
-    <string name="axi_ui_introduce_el_bitrate_si_prefieres_no_usar_el_deslizador_los_valo" formatted="false">"Introduce el bitrate si prefieres no usar el deslizador. Los valores superiores a su máximo se aplican al transmisión aunque el deslizador no los muestre."</string>
+    <string name="axi_ui_introduce_el_bitrate_si_prefieres_no_usar_el_deslizador_los_valo" formatted="false">"Introduce el bitrate si prefieres no usar el deslizador. Los valores superiores a su máximo se aplican a la transmisión aunque el deslizador no los muestre."</string>
     <string name="axi_ui_introduce_los_fps" formatted="false">"Introduce los FPS"</string>
     <string name="axi_ui_introduce_los_fps_c362d2cc" formatted="false">"Introduce los FPS"</string>
     <string name="axi_ui_introduce_un_nombre" formatted="false">"Introduce un nombre"</string>
@@ -368,17 +368,17 @@
     <string name="axi_ui_latencia_decodificacion" formatted="false">"Latencia/decodificación: "</string>
     <string name="axi_ui_latencia_decodificacion_109_ms_7_ms_perdida_69_fps_60" formatted="false">"Latencia/decodificación: 109 ms/7 ms · Pérdida: 69 % · FPS: 60"</string>
     <string name="axi_ui_latencia_del_servidor" formatted="false">"Latencia del servidor"</string>
-    <string name="axi_ui_layout_1" formatted="false">"diseño 1"</string>
-    <string name="axi_ui_layout_2" formatted="false">"diseño 2"</string>
-    <string name="axi_ui_layout_3" formatted="false">"diseño 3"</string>
-    <string name="axi_ui_layout_4" formatted="false">"diseño 4"</string>
-    <string name="axi_ui_layout_5" formatted="false">"diseño 5"</string>
-    <string name="axi_ui_layout_guardado" formatted="false">"diseño guardado"</string>
-    <string name="axi_ui_layout_opacidad_y_vibracion" formatted="false">"diseño, opacidad y vibración"</string>
-    <string name="axi_ui_layout_predeterminado" formatted="false">"diseño predeterminado"</string>
-    <string name="axi_ui_layouts_de_controles" formatted="false">"diseños de controles"</string>
-    <string name="axi_ui_layouts_del_mando" formatted="false">"diseños del mando"</string>
-    <string name="axi_ui_layouts_independientes_para_orientacion_horizontal_y_vertical" formatted="false">"diseños independientes para orientación horizontal y vertical."</string>
+    <string name="axi_ui_layout_1" formatted="false">"Diseño 1"</string>
+    <string name="axi_ui_layout_2" formatted="false">"Diseño 2"</string>
+    <string name="axi_ui_layout_3" formatted="false">"Diseño 3"</string>
+    <string name="axi_ui_layout_4" formatted="false">"Diseño 4"</string>
+    <string name="axi_ui_layout_5" formatted="false">"Diseño 5"</string>
+    <string name="axi_ui_layout_guardado" formatted="false">"Diseño guardado"</string>
+    <string name="axi_ui_layout_opacidad_y_vibracion" formatted="false">"Diseño, opacidad y vibración"</string>
+    <string name="axi_ui_layout_predeterminado" formatted="false">"Diseño predeterminado"</string>
+    <string name="axi_ui_layouts_de_controles" formatted="false">"Diseños de controles"</string>
+    <string name="axi_ui_layouts_del_mando" formatted="false">"Diseños del mando"</string>
+    <string name="axi_ui_layouts_independientes_para_orientacion_horizontal_y_vertical" formatted="false">"Diseños independientes para orientación horizontal y vertical."</string>
     <string name="axi_ui_lejos" formatted="false">"Lejos"</string>
     <string name="axi_ui_limpiar" formatted="false">"Limpiar"</string>
     <string name="axi_ui_lista_de_registros" formatted="false">"Lista de registros"</string>
@@ -503,7 +503,7 @@
     <string name="axi_ui_posicion_inicial" formatted="false">"Posición inicial"</string>
     <string name="axi_ui_posicion_xx" formatted="false">"Posición: xx"</string>
     <string name="axi_ui_predeterminado" formatted="false">"Predeterminado"</string>
-    <string name="axi_ui_prioriza_un_modo_de_pantalla_que_coincida_con_los_fps_del_stream" formatted="false">"Prioriza un modo de pantalla que coincida con los FPS del transmisión. Desactívalo si causa problemas de imagen."</string>
+    <string name="axi_ui_prioriza_un_modo_de_pantalla_que_coincida_con_los_fps_del_stream" formatted="false">"Prioriza un modo de pantalla que coincida con los FPS de la transmisión. Desactívalo si causa problemas de imagen."</string>
     <string name="axi_ui_probar_teclas_del_teclado" formatted="false">"Probar teclas del teclado"</string>
     <string name="axi_ui_probar_vibracion_del_dispositivo" formatted="false">"Probar vibración del dispositivo"</string>
     <string name="axi_ui_probar_vibracion_del_mando" formatted="false">"Probar vibración del mando"</string>
@@ -651,7 +651,7 @@
     <string name="axi_ui_una_combinacion_admite_hasta_5_teclas" formatted="false">"Una combinación admite hasta 5 teclas"</string>
     <string name="axi_ui_usa_el_giroscopio_del_telefono_con_el_mando_virtual_puede_requer" formatted="false">"Usa el giroscopio del teléfono con el mando virtual. Puede requerir mando PS4 en Sunshine. Desactívalo si conectas un mando físico."</string>
     <string name="axi_ui_usa_el_motor_del_dispositivo_en_lugar_del_mando_no_afecta_a_mand" formatted="false">"Usa el motor del dispositivo en lugar del mando. No afecta a mandos gestionados por el controlador USB de Moonlight."</string>
-    <string name="axi_ui_usa_esc_del_teclado_fisico_para_abrir_el_menu_rapido_del_stream" formatted="false">"Usa Esc del teclado físico para abrir el menú rápido del transmisión."</string>
+    <string name="axi_ui_usa_esc_del_teclado_fisico_para_abrir_el_menu_rapido_del_stream" formatted="false">"Usa Esc del teclado físico para abrir el menú rápido de la transmisión."</string>
     <string name="axi_ui_usa_una_resolucion_personalizada_vertical_compatible_con_el_serv" formatted="false">"Usa una resolución personalizada vertical compatible con el servidor y con la pantalla del PC."</string>
     <string name="axi_ui_usa_unicamente_los_atajos_que_importes" formatted="false">"Usa únicamente los atajos que importes."</string>
     <string name="axi_ui_usar_controlador_nusb_de_moonlight" formatted="false">"Usar controlador\nUSB de Moonlight"</string>
@@ -687,7 +687,7 @@
     <string name="axi_ui_view_mantener" formatted="false">"View (mantener)"</string>
     <string name="axi_ui_vincular_vibracion_nde_agarres_y_gatillos" formatted="false">"Vincular vibración\nde agarres y gatillos"</string>
     <string name="axi_ui_visita_el_perfil_del_desarrollador_para_descubrir_mas_proyectos" formatted="false">"Visita el perfil del desarrollador para descubrir más proyectos"</string>
-    <string name="axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios" formatted="false">"Vuelve a abrir el transmisión para aplicar los cambios."</string>
+    <string name="axi_ui_vuelve_a_abrir_el_stream_para_aplicar_los_cambios" formatted="false">"Vuelve a abrir la transmisión para aplicar los cambios."</string>
     <string name="axi_ui_win_d_escritorio" formatted="false">"Win + D (escritorio)"</string>
     <string name="axi_ui_win_g_xbox_game_bar" formatted="false">"Win + G (Xbox Game Bar)"</string>
     <string name="axi_ui_win_menu_inicio_de_windows" formatted="false">"Win (menú Inicio de Windows)"</string>
@@ -803,8 +803,8 @@
     <string name="home_switch_to_list" formatted="false">"Ver lista de equipos"</string>
     <string name="host_actions_subtitle" formatted="false">"Elige una acción para este equipo"</string>
     <string name="keyboard_service_label" formatted="false">"Teclado físico de Axixi Moonlight"</string>
-    <string name="mic_uplink_not_supported" formatted="false">"El micrófono requiere Android 10 o un codificador Opus. El transmisión continuará sin micrófono."</string>
-    <string name="mic_uplink_permission_denied" formatted="false">"No se concedió acceso al micrófono. El transmisión continuará sin micrófono."</string>
+    <string name="mic_uplink_not_supported" formatted="false">"El micrófono requiere Android 10 o un codificador Opus. La transmisión continuará sin micrófono."</string>
+    <string name="mic_uplink_permission_denied" formatted="false">"No se concedió acceso al micrófono. La transmisión continuará sin micrófono."</string>
     <string name="nettest_port_check_inconclusive" formatted="false">"La comprobación de puertos no fue concluyente, pero la prueba UDP llegó a un servidor de pruebas de Moonlight."</string>
     <string name="nettest_udp_probe_blocked" formatted="false">"No se pudo medir UDP; el puerto UDP 47998 parece bloqueado."</string>
     <string name="nettest_udp_probe_good" formatted="false">"No se observó pérdida de paquetes en esta muestra."</string>
@@ -883,11 +883,11 @@
     <string name="stream_loading_step_picture" formatted="false">"Imagen"</string>
     <string name="stream_loading_step_prepare" formatted="false">"Preparar"</string>
     <string name="stream_loading_step_start" formatted="false">"Iniciar"</string>
-    <string name="stream_phase_connected" formatted="false">"transmisión conectado"</string>
+    <string name="stream_phase_connected" formatted="false">"Transmisión conectada"</string>
     <string name="stream_phase_connected_detail" formatted="false">"Primer fotograma listo"</string>
     <string name="stream_phase_connecting" formatted="false">"Conectando al equipo"</string>
     <string name="stream_phase_connecting_detail" formatted="false">"Resolviendo la dirección y negociando la sesión"</string>
-    <string name="stream_phase_failed" formatted="false">"No se pudo iniciar el transmisión"</string>
+    <string name="stream_phase_failed" formatted="false">"No se pudo iniciar la transmisión"</string>
     <string name="stream_phase_initializing" formatted="false">"Inicializando transmisión"</string>
     <string name="stream_phase_initializing_detail" formatted="false">"Preparando vídeo, audio, entrada y canales de control"</string>
     <string name="stream_phase_launching" formatted="false">"Iniciando aplicación en el PC"</string>
@@ -902,7 +902,7 @@
     <string name="summary_perf_overlay_lite_margin" formatted="false">"Distancia al borde superior o inferior seleccionado. Predeterminado: 4 dp."</string>
     <string name="summary_show_guide_button" formatted="false">"Muestra el botón Guide en pantalla"</string>
     <string name="summary_touch_stutter_compatibility" formatted="false">"Tolera variaciones breves de latencia de control para reducir interrupciones al arrastrar. Reconecta para aplicar."</string>
-    <string name="summary_virtual_display" formatted="false">"Compatible con Sunshine · Axixi y Razer; Apollo admite modo extendido. Se aplica al conectar el siguiente transmisión."</string>
+    <string name="summary_virtual_display" formatted="false">"Compatible con Sunshine · Axixi y Razer; Apollo admite modo extendido. Se aplica al conectar la siguiente transmisión."</string>
     <string name="title_gamepad_emulation" formatted="false">"Tipo de mando virtual en el PC"</string>
     <string name="title_perf_overlay_lite_margin" formatted="false">"Margen del rendimiento compacto"</string>
     <string name="title_perf_overlay_lite_position" formatted="false">"Posición del rendimiento compacto"</string>
@@ -938,7 +938,7 @@
     <string name="axi_ui_introduce_valor_0_9999" formatted="false">"Introduce un valor entre 0 y 9999."</string>
     <string name="axi_ui_ajustes_guardados" formatted="false">"Ajustes guardados"</string>
     <string name="axi_ui_archivo_vacio" formatted="false">"El archivo está vacío"</string>
-    <string name="axi_ui_importacion_correcta" formatted="false">"diseño importado"</string>
+    <string name="axi_ui_importacion_correcta" formatted="false">"Diseño importado"</string>
     <string name="axi_ui_importacion_fallida" formatted="false">"No se pudo importar el diseño"</string>
     <string name="axi_ui_error_archivo" formatted="false">"Error al leer el archivo: "</string>
     <string name="axi_ui_3d_sdr" formatted="false">"La salida 3D utiliza SDR; HDR se ha desactivado para esta sesión."</string>

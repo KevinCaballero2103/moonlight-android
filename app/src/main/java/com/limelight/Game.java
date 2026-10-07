@@ -4815,7 +4815,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
         return (data[offset] & 0xFF) | ((data[offset + 1] & 0xFF) << 8);
     }
 
-    private static String formatHdrMetadataLuminance(int luminanceNits) {
+    private String formatHdrMetadataLuminance(int luminanceNits) {
         return luminanceNits > 0
                 ? String.format(Locale.US, "%,d nit", luminanceNits)
                 : getString(R.string.axi_ui_no_informado_por_el_servidor);
