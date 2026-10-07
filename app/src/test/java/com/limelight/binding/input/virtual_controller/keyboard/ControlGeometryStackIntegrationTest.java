@@ -93,6 +93,29 @@ public class ControlGeometryStackIntegrationTest {
             assertEquals(View.VISIBLE,panel.findViewById(R.id.lv_zoom_wh).getVisibility());
         }
     }
+    @Test public void sizeLimitsCoverViewportForRectanglesAndDiagonalForCircles() {
+        for(int type:new int[]{1,2,4,6}) {
+            GameMenuQuickBean b=bean(type,1,100,100);if(type==4)b.setCodes("33");
+            keyBoardVirtualControllerElement v=load(beans.size()-1);select(beans.size()-1);
+            SeekBar width=panel.findViewById(R.id.sb_zoom_w),height=panel.findViewById(R.id.sb_zoom_h);
+            assertTrue(width.getMax()>=1000);assertTrue(height.getMax()>=1000);
+            change(R.id.sb_zoom_w,width.getMax());change(R.id.sb_zoom_h,height.getMax());
+            assertTrue(b.getWidth()>=root.getWidth());assertTrue(b.getHeight()>=root.getHeight());
+            ((CheckBox)panel.findViewById(R.id.cb_round)).setChecked(false);layout();
+            SeekBar diameter=panel.findViewById(R.id.sb_zoom_x);assertTrue(diameter.getMax()>=1000);
+            change(R.id.sb_zoom_x,diameter.getMax());
+            assertEquals(b.getWidth(),b.getHeight());assertTrue(b.getCircleDiameter()>=Math.ceil(Math.hypot(root.getWidth(),root.getHeight())));
+            assertEquals(b.getWidth(),v.getLayoutParams().width);
+        }
+    }
+    @Test public void veryLargeImportedSizesStayUnchangedAndEditable() {
+        GameMenuQuickBean b=bean(2,13,20000,12000);b.setStackLevel(1);b.setOpacity(0);load(0);select(0);
+        assertEquals(20000,b.getWidth());assertEquals(12000,b.getHeight());
+        SeekBar width=panel.findViewById(R.id.sb_zoom_w),height=panel.findViewById(R.id.sb_zoom_h);
+        assertTrue(width.getMax()>=width.getProgress());assertTrue(height.getMax()>=height.getProgress());
+        ReflectionHelpers.callInstanceMethod(controller,"updateItem");layout();select(0);
+        assertEquals(20000,b.getWidth());assertEquals(12000,b.getHeight());assertEquals(1,b.getStackLevel());assertEquals(Integer.valueOf(0),b.getOpacity());
+    }
     @Test public void selectingDifferentShapesDoesNotModifyEitherImportedSize() {
         GameMenuQuickBean a=bean(2,13,417,193);GameMenuQuickBean b=bean(2,14,200,200);b.setShapeType(0);
         load(0);load(1);select(0);select(1);select(0);

@@ -451,8 +451,15 @@ public class KeyBoardController {
 
     private static int scaledSize(int base, int percent) { return Math.max(1, Math.round(base * percent / 100f)); }
     private static int sizePercent(int size, int base) { return Math.max(1, Math.round(size * 100f / Math.max(1, base))); }
-    private void bindSizeBar(SeekBar bar, int percent) {
-        bar.setMax(Math.max(300, percent));
+    private void bindSizeBar(SeekBar bar, int percent, int base) {
+        int width = frame_layout.getWidth() > 0 ? frame_layout.getWidth()
+                : context.getResources().getDisplayMetrics().widthPixels;
+        int height = frame_layout.getHeight() > 0 ? frame_layout.getHeight()
+                : context.getResources().getDisplayMetrics().heightPixels;
+        // A circle needs the diagonal to cover all four corners. Each size bar
+        // must also keep imported sizes beyond the normal range editable.
+        int fullScreen = (int) Math.ceil(Math.ceil(Math.hypot(width, height)) * 100.0 / Math.max(1, base));
+        bar.setMax(Math.max(1000, Math.max(percent, fullScreen)));
         bar.setProgress(percent);
     }
 
@@ -480,12 +487,13 @@ public class KeyBoardController {
         int size = bean.isCircular() ? bean.getCircleDiameter() : bean.getHeight();
         int percent = sizePercent(size, baseSize(bean, false));
         txZoom.setText(context.getString(bean.isCircular() ? R.string.control_diameter : R.string.control_size, percent));
-        bindSizeBar(sb_zoom_x, percent);
+        bindSizeBar(sb_zoom_x, percent, baseSize(bean, false));
         int w = sizePercent(bean.getWidth(), baseSize(bean, true));
         int h = sizePercent(bean.getHeight(), baseSize(bean, false));
         tx_zoom_w.setText(context.getString(R.string.control_width, w));
         tx_zoom_h.setText(context.getString(R.string.control_height, h));
-        bindSizeBar(sb_zoom_w, w); bindSizeBar(sb_zoom_h, h);
+        bindSizeBar(sb_zoom_w, w, baseSize(bean, true));
+        bindSizeBar(sb_zoom_h, h, baseSize(bean, false));
         bindingSize = false;
         tx_margin.setText("坐标：" + bean.getmLeft() + "，" + bean.getmTop());
     }

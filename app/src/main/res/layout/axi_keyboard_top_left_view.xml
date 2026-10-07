@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"/>
 
         <SeekBar
-            android:max="300"
+            android:max="1000"
             android:id="@+id/sb_zoom_x"
             android:progress="100"
             android:layout_marginTop="4dp"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"/>
 
             <SeekBar
-                android:max="300"
+                android:max="1000"
                 android:id="@+id/sb_zoom_w"
                 android:progress="100"
                 android:layout_marginTop="4dp"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"/>
 
             <SeekBar
-                android:max="300"
+                android:max="1000"
                 android:id="@+id/sb_zoom_h"
                 android:progress="100"
                 android:layout_marginTop="4dp"
